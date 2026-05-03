@@ -11,14 +11,6 @@
   name: id-card-access-level-fota-head
 
 - type: accessGroup
-  id: BOSSeniorScribe
-  tags:
-  - BOS
-  - BOSInitiate
-  - BOSScribe
-  - BOSSeniorScribe
-
-- type: accessGroup
   id: FotA
   tags:
   - FotA
