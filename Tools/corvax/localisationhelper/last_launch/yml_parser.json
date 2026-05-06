@@ -155,6 +155,24 @@
         "desc": null,
         "suffix": null
     },
+    "FotA": {
+        "parent": null,
+        "name": "id-card-access-level-followers-apocalypse",
+        "desc": null,
+        "suffix": null
+    },
+    "FotADoctor": {
+        "parent": null,
+        "name": "id-card-access-level-followers-apocalypse",
+        "desc": null,
+        "suffix": null
+    },
+    "FotAHead": {
+        "parent": null,
+        "name": "id-card-access-level-followers-apocalypse",
+        "desc": null,
+        "suffix": null
+    },
     "ZetanCaptain": {
         "parent": null,
         "name": "id-card-access-level-zetan-captain",

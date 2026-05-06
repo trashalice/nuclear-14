@@ -1,0 +1,29 @@
+- type: accessLevel
+  id: FotA
+  name: id-card-access-level-fota
+
+- type: accessLevel
+  id: FotADoctor
+  name: id-card-access-level-fota-doctor
+
+- type: accessLevel
+  id: FotAHead
+  name: id-card-access-level-fota-head
+
+- type: accessGroup
+  id: FotA
+  tags:
+  - FotA
+
+- type: accessGroup
+  id: FotADoctor
+  tags:
+  - FotA
+  - FotADoctor 
+
+- type: accessGroup
+  id: FotAHead
+  tags:
+  - FotA
+  - FotADoctor
+  - FotAHead

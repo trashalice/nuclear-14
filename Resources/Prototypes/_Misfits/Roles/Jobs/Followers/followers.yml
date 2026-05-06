@@ -29,6 +29,9 @@
   supervisors: job-supervisors-follower-head
   accessGroups:
   - FollowersApocalypse
+  - FotAHead
+  - FotADoctor
+  - FotA
   requirements:
   - !type:CharacterPlaytimeRequirement
     tracker: FollowerDoctor
@@ -99,6 +102,8 @@
   supervisors: job-supervisors-follower-doctor
   accessGroups:
   - FollowersApocalypse
+  - FotADoctor
+  - FotA
   requirements:
   - !type:CharacterPlaytimeRequirement
     tracker: FollowerVolunteer
@@ -167,6 +172,7 @@
   supervisors: job-supervisors-follower-volunteer
   accessGroups:
   - FollowersApocalypse
+  - FotA
   requirements:
   - !type:CharacterPlaytimeRequirement
     tracker: Wastelander
