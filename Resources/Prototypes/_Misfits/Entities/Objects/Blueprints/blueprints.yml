@@ -1058,6 +1058,7 @@
     # #Misfits Add - paired tribal head wraps and drylander goggles
     - N14BPTribeArmorHelmetTribalHeadWraps
     - N14BPTribeArmorHelmetDrylanderGoggles
+    - TribalMaskofGreed
 
 - type: entity
   parent: N14BlueprintBase
@@ -1067,6 +1068,7 @@
   components:
   - type: Blueprint
     recipes:
+    - TribalHelmetofPeace
     - N14BPTribeArmorBandito
     - N14BPTribeArmorForager
     - N14BPTribeArmorHunter

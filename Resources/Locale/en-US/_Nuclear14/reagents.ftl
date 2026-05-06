@@ -111,6 +111,8 @@ reagent-name-fireantnectar = Fire ant nectar
 reagent-desc-fireantnectar = Crystals of fire ant nectar.
 reagent-name-bloatflyacid = bloatfly acid
 reagent-desc-bloatflyacid = Acid from the sac of a bloatfly.
+reagent-name-bloatflymilk = bloatfly milk
+reagent-desc-bloatflymilk = Milk from the sac of a bloatfly.
 reagent-name-cazadoracid = cazador acid
 reagent-desc-cazadoracid = Acid from the sac of a cazador stinger.
 

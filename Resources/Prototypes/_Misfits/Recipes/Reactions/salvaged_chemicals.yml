@@ -1,0 +1,36 @@
+﻿- type: reaction
+  id: AmmoniaBreakdown
+  source: true
+  requiredMixerCategories:
+  - Electrolysis
+  reactants:
+    Ammonia:
+      amount: 8
+    Oxygen:
+      amount: 3
+  products:
+    Nitrogen: 2
+    Water: 6
+
+- type: reaction
+  id: BananaYuccaBreakdown
+  source: true
+  requiredMixerCategories:
+  - Electrolysis
+  reactants:
+    ExtractBananaYucca:
+      amount: 10
+  products:
+    Potassium: 5
+
+- type: reaction
+  id: BananaYuccaCentrifuge
+  source: true
+  requiredMixerCategories:
+  - Centrifuge
+  reactants:
+    ExtractBananaYucca:
+      amount: 10
+  products:
+    Potassium: 5
+    Water: 5

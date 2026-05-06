@@ -2,7 +2,7 @@
   id: Chinese #SolCommon
   isVisibleLanguage: false
   speech:
-    color: "#df57aaee"
+    color: "#e83c41" #Misfits Change -  df57aaee
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1

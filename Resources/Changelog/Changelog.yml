@@ -4577,3 +4577,52 @@ Entries:
   id: 5832
   time: '2026-05-03T23:06:32.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/418
+- author: Chancerous
+  changes:
+    - type: Fix
+      message: BoS wall rechargers
+    - type: Fix
+      message: Brig doors
+    - type: Fix
+      message: BoS shooting ranger (theres a button on the wall its a lil dark)
+    - type: Tweak
+      message: Brig is now controlled by the Knights (RP MAX LOSERS <3)
+    - type: Add
+      message: Gave vault overseer access terminal
+    - type: Add
+      message: Extra vault ID's to overseer
+  id: 5833
+  time: '2026-05-04T20:35:31.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/421
+- author: HungryCuban
+  changes:
+    - type: Add
+      message: 'Added Legion PA textures made by @Nope1356 '
+  id: 5834
+  time: '2026-05-05T21:31:54.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/432
+- author: Torma25 on discord for the idea
+  changes:
+    - type: Add
+      message: bloatfly milk
+  id: 5835
+  time: '2026-05-05T21:32:44.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/430
+- author: Bradysgaming
+  changes:
+    - type: Add
+      message: Added the mask of greed.
+    - type: Add
+      message: Added base mask paths in mifits so they can be sorted properly
+    - type: Add
+      message: Added the helmet of peace
+  id: 5836
+  time: '2026-05-05T21:36:42.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/407
+- author: NajaTheNaja
+  changes:
+    - type: Add
+      message: 3 recipes for salvaging base reagents from wasteland chemicals
+  id: 5837
+  time: '2026-05-06T01:06:44.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/433

@@ -1,0 +1,17 @@
+- type: entity
+  parent: ClothingMaskBase
+  id: TribalMaskofGreed
+  name: Mask of Greed
+  description: Greed is your god, Kaz.
+  components:
+  - type: Sprite
+    sprite: _Misfits/Clothing/Mask/TribalMasks/maskofgreed.rsi
+  - type: Clothing
+    sprite: _Misfits/Clothing/Mask/TribalMasks/maskofgreed.rsi
+  - type: IngestionBlocker
+  - type: BreathMask
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+  - type: IdentityBlocker

@@ -710,6 +710,18 @@
 
 # --- Tribe Tier 1 Armor ---
 - type: latheRecipe
+  id: TribalMaskofGreed
+  result: TribalMaskofGreed
+  category: N14BlueprintTribeArmorT1
+  completetime: 6
+  requiresBlueprint: true
+  availableFaction:
+  - Tribe
+  materials:
+    N14Gold: 200
+    Cloth: 750
+
+- type: latheRecipe
   id: N14BPTribeArmorTribalArmor
   result: N14ClothingOuterTribalArmor
   category: N14BlueprintTribeArmorT1
@@ -736,6 +748,18 @@
     Leather: 50
 
 # --- Tribe Tier 2 Armor ---
+- type: latheRecipe
+  id: TribalHelmetofPeace
+  result: TribalHelmetofPeace
+  category: N14BlueprintTribeArmorT2
+  completetime: 20
+  requiresBlueprint: true
+  availableFaction:
+  - Tribe
+  materials:
+    Leather: 1000
+    Cloth: 500
+
 - type: latheRecipe
   id: N14BPTribeArmorBandito
   result: N14ClothingOuterBandito

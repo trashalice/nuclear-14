@@ -1,0 +1,28 @@
+# FOTA
+- type: entity
+  parent: DoorElectronicsFotA
+  id: DoorElectronicsFotAHead
+  suffix: FotA Head, Locked
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: AccessReader
+    access: [["FotAHead"]]
+
+- type: entity
+  parent: DoorElectronicsFotA
+  id: DoorElectronicsFotADoctor
+  suffix: FotA Doctor, Locked
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: AccessReader
+    access: [["FotADoctor"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsFotA
+  suffix: FotA, Locked
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: AccessReader
+    access: [["FotA"]]
+

@@ -1,44 +1,44 @@
 ﻿# 12 Gauge
-- type: latheRecipe
-  id: MisfitsShellShotgun12Beanbag
-  result: MisfitsShellShotgun12Beanbag
-  category: N14Ammo
-  completetime: 2
-  materials:
-    Plastic: 2
-    Steel: 3
-    N14Gunpowder: 2
-
-- type: latheRecipe
-  id: MisfitsMagazineBox12GaugeBeanbag
-  result: MisfitsMagazineBox12GaugeBeanbag
-  category: N14AmmoBox
-  completetime: 5
-  materials:
-    Plastic: 60
-    N14Paper: 90
-    N14Gunpowder: 60
-    Cardboard: 100
-
+#- type: latheRecipe
+#  id: MisfitsShellShotgun12Beanbag
+#  result: MisfitsShellShotgun12Beanbag
+#  category: N14Ammo
+#  completetime: 2
+#  materials:
+#    Plastic: 2
+#    Steel: 3
+#    N14Gunpowder: 2
+#
+#- type: latheRecipe
+#  id: MisfitsMagazineBox12GaugeBeanbag
+#  result: MisfitsMagazineBox12GaugeBeanbag
+#  category: N14AmmoBox
+#  completetime: 5
+#  materials:
+#    Plastic: 60
+#    N14Paper: 90
+#    N14Gunpowder: 60
+#    Cardboard: 100
+#
 # 20 Gauge
-- type: latheRecipe
-  id: MisfitsShellShotgun20Beanbag
-  result: MisfitsShellShotgun20Beanbag
-  category: N14Ammo
-  completetime: 2
-  materials:
-    Plastic: 1
-    N14Paper: 2
-    N14Gunpowder: 2
-
-- type: latheRecipe
-  id: MisfitsMagazineBox20GaugeBeanbag
-  result: MisfitsMagazineBox20GaugeBeanbag
-  category: N14AmmoBox
-  completetime: 5
-  materials:
-    Plastic: 30
-    N14Paper: 60
-    N14Gunpowder: 60
-    Cardboard: 100
+#- type: latheRecipe
+#  id: MisfitsShellShotgun20Beanbag
+#  result: MisfitsShellShotgun20Beanbag
+#  category: N14Ammo
+#  completetime: 2
+#  materials:
+#    Plastic: 1
+#    N14Paper: 2
+#    N14Gunpowder: 2
+#
+#- type: latheRecipe
+#  id: MisfitsMagazineBox20GaugeBeanbag
+#  result: MisfitsMagazineBox20GaugeBeanbag
+#  category: N14AmmoBox
+#  completetime: 5
+#  materials:
+#    Plastic: 30
+#    N14Paper: 60
+#    N14Gunpowder: 60
+#    Cardboard: 100
 

@@ -43,15 +43,19 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 10
+        maxVol: 15
         reagents:
         - ReagentId: N14BloatflyAcid
           Quantity: 10
+        - ReagentId: N14BloatflyMilk
+          Quantity: 5
   - type: Extractable
     juiceSolution:
       reagents:
       - ReagentId: N14BloatflyAcid
         Quantity: 10
+      - ReagentId: N14BloatflyMilk
+        Quantity: 5
   - type: StaticPrice # Forge-Change
     price: 1 # PH
 

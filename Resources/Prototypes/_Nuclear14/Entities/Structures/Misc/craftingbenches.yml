@@ -12,7 +12,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.25,-0.3,1.25,0.3"
+          bounds: "-0.25,0,1.25,0.3"
         density: 3000
         mask:
         - MachineMask
@@ -197,13 +197,9 @@
     - N14ShellShotgun12
     - N14MagazineShotgun12
     - MagazineBox12gauge
-    - MisfitsShellShotgun12Beanbag
-    - MisfitsMagazineBox12GaugeBeanbag
     - N14ShellShotgun20
     - N14MagazineShotgun20
     - MagazineBox20gauge
-    - MisfitsMagazineBox20GaugeBeanbag
-    - MisfitsShellShotgun20Beanbag
     - N14MagazinePistol22lr
     - MagazineBox22
     - SpeedLoader44

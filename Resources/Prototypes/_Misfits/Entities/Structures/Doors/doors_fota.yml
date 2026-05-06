@@ -1,0 +1,79 @@
+- type: entity
+  parent: N14DoorWoodSlanted
+  id: N14DoorWoodSecureLockedFotA
+  suffix: FotA, Locked
+  components:
+  - type: AccessReader
+    access: [["FotA"]]
+  - type: Wires
+    layoutId: AirlockService
+
+- type: entity
+  parent: N14DoorWoodSlanted
+  id: N14DoorWoodSecureLockedFotADoctor
+  suffix: FotA, Locked, Doctor
+  components:
+  - type: AccessReader
+    access: [["FotADoctor"]]
+  - type: Wires
+    layoutId: AirlockService
+
+- type: entity
+  parent: N14DoorWoodSlanted
+  id: N14DoorWoodSecureLockedFotAHead
+  suffix: FotA, Locked, Head
+  components:
+  - type: AccessReader
+    access: [["FotAHead"]]
+  - type: Wires
+    layoutId: AirlockService
+
+- type: entity
+  parent: N14DoorMetalBlueSlanted
+  id: N14DoorMetalSlantedLockedFotA
+  suffix: FotA, Locked
+  components:
+  - type: AccessReader
+    access: [["FotA"]]
+  - type: Wires
+    layoutId: AirlockService
+
+- type: entity
+  parent: N14DoorMetalBarSlanted
+  id: N14DoorCellSlantedLockedFotA
+  suffix: FotA, Locked
+  components:
+  - type: AccessReader
+    access: [["FotA"]]
+  - type: Wires
+    layoutId: AirlockService
+
+- type: entity
+  parent: N14DoorWoodWhiteSlanted
+  id: N14DoorWoodSlantedWhiteLockedFotA
+  suffix: FotA, Locked
+  components:
+  - type: AccessReader
+    access: [["FotA"]]
+  - type: Wires
+    layoutId: AirlockService
+
+- type: entity
+  parent: N14DoorWoodRedSlanted
+  id: N14DoorWoodSlantedRedLockedFotA
+  suffix: FotA, Locked
+  components:
+  - type: AccessReader
+    access: [["FotA"]]
+  - type: Wires
+    layoutId: AirlockService
+
+- type: entity
+  parent: FenceMetalGate
+  id: N14DoorFenceMetalGateLockedFotA
+  suffix: FotA, Locked
+  components:
+  - type: AccessReader
+    access: [["FotA"]]
+  - type: Wires
+    layoutId: AirlockService

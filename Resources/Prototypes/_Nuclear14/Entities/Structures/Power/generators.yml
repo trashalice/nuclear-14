@@ -122,8 +122,8 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-            bounds: "-0.2,-0.2,1.2,0.5"
-        density: 190
+            bounds: "-0.5,-0.2,1.5,0.4"
+        density: 3000
         mask:
         - MachineMask
         layer:
@@ -150,7 +150,7 @@
         shape:
           !type:PhysShapeAabb
             bounds: "-0.5,-0.5,0.5,0.8"
-        density: 190
+        density: 1000
         mask:
         - MachineMask
         layer:
@@ -202,15 +202,15 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-            bounds: "-0.5,-0.5,0.5,0.8"
-        density: 190
+            bounds: "-0.5,-0.1,0.5,0.8"
+        density: 1900
         mask:
         - MachineMask
         layer:
         - MachineLayer
   - type: Sprite
     sprite: _Nuclear14/Structures/Power/enclave.rsi
-    drawdepth: Overdoors
+    #drawdepth: Overdoors
     offset: 0, 0.5
     layers:
     - state: generator_enclave_off
@@ -257,8 +257,8 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-            bounds: "-0.3,-0.2,1,0.4"
-        density: 190
+          bounds: "-0.4,-0.1,1.2,0.5"
+        density: 4900
         mask:
         - MachineMask
         layer:
@@ -291,6 +291,7 @@
     layers:
     - state: generator_off
       map: [ "enum.GeneratorVisualLayers.Body" ]
+    offset: 0.5, 0
   - type: GenericVisualizer
     visuals:
       enum.GeneratorVisuals.Running:
@@ -303,6 +304,17 @@
       output:
         !type:CableDeviceNode
         nodeGroupID: HVPower
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.1,1.2,0.5"
+        density: 4900
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
   - type: PowerMonitoringDevice
     group: Generator
     loadNode: output
@@ -358,6 +370,17 @@
     layers:
     - state: reactoroff
     - state: norm0
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+            bounds: "-1.0,0,1.0,0.5"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
   - type: PointLight
     radius: 3
     energy: 4.5
@@ -382,7 +405,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-            bounds: "-0.7,0,0.7,0.7"
+            bounds: "-1.0,0,1.0,0.5"
         density: 190
         mask:
         - MachineMask
