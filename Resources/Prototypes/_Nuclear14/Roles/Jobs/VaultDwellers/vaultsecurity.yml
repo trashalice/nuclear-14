@@ -27,7 +27,6 @@
   - VaultSecurity
   - VaultEngineer
   - VaultMedical
-  - VaultChemistry
   special:
   - !type:AddComponentSpecial
     components:
