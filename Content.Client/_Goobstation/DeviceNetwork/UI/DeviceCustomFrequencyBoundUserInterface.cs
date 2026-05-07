@@ -29,7 +29,6 @@ public sealed class DeviceCustomFrequencyBoundUserInterface : BoundUserInterface
 
         _window = this.CreateWindow<DeviceCustomFrequencyWindow>();
         _window.OnFrequencyChanged += OnFrequencyChanged;
-        _window.OnResetToDefault += OnReset;
 
         if (!EntMan.TryGetComponent(Owner, out DeviceCustomFrequencyComponent? deviceCustom))
             return;
@@ -49,11 +48,6 @@ public sealed class DeviceCustomFrequencyBoundUserInterface : BoundUserInterface
 
         if (cast.Frequency != null)
             _window.EnsureSpin(cast.Frequency.Value);
-    }
-
-    private void OnReset()
-    {
-        SendMessage(new DeviceCustomResetFrequencyMessage());
     }
 
     private void OnFrequencyChanged(uint value)

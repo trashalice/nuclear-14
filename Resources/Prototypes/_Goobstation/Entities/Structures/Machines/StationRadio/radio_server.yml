@@ -1,6 +1,6 @@
 - type: entity
   id: StationRadioServer
-  name: station radio server
+  name: radio server
   parent: [ BaseMachinePowered, ConstructibleMachine ]
   description: A rack of servers, controls whether your voice is being broadcasted or not
   components:
@@ -21,7 +21,9 @@
     receiveAll: true
     deviceNetId: Wireless
     receiveFrequencyId: StationRadio
-    transmitFrequencyId: StationRadio # Default value, can be changed
+    transmitFrequencyId: StationRadio
+    receiveFrequency: 1667
+    transmitFrequency: 1667
   - type: DeviceCustomFrequency
     frequencyChange: true
   - type: ActivatableUI
@@ -36,11 +38,10 @@
     powerRequired: true
     broadcastChannel: PBS
     toggleOnInteract: false
-    frequency: 1225
+    frequency: 1667
 
 - type: entity
   id: StationRadioServerBazaar
-  name: station radio server
   parent: StationRadioServer
   suffix: Bazaar
   components:
@@ -52,7 +53,6 @@
 
 - type: entity
   id: StationRadioServerWasteland
-  name: station radio server
   parent: StationRadioServer
   suffix: Wasteland
   components:
@@ -65,7 +65,7 @@
 - type: entity
   id: StationRadioRig
   parent: [ BaseMachinePowered, ConstructibleMachine ]
-  name: station radio rig
+  name: radio rig
   description: A collection of everything you need to play music over the station.
   components:
   - type: Sprite
@@ -85,14 +85,13 @@
     powerRequired: true
     broadcastChannel: PBS
     toggleOnInteract: true
-    frequency: 1225
+    frequency: 1667
   - type: ActiveRadio
     channels:
     - PBS
 
 - type: entity
   id: StationRadioRigBazaar
-  name: station radio server
   parent: StationRadioRig
   suffix: Bazaar
   components:
@@ -101,7 +100,6 @@
 
 - type: entity
   id: StationRadioRigrWasteland
-  name: station radio server
   parent: StationRadioRig
   suffix: Wasteland
   components:

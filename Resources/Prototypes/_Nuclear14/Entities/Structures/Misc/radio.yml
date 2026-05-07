@@ -143,7 +143,9 @@
   - type: DeviceNetwork
     receiveAll: true
     deviceNetId: Wireless
-    receiveFrequencyId: StationRadio # Default value, can be changed
+    receiveFrequencyId: StationRadio 
+    receiveFrequency: 1667
+    transmitFrequency: 1667
   - type: DeviceCustomFrequency
     frequencyChange: true
   - type: UserInterface

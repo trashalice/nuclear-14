@@ -110,6 +110,16 @@ public sealed class StationRadioSystem : EntitySystem
 
     private void OnServerChangeFrequency(Entity<StationRadioServerComponent> ent, ref DeviceNetworkFrequencyChangedEvent args)
     {
+        var query = EntityQueryEnumerator<StationRadioServerComponent, DeviceNetworkComponent>();
+        while (query.MoveNext(out var uid, out var server, out var serverNetwork))
+        {
+            if (serverNetwork.ReceiveFrequency == args.NewFrequency)
+            {
+                args.Cancelled = true;
+                return;
+            }
+        }
+
         if (TryComp<RadioMicrophoneComponent>(ent.Owner, out var radioMic) && args.NewFrequency != null)
         {
             radioMic.Frequency = (int) args.NewFrequency;

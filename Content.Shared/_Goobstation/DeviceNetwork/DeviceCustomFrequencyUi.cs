@@ -20,9 +20,6 @@ public sealed class DeviceCustomFrequencyChangeMessage : BoundUserInterfaceMessa
 }
 
 [Serializable, NetSerializable]
-public sealed class DeviceCustomResetFrequencyMessage : BoundUserInterfaceMessage;
-
-[Serializable, NetSerializable]
 public sealed class DeviceCustomFrequencyUserInterfaceState : BoundUserInterfaceState
 {
     public uint? Frequency;

@@ -8,6 +8,6 @@ SPDX-License-Identifier: MIT
 <DefaultWindow xmlns="https://spacestation14.io" Title="{Loc ui-device-custom-frequency-title}">
     <BoxContainer Orientation="Vertical" SeparationOverride="4">
         <BoxContainer Name="FrequencyContainer" Orientation="Horizontal"></BoxContainer>
-        <Button Name="ResetToDefaults" Text="Reset to Default" />
+        <Button Name="SetFrequencyButton" Text="Set Frequency" />
     </BoxContainer>
 </DefaultWindow>

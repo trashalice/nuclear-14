@@ -53,22 +53,22 @@ public sealed partial class DeviceCustomFrequencyWindow : DefaultWindow
 {
     public uint MinFrequency;
     public uint MaxFrequency;
+    public uint Value;
 
     public event Action<uint>? OnFrequencyChanged;
-    public event Action? OnResetToDefault;
+    public event Action<uint>? OnSetFrequency;
 
     public FloatSpinBox? FrequencySpin;
     public DeviceCustomFrequencyWindow()
     {
         RobustXamlLoader.Load(this);
 
-        ResetToDefaults.OnPressed += _ => OnResetToDefault?.Invoke();
+        SetFrequencyButton.OnPressed += _ => OnFrequencyChanged?.Invoke(Value);
     }
 
     private void OnChanged(FloatSpinBox.FloatSpinBoxEventArgs arg)
     {
-        var value = (uint) MathF.Round(arg.Value, MidpointRounding.ToZero);
-        OnFrequencyChanged?.Invoke(value);
+        Value = (uint) MathF.Round(arg.Value, MidpointRounding.ToZero);
     }
 
     // We are using FloatSpinBox because for some reason only they have an event raised when the value is changed.
@@ -85,7 +85,7 @@ public sealed partial class DeviceCustomFrequencyWindow : DefaultWindow
             FrequencySpin.IsValid = f => f > MinFrequency && f < MaxFrequency;
             FrequencySpin.OnValueChanged += OnChanged;
 
-            FrequencyContainer.AddChild(new Label { Text = Loc.GetString("ui-device-custom-frequency-receive-label") });
+            FrequencyContainer.AddChild(new Label { Text = Loc.GetString("ui-device-custom-frequency-label") });
             FrequencyContainer.AddChild(FrequencySpin);
         }
 
