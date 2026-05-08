@@ -24,7 +24,7 @@
       thresholds:
         - trigger:
             !type:DamageTrigger
-            damage: 100
+            damage: 50
           behaviors:
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
@@ -51,8 +51,8 @@
           Slash: 0.5
           Piercing: 0.5
           Heat: 1
-    - type: Reflect # #Misfits Change Tweak: Reduced small-arms ricochet from 50% to 30%
-      reflectProb: 0.3
+    - type: Reflect # #Made the deflect change 15% to interact with the heavy shields double
+      reflectProb: 0.15
       spread: 150
     - type: SpearBlock # #Misfits Change Add: Shields deflect thrown polearms; falls to ground instead of embedding.
     - type: ClothingSpeedModifier
@@ -93,7 +93,7 @@
       thresholds:
         - trigger:
             !type:DamageTrigger
-            damage: 200 # Forge-Change
+            damage: 100 # Half'd durabillity due to insanely cheap cost
           behaviors:
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
@@ -115,18 +115,18 @@
           Slash: 0.8
           Piercing: 0.85 # Forge-Change
           Heat: 0.8
-        flatReductions: 
+        flatReductions:
           Blunt: 0.5 # Forge-Change
           Slash: 0.5 # Forge-Change
           Piercing: 0.5 # Forge-Change
           Heat: 1 # Forge-Change
-    - type: Reflect # #Misfits Change Tweak: Reduced small-arms ricochet from 50% to 30%
-      reflectProb: 0.3
+    - type: Reflect # # Made reflect to 20 because the shield is insane
+      reflectProb: 0.20
       spread: 150
     - type: ClothingSpeedModifier
-      walkModifier: 0.85 # Forge-Change 
+      walkModifier: 0.85 # Forge-Change
       sprintModifier: 0.85 # Forge-Change
-    - type: HeldSpeedModifier 
+    - type: HeldSpeedModifier
       mirrorClothingModifier: false
       walkModifier: 0.875 # Forge-Change
       sprintModifier: 0.875 # Forge-Change

@@ -7,7 +7,7 @@
     - type: Reflect # #Misfits Change Add: Metal heater shield deflects sub-5.56mm pistol rounds at 30%; degrades while moving.
       reflects:
         - SmallCaliber
-      reflectProb: 0.3
+      reflectProb: 0.10 # It is incrediblly cheap as a shield.
       spread: 90
     - type: SpearBlock # #Misfits Change Add: Legionnaire heater shield deflects thrown polearms.
     - type: Construction
@@ -28,10 +28,10 @@
     - type: Blocking
       passiveBlockModifier:
         coefficients:
-          Blunt: 0.9
-          Slash: 0.9
-          Piercing: 0.9
-          Heat: 0.9
+          Blunt: 0.5
+          Slash: 0.5
+          Piercing: 0.5
+          Heat: 0.5
       activeBlockModifier:
         coefficients:
           Blunt: 0.8
@@ -47,13 +47,13 @@
       thresholds:
         - trigger:
             !type:DamageTrigger
-            damage: 300
+            damage: 150
           behaviors:
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
         - trigger:
             !type:DamageTrigger
-            damage: 120 #Weaker shield
+            damage: 60 #Weaker shield
           behaviors:
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
