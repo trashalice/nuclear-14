@@ -57,6 +57,9 @@
   - type: Clothing
     sprite: _Nuclear14/Clothing/Eyes/sunglasses.rsi
   - type: VisionCorrection
+  - type: FlashImmunity # For some reason they don't have flash protection
+  - type: EyeProtection
+    protectionTime: 5
   # - type: ClothingSpecialModifier
     # charismaModifier: 1 
 
