@@ -224,6 +224,20 @@
         Slash: 0.5
         Piercing: 0.5
 
+- type: entity
+  parent: ClothingMaskBase
+  id: ClothingSuperRangerGasmask
+  name: Super Mutant Ranger Gasmask
+  description: A larger Ranger gasmask fitted for a supermutant
+  components:
+  - type: Sprite
+    sprite: _Misfits/Clothing/SuperMutant/ranger_gasmask.rsi
+  - type: Clothing
+    sprite: _Misfits/Clothing/SuperMutant/ranger_gasmask.rsi
+  - type: Tag
+    tags:
+    - SuperMutantWearable
+
 # #Misfits Add - Ranger armor for the playable Supermutant Ranger job variant.
 # Tagged SuperMutantWearable so only supermutants can equip it in outerClothing slot.
 - type: entity
@@ -266,7 +280,7 @@
   parent: ClothingHeadBase
   id: ClothingSuperMutantTrooperHelmet
   name: super mutant trooper helmet
-  description: A steel helmet fitted for a Supermutant.
+  description: A crude helmet assembled from scrap metal and leather, shaped to fit a super mutant's oversized skull.
   components:
   - type: Sprite
     sprite: _Misfits/Clothing/SuperMutant/trooper_helmet.rsi
