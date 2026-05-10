@@ -172,7 +172,7 @@ namespace Content.Server.Entry
                 IoCManager.Resolve<IConnectionManager>().PostInit();
                 IoCManager.Resolve<SponsorManager>().Initialize(); // Forge-Change
                 IoCManager.Resolve<ISupporterManager>().Initialize(); // #Misfits Add
-                IoCManager.Resolve<IConsoleHost>().ExecuteCommand("populationadjust 121");
+                IoCManager.Resolve<IConsoleHost>().ExecuteCommand("populationadjust 200");
             }
         }
 
