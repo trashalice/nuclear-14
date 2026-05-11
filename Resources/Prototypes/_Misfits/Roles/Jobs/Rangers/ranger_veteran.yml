@@ -46,6 +46,7 @@
       - RobotRobobrainLaser # #Misfits Fix - missing variant species
       - SuperMutant
       - GhoulGlowing # #Misfits Tweak - glowing ghouls not allowed in NCR Rangers
+      - Nightkin
 
 - type: startingGear
   id: NCRVeteranRangerGear
