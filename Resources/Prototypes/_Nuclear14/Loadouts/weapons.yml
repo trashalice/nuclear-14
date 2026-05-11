@@ -467,6 +467,34 @@
   items:
     - N14TribalSword
 
+    
+- type: loadout
+  id: N14LongSwordBoS
+  category: Weapons
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutMelee
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - BrotherhoodOfSteel # Longsword with the medieval themed faction
+  items:
+    - N14LongSword
+
+- type: loadout
+  id: N14GladiusLegion
+  category: Weapons
+  cost: 3
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutMelee
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - CaesarLegion # Basically free for some roles, others don't get that
+  items:
+    - N14Gladius
+
+
 - type: loadout
   id: N14LongSword
   category: Weapons
@@ -476,6 +504,16 @@
       group: N14LoadoutMelee
   items:
     - N14LongSword
+
+- type: loadout
+  id: N14Gladius
+  category: Weapons
+  cost: 5
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutMelee
+  items:
+    - N14Gladius
 
 - type: loadout
   id: N14ChineseSword
@@ -490,3 +528,17 @@
       group: N14LoadoutMelee
   items:
     - N14ChineseSword
+
+
+- type: loadout
+  id: N14CeremonialSwordCent
+  category: Weapons
+  cost: 5
+  requirements:
+    - !type:CharacterJobRequirement
+      traits:
+      - CaesarLegionCenturion
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutMelee
+  items:
+    - N14CeremonialSword
