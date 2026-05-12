@@ -22,7 +22,7 @@
       department: Enclave
       min: 14400 # 4 hours
   startingGear: EnclaveEnlistedGear
-  icon: "JobIconNcrCadet"
+  icon: "JobIconEnclaveEnlisted"
   supervisors: job-supervisors-enclave
   alwaysUseSpawner: true
   accessGroups:
