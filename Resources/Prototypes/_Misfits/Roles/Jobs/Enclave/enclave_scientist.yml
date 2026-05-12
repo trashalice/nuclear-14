@@ -23,7 +23,7 @@
       department: Enclave
       min: 43200 # 12 hours
   startingGear: EnclaveScientistGear
-  icon: "JobIconScientist"
+  icon: "JobIconEnclaveScientist"
   supervisors: job-supervisors-enclave-scientist
   alwaysUseSpawner: true
   accessGroups:
