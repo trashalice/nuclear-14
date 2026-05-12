@@ -57,7 +57,7 @@ public sealed partial class FactionWarWindow : FancyWindow
         RulesLabel.SetMarkup(
             "[bold]6.3 - Faction Warfare Rules[/bold]\n" +
             "[bullet]Factions begin [bold]neutral[/bold].[/bullet]\n" +
-            "[bullet]Only [bold]leaders[/bold] may declare war.[/bullet]\n" +
+            "[bullet]Highest Rank may declare war.[/bullet]\n" +
             "[bullet]War begins [bold]five minutes[/bold] after declaration.[/bullet]\n" +
             "[bullet]Killing diplomats or surrendered individuals is [bold]forbidden[/bold].[/bullet]\n" +
             "[bullet]You must prioritize taking [bold]slaves / prisoners[/bold].[/bullet]\n" +

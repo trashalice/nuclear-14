@@ -26,6 +26,8 @@ public sealed partial class RulesControl : BoxContainer, ILinkClickHandler
 
         SetGuide();
 
+        OpenRulesButton.OnPressed += _ => _uriOpener.OpenUri("https://wiki.misfitsystems.net/index.php/Rules");
+
         HomeButton.OnPressed += _ => SetGuide();
 
         BackButton.OnPressed += _ => SetGuide(_priorEntries.Pop(), false);
@@ -51,7 +53,52 @@ public sealed partial class RulesControl : BoxContainer, ILinkClickHandler
         Scroll.SetScrollValue(default);
         RulesContainer.Children.Clear();
         if (!_parsingMan.TryAddMarkup(RulesContainer, entry.Value))
+        {
+            // Fallback: show a simple message and open the live rules in the browser.
+            var fallbackRoot = new Control
+            {
+                HorizontalExpand = true,
+                VerticalExpand = true
+            };
+
+            var fallbackBox = new BoxContainer
+            {
+                Orientation = BoxContainer.LayoutOrientation.Vertical,
+                HorizontalAlignment = HAlignment.Center,
+                VerticalExpand = false,
+                MaxWidth = 700,
+                Margin = new Thickness(4)
+            };
+
+            var fallback = new Label
+            {
+                Text = "Rules are available on the Misfits wiki. Click the button to open the live rules in your browser.",
+                HorizontalExpand = true,
+                VerticalExpand = false,
+                MaxWidth = 600,
+                ClipText = false,
+                Align = Label.AlignMode.Center,
+                Margin = new Thickness(4)
+            };
+
+            var openButton = new Button
+            {
+                Text = "Open Live Rules",
+                HorizontalAlignment = HAlignment.Center,
+                TextAlign = Label.AlignMode.Center,
+                MinWidth = 160,
+                MaxWidth = 260,
+                Margin = new Thickness(4)
+            };
+
+            openButton.OnPressed += _ => _uriOpener.OpenUri("https://wiki.misfitsystems.net/index.php/Rules");
+
+            fallbackBox.AddChild(fallback);
+            fallbackBox.AddChild(openButton);
+            fallbackRoot.AddChild(fallbackBox);
+            RulesContainer.AddChild(fallbackRoot);
             return;
+        }
 
         if (addToPrior && _currentEntry != null)
             _priorEntries.Push(_currentEntry);

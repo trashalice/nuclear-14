@@ -3,16 +3,24 @@
         <ScrollContainer Name="Scroll" HScrollEnabled="False" HorizontalExpand="True" VerticalExpand="True">
             <BoxContainer Name="RulesContainer" VerticalExpand="True" Margin="0 0 5 0"/>
         </ScrollContainer>
-        <BoxContainer Margin="0 0 15 0" HorizontalExpand="True" HorizontalAlignment="Right">
-            <Button Name="BackButton"
-                    Text="{Loc 'ui-rules-button-back'}"
-                    HorizontalAlignment="Right"
-                    VerticalAlignment="Top"/>
-            <Control MinWidth="5"/>
-            <Button Name="HomeButton"
-                    Text="{Loc 'ui-rules-button-home'}"
-                    HorizontalAlignment="Right"
-                    VerticalAlignment="Top"/>
-        </BoxContainer>
     </Control>
+    <BoxContainer Margin="8 8 8 10" HorizontalExpand="True" Orientation="Horizontal" VerticalAlignment="Bottom">
+        <Control HorizontalExpand="True"/>
+        <Button Name="OpenRulesButton"
+                Text="{Loc 'Click me for rules'}"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                MinWidth="160"
+                MaxWidth="260"/>
+        <Control HorizontalExpand="True"/>
+        <Button Name="BackButton"
+                Text="{Loc 'ui-rules-button-back'}"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"/>
+        <Control MinWidth="5"/>
+        <Button Name="HomeButton"
+                Text="{Loc 'ui-rules-button-home'}"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"/>
+    </BoxContainer>
 </BoxContainer>
