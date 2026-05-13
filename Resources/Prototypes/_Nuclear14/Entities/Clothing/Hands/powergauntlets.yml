@@ -13,6 +13,9 @@
     equipSound: /Audio/Mecha/mechmove03.ogg
     unequipSound: /Audio/Mecha/mechmove03.ogg
     slots: gloves
+  - type: Tag
+    tags:
+    - SuperMutantWearable
   - type: Insulated # Don't electrocute my Paladins!
   - type: MeleeWeapon # Misfits Change - BoS hardsuit punch: wall destruction, slight reach and damage boost
     soundHit:
@@ -23,9 +26,6 @@
       types:
         Blunt: 18
         Structural: 12
-  - type: Tag
-    tags:
-    - SuperMutantWearable
     animation: WeaponArcFist
     wideAnimation: WeaponArcFist
     mustBeEquippedToUse: true
