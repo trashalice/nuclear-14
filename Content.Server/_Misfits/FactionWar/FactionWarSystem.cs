@@ -45,11 +45,11 @@ public sealed class FactionWarSystem : EntitySystem
 
     /// <summary>Minimum elapsed round time before war can be declared.</summary>
     /// <summary>Minimum elapsed round time before war can be declared.</summary>
-    private static readonly TimeSpan WarCooldownAfterRoundStart = TimeSpan.FromMinutes(0);
+    private static readonly TimeSpan WarCooldownAfterRoundStart = TimeSpan.FromMinutes(30);
 
     /// <summary>How long a war stays in Pending before becoming Active.</summary>
     /// <summary>How long a war stays in Pending before becoming Active.</summary>
-    private static readonly TimeSpan WarPrepDuration = TimeSpan.FromMinutes(1);
+    private static readonly TimeSpan WarPrepDuration = TimeSpan.FromMinutes(5);
 
     /// <summary>How long target player has to accept war before prompt times out.</summary>
     private static readonly TimeSpan WarAcceptanceTimeout = TimeSpan.FromMinutes(5);
