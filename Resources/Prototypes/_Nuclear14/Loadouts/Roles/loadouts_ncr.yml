@@ -485,7 +485,7 @@
 
 - type: loadout
   id: LoadoutNCRCloakNCR
-  category: Roles 
+  category: Roles
   cost: 1
   exclusive: true
   requirements:
@@ -666,6 +666,70 @@
         - NCRCaptain
   items:
     - ClothingNeckPinNCRCaptain
+
+- type: loadout
+  id: LoadoutNCRuniformPants
+  category: Roles
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - NCRSoldier
+        - NCRSGT
+        - NCRWS # Forge-Change
+        - NCRCadet # Misfits Change /Add/: expand access to all NCR roles
+        - NCRPrivateFirstClass
+        - NCRMedic
+        - NCREngineer
+        - NCRDoctor
+        - NCRStaffSergeant
+        - NCRFirstSergeant
+        - NCRLT
+        - NCRCaptain
+        - NCRMajor # Misfits Add: NCRMajor was missing from shared NCR cosmetics
+        - NCRMPinvestigator
+        - NCRMilitaryPoliceRecruit # Misfits Add: MPs are apart of the NCR
+        - NCRMilitaryPoliceSergeant # Misfits Add: MPs are apart of the NCR
+        - NCRMilitaryPoliceCaptain # Misfits Add: MPs are apart of the NCR
+        - NCRRangerRecruit
+        - NCRFieldRanger # #Misfits Fix - renamed from NCRRanger
+        - NCRPatrolRanger
+        - NCRVeteranRanger
+  items:
+    - N14ClothingUniformDesertPants
+
+- type: loadout
+  id: LoadoutNCRuniformDesertPantsFull
+  category: Roles
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - NCRSoldier
+        - NCRSGT
+        - NCRWS # Forge-Change
+        - NCRCadet # Misfits Change /Add/: expand access to all NCR roles
+        - NCRPrivateFirstClass
+        - NCRMedic
+        - NCREngineer
+        - NCRDoctor
+        - NCRStaffSergeant
+        - NCRFirstSergeant
+        - NCRLT
+        - NCRCaptain
+        - NCRMajor # Misfits Add: NCRMajor was missing from shared NCR cosmetics
+        - NCRMPinvestigator
+        - NCRMilitaryPoliceRecruit # Misfits Add: MPs are apart of the NCR
+        - NCRMilitaryPoliceSergeant # Misfits Add: MPs are apart of the NCR
+        - NCRMilitaryPoliceCaptain # Misfits Add: MPs are apart of the NCR
+        - NCRRangerRecruit
+        - NCRFieldRanger # #Misfits Fix - renamed from NCRRanger
+        - NCRPatrolRanger
+        - NCRVeteranRanger
+  items:
+    - N14ClothingUniformDesertPantsFull
 
 # Misfits Change - Disabled: NCR Major insignia is now granted by NCRMajor starting gear, not the character setup menu.
 #- type: loadout

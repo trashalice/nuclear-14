@@ -169,32 +169,6 @@
     - N14ClothingUniformRangerV3
 
 - type: loadout
-  id: LoadoutNCRuniformPants
-  category: Roles
-  cost: 1
-  exclusive: true
-  requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - NCRFieldRanger # #Misfits Fix - renamed from NCRRanger
-        - NCRVeteranRanger
-  items:
-    - N14ClothingUniformDesertPants
-
-- type: loadout
-  id: LoadoutNCRuniformDesertPantsFull
-  category: Roles
-  cost: 1
-  exclusive: true
-  requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - NCRFieldRanger # #Misfits Fix - renamed from NCRRanger
-        - NCRVeteranRanger
-  items:
-    - N14ClothingUniformDesertPantsFull
-
-- type: loadout
   id: LoadoutNCRgloves
   category: Roles
   cost: 1
