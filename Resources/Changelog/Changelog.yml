@@ -4992,3 +4992,12 @@ Entries:
   id: 5874
   time: '2026-05-13T02:32:55.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/497
+- author: Wazura
+  changes:
+    - type: Tweak
+      message: Recon Ranger Armor Speed set to 10%(5% increase)
+    - type: Tweak
+      message: Ranger Coat Armor Vault set to 30% for Both Pierce and Heat(5% increase)
+  id: 5875
+  time: '2026-05-13T02:34:26.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/496
