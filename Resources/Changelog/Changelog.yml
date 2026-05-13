@@ -4959,3 +4959,10 @@ Entries:
   id: 5871
   time: '2026-05-13T00:57:55.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/494
+- author: Loldaddy5676
+  changes:
+    - type: Tweak
+      message: 'amount of job slots available for vault faction, nothing else. '
+  id: 5872
+  time: '2026-05-13T01:09:38.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/493
