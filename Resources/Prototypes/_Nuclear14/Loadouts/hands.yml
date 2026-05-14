@@ -120,7 +120,7 @@
     - !type:CharacterItemGroupRequirement
       group: N14LoadoutHands
     - !type:CharacterJobRequirement
-      job:
+      jobs:
         - CaesarLegionCenturion 
         - TribalElder
   items:
