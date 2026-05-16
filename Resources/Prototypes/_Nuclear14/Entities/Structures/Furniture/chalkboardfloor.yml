@@ -45,7 +45,7 @@
   suffix: suck
   components:
   - type: Sprite
-    state: board_mess1
+    state: board_mess2
     
 - type: entity
   parent: N14ChalkboardFloor

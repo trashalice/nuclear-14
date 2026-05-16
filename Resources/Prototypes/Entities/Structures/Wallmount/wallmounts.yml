@@ -14,14 +14,23 @@
   - type: Sprite
     drawdepth: Overdoors
     sprite: Structures/Storage/storage.rsi
-    state: vent
+    layers:
+    - state: vent
+      map: [ "DoorVisualState.DoorOpen" ]
   - type: SecretStash
     secretPartName: secret-stash-part-vent
     maxItemSize: Normal
+    openableStash: true
   - type: ContainerContainer
     containers:
       stash: !type:ContainerSlot {}
-  - type: PottedPlantHide # TODO: This needs changed to be generic stash hide?
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.StashVisuals.DoorVisualState:
+        DoorVisualState.DoorOpen:
+          DoorOpen: { state: vent-open }
+          DoorClosed: { state: vent }
 
 - type: entity
   parent: WallmountVent
@@ -29,17 +38,23 @@
   suffix: damaged
   components:
   - type: Sprite
-    sprite: Structures/Storage/storage.rsi
-    state: vent-damaged
-
+    layers:
+    - state: vent-damaged
+      map: [ "DoorVisualState.DoorOpen" ]
+  - type: SecretStash
+    toggleOpen: true
+      
 - type: entity
   parent: WallmountVent
   id: WallmountVentOpen
   suffix: open
   components:
   - type: Sprite
-    sprite: Structures/Storage/storage.rsi
-    state: vent-open
+    layers:
+    - state: vent-open
+      map: [ "DoorVisualState.DoorOpen" ]
+  - type: SecretStash
+    toggleOpen: true
 
 
 # First Aid

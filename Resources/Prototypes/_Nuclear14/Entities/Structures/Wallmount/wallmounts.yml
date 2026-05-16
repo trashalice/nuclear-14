@@ -13,12 +13,24 @@
     arc: 360
   - type: Sprite
     drawdepth: Overdoors
-    snapCardinals: true
-    sprite: _Nuclear14/Structures/Storage/storage.rsi
-    state: vent
+    sprite: Structures/Storage/storage.rsi
+    layers:
+    - state: vent
+      map: [ "DoorVisualState.DoorOpen" ]
+  - type: SecretStash
+    secretPartName: secret-stash-part-vent
+    maxItemSize: Normal
+    openableStash: true
   - type: ContainerContainer
     containers:
       stash: !type:ContainerSlot {}
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.StashVisuals.DoorVisualState:
+        DoorVisualState.DoorOpen:
+          DoorOpen: { state: vent-open }
+          DoorClosed: { state: vent }
 
 - type: entity
   parent: N14WallmountVent
@@ -26,8 +38,11 @@
   suffix: damaged
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Storage/storage.rsi
-    state: vent-damaged
+    layers:
+    - state: vent-damaged
+      map: [ "DoorVisualState.DoorOpen" ]
+  - type: SecretStash
+    toggleOpen: true
 
 - type: entity
   parent: N14WallmountVent
@@ -35,8 +50,10 @@
   suffix: open
   components:
   - type: Sprite
-    sprite: _Nuclear14/Structures/Storage/storage.rsi
-    state: vent-open
-
+    layers:
+    - state: vent-open
+      map: [ "DoorVisualState.DoorOpen" ]
+  - type: SecretStash
+    toggleOpen: true
 
 # First Aid

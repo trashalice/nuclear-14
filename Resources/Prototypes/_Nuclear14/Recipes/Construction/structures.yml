@@ -38,6 +38,42 @@
   conditions:
     - !type:TileNotBlocked
 
+- type: construction
+  name: bunker door
+  id: N14DoorBunker
+  graph: N14DoorBunker
+  startNode: start
+  targetNode: bunker
+  category: construction-category-structures
+  description: It opens, it closes, it might crush you, and there might be only radiation and monsters behind it. Has to be manually activated.
+  icon:
+    sprite: _Nuclear14/Structures/Doors/FalloutDoors/bunkerdoor.rsi
+    state: closed
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  hide: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: bunker glass airlock
+  id: N14DoorBunkerGlass
+  graph: N14DoorBunker
+  startNode: start
+  targetNode: glassBunker
+  category: construction-category-structures
+  description: It opens, it closes, it might crush you, and there might be only radiation and monsters behind it. Has to be manually activated.
+  icon:
+    sprite: _Nuclear14/Structures/Doors/FalloutDoors/glassbunkerdoor.rsi
+    state: closed
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  hide: false
+  conditions:
+    - !type:TileNotBlocked
+
 # Slanted Structures
 ## Walls
 - type: construction

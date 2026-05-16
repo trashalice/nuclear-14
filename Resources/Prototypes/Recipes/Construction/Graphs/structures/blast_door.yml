@@ -9,7 +9,7 @@
             - !type:SetAnchor
               value: false
           steps:
-            - material: Plasteel
+            - material: Lead #Misfits Changed
               amount: 10
               doAfter: 3
 
@@ -45,13 +45,13 @@
           conditions:
             - !type:EntityAnchored {}
           steps:
-            - tag: DoorElectronics
-              store: board
-              name: Door Electronics
-              icon:
-                sprite: "Objects/Misc/module.rsi"
-                state: "door_electronics"
-              doAfter: 2
+          - component: DoorElectronics
+            store: board
+            name: "door electronics circuit board"
+            icon:
+              sprite: "Objects/Misc/module.rsi"
+              state: "door_electronics"
+            doAfter: 3
         - to: frame1
           completed:
             - !type:SpawnPrototype
@@ -99,6 +99,7 @@
 
     - node: blastdoor
       entity: BlastDoorOpen
+      doNotReplaceInheritingEntities: true
       edges:
         - to: frame4
           conditions:

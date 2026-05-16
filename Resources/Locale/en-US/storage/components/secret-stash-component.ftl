@@ -9,3 +9,4 @@ comp-secret-stash-on-examine-found-hidden-item = There is something hidden insid
 
 secret-stash-part-plant = the plant
 secret-stash-part-toilet = the toilet cistern
+secret-stash-part-vent = the vent

@@ -436,6 +436,7 @@
     - LandMineKick       # Concussion Mine (non-lethal)
     - LandMineExplosive  # Explosive Mine (~4 tile radius)
     - LandMineModular    # Modular Mine (empty casing, add payload)
+    - N14ModularGrenade
     - N14ChemicalPayload
     - N14ExplosivePayload
     - N14FlashPayload

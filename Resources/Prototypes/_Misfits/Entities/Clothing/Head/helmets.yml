@@ -22,6 +22,6 @@
   description: An antler skull headdress traditionally worn by the spiritually inclined.
   components:
   - type: Sprite
-    sprite: _Misfits\Clothing\Head\antlerhelm.rsi
+    sprite: _Misfits/Clothing/Head/antlerhelm.rsi
   - type: Clothing
-    sprite: _Misfits\Clothing\Head\antlerhelm.rsi
+    sprite: _Misfits/Clothing/Head/antlerhelm.rsi

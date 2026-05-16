@@ -36,6 +36,11 @@
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Doors/FalloutDoors/bunkerdoor.rsi
+  - type: Construction
+    graph: N14DoorBunker
+    node: bunker
+    containers:
+    - board
 
 - type: entity
   parent: N14Airlock
@@ -47,3 +52,19 @@
     enabled: false
   - type: Sprite
     sprite: _Nuclear14/Structures/Doors/FalloutDoors/glassbunkerdoor.rsi
+  - type: Construction
+    graph: N14DoorBunker
+    node: glassBunker
+    containers:
+    - board
+
+- type: entity
+  parent: AirlockAssembly
+  id: N14DoorBunkerAssembly
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Doors/FalloutDoors/bunkerdoor.rsi
+    state: closed
+  - type: Construction
+    graph: N14DoorBunker
+    node: n14assembly
