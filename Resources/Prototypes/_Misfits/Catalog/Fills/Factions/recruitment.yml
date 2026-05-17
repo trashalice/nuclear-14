@@ -14,110 +14,110 @@
     - id: BoxFolderGrey
     - id: Pen
 
-  - type: entity
-    id: MisfitsClosetSafeSpinnerLegion
-    suffix: Filled, Legion
-    parent: N14ClosetSafeSpinner
-    components:
-    - type: StorageFill
-      contents:
-      - id: BoxIDLegion
-      - id: BoxIDLegionSlave
-      - id: BoxHeadsetLegion
-      - id: BoxEncryptionKeyLegion
-      - id: N14AccessConfigurator
-      - id: SheetSteel10
-      - id: MaterialCloth10
-      - id: BoxFolderGrey
-      - id: Pen
-      - id: N14Cartridge50
-        amount: 4
+- type: entity
+  id: MisfitsClosetSafeSpinnerLegion
+  suffix: Filled, Legion
+  parent: N14ClosetSafeSpinner
+  components:
+  - type: StorageFill
+    contents:
+    - id: BoxIDLegion
+    - id: BoxIDLegionSlave
+    - id: BoxHeadsetLegion
+    - id: BoxEncryptionKeyLegion
+    - id: N14AccessConfigurator
+    - id: SheetSteel10
+    - id: MaterialCloth10
+    - id: BoxFolderGrey
+    - id: Pen
+    - id: N14Cartridge50
+      amount: 4
 
-  - type: entity
-    id: MisfitsClosetSafeSpinnerNCR
-    suffix: Filled, NCR
-    parent: N14ClosetSafeSpinner
-    components:
-    - type: StorageFill
-      contents:
-      - id: BoxIDNCR
-      - id: BoxIDNCRPrisoner
-      - id: MisfitsBriefcaseBrownNCRMedals
-      - id: BoxHeadsetNCR
-      - id: BoxEncryptionKeyNCR
-      - id: N14AccessConfigurator
-      - id: SheetSteel10
-      - id: MaterialCloth10
-      - id: BoxFolderGrey
-      - id: Pen
-      - id: DrinkGlass
-        amount: 2
-      - id: N14ClothingHeadHatNCRBeretRecon
-      - id: N14DrinkRoentgenRum
-      - id: N14DrinkWhisky
-      - id: N14DrinkWine
-      - id: N14IDNCRDogtagOfficer
-      - id: N14IDNCRDogtagNCO
-        amount: 2
+- type: entity
+  id: MisfitsClosetSafeSpinnerNCR
+  suffix: Filled, NCR
+  parent: N14ClosetSafeSpinner
+  components:
+  - type: StorageFill
+    contents:
+    - id: BoxIDNCR
+    - id: BoxIDNCRPrisoner
+    - id: MisfitsBriefcaseBrownNCRMedals
+    - id: BoxHeadsetNCR
+    - id: BoxEncryptionKeyNCR
+    - id: N14AccessConfigurator
+    - id: SheetSteel10
+    - id: MaterialCloth10
+    - id: BoxFolderGrey
+    - id: Pen
+    - id: DrinkGlass
+      amount: 2
+    - id: N14ClothingHeadHatNCRBeretRecon
+    - id: N14DrinkRoentgenRum
+    - id: N14DrinkWhisky
+    - id: N14DrinkWine
+    - id: N14IDNCRDogtagOfficer
+    - id: N14IDNCRDogtagNCO
+      amount: 2
 
-  - type: entity
-    id: MisfitsClosetSafeSpinnerBrotherhoodOfSteel
-    suffix: Filled, BoS
-    parent: N14ClosetSafeSpinner
-    components:
-    - type: StorageFill
-      contents:
-      - id: BoxIDBrotherhoodOfSteel
-      - id: BoxHeadsetBrotherhoodOfSteel
-      - id: BoxEncryptionKeyBrotherhoodOfSteel
-      - id: N14AccessConfigurator
-      - id: SheetSteel10
-      - id: MaterialCloth10
-      - id: BoxFolderGrey
-      - id: Pen
+- type: entity
+  id: MisfitsClosetSafeSpinnerBrotherhoodOfSteel
+  suffix: Filled, BoS
+  parent: N14ClosetSafeSpinner
+  components:
+  - type: StorageFill
+    contents:
+    - id: BoxIDBrotherhoodOfSteel
+    - id: BoxHeadsetBrotherhoodOfSteel
+    - id: BoxEncryptionKeyBrotherhoodOfSteel
+    - id: N14AccessConfigurator
+    - id: SheetSteel10
+    - id: MaterialCloth10
+    - id: BoxFolderGrey
+    - id: Pen
 
-  - type: entity
-    id: MisfitsClosetSafeSpinnerTown
-    suffix: Filled, Town
-    parent: N14ClosetSafeSpinner
-    components:
-    - type: StorageFill
-      contents:
-      - id: BoxIDTown
-      - id: BoxHeadsetWasteland
-      - id: N14AccessConfigurator
-      - id: SheetSteel10
-      - id: MaterialCloth10
-      - id: BoxFolderGrey
-      - id: Pen
+- type: entity
+  id: MisfitsClosetSafeSpinnerTown
+  suffix: Filled, Town
+  parent: N14ClosetSafeSpinner
+  components:
+  - type: StorageFill
+    contents:
+    - id: BoxIDTown
+    - id: BoxHeadsetWasteland
+    - id: N14AccessConfigurator
+    - id: SheetSteel10
+    - id: MaterialCloth10
+    - id: BoxFolderGrey
+    - id: Pen
 
-  - type: entity
-    id: MisfitsClosetSafeSpinnerFollowers
-    suffix: Filled, Followers
-    parent: N14ClosetSafeSpinner
-    components:
-    - type: StorageFill
-      contents:
-      - id: BoxIDFollowers
-      - id: BoxHeadsetFollowers
-      - id: BoxEncryptionKeyFollowers
-      - id: N14AccessConfigurator
-      - id: SheetSteel10
-      - id: MaterialCloth10
-      - id: BoxFolderGrey
-      - id: Pen
+- type: entity
+  id: MisfitsClosetSafeSpinnerFollowers
+  suffix: Filled, Followers
+  parent: N14ClosetSafeSpinner
+  components:
+  - type: StorageFill
+    contents:
+    - id: BoxIDFollowers
+    - id: BoxHeadsetFollowers
+    - id: BoxEncryptionKeyFollowers
+    - id: N14AccessConfigurator
+    - id: SheetSteel10
+    - id: MaterialCloth10
+    - id: BoxFolderGrey
+    - id: Pen
 
-  - type: entity
-    id: MisfitsClosetSafeSpinnerEnclave
-    suffix: Filled, Enclave
-    parent: N14ClosetSafeSpinner
-    components:
-    - type: StorageFill
-      contents:
-      - id: BoxHeadsetEnclave
-      - id: BoxEncryptionKeyEnclave
-      - id: N14AccessConfigurator
-      - id: SheetSteel10
-      - id: MaterialCloth10
-      - id: BoxFolderGrey
-      - id: Pen
+- type: entity
+  id: MisfitsClosetSafeSpinnerEnclave
+  suffix: Filled, Enclave
+  parent: N14ClosetSafeSpinner
+  components:
+  - type: StorageFill
+    contents:
+    - id: BoxHeadsetEnclave
+    - id: BoxEncryptionKeyEnclave
+    - id: N14AccessConfigurator
+    - id: SheetSteel10
+    - id: MaterialCloth10
+    - id: BoxFolderGrey
+    - id: Pen
