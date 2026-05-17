@@ -18,7 +18,7 @@
       fix1:
         shape:
           !type:PhysShapeCircle
-            radius: 0.5
+            radius: 0.3
         density: 20
         mask:
         - MobMask
@@ -67,6 +67,8 @@
   - type: Body # #Misfits Add - override N14Animal with N14PetAnimal to include heart (Medicine/Poison metabolizer)
     prototype: N14PetAnimal
   - type: Hands # #Misfits Add - allows player-controlled mirelurk pets to drag items
+  - type: Puller
+    needsHands: false
   - type: MisfitsPetNoPickup # #Misfits Add - cancels PickupAttemptEvent; drag only, no item pickup
   - type: PassiveDamage # #Misfits Add - slow natural regeneration for player-controlled pet mirelurks
     allowedStates:
