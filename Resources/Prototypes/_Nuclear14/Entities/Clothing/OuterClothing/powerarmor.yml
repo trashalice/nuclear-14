@@ -489,20 +489,11 @@
         Heat: 0.70
         Caustic: 0.75
         Radiation: 0.6
-  - type: Storage
-    grid:
-    - 0,0,2,1
-  - type: ContainerContainer
-    containers:
-      storagebase: !type:Container
-        ents: []
   - type: UserInterface
     interfaces:
-      enum.StorageUiKey.Key:
-        type: StorageBoundUserInterface
-      enum.ToggleClothingUiKey.Key:
-        type: ToggleableClothingBoundUserInterface
-      enum.WastelandMapUiKey.Key:
+        enum.ToggleClothingUiKey.Key:
+            type: ToggleableClothingBoundUserInterface
+    enum.WastelandMapUiKey.Key:
         type: WastelandMapBoundUserInterface
   - type: WastelandMap
     mapTexturePath: _Misfits/Maps/wendover_map.png
@@ -722,17 +713,8 @@
         Heat: 0.675
         Caustic: 0.75
         Radiation: 0.6
-  - type: Storage
-    grid:
-    - 0,0,2,1
-  - type: ContainerContainer
-    containers:
-      storagebase: !type:Container
-        ents: []
   - type: UserInterface
     interfaces:
-      enum.StorageUiKey.Key:
-        type: StorageBoundUserInterface
       enum.ToggleClothingUiKey.Key:
         type: ToggleableClothingBoundUserInterface
       enum.WastelandMapUiKey.Key:
