@@ -570,10 +570,10 @@
   suffix: AutoRecharge
   components:
   - type: LimitedCharges
-    maxCharges: 20
-    charges: 20
+    maxCharges: 25
+    charges: 25
   - type: AutoRecharge
-    rechargeDuration: 10
+    rechargeDuration: 5
 
 - type: entity
   id: RCDExperimental
