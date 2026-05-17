@@ -19,7 +19,7 @@
 #MARK: Undecided Loadout Backpacks
 
 # New California Republic Army
-#Misfits Change /Tweak/: Split NCR army loadout kits by rank progression.
+
 - type: entity
   id: NCRcadetloadoutkits
   name: Undecided NCRA Recruit Loadout Kit
@@ -47,46 +47,47 @@
     - NCRA_RiflemanSet
     - NCRA_StormSet
     - NCRA_ScoutSet
-
-- type: entity
-  id: NCRpfcloadoutkits
-  name: Undecided NCRA Private First Class Loadout Kit
-  parent: NCRcadetloadoutkits
-  components:
-  - type: Sprite
-    sprite: _Nuclear14/Objects/Misc/kits.rsi
-    state: rifleman
-  - type: UndecidedLoadoutBackpack
-    possibleSets:
-    - NCRA_RiflemanSet
-    - NCRA_StormSet
-    - NCRA_ScoutSet
     - NCRA_PointSet
     - NCRA_MoraleSet
-    - NCRA_PFCFireteamSet
 
-- type: entity
-  id: NCRcorporalloadoutkits
-  name: Undecided NCRA Specialist Loadout Kit # #Misfits Tweak - renamed from Corporal; Engineer & Medic sets merged in
-  parent: NCRcadetloadoutkits
-  components:
-  - type: Sprite
-    sprite: _Nuclear14/Objects/Misc/kits.rsi
-    state: pointman
-  - type: UndecidedLoadoutBackpack
-    possibleSets:
-    - NCRA_PointSet
-    - NCRA_MoraleSet
-    - NCRA_GrenadierSet
-    - NCRA_ScoutSet
-    - NCRA_CorporalPatrolSet
-    # #Misfits Add - Engineer kits folded in from consolidated NCR Engineer role
-    - NCRA_MechanicSet
-    - NCRA_DemolitionSet
-    - NCRA_BreacherSet
-    # #Misfits Change - all three medic kit options consolidated into one combat medic kit
-    - NCRA_ComMedSet
-    - NCRA_SniperSet
+# - type: entity
+#  id: NCRpfcloadoutkits
+#  name: Undecided NCRA Private First Class Loadout Kit
+#  parent: NCRcadetloadoutkits
+#  components:
+#  - type: Sprite
+#    sprite: _Nuclear14/Objects/Misc/kits.rsi
+#    state: rifleman
+#  - type: UndecidedLoadoutBackpack
+#    possibleSets:
+#    - NCRA_RiflemanSet
+#    - NCRA_StormSet
+#    - NCRA_ScoutSet
+#    - NCRA_PointSet
+#    - NCRA_MoraleSet
+
+#- type: entity
+#  id: NCRcorporalloadoutkits
+#  name: Undecided NCRA Specialist Loadout Kit # #Misfits Tweak - renamed from Corporal; Engineer & Medic sets merged in
+#  parent: NCRcadetloadoutkits
+#  components:
+#  - type: Sprite
+#    sprite: _Nuclear14/Objects/Misc/kits.rsi
+#    state: pointman
+#  - type: UndecidedLoadoutBackpack
+#    possibleSets:
+#    - NCRA_PointSet
+#    - NCRA_MoraleSet
+#    - NCRA_GrenadierSet
+#    - NCRA_ScoutSet
+#    - NCRA_CorporalPatrolSet
+#    # #Misfits Add - Engineer kits folded in from consolidated NCR Engineer role
+#    - NCRA_MechanicSet
+#    - NCRA_DemolitionSet
+#    - NCRA_BreacherSet
+#    # #Misfits Change - all three medic kit options consolidated into one combat medic kit
+#    - NCRA_ComMedSet
+#    - NCRA_SniperSet
 
 - type: entity
   id: NCRengineerloadoutkits
@@ -102,6 +103,8 @@
     - NCRA_DemolitionSet
     - NCRA_BreacherSet
 
+# Removed NCR Surgeon kit, gave directly to NCR doctor
+
 - type: entity
   id: NCRmedicloadoutkits
   name: Undecided NCRA Medic Loadout Kit
@@ -112,7 +115,6 @@
     state: medic
   - type: UndecidedLoadoutBackpack
     possibleSets:
-    - NCRA_SurgeonSet
     - NCRA_DoctorSet
     - NCRA_ComMedSet
 
@@ -129,6 +131,7 @@
     - NCRA_GunnerSet
     - NCRA_GrenadierSet
     - NCRA_SniperSet   
+    - NCRA_StealthSet
 
 - type: entity
   id: NCRSGTloadoutkits
@@ -159,7 +162,8 @@
     - NCRA_SGTScoutSet
     - NCRA_SGTPointSet
     - NCRA_StaffSergeantLineSet
-
+    - NCRA_FirstSergeantVeteranSet
+    
 - type: entity
   id: NCRfirstsergeantloadoutkits
   name: Undecided NCRA Sergeant First Class Loadout Kit
