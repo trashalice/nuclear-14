@@ -26,8 +26,8 @@
         - !type:HealthChange
           damage:
             groups:
-              Burn: -5
-              Brute: -5
+              Burn: -12 # 12/3 = 4 | 4*25 = 100 of every type in 25 seconds. 
+              Brute: -12 # 12/3 = 4 | 4*25 = 100 of every type in 25 seconds. 
               Airloss: -3
         - !type:ModifyBleedAmount
           amount: -2
@@ -37,9 +37,9 @@
             min: 27
           damage:
             groups:
-              Burn: -1.25
-              Brute: -1.25
-              Airloss: -1.25
+              Burn: -1.0
+              Brute: -1.0
+              Airloss: -1.0
             types:
               Poison: 3
         - !type:HealthChange # to prevent doping
@@ -253,9 +253,9 @@
       - !type:HealthChange
         damage:
           groups:
-            Burn: -8.125
-            Brute: -8.125
-            Airloss: -8.125
+            Burn: -9 # 150 healing of every type over 50 seconds
+            Brute: -9 # 150 healing of every type over 50 seconds
+            Airloss: -4.5
       - !type:ModifyBleedAmount
         amount: -3
       - !type:HealthChange # Taking 2 is more or less a guaranteed death
@@ -265,11 +265,11 @@
         - !type:MobStateCondition #Misfits Tweak: OD can push to crit but never kill
         damage:
           groups:
-            Burn: -2.5
-            Brute: -2.5
-            Airloss: -2.5
+            Burn: -1.5
+            Brute: -1.5
+            Airloss: -1.5
           types:
-            Poison: 4.5
+            Poison: 5
             Cellular: 0.75 # permanent damage, be glad you aint dead
       - !type:MovespeedModifier
         walkSpeedModifier: 0.50

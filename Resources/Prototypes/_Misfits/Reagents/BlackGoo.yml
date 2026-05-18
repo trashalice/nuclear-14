@@ -8,8 +8,9 @@
   color: "#212121"
   metabolisms:
     Medicine:
+      metabolismRate: 1.0
       effects:
-      - !type:HealthChange
-        damage:
-          types:
-            Poison: 1
+        - !type:HealthChange
+          damage:
+           types:
+              Poison: 1
