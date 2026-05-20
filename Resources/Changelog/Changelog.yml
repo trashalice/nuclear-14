@@ -5405,3 +5405,12 @@ Entries:
   id: 5917
   time: '2026-05-20T22:29:01.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/560
+- author: Bradysgaming
+  changes:
+    - type: Tweak
+      message: >-
+        Turned the Experimental X-01 Power Armor into a living, unremoveable
+        casket. 
+  id: 5918
+  time: '2026-05-20T22:29:54.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/563
