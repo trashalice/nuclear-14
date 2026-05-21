@@ -5479,3 +5479,10 @@ Entries:
   id: 5922
   time: '2026-05-21T12:55:30.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/569
+- author: Lucky
+  changes:
+    - type: Add
+      message: lots of prototypes have been added for mapping
+  id: 5923
+  time: '2026-05-21T15:29:13.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/533
