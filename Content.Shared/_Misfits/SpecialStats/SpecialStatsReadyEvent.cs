@@ -9,4 +9,5 @@ namespace Content.Shared._Misfits.SpecialStats;
 /// or freshly confirmed, signalling other systems to (re-)apply stat-driven effects
 /// such as stamina pool size and movement speed bonus.
 /// </summary>
-public sealed class SpecialStatsReadyEvent : EntityEventArgs;
+[ByRefEvent]
+public readonly record struct SpecialStatsReadyEvent(EntityUid Entity);

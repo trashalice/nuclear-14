@@ -55,6 +55,9 @@ public sealed class SharedSpecialSystem : EntitySystem
     private void OnShutdown(Entity<SpecialComponent> ent, ref ComponentShutdown args)
     {
         _temporaryModifiers.RemoveAll(entry => entry.Entity == ent.Owner);
+
+        var ev = new SpecialShutdownEvent(ent.Owner);
+        RaiseLocalEvent(ent.Owner, ref ev, true);
     }
 
     private void OnSolutionScan(Entity<SpecialComponent> ent, ref SolutionScanEvent args)
@@ -282,7 +285,8 @@ public sealed class SharedSpecialSystem : EntitySystem
 
     private void RaiseSpecialChanged(EntityUid uid)
     {
-        RaiseLocalEvent(uid, new SpecialChangedEvent());
+        var ev = new SpecialChangedEvent(uid);
+        RaiseLocalEvent(uid, ref ev, true);
         _movement.RefreshMovementSpeedModifiers(uid);
     }
 

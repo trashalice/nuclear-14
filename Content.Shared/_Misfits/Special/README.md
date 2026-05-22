@@ -33,6 +33,6 @@ The tuning values below are multiplied by that curved delta or scaled to explici
 - Perception changes ranged spread/recoil from `perceptionSpreadPenaltyAtOne` at 1 PER to `perceptionSpreadReductionAtTen` at 10 PER.
 - Endurance changes health thresholds from `enduranceHealthPenaltyAtOne` at 1 END to `enduranceHealthBonusAtTen` at 10 END.
 - Charisma changes character-creation loadout points by the curved delta times 2, rounded away from zero.
-- Intelligence changes crafting delay on a fixed curve: 1 blocks hand crafting, 5 is normal speed, and 10 is 50% faster for hand crafting. Lathe production is instant at 10 intelligence.
+- Intelligence changes crafting delay on a fixed curve: 1 blocks hand crafting, 5 is normal speed, and 10 is 50% faster for hand crafting. Lathe production is instant at 10 intelligence. At 1 intelligence, the low-intelligence accent is enabled.
 - Agility changes movement speed from `agilityMovementSpeedPenaltyAtOne` at 1 AGI to `agilityMovementSpeedBonusAtTen` at 10 AGI.
-- Luck changes critical-hit and lucky-scavenge chance.
+- Luck changes critical-hit and lucky-scavenge chance. Below 4 luck, clumsy is applied until luck recovers.

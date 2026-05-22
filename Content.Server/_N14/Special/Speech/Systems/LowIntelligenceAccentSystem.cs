@@ -1,4 +1,3 @@
-/*
 using System.Text.RegularExpressions;
 using Content.Server.Speech;
 using Content.Server.Speech.Components;
@@ -44,4 +43,3 @@ namespace Content.Server._N14.Special.Speech.EntitySystems
         }
     }
 }
-*/

@@ -201,7 +201,8 @@ public sealed class PersistentPlayerDataSystem : EntitySystem
         SavePlayer(comp);
 
         // #Misfits Add - Re-apply stat-driven gameplay effects with the newly confirmed values.
-        RaiseLocalEvent(entity.Value, new SpecialStatsReadyEvent());
+        var ev = new SpecialStatsReadyEvent(entity.Value);
+        RaiseLocalEvent(entity.Value, ref ev, true);
         _movement.RefreshMovementSpeedModifiers(entity.Value);
     }
 
@@ -267,7 +268,8 @@ public sealed class PersistentPlayerDataSystem : EntitySystem
         SavePlayer(comp);
 
         // #Misfits Add - Trigger stat-driven gameplay effects (stamina pool, movement speed).
-        RaiseLocalEvent(uid, new SpecialStatsReadyEvent());
+        var ev = new SpecialStatsReadyEvent(uid);
+        RaiseLocalEvent(uid, ref ev, true);
         _movement.RefreshMovementSpeedModifiers(uid);
     }
 
