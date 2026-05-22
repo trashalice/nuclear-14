@@ -583,7 +583,7 @@
       #   min: 25
       -
 - type: reaction
-  id: epoetine
+  id: Epoetine
   reactants:
     Oxygen:
       amount: 2
