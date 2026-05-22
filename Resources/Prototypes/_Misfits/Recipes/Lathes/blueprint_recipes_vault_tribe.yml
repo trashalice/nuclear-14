@@ -199,33 +199,22 @@
     Plastic: 500
 
 # --- Vault Tier 2 Armor ---
+
 - type: latheRecipe
-  id: N14BPVaultArmorLightLeatherArmor
-  result: N14ClothingOuterLightLeatherArmor
+  id: M14BPVaultAdvancedVestArmor
+  result: M14ClothingOuterVaultAdvancedVest
   category: N14BlueprintVaultArmorT2
   completetime: 8
   requiresBlueprint: true
   availableFaction:
   - Vault
   materials:
-    Leather: 500
-    Cloth: 550
-    Thread: 800
-    Plastic: 250
-
-- type: latheRecipe
-  id: N14BPVaultArmorReinforcedLeatherArmor
-  result: N14ClothingOuterReinforcedLeatherArmor
-  category: N14BlueprintVaultArmorT2
-  completetime: 10
-  requiresBlueprint: true
-  availableFaction:
-  - Vault
-  materials:
-    Leather: 2000
+    Cloth: 900
+    Thread: 600
+    Plastic: 1000
     Steel: 1000
-    Cloth: 150
-    Thread: 700
+    N14Iron: 100
+    Leather: 250
 
 # --- Vault Tier 3 Armor ---
 - type: latheRecipe
@@ -1073,6 +1062,20 @@
     Cloth: 200
 
 # --- Vault Tier 2 Helmets (basic metal) ---
+- type: latheRecipe
+  id: M14BPVaultArmorHelmetAdvancedRiot
+  result: M14ClothingHeadHatVaultRiotHelmet
+  category: N14BlueprintVaultArmorT2
+  completetime: 5
+  requiresBlueprint: true
+  availableFaction:
+  - Vault
+  materials:
+    Steel: 500
+    Cloth: 500
+    Leather: 100
+    Plastic: 500
+
 - type: latheRecipe
   id: N14BPVaultArmorHelmetMetal
   result: N14ClothingHeadHatVaultBlueprintHelmetMetal

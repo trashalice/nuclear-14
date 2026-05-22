@@ -902,8 +902,8 @@
   components:
   - type: Blueprint
     recipes:
-    - N14BPVaultArmorLightLeatherArmor
-    - N14BPVaultArmorReinforcedLeatherArmor
+    - M14BPVaultAdvancedVestArmor
+    - M14BPVaultArmorHelmetAdvancedRiot
     # #Misfits Add - paired basic metal helmet
     - N14BPVaultArmorHelmetMetal
 

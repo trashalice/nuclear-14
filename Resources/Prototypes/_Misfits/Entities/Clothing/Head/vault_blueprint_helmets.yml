@@ -48,3 +48,41 @@
   - type: ExplosionResistance
     damageCoefficient: 0.9
 
+- type: entity
+  parent: ClothingHeadBase
+  id: M14ClothingHeadHatVaultCap
+  name: vault-tec cap
+  description: A blue and yellow company cap worn by patriotic vault dwellers, it has a fresh and clean exterior.
+  components:
+  - type: Sprite
+    sprite: _Misfits/Clothing/Head/vaultteccap.rsi
+  - type: Clothing
+    sprite: _Misfits/Clothing/Head/vaultteccap.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: M14ClothingHeadHatVaultRiotHelmet
+  name: ballistic vault riot helmet
+  description: The only thing standing between you and a larger knife.
+  components:
+  - type: Sprite
+    sprite: _Misfits/Clothing/Head/Helmets/vaultriot.rsi
+  - type: Clothing
+    sprite: _Misfits/Clothing/Head/Helmets/vaultriot.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.90
+        Slash: 0.90
+        Piercing: 0.85
+
+- type: entity
+  parent: ClothingHeadBase
+  id: M14ClothingHeadHatOldVaultCap
+  name: old vault-tec cap
+  description: A worn vault-tec company cap, why do you even still have this?
+  components:
+  - type: Sprite
+    sprite: _Misfits/Clothing/Head/oldvaultteccap.rsi
+  - type: Clothing
+    sprite: _Misfits/Clothing/Head/oldvaultteccap.rsi

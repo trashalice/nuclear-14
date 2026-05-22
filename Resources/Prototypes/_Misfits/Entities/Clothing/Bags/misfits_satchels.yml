@@ -1,0 +1,8 @@
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: M14VaultSecuritySatchel
+  name: vault security satchel
+  description: A robust satchel used by vault security, comes in vault-tec colors.
+  components:
+  - type: Sprite
+    sprite: _Misfits/Clothing/Back/vaultsecuritysatchel.rsi

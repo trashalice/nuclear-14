@@ -39,7 +39,7 @@
   id: VaultSecurityGear
   equipment:
     jumpsuit: N14ClothingUniformJumpsuitVault14
-    back: N14ClothingBackpackVaultBlue # Forge-Change
+    back: M14VaultSecuritySatchel #Misfits Add
     shoes: N14ClothingBootsBlack
     eyes: N14ClothingEyesSunGlasses
     head: N14ClothingHeadHatVaultRiot
@@ -48,7 +48,7 @@
     pocket1: N14WeaponPistol10mm
     pocket2: Handcuffs
     ears: N14ClothingHeadsetVaultDweller
-    belt: N14PoliceBaton
+    belt: M14ClothingBeltVaultSecurity #Misfits Add
   storage: # Forge-Change
     back:
     - N14Bandage

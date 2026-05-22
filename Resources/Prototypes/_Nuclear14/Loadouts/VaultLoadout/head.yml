@@ -57,3 +57,20 @@
       - Overseer
   items:
     - ClothingHeadHatFedoraChoc
+
+- type: loadout
+  id: M14ClothingHeadHatVaultCap
+  category: Head
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutHead
+    - !type:CharacterJobRequirement
+      jobs:
+      - VaultDweller
+      - Overseer
+      - VaultSecurity
+      - VaultEngineer
+  items:
+    - M14ClothingHeadHatVaultCap

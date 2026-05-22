@@ -12,3 +12,15 @@
   - type: Clothing
     sprite: _Misfits/Clothing/Belt/leatherpouches.rsi
   - type: Appearance
+
+- type: entity
+  parent: N14ClothingBeltStorageBase
+  id: M14ClothingBeltVaultSecurity
+  name: vault security belt
+  description: A used belt used by vault security, it can carry a few magazines but not much else.
+  components:
+  - type: Sprite
+    sprite: _Misfits/Clothing/Belt/vaultsecuritybelt.rsi
+  - type: Clothing
+    sprite: _Misfits/Clothing/Belt/vaultsecuritybelt.rsi
+  - type: Appearance
