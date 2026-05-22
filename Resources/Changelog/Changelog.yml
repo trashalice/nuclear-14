@@ -5486,3 +5486,10 @@ Entries:
   id: 5923
   time: '2026-05-21T15:29:13.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/533
+- author: HungryCuban
+  changes:
+    - type: Add
+      message: Ported Goob vehicle system.
+  id: 5924
+  time: '2026-05-22T19:02:07.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/510
