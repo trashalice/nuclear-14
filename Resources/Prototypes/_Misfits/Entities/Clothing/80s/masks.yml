@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingMaskBase
+  id: MisfitsClothingTheBlockMask
+  name: The Block Mask
+  description: A mask with shards of metal sticking out of it.
+  components:
+  - type: Sprite
+    sprite: _Misfits/Clothing/80s/Mask/TheBlock.rsi
+  - type: Clothing
+    sprite: _Misfits/Clothing/80s/Mask/TheBlock.rsi

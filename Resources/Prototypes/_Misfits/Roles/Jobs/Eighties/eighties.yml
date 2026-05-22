@@ -40,8 +40,9 @@
   id: EightiesTheBlockGear
   equipment:
     bandage: NCClothingBandageRaiders
-    jumpsuit: N14ClothingUniformJumpsuitBrahminFarmer
-    outerClothing: MisfitsClothingOuterEightiesArmor
+    jumpsuit: MisfitsClothingTheBlockPants
+    outerClothing: MisfitsClothingOuterTheBlockArmor
+    mask: MisfitsClothingTheBlockMask
     shoes: N14ClothingShoesRaider
     neck: ClothingNeckBlackScarf
     head: N14ClothingHeadHatBeanie

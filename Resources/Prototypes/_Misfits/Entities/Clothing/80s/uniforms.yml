@@ -8,3 +8,14 @@
     sprite: _Misfits/Clothing/80s/Uniforms/pants.rsi
   - type: Clothing
     sprite: _Misfits/Clothing/80s/Uniforms/pants.rsi
+
+- type: entity
+  parent: N14ClothingUniformBase
+  id: MisfitsClothingTheBlockPants
+  name: The Block Pants
+  description: A pair of pants with some shards of metal sticking out of it.
+  components:
+  - type: Sprite
+    sprite: _Misfits/Clothing/80s/Uniforms/theblockpants.rsi
+  - type: Clothing
+    sprite: _Misfits/Clothing/80s/Uniforms/theblockpants.rsi

@@ -77,3 +77,21 @@
         Heat: 0.85    # slightly worse than baseline (0.80) — metal conducts heat
   - type: ExplosionResistance
     damageCoefficient: 0.88 # near NCR Private baseline (0.90) — bulky metal helps slightly
+
+- type: entity
+  parent: N14FalloutArmorBase
+  id: MisfitsClothingOuterTheBlockArmor
+  name: The Block Armor
+  description: A jacket with some steel street sign plates attached.
+  components:
+  - type: Sprite
+    sprite: _Misfits/Clothing/80s/OuterClothing/theblockarmor.rsi
+  - type: Clothing
+    sprite: _Misfits/Clothing/80s/OuterClothing/theblockarmor.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.45
+        Slash: 0.45
+        Piercing: 0.45
+        Heat: 0.45
