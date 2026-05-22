@@ -5509,3 +5509,12 @@ Entries:
   id: 5926
   time: '2026-05-22T21:37:11.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/577
+- author: Chance
+  changes:
+    - type: Tweak
+      message: BoS base reworked by Lucky
+    - type: Add
+      message: 80's Camp
+  id: 5927
+  time: '2026-05-22T22:15:10.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/579
