@@ -84,7 +84,7 @@ job-description-supermutant-ncr-trooper = You are a supermutant who fights under
 
 # #Misfits Add - NCR-aligned supermutant variants for the FEVMutants whitelist department.
 job-name-supermutant-tribal = Supermutant Tribal
-job-description-supermutant-tribal = You are a Supermutant that found a home with the local tribe you will protect them with all your heart
+job-description-supermutant-tribal = You are a supermutant that found a home within the local tribe. You will protect them with all your heart.
 
 # #Misfits Add (Phase G) - C-27 Humanoid Robot job locale.
 job-name-c27 = C-27 Humanoid Robot

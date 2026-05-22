@@ -11,6 +11,7 @@
   - FollowerHead
   - FollowerDoctor
   - FollowerVolunteer
+  - SuperMutantFollowerDoctor
 
 # ─── Follower Head ────────────────────────────────────────────────────────────
 - type: job

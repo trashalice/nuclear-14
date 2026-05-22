@@ -1,7 +1,7 @@
 # Prefixes
 accent-tribal-prefix-1 = Mebbe.
 accent-tribal-prefix-2 = Mmh.
-accent-tribal-prefix-3 = Hear me words.
+accent-tribal-prefix-3 = Lissen.
 accent-tribal-prefix-4 = Hoy.
 accent-tribal-prefix-5 = Yah.
 accent-tribal-prefix-6 = Now den.
@@ -76,7 +76,7 @@ accent-tribal-words-22 = their
 accent-tribal-words-replace-22 = dey
 
 accent-tribal-words-23 = there
-accent-tribal-words-replace-23 = dere
+accent-tribal-words-replace-23 = dey
 
 accent-tribal-words-24 = though
 accent-tribal-words-replace-24 = doh
@@ -148,7 +148,7 @@ accent-tribal-words-46 = spirit
 accent-tribal-words-replace-46 = sperit
 
 accent-tribal-words-47 = spirits
-accent-tribal-words-replace-47 = sperits
+accent-tribal-words-replace-47 = speriss
 
 accent-tribal-words-48 = death
 accent-tribal-words-replace-48 = det
@@ -307,10 +307,10 @@ accent-tribal-words-99 = garment
 accent-tribal-words-replace-99 = garma
 
 accent-tribal-words-100 = god
-accent-tribal-words-replace-100 = great spirit
+accent-tribal-words-replace-100 = great sperit
 
 accent-tribal-words-101 = gods
-accent-tribal-words-replace-101 = great spirits
+accent-tribal-words-replace-101 = great speriss
 
 accent-tribal-words-102 = oh my god
 accent-tribal-words-replace-102 = ancestas
@@ -411,8 +411,8 @@ accent-tribal-words-replace-133 = bostin
 accent-tribal-words-134 = shitting
 accent-tribal-words-replace-134 = mokkin
 
-accent-tribal-words-135 = what
-accent-tribal-words-replace-135 = wot
+accent-tribal-words-135 = uranium
+accent-tribal-words-replace-135 = glowstone
 
 accent-tribal-words-136 = hey
 accent-tribal-words-replace-136 = hoy

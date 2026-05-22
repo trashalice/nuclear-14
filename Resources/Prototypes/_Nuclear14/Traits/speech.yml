@@ -33,13 +33,10 @@
     inverted: true
     traits:
     - LanguageTribalGeneral
-  - !type:CharacterJobRequirement
-    jobs:
-    - NCRFieldRanger
-    - NCRVeteranRanger
-    - FollowerHead    # #Misfits Change - Followers job replaced by ranked hierarchy
-    - FollowerDoctor
-    - FollowerVolunteer
+  - !type:CharacterDepartmentRequirement
+    departments:
+    - Rangers
+    - FollowersOfTheApocalypse
   functions:
   - !type:TraitModifyLanguages
     languagesSpoken:
@@ -158,7 +155,6 @@
     - N14FrontalLisp
     - N14ScottishAccent
     - N14Liar
-    - N14TribalAccent # Misfits
   functions:
   - !type:TraitAddComponent
     components:

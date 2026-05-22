@@ -25,7 +25,7 @@ public sealed class TribalAccentSystem : EntitySystem
     private static readonly Regex RegexToUpper = new(@"(?<=\w)((?i)e(?-i)\W|\W)[tT]O\b");
     private static readonly Regex RegexOfLower = new(@"(?<=\w)((?i)e(?-i)\W|\W)[oO]f\b");
     private static readonly Regex RegexOfUpper = new(@"(?<=\w)((?i)e(?-i)\W|\W)[oO]F\b");
-    private static readonly Regex RegexIndefiniteArticle = new(@"(?i)(?<= )a ");
+    private static readonly Regex RegexIndefiniteArticle = new(@"(?i)(?<= )(a|an) ");
     private static readonly Regex RegexVowelShiftLower = new(@"([oO]u|u)(?=[nN])");
     private static readonly Regex RegexVowelShiftUpper = new(@"([oO]U|U)(?=[nN])");
 
@@ -35,6 +35,11 @@ public sealed class TribalAccentSystem : EntitySystem
     /// The number of tribal prefix utterances in tribal.ftl. Update this as necessary.
     /// </summary>
     private const int TribalPrefixes = 8;
+
+    /// <summary>
+    /// The chance for a prefix to be prepended to the statement.
+    /// </summary>
+    private const float PrefixChance = 0.05f;
 
 
     [Dependency] private readonly IRobustRandom _random = default!;
@@ -91,9 +96,10 @@ public sealed class TribalAccentSystem : EntitySystem
         msg = RegexOfUpper.Replace(msg, "A");
 
         // random prefix
-        if (_random.Prob(0.15f))
+        if (_random.Prob(PrefixChance))
         {
-            var firstWordAllCaps = !RegexFirstWord.Match(msg).Value.Any(char.IsLower);
+            var firstWord = RegexFirstWord.Match(msg).Value;
+            var firstWordAllCaps = (firstWord != "I" && !firstWord.Any(char.IsLower));
             var pick = _random.Next(1, TribalPrefixes);
 
             // Reverse sanitize capital
