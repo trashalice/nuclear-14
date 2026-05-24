@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Numerics;
+using Content.Shared._Misfits.Special.Components;
 using Content.Server._NC.Sponsor; // Forge-Change
 using Content.Server.GameTicking;
 using Content.Server.Ghost.Components;
@@ -468,6 +469,10 @@ namespace Content.Server.Ghost
             // Forge-Change-End
 
             var ghostComponent = Comp<GhostComponent>(ghost);
+
+            // Ghosts are observers, not character bodies; sponsor/custom ghost
+            // prototypes should not carry player SPECIAL stats.
+            RemCompDeferred<SpecialComponent>(ghost);
 
             // Try setting the ghost entity name to either the character name or the player name.
             // If all else fails, it'll default to the default entity prototype name, "observer".

@@ -5,6 +5,8 @@ namespace Content.Shared._Misfits.Special;
 [Serializable, NetSerializable]
 public enum SpecialStat : byte
 {
+    // Keep this enum compact and stable: profiles, network messages, and saved
+    // data all refer to these values.
     Strength,
     Perception,
     Endurance,
@@ -16,6 +18,7 @@ public enum SpecialStat : byte
 
 public static class SpecialStats
 {
+    // Single canonical iteration order for display, serialization helpers, and commands.
     public static readonly SpecialStat[] All =
     {
         SpecialStat.Strength,
@@ -29,6 +32,7 @@ public static class SpecialStats
 
     public static bool IsEnabled(SpecialStat stat)
     {
+        // Centralizes active-stat checks so old/unknown enum values degrade safely.
         return stat is SpecialStat.Strength
             or SpecialStat.Perception
             or SpecialStat.Endurance

@@ -10,9 +10,12 @@ namespace Content.Shared._Misfits.Special;
 [Serializable, NetSerializable]
 public sealed partial class SpecialProfile
 {
+    // SPECIAL uses Fallout-style 1-10 stats with 5 as the neutral midpoint.
     public const int Minimum = 1;
     public const int Maximum = 10;
     public const int DefaultValue = 5;
+
+    // Players start at the default total and may distribute a small bonus pool.
     public const int BonusPoints = 5;
     public const int ActiveStatCount = 7;
     public const int DefaultTotal = DefaultValue * ActiveStatCount;
@@ -76,6 +79,8 @@ public sealed partial class SpecialProfile
 
     public static SpecialProfile EnsureValid(SpecialProfile? profile)
     {
+        // Invalid profiles fall back completely instead of being partially
+        // clamped, so malformed or over-budget input cannot preserve advantages.
         if (profile == null)
             return Default();
 
@@ -101,6 +106,8 @@ public sealed partial class SpecialProfile
 
     public void Set(SpecialStat stat, int value)
     {
+        // Setters clamp individual values, but full-profile budget validation
+        // remains the caller's responsibility through IsValid/EnsureValid.
         value = Math.Clamp(value, Minimum, Maximum);
 
         switch (stat)

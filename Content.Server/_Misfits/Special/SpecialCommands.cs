@@ -7,7 +7,7 @@ using Robust.Shared.Console;
 
 namespace Content.Server._Misfits.Special;
 
-[AdminCommand(AdminFlags.Debug)]
+[AdminCommand(AdminFlags.Admin)]
 public sealed class SpecialGetCommand : IConsoleCommand
 {
     [Dependency] private readonly IEntityManager _entities = default!;
@@ -33,6 +33,12 @@ public sealed class SpecialGetCommand : IConsoleCommand
         }
 
         var specialSystem = _entities.System<SharedSpecialSystem>();
+        if (!specialSystem.UsesSpecialStats(target.Value))
+        {
+            shell.WriteError("Target cannot use SPECIAL stats.");
+            return;
+        }
+
         if (!_entities.TryGetComponent<SpecialComponent>(target.Value, out var special))
         {
             shell.WriteError("Target has no SpecialComponent.");
@@ -59,6 +65,7 @@ public sealed class SpecialGetCommand : IConsoleCommand
 
     internal static EntityUid? ParsePlayerEntity(IConsoleShell shell, string username, IPlayerManager players)
     {
+        // SPECIAL is stored on the attached mob, not directly on the player session.
         if (!players.TryGetSessionByUsername(username, out var player))
         {
             shell.WriteError("Unable to find that player.");
@@ -75,7 +82,7 @@ public sealed class SpecialGetCommand : IConsoleCommand
     }
 }
 
-[AdminCommand(AdminFlags.Debug)]
+[AdminCommand(AdminFlags.Admin)]
 public sealed class SpecialSetCommand : IConsoleCommand
 {
     [Dependency] private readonly IEntityManager _entities = default!;
@@ -110,6 +117,12 @@ public sealed class SpecialSetCommand : IConsoleCommand
         }
 
         var specialSystem = _entities.System<SharedSpecialSystem>();
+        if (!specialSystem.UsesSpecialStats(target.Value))
+        {
+            shell.WriteError("Target cannot use SPECIAL stats.");
+            return;
+        }
+
         var special = _entities.EnsureComponent<SpecialComponent>(target.Value);
         if (!specialSystem.TrySetBase(target.Value, stat, value, special))
         {
@@ -135,6 +148,8 @@ public sealed class SpecialSetCommand : IConsoleCommand
 
     internal static bool TryParseStat(string text, out SpecialStat stat)
     {
+        // Accept short Fallout-style stat letters plus local flavor aliases used
+        // by the character UI/design docs.
         switch (text.ToLowerInvariant())
         {
             case "s":
@@ -216,7 +231,7 @@ public sealed class SpecialSetCommand : IConsoleCommand
     ];
 }
 
-[AdminCommand(AdminFlags.Debug)]
+[AdminCommand(AdminFlags.Admin)]
 public sealed class SpecialModCommand : IConsoleCommand
 {
     [Dependency] private readonly IEntityManager _entities = default!;
@@ -264,6 +279,12 @@ public sealed class SpecialModCommand : IConsoleCommand
 
         var source = args.Length >= 5 ? args[4] : "admin";
         var specialSystem = _entities.System<SharedSpecialSystem>();
+        if (!specialSystem.UsesSpecialStats(target.Value))
+        {
+            shell.WriteError("Target cannot use SPECIAL stats.");
+            return;
+        }
+
         var special = _entities.EnsureComponent<SpecialComponent>(target.Value);
 
         if (!specialSystem.TryModifyTemporary(target.Value, stat, modifier, duration, source, special))

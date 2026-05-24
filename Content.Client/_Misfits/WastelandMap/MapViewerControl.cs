@@ -165,6 +165,12 @@ public sealed class MapViewerControl : Control
         if (_texture == null)
             return;
 
+        // The map math below is intentionally in virtual UI coordinates so it
+        // matches mouse input positions. DrawingHandleScreen is pixel-space, so
+        // scale the draw transform once here instead of mixing spaces per call.
+        var oldTransform = handle.GetTransform();
+        handle.SetTransform(Matrix3Helpers.CreateScale(new Vector2(UIScale)) * oldTransform);
+
         var scale = FitScale * _zoom;
         var drawW = _texture.Width * scale;
         var drawH = _texture.Height * scale;
@@ -235,6 +241,8 @@ public sealed class MapViewerControl : Control
                 DrawThickLine(handle, p0, p1, previewColor, _currentStrokeWidth);
             }
         }
+
+        handle.SetTransform(oldTransform);
     }
 
     private bool TryGetPlayerUv(out Vector2 uv)
