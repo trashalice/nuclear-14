@@ -5731,3 +5731,10 @@ Entries:
   id: 5948
   time: '2026-05-25T12:14:57.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/594
+- author: Bradysgaming
+  changes:
+    - type: Fix
+      message: Fixed 80's slots being open early (not ready just yet!)
+  id: 5949
+  time: '2026-05-25T12:33:28.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/598
