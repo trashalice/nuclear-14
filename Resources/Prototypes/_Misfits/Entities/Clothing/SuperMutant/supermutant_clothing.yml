@@ -175,12 +175,12 @@
   - type: Tag
     tags:
     - SuperMutantWearable
-  - type: Armor # #Misfits Add - 50% physical damage resistance (head protection)
+  - type: Armor # #Misfits Add - Haha get nerfed mutie -pierow
     modifiers:
       coefficients:
-        Blunt: 0.5
-        Slash: 0.5
-        Piercing: 0.5
+        Blunt: 0.80
+        Slash: 0.80
+        Piercing: 0.95
 
 # #Misfits Add - Ranger armor for the Supermutant Ranger job.
 # Tagged SupermutantWearable so only supermutants can equip it in Outerclothing slot.
@@ -217,12 +217,11 @@
   - type: Tag
     tags:
     - SuperMutantWearable
-  - type: Armor # #Misfits Add - 50% physical damage resistance (head protection)
+  - type: Armor # #Misfits Add - Haha get nerfed mutie -pierow
     modifiers:
       coefficients:
-        Blunt: 0.5
-        Slash: 0.5
-        Piercing: 0.5
+        Blunt: 0.90
+        Slash: 0.90
 
 - type: entity
   parent: ClothingHeadBase
@@ -237,12 +236,12 @@
   - type: Tag
     tags:
     - SuperMutantWearable
-  - type: Armor # #Misfits Add - 50% physical damage resistance (head protection)
+  - type: Armor # #Misfits Add - Haha get nerfed mutie -pierow
     modifiers:
       coefficients:
-        Blunt: 0.5
-        Slash: 0.5
-        Piercing: 0.5
+        Blunt: 0.90
+        Slash: 0.85
+        Piercing: 0.75
 
 - type: entity
   parent: ClothingMaskBase
@@ -309,12 +308,12 @@
   - type: Tag
     tags:
     - SuperMutantWearable
-  - type: Armor # #Misfits Add - 50% physical damage resistance (head protection)
+  - type: Armor # #Misfits Add - Haha get nerfed mutie -pierow
     modifiers:
       coefficients:
-        Blunt: 0.5
-        Slash: 0.5
-        Piercing: 0.5
+        Blunt: 0.90
+        Slash: 0.85
+        Piercing: 0.85
 
 # #Misfits Add - Extra supermutant outer outfit (outfit C) — spawnable standalone wearable.
 - type: entity
@@ -409,12 +408,11 @@
   - type: Tag
     tags:
     - SuperMutantWearable
-  - type: Armor # #Misfits Add - 50% physical damage resistance (head protection)
+  - type: Armor # #Misfits Add - Haha get nerfed mutie -pierow
     modifiers:
       coefficients:
-        Blunt: 0.5
-        Slash: 0.5
-        Piercing: 0.5
+        Blunt: 0.75
+        Slash: 0.75
 
 # #Misfits Add - Supermutant Tribal Gloves
 - type: entity
