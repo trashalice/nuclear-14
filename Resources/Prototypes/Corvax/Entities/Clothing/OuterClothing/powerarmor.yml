@@ -123,19 +123,6 @@
       gloves: N14ClothingPAGauntlets
       shoes: N14ClothingPABoots
       back: N14ClothingPowerSystemsBack
-  - type: Storage
-    grid:
-    - 0,0,2,1
-  - type: ContainerContainer
-    containers:
-      storagebase: !type:Container
-        ents: []
-  - type: UserInterface
-    interfaces:
-      enum.StorageUiKey.Key:
-        type: StorageBoundUserInterface
-      enum.ToggleClothingUiKey.Key:
-        type: ToggleableClothingBoundUserInterface
 
 #Misfits Change /Comment-out/: Western BoS power armor removed — no Western BoS chapter in Misfits.
 #- type: entity
