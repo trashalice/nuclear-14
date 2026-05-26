@@ -21,6 +21,7 @@
     species:
     - Human
     - Ghoul
+    - GhoulGlowing
   - !type:CharacterDepartmentTimeRequirement
     department: Eighties
     min: 144000 # 40 hours
@@ -82,6 +83,7 @@
     species:
     - Human
     - Ghoul
+    - GhoulGlowing
   - !type:CharacterDepartmentTimeRequirement
     department: Eighties
     min: 54000 # 15 hours
@@ -139,6 +141,7 @@
     species:
     - Human
     - Ghoul
+    - GhoulGlowing
   - !type:CharacterDepartmentTimeRequirement
     department: Eighties
     min: 21600 # 6 hours
@@ -196,6 +199,7 @@
     species:
     - Human
     - Ghoul
+    - GhoulGlowing
   - !type:CharacterDepartmentTimeRequirement
     department: Eighties
     min: 7200 # 2 hours
@@ -253,6 +257,7 @@
     species:
     - Human
     - Ghoul
+    - GhoulGlowing
   - !type:CharacterPlaytimeRequirement
     tracker: Wastelander
     min: 36000 # 10 hours

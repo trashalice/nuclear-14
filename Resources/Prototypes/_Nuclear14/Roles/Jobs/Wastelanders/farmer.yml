@@ -10,24 +10,12 @@
   startingGear: FarmerGear
   icon: "JobIconWastelandFarmer" # Corvax-Change
   supervisors: job-supervisors-wastelander
-  requirements: # #Misfits Change - robots and supermutants cannot be Farmers
+  requirements:
     - !type:CharacterSpeciesRequirement
-      inverted: true
       species:
-      - RobotMrHandy
-      - RobotProtectron
-      - RobotProtectronPolice # #Misfits Fix - missing variant species
-      - RobotProtectronBuilder # #Misfits Fix - missing variant species
-      - RobotProtectronFire # #Misfits Fix - missing variant species
-      - RobotMrGutsy
-      - RobotAssaultron
-      - RobotAssaultronTesla # #Misfits Fix - missing variant species
-      - RobotSentryBot # #Misfits Fix - missing robot chassis
-      - RobotSentryBotLaser # #Misfits Fix - missing variant species
-      - RobotRobobrain # #Misfits Fix - missing robot chassis
-      - RobotRobobrainLaser # #Misfits Fix - missing variant species
-      - SuperMutant #Misfits Change /Add: SuperMutants cannot be Town Farmers
-      - Nightkin
+      - Human
+      - Ghoul
+      - GhoulGlowing
   access:
   - WastelandFarmer
   - TownsPerson # Corvax-Change

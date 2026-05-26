@@ -12,6 +12,7 @@
       species:
       - Human
       - Ghoul
+      - GhoulGlowing
   startingGear: WastelandReporterGear
   icon: "JobIconTownReporter" # Corvax-Change
   supervisors: job-supervisors-townsfolk
