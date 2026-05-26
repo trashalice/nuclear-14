@@ -5795,3 +5795,18 @@ Entries:
   id: 5956
   time: '2026-05-26T14:04:28.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/608
+- author: sssaaagggeee
+  changes:
+    - type: Add
+      message: >-
+        NCR Super Mutant Trooper ranks and progression, going from E2 -> E3 ->
+        E4
+    - type: Tweak
+      message: NCR Super Mutant Troopers can now wear rank pins
+    - type: Tweak
+      message: All NCR jobs minus Trooper now require their own playtime to rank up
+    - type: Tweak
+      message: NCR Executive Officer rank progression changed to O2 -> O3
+  id: 5957
+  time: '2026-05-26T14:05:10.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/604
