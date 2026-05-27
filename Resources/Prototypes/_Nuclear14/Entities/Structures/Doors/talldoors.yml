@@ -471,6 +471,9 @@
   - type: SpriteFade
   - type: DoorSignalControl
   - type: BlockNetworkConfigurator
+    allowedSourcePrototypes:
+    - N14DoorVaultControls
+    - N14DoorVaultControlsLocked
   - type: DeviceNetwork
     deviceNetId: Wireless
     receiveFrequencyId: BasicDevice

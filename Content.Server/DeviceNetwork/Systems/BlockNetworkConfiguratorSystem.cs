@@ -14,7 +14,17 @@ public sealed class BlockNetworkConfiguratorSystem : EntitySystem
 
     private void OnLinkAttempt(EntityUid uid, BlockNetworkConfiguratorComponent component, LinkAttemptEvent args)
     {
+        if (IsAllowedSource(component, args.Source))
+            return;
+
         if (args.User != null)
             args.Cancel();
+    }
+
+    public bool IsAllowedSource(BlockNetworkConfiguratorComponent component, EntityUid source)
+    {
+        var prototype = Prototype(source);
+
+        return prototype != null && component.AllowedSourcePrototypes.Contains(prototype.ID);
     }
 }
