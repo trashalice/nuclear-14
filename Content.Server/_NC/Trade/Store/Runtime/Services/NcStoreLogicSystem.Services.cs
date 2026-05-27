@@ -50,11 +50,10 @@ public sealed partial class NcStoreLogicSystem
             return amount;
 
         var tuning = _special.GetTuning();
-        var modifier = _special.GetCurvedEffectScale(
+        var modifier = _special.GetCurvedEffectModifier(
             user,
             SpecialStat.Charisma,
-            buying ? tuning.CharismaTradePenaltyAtOne : -tuning.CharismaTradePenaltyAtOne,
-            buying ? -tuning.CharismaTradeBonusAtTen : tuning.CharismaTradeBonusAtTen,
+            buying ? -tuning.CharismaTradeMultiplierPerPoint : tuning.CharismaTradeMultiplierPerPoint,
             special);
         var multiplier = MathF.Max(0.05f, 1f + modifier);
         var adjusted = (int) Math.Round(amount * multiplier, MidpointRounding.AwayFromZero);

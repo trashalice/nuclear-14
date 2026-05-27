@@ -2099,3 +2099,33 @@
   - type: EmitSoundOnTrigger
     sound:
       path: /Audio/Voice/Human/femalescream_5.ogg
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieMechanicalIdol
+  name: Mechanical Idol Plushie
+  description: "It has no eyes, but you feel watched by it at all times. Electronic devices whir and hum within its presence..."
+  components:
+  - type: Sprite
+    state: plushie_mechanicalidol
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Effects/PowerSink/electric.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Effects/PowerSink/electric.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Effects/metal_break4.ogg
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/Effects/metal_slam3.ogg
+ ## - type: PopupOnInteract
+ ##   popup: "The Mechanical Idol seems to try to align with something in the sky..."
+  - type: Food
+    requiresSpecialDigestion: true
+    useSound:
+      path: /Audio/Effects/metal_break3.ogg
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Effects/metal_thud1.ogg

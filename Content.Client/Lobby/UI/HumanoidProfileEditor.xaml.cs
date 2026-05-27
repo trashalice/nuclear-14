@@ -2503,7 +2503,7 @@ namespace Content.Client.Lobby.UI
                 SpecialStat.Strength => GetStrengthEffectDetails(value, tuning),
                 SpecialStat.Perception => GetPerceptionEffectDetails(value, tuning),
                 SpecialStat.Endurance => GetEnduranceEffectDetails(value, tuning),
-                SpecialStat.Charisma => GetCharismaEffectDetails(value),
+                SpecialStat.Charisma => GetCharismaEffectDetails(value, tuning),
                 SpecialStat.Intelligence => GetIntelligenceEffectDetails(value, tuning),
                 SpecialStat.Agility => GetAgilityEffectDetails(value, tuning),
                 SpecialStat.Luck => GetLuckEffectDetails(value, tuning),
@@ -2522,59 +2522,65 @@ namespace Content.Client.Lobby.UI
         {
             var delta = SharedSpecialSystem.GetCurvedEffectDelta(value);
             var melee = delta * tuning.StrengthMeleeDamageMultiplierPerPoint;
-            var carry = SharedSpecialSystem.GetCurvedEffectScale(
+            var unarmed = delta * tuning.StrengthUnarmedDamageMultiplierPerPoint;
+            var carry = SharedSpecialSystem.GetCurvedEffectModifier(
                 delta,
-                -tuning.StrengthCarryPullSpeedPenaltyAtOne,
-                tuning.StrengthCarryPullSpeedBonusAtTen);
-            var heavyGun = SharedSpecialSystem.GetCurvedEffectScale(
-                delta,
-                tuning.StrengthHeavyGunPenaltyAtOne,
-                -tuning.StrengthHeavyGunReductionAtTen);
+                tuning.StrengthCarryPullSpeedMultiplierPerPoint);
+            var duffel = value >= 7
+                ? ", ignores duffel bag slowdown"
+                : string.Empty;
 
-            return $"melee damage {FormatSignedPercent(melee)}, carry/pull speed {FormatSignedPercent(carry)}, heavy gun spread/recoil {FormatSignedPercent(heavyGun)}.";
+            return $"melee damage {FormatSignedPercent(melee)}, unarmed damage {FormatSignedPercent(unarmed)}, carry/pull speed {FormatSignedPercent(carry)}{duffel}.";
         }
 
         private static string GetPerceptionEffectDetails(int value, SpecialTuningPrototype tuning)
         {
             var delta = SharedSpecialSystem.GetCurvedEffectDelta(value);
-            var spread = SharedSpecialSystem.GetCurvedEffectScale(
+            var spread = SharedSpecialSystem.GetCurvedEffectModifier(
                 delta,
-                tuning.PerceptionSpreadPenaltyAtOne,
-                -tuning.PerceptionSpreadReductionAtTen);
-            var fireDelay = SharedSpecialSystem.GetCurvedEffectScale(
+                -tuning.PerceptionSpreadMultiplierPerPoint);
+            var heavyGun = SharedSpecialSystem.GetCurvedEffectModifier(
                 delta,
-                tuning.PerceptionFireDelayPenaltyAtOne,
-                -tuning.PerceptionFireDelayReductionAtTen);
+                -tuning.PerceptionHeavyGunMultiplierPerPoint);
+            var fireDelay = SharedSpecialSystem.GetCurvedEffectModifier(
+                delta,
+                -tuning.PerceptionFireDelayMultiplierPerPoint);
+            var mineDelay = SharedSpecialSystem.GetCurvedEffectModifier(
+                delta,
+                -tuning.PerceptionMineDelayMultiplierPerPoint);
 
-            return $"gun spread/recoil {FormatSignedPercent(spread)}, gun fire delay {FormatSignedPercent(fireDelay)}.";
+            return $"gun spread/recoil {FormatSignedPercent(spread)}, heavy gun spread/recoil {FormatSignedPercent(heavyGun)}, gun fire delay {FormatSignedPercent(fireDelay)}, mine arm/disarm delay {FormatSignedPercent(mineDelay)}.";
         }
 
         private static string GetEnduranceEffectDetails(int value, SpecialTuningPrototype tuning)
         {
             var delta = SharedSpecialSystem.GetCurvedEffectDelta(value);
-            var health = SharedSpecialSystem.GetCurvedEffectScale(
+            var health = SharedSpecialSystem.GetCurvedEffectModifier(
                 delta,
-                -tuning.EnduranceHealthPenaltyAtOne,
-                tuning.EnduranceHealthBonusAtTen);
-            var needs = SharedSpecialSystem.GetCurvedEffectScale(
+                tuning.EnduranceHealthModifierPerPoint);
+            var needs = SharedSpecialSystem.GetCurvedEffectModifier(
                 delta,
-                tuning.EnduranceNeedDecayPenaltyAtOne,
-                -tuning.EnduranceNeedDecayReductionAtTen);
-            var stamina = SharedSpecialSystem.GetCurvedEffectScale(
+                -tuning.EnduranceNeedDecayMultiplierPerPoint);
+            var stamina = SharedSpecialSystem.GetCurvedEffectModifier(
                 delta,
-                -tuning.EnduranceStaminaRecoveryPenaltyAtOne,
-                tuning.EnduranceStaminaRecoveryBonusAtTen);
-            var toxin = SharedSpecialSystem.GetCurvedEffectScale(
+                tuning.EnduranceStaminaRecoveryMultiplierPerPoint);
+            var toxin = SharedSpecialSystem.GetCurvedEffectModifier(
                 delta,
-                tuning.EnduranceToxinDamagePenaltyAtOne,
-                -tuning.EnduranceToxinDamageReductionAtTen);
+                -tuning.EnduranceToxinDamageMultiplierPerPoint);
 
             return $"health thresholds {FormatSignedNumber(health)}, hunger/thirst decay {FormatSignedPercent(needs)}, stamina recovery {FormatSignedPercent(stamina)}, poison/rad damage {FormatSignedPercent(toxin)}.";
         }
 
-        private static string GetCharismaEffectDetails(int value)
+        private static string GetCharismaEffectDetails(int value, SpecialTuningPrototype tuning)
         {
+            var delta = SharedSpecialSystem.GetCurvedEffectDelta(value);
             var loadout = SharedSpecialSystem.GetCharismaLoadoutPointModifier(value);
+            var buyPrices = SharedSpecialSystem.GetCurvedEffectModifier(
+                delta,
+                -tuning.CharismaTradeMultiplierPerPoint);
+            var sellPayouts = SharedSpecialSystem.GetCurvedEffectModifier(
+                delta,
+                tuning.CharismaTradeMultiplierPerPoint);
             var social = value switch
             {
                 <= 2 => "awkward examine text and speech quirks",
@@ -2583,7 +2589,7 @@ namespace Content.Client.Lobby.UI
                 _ => "no social penalty",
             };
 
-            return $"loadout points {FormatSignedInt(loadout)}, {social}.";
+            return $"loadout points {FormatSignedInt(loadout)}, buy prices {FormatSignedPercent(buyPrices)}, sell payouts {FormatSignedPercent(sellPayouts)}, {social}.";
         }
 
         private static string GetIntelligenceEffectDetails(int value, SpecialTuningPrototype tuning)
@@ -2598,6 +2604,7 @@ namespace Content.Client.Lobby.UI
             var extra = value switch
             {
                 <= 1 => ", low-intelligence accent",
+                >= 10 => ", detailed chemical scans, medical HUD",
                 >= 8 => ", detailed chemical scans",
                 _ => string.Empty,
             };
@@ -2608,14 +2615,12 @@ namespace Content.Client.Lobby.UI
         private static string GetAgilityEffectDetails(int value, SpecialTuningPrototype tuning)
         {
             var delta = SharedSpecialSystem.GetCurvedEffectDelta(value);
-            var move = SharedSpecialSystem.GetCurvedEffectScale(
+            var move = SharedSpecialSystem.GetCurvedEffectModifier(
                 delta,
-                -tuning.AgilityMovementSpeedPenaltyAtOne,
-                tuning.AgilityMovementSpeedBonusAtTen);
-            var actionDelay = SharedSpecialSystem.GetCurvedEffectScale(
+                tuning.AgilityMovementSpeedMultiplierPerPoint);
+            var actionDelay = SharedSpecialSystem.GetCurvedEffectModifier(
                 delta,
-                tuning.AgilityActionDelayPenaltyAtOne,
-                -tuning.AgilityActionDelayReductionAtTen);
+                -tuning.AgilityActionDelayMultiplierPerPoint);
 
             return $"movement speed {FormatSignedPercent(move)}, melee attack delay {FormatSignedPercent(actionDelay)}.";
         }
@@ -2623,8 +2628,7 @@ namespace Content.Client.Lobby.UI
         private static string GetLuckEffectDetails(int value, SpecialTuningPrototype tuning)
         {
             var delta = SharedSpecialSystem.GetCurvedEffectDelta(value);
-            var maxDelta = SharedSpecialSystem.GetCurvedEffectDelta(SpecialProfile.Maximum);
-            var shotCrit = Math.Clamp(tuning.LuckSingleShotCriticalChanceAtTen * delta / maxDelta, 0f, 1f);
+            var shotCrit = Math.Clamp(delta * tuning.LuckSingleShotCriticalChancePerPoint, 0f, 1f);
             var revolverCrit = Math.Clamp(shotCrit * 2f, 0f, 1f);
             var luckyLoot = Math.Clamp(delta * tuning.LuckLootChancePerPoint, 0f, 1f);
             var clumsy = value switch
@@ -2659,11 +2663,9 @@ namespace Content.Client.Lobby.UI
 
         private static float GetIntelligenceLatheTimeModifier(int value, SpecialTuningPrototype tuning)
         {
-            var minMultiplier = Math.Clamp(tuning.IntelligenceLatheMinimumTimeMultiplierAtTen, 0.1f, 1f);
-            var multiplier = value >= SpecialProfile.DefaultValue
-                ? 1f - (1f - minMultiplier) * (value - SpecialProfile.DefaultValue) /
-                    (SpecialProfile.Maximum - SpecialProfile.DefaultValue)
-                : 1f + (SpecialProfile.DefaultValue - value) * 0.15f;
+            var delta = SharedSpecialSystem.GetCurvedEffectDelta(value);
+            var modifier = -delta * tuning.IntelligenceLatheTimeMultiplierPerPoint;
+            var multiplier = 1f + modifier;
 
             return MathF.Max(0.1f, multiplier) - 1f;
         }
@@ -2673,7 +2675,7 @@ namespace Content.Client.Lobby.UI
             return SharedSpecialSystem.GetIntelligenceLatheMaterialUseMultiplier(
                 value,
                 1f,
-                tuning.IntelligenceLatheMaterialDiscountAtTen) - 1f;
+                tuning.IntelligenceLatheMaterialUseMultiplierPerPoint) - 1f;
         }
 
         private static string FormatSignedPercent(float value)
@@ -2936,6 +2938,9 @@ namespace Content.Client.Lobby.UI
             _traits.Clear();
             foreach (var trait in _prototypeManager.EnumeratePrototypes<TraitPrototype>())
             {
+                if (trait.Hidden)
+                    continue;
+
                 var usable = _characterRequirementsSystem.CheckRequirementsValid(
                     trait.Requirements,
                     highJob,

@@ -242,11 +242,10 @@ public sealed class LandMineSystem : EntitySystem
     private TimeSpan GetPerceptionMineDelay(EntityUid user, float baseSeconds)
     {
         var tuning = _special.GetTuning();
-        var modifier = _special.GetCurvedEffectScale(
+        var modifier = _special.GetCurvedEffectModifier(
             user,
             SpecialStat.Perception,
-            tuning.PerceptionMineDelayPenaltyAtOne,
-            -tuning.PerceptionMineDelayReductionAtTen);
+            -tuning.PerceptionMineDelayMultiplierPerPoint);
         var seconds = MathF.Max(0.5f, baseSeconds * (1f + modifier));
 
         return TimeSpan.FromSeconds(seconds);

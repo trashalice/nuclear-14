@@ -69,6 +69,9 @@ public sealed class FactionWarSystem : EntitySystem
     /// <summary>Cooldown after a war ends before same player can declare again.</summary>
     private static readonly TimeSpan WarCooldownAfterEnd = TimeSpan.FromMinutes(10);
 
+    /// <summary>Cooldown after a ceasefire rejection before the proposer can request again.</summary>
+    private static readonly TimeSpan CeasefireCooldownAfterRejection = TimeSpan.FromMinutes(20);
+
     /// <summary>Factions that auto-enlist their members when a war is declared.</summary>
     private static readonly HashSet<string> AutoEnlistFactions = new()
     {
@@ -111,6 +114,9 @@ public sealed class FactionWarSystem : EntitySystem
 
     /// <summary>Per-player cooldown after a war ends. Key = player UID, Value = earliest next war time.</summary>
     private readonly Dictionary<string, TimeSpan> _playerWarCooldowns = new();
+
+    /// <summary>Per-player cooldown after ceasefire rejection. Key = player UID, Value = earliest next request time.</summary>
+    private readonly Dictionary<string, TimeSpan> _ceasefireCooldowns = new();
 
     /// <summary>Ceasefire proposals awaiting the other player's consent. Key = WarKey.</summary>
     private readonly Dictionary<string, CeasefireProposal> _pendingCeasefireProposals = new();
@@ -196,7 +202,7 @@ public sealed class FactionWarSystem : EntitySystem
 
         var now = _gameTiming.CurTime;
 
-        // ── Ceasefire proposal timeouts ──────────────────────────────────
+        // ── Ceasefire proposal timeouts (auto-accept on expiry) ──────────
         if (_pendingCeasefireProposals.Count > 0)
         {
             List<string>? expiredCeaseKeys = null;
@@ -214,12 +220,12 @@ public sealed class FactionWarSystem : EntitySystem
                 {
                     var prop = _pendingCeasefireProposals[key];
                     _pendingCeasefireProposals.Remove(key);
+                    RemoveWar(prop.War);
                     _chat.DispatchServerAnnouncement(
-                        $"CEASEFIRE PROPOSAL EXPIRED\n" +
-                        $"The ceasefire proposed by {prop.ProposingPlayerName} expired. The war continues.",
-                        Color.Gray);
+                        $"CEASEFIRE ACCEPTED\n" +
+                        $"No response was received in time. {prop.War.SideName1} and {prop.War.SideName2} have agreed to a ceasefire.",
+                        Color.SkyBlue);
                 }
-                SendPanelDataToAll();
             }
         }
 
@@ -266,7 +272,7 @@ public sealed class FactionWarSystem : EntitySystem
         // ── Death-triggered ceasefire ─────────────────────────────────────
         // Check if either original war principal has died; end the war if so.
         // Polled here to avoid event subscription conflicts with other systems.
-        foreach (var war in _activeWars.Values.ToList())
+        /*foreach (var war in _activeWars.Values.ToList())
         {
             var e1 = GetEntity(war.DeclaredByEntity);
             var e2 = GetEntity(war.DeclaredAgainstEntity);
@@ -298,7 +304,7 @@ public sealed class FactionWarSystem : EntitySystem
                 $"Any ongoing raids have been ended.",
                 Color.Gray);
             break;
-        }
+        }*/
 
         // Safety resync: re-broadcast participant dict every 30 s
         if (_activeWars.Count > 0)
@@ -675,8 +681,15 @@ public sealed class FactionWarSystem : EntitySystem
             return;
         }
 
-        var warKey = war.WarKey;
         var now = _gameTiming.CurTime;
+        if (_ceasefireCooldowns.TryGetValue(player.UserId.ToString(), out var ceaseCooldown) && now < ceaseCooldown)
+        {
+            var remaining = ceaseCooldown - now;
+            SendResult(player, false, $"Ceasefire cooldown: {remaining.Minutes}m {remaining.Seconds}s remaining.");
+            return;
+        }
+
+        var warKey = war.WarKey;
 
         if (_pendingCeasefireProposals.ContainsKey(warKey))
         {
@@ -815,6 +828,7 @@ public sealed class FactionWarSystem : EntitySystem
             return;
         }
 
+        _ceasefireCooldowns[proposal.ProposingPlayer.ToString()] = _gameTiming.CurTime + CeasefireCooldownAfterRejection;
         _pendingCeasefireProposals.Remove(warKey);
         SendPanelDataToAll();
 
@@ -1117,6 +1131,7 @@ public sealed class FactionWarSystem : EntitySystem
         _warActivationTimes.Clear();
         _warParticipants.Clear();
         _playerWarCooldowns.Clear();
+        _ceasefireCooldowns.Clear();
         _pendingCeasefireProposals.Clear();
         _pendingAcceptancePrompts.Clear();
         _panelOpenSessions.Clear();

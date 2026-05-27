@@ -72,11 +72,12 @@ public sealed class HelpSelectorUIController : UIController, IOnStateChanged<Gam
             };
 
             // "Mentor Help" button — delegates to the existing MentorHelpUIController
-            _window.MentorHelpButton.OnPressed += _ =>
-            {
-                _window.Close();
-                UIManager.GetUIController<MentorHelpUIController>().ToggleWindow();
-            };
+            // "Mentor Help" button — delegates to the existing MentorHelpUIController
+            // _window.MentorHelpButton.OnPressed += _ =>
+            // {
+            //     _window.Close();
+            //     UIManager.GetUIController<MentorHelpUIController>().ToggleWindow();
+            // };
 
             // Null out reference when the window is closed so it can be reopened fresh
             _window.OnClose += () => _window = null;

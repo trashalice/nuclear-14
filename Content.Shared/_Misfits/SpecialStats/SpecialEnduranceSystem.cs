@@ -65,11 +65,10 @@ public sealed class SpecialEnduranceSystem : EntitySystem
             return;
 
         var tuning = _special.GetTuning();
-        var modifier = _special.GetCurvedEffectScale(
+        var modifier = _special.GetCurvedEffectModifier(
             ent.Owner,
             SpecialStat.Endurance,
-            tuning.EnduranceToxinDamagePenaltyAtOne,
-            -tuning.EnduranceToxinDamageReductionAtTen,
+            -tuning.EnduranceToxinDamageMultiplierPerPoint,
             ent.Comp);
         var multiplier = MathF.Max(0.1f, 1f + modifier);
 
@@ -110,11 +109,10 @@ public sealed class SpecialEnduranceSystem : EntitySystem
         var tuning = _special.GetTuning();
         var desired = reset
             ? 0f
-            : _special.GetCurvedEffectScale(
+            : _special.GetCurvedEffectModifier(
                 ent.Owner,
                 SpecialStat.Endurance,
-                -tuning.EnduranceHealthPenaltyAtOne,
-                tuning.EnduranceHealthBonusAtTen,
+                tuning.EnduranceHealthModifierPerPoint,
                 ent.Comp);
         var adjustment = desired - ent.Comp.AppliedHealthThresholdModifier;
 
@@ -202,11 +200,10 @@ public sealed class SpecialEnduranceSystem : EntitySystem
     private float GetNeedDecayMultiplier(Entity<SpecialComponent> ent)
     {
         var tuning = _special.GetTuning();
-        var modifier = _special.GetCurvedEffectScale(
+        var modifier = _special.GetCurvedEffectModifier(
             ent.Owner,
             SpecialStat.Endurance,
-            tuning.EnduranceNeedDecayPenaltyAtOne,
-            -tuning.EnduranceNeedDecayReductionAtTen,
+            -tuning.EnduranceNeedDecayMultiplierPerPoint,
             ent.Comp);
 
         return MathF.Max(0.1f, 1f + modifier);
@@ -215,11 +212,10 @@ public sealed class SpecialEnduranceSystem : EntitySystem
     private float GetStaminaRecoveryMultiplier(Entity<SpecialComponent> ent)
     {
         var tuning = _special.GetTuning();
-        var modifier = _special.GetCurvedEffectScale(
+        var modifier = _special.GetCurvedEffectModifier(
             ent.Owner,
             SpecialStat.Endurance,
-            -tuning.EnduranceStaminaRecoveryPenaltyAtOne,
-            tuning.EnduranceStaminaRecoveryBonusAtTen,
+            tuning.EnduranceStaminaRecoveryMultiplierPerPoint,
             ent.Comp);
 
         return MathF.Max(0.1f, 1f + modifier);

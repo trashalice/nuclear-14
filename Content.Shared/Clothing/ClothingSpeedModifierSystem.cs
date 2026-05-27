@@ -1,3 +1,7 @@
+using Content.Shared._Misfits.Special;
+using Content.Shared._Misfits.Special.Components;
+using Content.Shared._Misfits.SpecialStats;
+using Content.Shared._Misfits.SpecialStats.Components;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Examine;
 using Content.Shared.Inventory;
@@ -21,6 +25,7 @@ public sealed class ClothingSpeedModifierSystem : EntitySystem
     [Dependency] private readonly MovementSpeedModifierSystem _movementSpeed = default!;
     [Dependency] private readonly ItemToggleSystem _toggle = default!;
     [Dependency] private readonly SharedPowerCellSystem _powerCell = default!;
+    [Dependency] private readonly SharedSpecialSystem _special = default!;
 
     public override void Initialize()
     {
@@ -60,7 +65,33 @@ public sealed class ClothingSpeedModifierSystem : EntitySystem
     private void OnRefreshMoveSpeed(EntityUid uid, ClothingSpeedModifierComponent component, InventoryRelayedEvent<RefreshMovementSpeedModifiersEvent> args)
     {
         if (_toggle.IsActivated(uid))
-            args.Args.ModifySpeed(component.WalkModifier, component.SprintModifier);
+        {
+            var walkModifier = component.WalkModifier;
+            var sprintModifier = component.SprintModifier;
+
+            if (ShouldIgnoreStrengthSlowdown(uid))
+            {
+                walkModifier = MathF.Max(walkModifier, 1f);
+                sprintModifier = MathF.Max(sprintModifier, 1f);
+            }
+
+            args.Args.ModifySpeed(walkModifier, sprintModifier);
+        }
+    }
+
+    private bool ShouldIgnoreStrengthSlowdown(EntityUid clothing)
+    {
+        if (!TryComp<StrengthIgnoreClothingSlowdownComponent>(clothing, out var ignore) ||
+            !_container.TryGetContainingContainer((clothing, null, null), out var container))
+        {
+            return false;
+        }
+
+        var wearer = container.Owner;
+        if (!TryComp<SpecialComponent>(wearer, out var special))
+            return false;
+
+        return _special.GetEffective(wearer, SpecialStat.Strength, special) >= ignore.MinimumStrength;
     }
 
     private void OnClothingVerbExamine(EntityUid uid, ClothingSpeedModifierComponent component, GetVerbsEvent<ExamineVerb> args)

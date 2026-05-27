@@ -8,7 +8,7 @@ Runtime systems should query `SharedSpecialSystem` instead of reading fields dir
 - `GetModifier(entity, stat)` for temporary modifier totals.
 - `GetEffective(entity, stat)` for gameplay-safe values clamped to 1-10.
 - `GetCurvedEffectDelta(entity, stat)` for gameplay effects that should scale non-linearly around 5.
-- `GetCurvedEffectScale(entity, stat, valueAtOne, valueAtTen)` for effects that should hit exact endpoints at 1 and 10.
+- `GetCurvedEffectModifier(entity, stat, multiplierPerPoint)` for effects that multiply that curved delta by a tuning value.
 - `HasRequirement(entity, stat, minimum)` for perks, weapons, or future skill gates.
 - `TryModifyTemporary(entity, stat, modifier, duration, source)` for drugs, chems, injuries, perks, or equipment.
 
@@ -27,12 +27,12 @@ Most gameplay effects use a curved delta from the effective stat instead of a fl
 - 9: +5.5
 - 10: +7.5
 
-The tuning values below are multiplied by that curved delta or scaled to explicit 1/10 endpoints:
+The tuning values below are multiplied by that curved delta:
 
-- Strength changes melee damage by `strengthMeleeDamageMultiplierPerPoint`.
-- Perception changes ranged spread/recoil from `perceptionSpreadPenaltyAtOne` at 1 PER to `perceptionSpreadReductionAtTen` at 10 PER.
-- Endurance changes health thresholds from `enduranceHealthPenaltyAtOne` at 1 END to `enduranceHealthBonusAtTen` at 10 END.
+- Strength changes held melee damage by `strengthMeleeDamageMultiplierPerPoint` and unarmed damage by the smaller `strengthUnarmedDamageMultiplierPerPoint`.
+- Perception changes ranged spread/recoil with `perceptionSpreadMultiplierPerPoint`, heavy gun spread/recoil with `perceptionHeavyGunMultiplierPerPoint`, mine trigger delay with `perceptionMineDelayMultiplierPerPoint`, and fire spread delay with `perceptionFireDelayMultiplierPerPoint`.
+- Endurance changes health thresholds with `enduranceHealthModifierPerPoint`, need decay with `enduranceNeedDecayMultiplierPerPoint`, stamina recovery with `enduranceStaminaRecoveryMultiplierPerPoint`, and poison/toxin damage with `enduranceToxinDamageMultiplierPerPoint`.
 - Charisma changes character-creation loadout points by the curved delta times 2, rounded away from zero. Below 5 charisma, examine text gives a social tell; at 1-2 charisma, speech can gain light awkward phrasing.
-- Intelligence changes crafting delay on a fixed curve: 1 blocks hand crafting, 5 is normal speed, and 10 is 50% faster for hand crafting. Lathe production is instant at 10 intelligence. At 1 intelligence, the low-intelligence accent is enabled.
-- Agility changes movement speed from `agilityMovementSpeedPenaltyAtOne` at 1 AGI to `agilityMovementSpeedBonusAtTen` at 10 AGI.
+- Intelligence changes crafting delay on a fixed curve: 1 blocks hand crafting, 5 is normal speed, and 10 is 50% faster for hand crafting. Lathe production uses `intelligenceLatheTimeMultiplierPerPoint`, material discounts use `intelligenceLatheMaterialUseMultiplierPerPoint`, and 10 intelligence grants the med HUD effect. At 1 intelligence, the low-intelligence accent is enabled.
+- Agility changes movement speed with `agilityMovementSpeedMultiplierPerPoint` and action delay with `agilityActionDelayMultiplierPerPoint`.
 - Luck changes critical-hit and lucky-scavenge chance. At 1 luck, clumsy uses its normal failure chance; at 2-4 luck, clumsy is still possible but much rarer.

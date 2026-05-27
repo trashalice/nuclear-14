@@ -169,10 +169,9 @@ undecided-loadout-category-recruit-base-name = Regular Legionary Recruit Kit
 undecided-loadout-category-recruit-base-description =
     A box with everything needed for a novice warrior.
     Contains: 1 light legion armor, 1 spear quiver belt,
-    1 9mm SMG, 2 SMG magazines (9mm),
-    1 box of ammunition (9mm), 1 legion buckler,
-    1 tribal machete, 1 healing powder,
-    2 K-rations, and 1 ceramic flask.
+    1 M3A1 grease gun, 2 .45 SMG magazines,
+    1 legion buckler, 1 tribal machete,
+    1 healing powder, 2 K-rations, and 1 ceramic flask.
 
 undecided-loadout-category-recruit-spear-name = Legionary Recruit Spearman Kit
 undecided-loadout-category-recruit-spear-description =

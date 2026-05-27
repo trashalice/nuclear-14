@@ -591,6 +591,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 
         var traits = TraitPreferences
             .Where(prototypeManager.HasIndex<TraitPrototype>)
+            .Where(t => !prototypeManager.Index<TraitPrototype>(t).Hidden)
             .Distinct()
             .ToList();
 

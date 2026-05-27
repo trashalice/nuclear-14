@@ -12,6 +12,7 @@
       species:
       - Human
       - Ghoul
+      - GhoulGlowing
     #- !type:CharacterOverallTimeRequirement # TEMP REMOVED
     #  min: 0 # 1 hour
   startingGear: TownspersonGear

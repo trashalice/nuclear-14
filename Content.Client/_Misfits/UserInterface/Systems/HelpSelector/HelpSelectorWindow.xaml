@@ -5,8 +5,6 @@
                MinSize="260 140"
                SetSize="260 140">
     <BoxContainer Orientation="Vertical" SeparationOverride="6" Margin="8 8 8 8">
-        <!-- Opens the Mentor Help window (F1) -->
-        <Button Name="MentorHelpButton" Access="Public" Text="Mentor Help (F1)" HorizontalAlignment="Stretch" />
         <!-- Opens the Admin Help (bwoink) window (F2) -->
         <Button Name="AdminHelpButton" Access="Public" Text="Admin Help (F2)" HorizontalAlignment="Stretch" />
     </BoxContainer>

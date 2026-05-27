@@ -5784,3 +5784,122 @@ Entries:
   id: 5955
   time: '2026-05-26T03:02:16.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/603
+- author: Dpellowski
+  changes:
+    - type: Tweak
+      message: If leader dies in war war doesn't end
+    - type: Tweak
+      message: Ceasefires auto approved if explicitly not denied
+    - type: Tweak
+      message: Ceasefires have a 20minute CD.
+  id: 5956
+  time: '2026-05-26T14:04:28.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/608
+- author: sssaaagggeee
+  changes:
+    - type: Add
+      message: >-
+        NCR Super Mutant Trooper ranks and progression, going from E2 -> E3 ->
+        E4
+    - type: Tweak
+      message: NCR Super Mutant Troopers can now wear rank pins
+    - type: Tweak
+      message: All NCR jobs minus Trooper now require their own playtime to rank up
+    - type: Tweak
+      message: NCR Executive Officer rank progression changed to O2 -> O3
+  id: 5957
+  time: '2026-05-26T14:05:10.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/604
+- author: Dpellowski
+  changes:
+    - type: Remove
+      message: MHELP
+  id: 5958
+  time: '2026-05-26T16:41:51.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/609
+- author: Billy
+  changes:
+    - type: Tweak
+      message: 'small legion buffs '
+    - type: Tweak
+      message: more town guard slots billions must town
+    - type: Tweak
+      message: buffed bren to be a little more accurate.
+  id: 5959
+  time: '2026-05-26T16:43:07.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/600
+- author: pierow
+  changes:
+    - type: Add
+      message: 'Mechanical Idol Plushie (based off SEVER: The Machine Gods Prophet).'
+  id: 5960
+  time: '2026-05-26T20:00:03.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/605
+- author: pierow
+  changes:
+    - type: Add
+      message: Whip now has 3 tile attack range
+  id: 5961
+  time: '2026-05-26T20:00:23.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/607
+- author: Bradysgaming
+  changes:
+    - type: Tweak
+      message: The Eighties can now be glowing ghouls ( Still not ready though)
+    - type: Tweak
+      message: All of town can now be glowing ghouls
+    - type: Fix
+      message: >-
+        Fixed C27 wastelanders spawning without ID and Farmer Species lock is no
+        longer inverted, No more extra C27's!!!
+    - type: Fix
+      message: >-
+        Fixed Sierra PA having storage causing topicals to be eaten and not
+        used.
+  id: 5962
+  time: '2026-05-26T20:47:50.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/610
+- author: Squagg
+  changes:
+    - type: Add
+      message: >-
+        Added the hidden Fireman Carry trait for Followers of the Apocalypse
+        roles.
+    - type: Add
+      message: Added a 10 Intelligence medical HUD effect.
+    - type: Add
+      message: Added rarity-based lucky junk pile rewards, including Pip Boys.
+    - type: Add
+      message: Added useful ammo rewards to the lucky loot table.
+    - type: Tweak
+      message: >-
+        Heavy gun spread and recoil now scale with Perception instead of
+        Strength.
+    - type: Fix
+      message: Lucky junk pile rewards now spawn inside the pile inventory.
+    - type: Tweak
+      message: Lucky junk pile reward chance now scales up to 50% at 10 Luck.
+  id: 5963
+  time: '2026-05-26T21:34:04.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/606
+- author: Bradysgaming
+  changes:
+    - type: Tweak
+      message: Removed Shock debuff from C27's
+  id: 5964
+  time: '2026-05-26T21:50:03.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/612
+- author: HungryCuban
+  changes:
+    - type: Tweak
+      message: Gutsy in accuracy debuff removed
+  id: 5965
+  time: '2026-05-26T21:51:24.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/611
+- author: Bradysgaming
+  changes:
+    - type: Tweak
+      message: Renamed the explosive .50 for clarity
+  id: 5966
+  time: '2026-05-27T17:39:29.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/613

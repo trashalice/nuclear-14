@@ -605,11 +605,9 @@ namespace Content.Server.Lathe
 
             var intelligence = _special.GetEffective(user.Value, SpecialStat.Intelligence, special);
             var tuning = _special.GetTuning();
-            var minMultiplier = Math.Clamp(tuning.IntelligenceLatheMinimumTimeMultiplierAtTen, 0.1f, 1f);
-            var multiplier = intelligence >= SpecialProfile.DefaultValue
-                ? 1f - (1f - minMultiplier) * (intelligence - SpecialProfile.DefaultValue) /
-                    (SpecialProfile.Maximum - SpecialProfile.DefaultValue)
-                : 1f + (SpecialProfile.DefaultValue - intelligence) * 0.15f;
+            var delta = SharedSpecialSystem.GetCurvedEffectDelta(intelligence);
+            var modifier = -delta * tuning.IntelligenceLatheTimeMultiplierPerPoint;
+            var multiplier = 1f + modifier;
 
             return baseTime * MathF.Max(0.1f, multiplier);
         }

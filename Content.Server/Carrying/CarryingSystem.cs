@@ -33,6 +33,7 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Nyanotrasen.Item.PseudoItem;
 using Content.Shared.Storage;
 using Content.Shared.Inventory; // #Misfits Change Add: needed for IsWearingPowerArmor check
+using Content.Shared._Misfits.Carrying; // #Misfits Add: Fireman Carry trait marker
 using Content.Shared._Misfits.PowerArmor; // #Misfits Change Add: N14PowerArmorComponent for power armor carry restriction
 using Content.Server._Misfits.Grabbing.Components; // #Misfits Change Add: BeingDoubleGrabbedComponent for choke-carry throw emote
 using Robust.Shared.Map.Components;
@@ -346,6 +347,13 @@ namespace Content.Server.Carrying
 
         private void ApplyCarrySlowdown(EntityUid carrier, EntityUid carried)
         {
+            if (HasComp<CanFiremanCarryComponent>(carrier))
+            {
+                var firemanSlowdown = EnsureComp<CarryingSlowdownComponent>(carrier);
+                _slowdown.SetModifier(carrier, 1f, 1f, firemanSlowdown);
+                return;
+            }
+
             var massRatio = _contests.MassContest(carrier, carried, true);
             var massRatioSq = MathF.Pow(massRatio, 2);
             var modifier = 1 - 0.15f / massRatioSq;

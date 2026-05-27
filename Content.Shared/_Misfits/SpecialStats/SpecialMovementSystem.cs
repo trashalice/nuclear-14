@@ -21,11 +21,10 @@ public sealed class SpecialMovementSystem : EntitySystem
     private void OnRefreshSpeed(Entity<SpecialComponent> ent, ref RefreshMovementSpeedModifiersEvent args)
     {
         var tuning = _special.GetTuning();
-        var modifier = _special.GetCurvedEffectScale(
+        var modifier = _special.GetCurvedEffectModifier(
             ent.Owner,
             SpecialStat.Agility,
-            -tuning.AgilityMovementSpeedPenaltyAtOne,
-            tuning.AgilityMovementSpeedBonusAtTen,
+            tuning.AgilityMovementSpeedMultiplierPerPoint,
             ent.Comp);
         var multiplier = MathF.Max(0.1f, 1f + modifier);
 

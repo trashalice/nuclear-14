@@ -244,7 +244,7 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(ContentKeyFunctions.OpenLanguageMenu);
             AddButton(ContentKeyFunctions.OpenAHelp);
             // #Misfits Add - Mentor and help selector binds in the UI section
-            AddButton(ContentKeyFunctions.OpenMentorHelp);
+            // AddButton(ContentKeyFunctions.OpenMentorHelp);
             AddButton(ContentKeyFunctions.OpenHelpSelector);
             AddButton(ContentKeyFunctions.OpenActionsMenu);
             AddButton(ContentKeyFunctions.ToggleRoundEndSummaryWindow);

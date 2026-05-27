@@ -34,8 +34,23 @@
   agilityMovementSpeedBonusAtTen: 0.075
   agilityActionDelayPenaltyAtOne: 0.08
   agilityActionDelayReductionAtTen: 0.10
+  strengthUnarmedDamageMultiplierPerPoint: 0.03333333
+  strengthCarryPullSpeedMultiplierPerPoint: 0.01333333
+  perceptionSpreadMultiplierPerPoint: 0.03333333
+  perceptionHeavyGunMultiplierPerPoint: 0.01333333
+  perceptionMineDelayMultiplierPerPoint: 0.03333333
+  perceptionFireDelayMultiplierPerPoint: 0.01333333
+  enduranceHealthModifierPerPoint: 2.6666667
+  enduranceNeedDecayMultiplierPerPoint: 0.016
+  enduranceStaminaRecoveryMultiplierPerPoint: 0.02666667
+  enduranceToxinDamageMultiplierPerPoint: 0.02
+  charismaTradeMultiplierPerPoint: 0.01333333
+  intelligenceLatheTimeMultiplierPerPoint: 0.06666667
+  intelligenceLatheMaterialUseMultiplierPerPoint: 0.03333333
+  agilityMovementSpeedMultiplierPerPoint: 0.01
+  agilityActionDelayMultiplierPerPoint: 0.01333333
   luckCriticalChancePerPoint: 0.005
-  luckSingleShotCriticalChanceAtTen: 0.25
+  luckSingleShotCriticalChancePerPoint: 0.03333333
   luckCriticalDamageMultiplier: 1.5
   luckUnluckyDamageMultiplier: 0.5
   luckLootChancePerPoint: 0.025

@@ -8,6 +8,8 @@
     sprite: Corvax/Objects/Weapons/Melee/whip.rsi
     state: icon
   - type: MeleeWeapon
+    range: 3
+    angle: 10
     soundHit:
       collection: WhipSound
     damage:

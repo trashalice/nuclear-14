@@ -23,7 +23,7 @@
         <PanelContainer StyleClasses="LowDivider" Margin="0 6 0 6" />
 
         <BoxContainer Orientation="Horizontal" SeparationOverride="8" HorizontalExpand="True">
-            <cc:CommandButton Command="openmentorhelp" Text="{Loc misfits-admin-list-open-mentorhelp}" HorizontalExpand="True" />
+            <!-- <cc:CommandButton Command="openmentorhelp" Text="{Loc misfits-admin-list-open-mentorhelp}" HorizontalExpand="True" /> -->
             <cc:CommandButton Command="openahelp" Text="{Loc misfits-admin-list-open-adminhelp}" HorizontalExpand="True" />
         </BoxContainer>
 

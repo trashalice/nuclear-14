@@ -1,6 +1,10 @@
 using Content.Shared._Misfits.Special;
 using Content.Shared._Misfits.Special.Components;
 using Content.Shared.GameTicking;
+using Content.Shared.Random.Helpers;
+using Content.Shared.Storage;
+using Content.Shared.Storage.EntitySystems;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
 namespace Content.Server._Misfits.SpecialStats;
@@ -12,6 +16,16 @@ public sealed class SpecialLuckSystem : EntitySystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedSpecialSystem _special = default!;
+    [Dependency] private readonly SharedStorageSystem _storage = default!;
+
+    private static readonly Dictionary<LuckyLootRarity, float> RarityWeights = new()
+    {
+        [LuckyLootRarity.Common] = 100f,
+        [LuckyLootRarity.Uncommon] = 45f,
+        [LuckyLootRarity.Rare] = 18f,
+        [LuckyLootRarity.VeryRare] = 6f,
+        [LuckyLootRarity.Legendary] = 1f,
+    };
 
     private readonly Dictionary<EntityUid, HashSet<EntityUid>> _alreadyRolled = new();
 
@@ -56,7 +70,36 @@ public sealed class SpecialLuckSystem : EntitySystem
         if (ent.Comp.LuckyItems.Count == 0)
             return;
 
-        var chosenProto = _random.Pick(ent.Comp.LuckyItems);
-        Spawn(chosenProto, Transform(ent.Owner).Coordinates);
+        if (!TryPickLuckyItem(ent.Comp, out var chosenProto))
+            return;
+
+        if (!TryComp<StorageComponent>(ent.Owner, out var storage))
+            return;
+
+        var spawned = Spawn(chosenProto, Transform(ent.Owner).Coordinates);
+        if (!_storage.Insert(ent.Owner, spawned, out _, out _, actor, storage, playSound: false))
+            Del(spawned);
+    }
+
+    private bool TryPickLuckyItem(LuckJunkBonusComponent component, out EntProtoId chosenProto)
+    {
+        var weights = new Dictionary<EntProtoId, float>();
+
+        foreach (var entry in component.LuckyItems)
+        {
+            if (!RarityWeights.TryGetValue(entry.Rarity, out var weight) || weight <= 0f)
+                continue;
+
+            weights[entry.Id] = weight;
+        }
+
+        if (weights.Count == 0)
+        {
+            chosenProto = default;
+            return false;
+        }
+
+        chosenProto = _random.Pick(weights);
+        return true;
     }
 }

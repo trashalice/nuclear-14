@@ -28,7 +28,7 @@ namespace Content.Client.Input
             common.AddFunction(ContentKeyFunctions.EscapeContext);
             common.AddFunction(ContentKeyFunctions.ExamineEntity);
             common.AddFunction(ContentKeyFunctions.OpenAHelp);
-            common.AddFunction(ContentKeyFunctions.OpenMentorHelp); // #Misfits Fix — register F1 keybind so Mentor Help window actually opens
+            // common.AddFunction(ContentKeyFunctions.OpenMentorHelp); // #Misfits Fix — register F1 keybind so Mentor Help window actually opens
             common.AddFunction(ContentKeyFunctions.OpenHelpSelector); // #Misfits Change - Help Selector popup (F12)
             common.AddFunction(ContentKeyFunctions.TakeScreenshot);
             common.AddFunction(ContentKeyFunctions.TakeScreenshotNoUI);

@@ -164,8 +164,9 @@ public sealed class FactionWarClientSystem : EntitySystem
     private void OnCeasefireProposal(CeasefireProposalEvent msg)
     {
         _pendingCeasefireProposal = msg;
-        if (_window != null)
-            RaiseNetworkEvent(new FactionWarOpenPanelRequestEvent());
+        EnsureWarWindow();
+        _window!.OpenCentered();
+        RaiseNetworkEvent(new FactionWarOpenPanelRequestEvent());
     }
 
     private void OnForceWarResult(FactionWarForceResultEvent msg)

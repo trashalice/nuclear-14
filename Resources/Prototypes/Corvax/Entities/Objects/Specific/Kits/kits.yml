@@ -1030,10 +1030,9 @@
     items:
       - id: N14ClothingOuterLegionnaireRecruitArmor
       - id: ClothingBeltQuiverSpear
-      - id: N14WeaponSMG9mm
-      - id: N14MagazineSMG9mm
+      - id: N14WeaponSMGGreaseGun
+      - id: Magazine45SubMachineGun
         amount: 2
-      - id: MagazineBox9mm
       - id: N14TribalMachete
       - id: N14LegionnaireBuckler
       - id: N14HealingPowder #Misfits Change /Tweak/: replaces dirty stimpak, Legion uses tribal medicine

@@ -12,6 +12,7 @@
       species:
       - Human
       - Ghoul
+      - GhoulGlowing
   startingGear: WastelandChaplainGear
   icon: "JobIconWastelandChaplain" # Forge-Change
   supervisors: job-supervisors-townsfolk

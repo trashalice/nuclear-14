@@ -178,27 +178,18 @@ public sealed class SharedSpecialSystem : EntitySystem
         };
     }
 
-    public float GetCurvedEffectScale(
+    public float GetCurvedEffectModifier(
         EntityUid uid,
         SpecialStat stat,
-        float valueAtOne,
-        float valueAtTen,
+        float multiplierPerPoint,
         SpecialComponent? component = null)
     {
-        return GetCurvedEffectScale(GetCurvedEffectDelta(uid, stat, component), valueAtOne, valueAtTen);
+        return GetCurvedEffectModifier(GetCurvedEffectDelta(uid, stat, component), multiplierPerPoint);
     }
 
-    public static float GetCurvedEffectScale(float curvedDelta, float valueAtOne, float valueAtTen)
+    public static float GetCurvedEffectModifier(float curvedDelta, float multiplierPerPoint)
     {
-        // Tuning fields describe the effect at stat 1 and stat 10. The curved
-        // delta interpolates from the neutral midpoint toward the matching end.
-        if (curvedDelta > 0f)
-            return valueAtTen * curvedDelta / GetCurvedEffectDelta(SpecialProfile.Maximum);
-
-        if (curvedDelta < 0f)
-            return valueAtOne * curvedDelta / GetCurvedEffectDelta(SpecialProfile.Minimum);
-
-        return 0f;
+        return curvedDelta * multiplierPerPoint;
     }
 
     public static int GetCharismaLoadoutPointModifier(int charisma)
@@ -243,14 +234,13 @@ public sealed class SharedSpecialSystem : EntitySystem
         return GetIntelligenceLatheMaterialUseMultiplier(
             GetEffective(uid, SpecialStat.Intelligence, component),
             baseMultiplier,
-            tuning.IntelligenceLatheMaterialDiscountAtTen);
+            tuning.IntelligenceLatheMaterialUseMultiplierPerPoint);
     }
 
-    public static float GetIntelligenceLatheMaterialUseMultiplier(int intelligence, float baseMultiplier, float discountAtTen)
+    public static float GetIntelligenceLatheMaterialUseMultiplier(int intelligence, float baseMultiplier, float multiplierPerPoint)
     {
         var delta = MathF.Max(0f, GetCurvedEffectDelta(intelligence));
-        var maxDelta = GetCurvedEffectDelta(SpecialProfile.Maximum);
-        var discount = Math.Clamp(discountAtTen, 0f, 0.5f) * delta / maxDelta;
+        var discount = Math.Clamp(delta * multiplierPerPoint, 0f, 0.5f);
 
         return MathF.Max(0.1f, baseMultiplier * (1f - discount));
     }

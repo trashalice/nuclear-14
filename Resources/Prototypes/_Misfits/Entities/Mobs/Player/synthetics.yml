@@ -331,10 +331,6 @@
   - type: RobotSelfRepairAnnouncer # #Misfits Change: hull integrity warnings + self-repair popups
 
   - type: Gun # #Misfits Add: built-in plasma caster — right-click in combat mode to fire
-    minAngle: 9
-    maxAngle: 18
-    angleIncrease: 3
-    angleDecay: 4
     fireRate: 2
     soundGunshot:
       collection: N14PlasmaPistolGunshot

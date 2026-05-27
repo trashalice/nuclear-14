@@ -74,6 +74,9 @@ public sealed class TraitSystem : EntitySystem
                 return;
             }
 
+            if (traitPrototype.Hidden)
+                continue;
+
             if (!_characterRequirements.CheckRequirementsValid(
                 traitPrototype.Requirements,
                 jobPrototypeToUse,

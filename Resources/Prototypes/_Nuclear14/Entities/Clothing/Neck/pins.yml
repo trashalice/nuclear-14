@@ -15,6 +15,9 @@
     clothingVisuals:
       neck:
       - state: empty-equipped
+  - type: Tag
+    tags:
+    - SuperMutantWearable
 
 - type: entity
   parent: ClothingNeckPinNCRRecruit
@@ -32,7 +35,10 @@
     clothingVisuals:
       neck:
       - state: gold-equipped
-
+  - type: Tag
+    tags:
+    - SuperMutantWearable
+    
 - type: entity
   parent: ClothingNeckPinNCRPrivate
   id: ClothingNeckPinNCRPrivate1st
@@ -44,6 +50,9 @@
     sprite: _Nuclear14/Clothing/Neck/Misc/pins.rsi
     layers:
     - state: private1st
+  - type: Tag
+    tags:
+    - SuperMutantWearable
 
 - type: entity
   parent: ClothingNeckPinNCRPrivate
@@ -56,6 +65,9 @@
     sprite: _Nuclear14/Clothing/Neck/Misc/pins.rsi
     layers:
     - state: corporal
+  - type: Tag
+    tags:
+    - SuperMutantWearable
 
 - type: entity
   parent: ClothingNeckPinNCRPrivate
@@ -68,6 +80,9 @@
     sprite: _Nuclear14/Clothing/Neck/Misc/pins.rsi
     layers:
     - state: specialist
+  - type: Tag
+    tags:
+    - SuperMutantWearable
 
 - type: entity
   parent: ClothingNeckPinNCRPrivate
@@ -80,6 +95,9 @@
     sprite: _Nuclear14/Clothing/Neck/Misc/pins.rsi
     layers:
     - state: sergeant
+  - type: Tag
+    tags:
+    - SuperMutantWearable
 
 - type: entity
   parent: ClothingNeckPinNCRPrivate
@@ -92,6 +110,9 @@
     sprite: _Nuclear14/Clothing/Neck/Misc/pins.rsi
     layers:
     - state: sergeant1st
+  - type: Tag
+    tags:
+    - SuperMutantWearable
 
 - type: entity
   parent: ClothingNeckPinNCRPrivate
@@ -104,6 +125,9 @@
     sprite: _Nuclear14/Clothing/Neck/Misc/pins.rsi
     layers:
     - state: mastersergeant
+  - type: Tag
+    tags:
+    - SuperMutantWearable
 
 - type: entity
   parent: ClothingNeckPinNCRPrivate
@@ -116,6 +140,9 @@
     sprite: _Nuclear14/Clothing/Neck/Misc/pins.rsi
     layers:
     - state: sergeantmajor
+  - type: Tag
+    tags:
+    - SuperMutantWearable
 
 - type: entity
   parent: ClothingNeckPinNCRPrivate
@@ -128,10 +155,13 @@
     sprite: _Nuclear14/Clothing/Neck/Misc/pins.rsi
     layers:
     - state: secondlieutenant
+  - type: Tag
+    tags:
+    - SuperMutantWearable
 
 - type: entity
   parent: ClothingNeckPinNCRPrivate
-  id: ClothingNeckPinNCRFirstlLieutenant
+  id: ClothingNeckPinNCRFirstLieutenant
   name: first lieutenant pin
   components:
   - type: RankTitle
@@ -145,6 +175,9 @@
     clothingVisuals:
       neck:
       - state: silver-equipped
+  - type: Tag
+    tags:
+    - SuperMutantWearable
 
 - type: entity
   parent: ClothingNeckPinNCRPrivate
@@ -162,6 +195,9 @@
     clothingVisuals:
       neck:
       - state: silver-equipped
+  - type: Tag
+    tags:
+    - SuperMutantWearable
 
 - type: entity
   parent: ClothingNeckPinNCRPrivate
@@ -174,6 +210,9 @@
     sprite: _Nuclear14/Clothing/Neck/Misc/pins.rsi
     layers:
     - state: major
+  - type: Tag
+    tags:
+    - SuperMutantWearable
 
 - type: entity
   parent: ClothingNeckPinNCRPrivate
@@ -191,6 +230,9 @@
     clothingVisuals:
       neck:
       - state: red-equipped
+  - type: Tag
+    tags:
+    - SuperMutantWearable
 
 - type: entity
   parent: ClothingNeckPinNCRPrivate
@@ -203,3 +245,6 @@
     sprite: _Nuclear14/Clothing/Neck/Misc/pins.rsi
     layers:
     - state: chiefphysician
+  - type: Tag
+    tags:
+    - SuperMutantWearable

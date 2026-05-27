@@ -30,11 +30,10 @@ public sealed class SpecialAgilitySystem : EntitySystem
     private float GetActionDelayMultiplier(EntityUid uid, SpecialComponent special)
     {
         var tuning = _special.GetTuning();
-        var modifier = _special.GetCurvedEffectScale(
+        var modifier = _special.GetCurvedEffectModifier(
             uid,
             SpecialStat.Agility,
-            tuning.AgilityActionDelayPenaltyAtOne,
-            -tuning.AgilityActionDelayReductionAtTen,
+            -tuning.AgilityActionDelayMultiplierPerPoint,
             special);
 
         return MathF.Max(0.1f, 1f + modifier);

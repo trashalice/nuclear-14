@@ -85,9 +85,6 @@
                     <controls:HSpacer Spacing="10" />
                     <!-- Voting & misc button bar -->
                     <BoxContainer Orientation="Horizontal" MinSize="0 40" HorizontalAlignment="Right">
-                        <!-- #Misfits Change - Mentor Help button in lobby -->
-                        <Button Name="MHelpButton" Access="Public" Text="MHelp"
-                                StyleClasses="ButtonBig" />
                         <Button Name="AHelpButton" Access="Public" Text="{Loc 'ui-lobby-ahelp-button'}"
                                 StyleClasses="ButtonBig" />
                         <vote:VoteCallMenuButton Name="CallVoteButton" StyleClasses="ButtonBig" />

@@ -290,8 +290,8 @@
     minAngle: -20 # Corvax-Change
     maxAngle: -45 # Corvax-Change
   - type: Gun
-    minAngle: 24
-    maxAngle: 60
+    minAngle: 22
+    maxAngle: 50
     angleIncrease: 4
     angleDecay: 16
     fireRate: 3.5 # Corvax-Change
@@ -353,8 +353,8 @@
     minAngle: -21 
     maxAngle: -40 
   - type: Gun
-    minAngle: 24
-    maxAngle: 60
+    minAngle: 22
+    maxAngle: 50
     angleIncrease: 4
     angleDecay: 16
     fireRate: 4

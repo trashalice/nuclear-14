@@ -1,6 +1,15 @@
 # #Misfits Change - Ported from Delta-V: chronic pain trait
 
 - type: trait
+  id: FiremanCarry
+  category: Physical
+  hidden: true
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: CanFiremanCarry
+
+- type: trait
   id: ChronicPain
   category: Physical
   points: 2

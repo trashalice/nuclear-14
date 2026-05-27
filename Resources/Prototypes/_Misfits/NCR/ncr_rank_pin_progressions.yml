@@ -14,21 +14,22 @@
 #   NCRHeavyTrooper      — NCR Heavy Trooper
 #   NCRTrooper           — NCR Trooper
 #   C27NCR               — NCR C27
+#   SuperMutantNCRTrooper— NCR Super Mutant Trooper
 
-# Command Officers: Captain (O-3) → Major (O-4) at 20h NCR dept time
+# Commander: Captain (O-3) → Major (O-4) at 20h
 - type: ncrRankPinProgression
   id: NCRCommandOfficerPins
   jobs:
     - NCRCommander
-  tracker: NCR
-  departmentTracker: true
+  tracker: NCRCommander
+  departmentTracker: false
   thresholds:
     - min: 0
       entity: ClothingNeckPinNCRCaptain
     - min: 72000   # 20 hours
       entity: ClothingNeckPinNCRMajor
 
-# Medical Officers: Captain (O-3) → Major (O-4) at 20h
+# Medical Officer: Captain (O-3) → Major (O-4) at 20h
 - type: ncrRankPinProgression
   id: NCRMedicalOfficerPins
   jobs:
@@ -41,19 +42,31 @@
     - min: 72000   # 20 hours
       entity: ClothingNeckPinNCRMajor
 
-# Junior Officers: 2LT (O-1) → 1LT (O-2) at 20h NCR dept time
+# Executive Officer: 1LT (O-2) → Captain (O-3) at 20h
 - type: ncrRankPinProgression
-  id: NCRJuniorOfficerPins
+  id: NCRExecutiveOfficerPins
   jobs:
     - NCRExecutiveOfficer
+  tracker: NCRExecutiveOfficer
+  departmentTracker: false
+  thresholds:
+    - min: 0
+      entity: ClothingNeckPinNCRFirstLieutenant
+    - min: 72000   # 20 hours
+      entity: ClothingNeckPinNCRCaptain
+
+# Platoon Leader: 2LT (O-1) → 1LT (O-2) at 20h
+- type: ncrRankPinProgression
+  id: NCRPlatoonLeaderPins
+  jobs:
     - NCRPlatoonLeader
-  tracker: NCR
-  departmentTracker: true
+  tracker: NCRPlatoonLeader
+  departmentTracker: false
   thresholds:
     - min: 0
       entity: ClothingNeckPinNCRSecondLieutenant
     - min: 72000   # 20 hours
-      entity: ClothingNeckPinNCRFirstlLieutenant
+      entity: ClothingNeckPinNCRFirstLieutenant
 
 # Squad Leaders: CPL (E-4) → SGT (E-5) at 20h → SSG (E-6) at 40h → SFC (E-7) at 60h
 # All 4 map slots share the NCRSquadLeader tracker so time accumulates across slots.
@@ -73,7 +86,7 @@
     - min: 216000  # 60 hours
       entity: ClothingNeckPinNCRMasterSergeant
 
-# Medic: PFC (E-3) → SPC (E-4) at 20h NCR dept → SGT (E-5) at 40h
+# Medic: PFC (E-3) → SPC (E-4) at 20h → SGT (E-5) at 40h
 - type: ncrRankPinProgression
   id: NCRMedicPins
   jobs:
@@ -88,15 +101,13 @@
     - min: 144000  # 40 hours
       entity: ClothingNeckPinNCRSergeant
 
-# Specialists: PV2 (E-2) → PFC (E-3) at 20h NCR dept → SPC (E-4) at 40h NCR dept
+# Weapon Specialist: PV2 (E-2) → PFC (E-3) at 20h → SPC (E-4) at 40h
 - type: ncrRankPinProgression
   id: NCRSpecialistPins
   jobs:
     - NCRWS
-    - NCREngineer
-    - NCRHeavyTrooper
-  tracker: NCR
-  departmentTracker: true
+  tracker: NCRWeaponsSpecialist
+  departmentTracker: false
   thresholds:
     - min: 0
       entity: ClothingNeckPinNCRPrivate
@@ -105,7 +116,37 @@
     - min: 144000  # 40 hours
       entity: ClothingNeckPinNCRSpecialist
 
-# Troopers: Recruit (E-1) → PV2 at 20h NCR dept → PFC at 40h NCR dept → SPC at 60h NCR dept
+# Engineer: PV2 (E-2) → PFC (E-3) at 20h → SPC (E-4) at 40h
+- type: ncrRankPinProgression
+  id: NCREngineerPins
+  jobs:
+    - NCREngineer
+  tracker: NCREngineer
+  departmentTracker: false
+  thresholds:
+    - min: 0
+      entity: ClothingNeckPinNCRPrivate
+    - min: 72000   # 20 hours
+      entity: ClothingNeckPinNCRPrivate1st
+    - min: 144000  # 40 hours
+      entity: ClothingNeckPinNCRSpecialist
+
+# Heavy Trooper: PV2 (E-2) → PFC (E-3) at 20h → SPC (E-4) at 40h
+- type: ncrRankPinProgression
+  id: NCRHeavyTrooperPins
+  jobs:
+    - NCRHeavyTrooper
+  tracker: NCRHeavyTrooper
+  departmentTracker: false
+  thresholds:
+    - min: 0
+      entity: ClothingNeckPinNCRPrivate
+    - min: 72000   # 20 hours
+      entity: ClothingNeckPinNCRPrivate1st
+    - min: 144000  # 40 hours
+      entity: ClothingNeckPinNCRSpecialist
+
+# Troopers: Recruit (E-1) → PV2 (E-2) at 20h → PFC (E-3) at 40h → SPC (E-4) at 60h NCR dept
 - type: ncrRankPinProgression
   id: NCRTrooperPins
   jobs:
@@ -122,7 +163,7 @@
     - min: 216000  # 60 hours
       entity: ClothingNeckPinNCRSpecialist
       
-# C-27: Sergeant (E-5) ->  1st Sergeant (E-6) -> Master Sergeant (E-8)
+# C-27: Sergeant (E-5) ->  1st Sergeant (E-6) at 10h -> Master Sergeant (E-8) at 20h
 - type: ncrRankPinProgression
   id: NCRC27Pins
   jobs:
@@ -136,3 +177,18 @@
       entity: ClothingNeckPinNCRSergeant1st
     - min: 72000  # 20 hours
       entity: ClothingNeckPinNCRMasterSergeant
+
+# Super Mutant Trooper: PV2 (E-2) → PFC (E-3) at 10h → SPC (E-4) at 20h
+- type: ncrRankPinProgression
+  id: NCRSuperMutantNCRTrooperPins
+  jobs:
+    - SuperMutantNCRTrooper
+  tracker: SuperMutantNCRTrooper
+  departmentTracker: false
+  thresholds:
+    - min: 0
+      entity: ClothingNeckPinNCRPrivate
+    - min: 36000  # 10 hours
+      entity: ClothingNeckPinNCRPrivate1st
+    - min: 72000  # 20 hours
+      entity: ClothingNeckPinNCRSpecialist

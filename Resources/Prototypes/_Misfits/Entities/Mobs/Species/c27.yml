@@ -143,7 +143,6 @@
         Brute: -0.3
       types:
         Heat: -0.3
-        Shock: -0.3
   # #Misfits Add (Phase F) - Innate melee buff: chassis fist hits noticeably harder than a
   # human punch (spec calls for melee buff to make the slow speed worth it).
   - type: MeleeWeapon

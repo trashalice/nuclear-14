@@ -104,6 +104,9 @@ public sealed partial class MentorHelpSystem : SharedMentorHelpSystem
     {
         base.Initialize();
 
+        // Mentor help has been retired; keep the server-side system inert.
+        return;
+
         Subs.CVar(_config, CCVars.DiscordMHelpWebhook, OnWebhookChanged, true);
         Subs.CVar(_config, CCVars.DiscordMHelpFooterIcon, OnFooterIconChanged, true);
         Subs.CVar(_config, CCVars.DiscordMHelpAvatar, OnAvatarChanged, true);

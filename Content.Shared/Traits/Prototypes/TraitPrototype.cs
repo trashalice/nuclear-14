@@ -28,6 +28,11 @@ public sealed partial class TraitPrototype : IPrototype
     [DataField]
     public int Points = 0;
 
+    /// <summary>
+    ///     Hidden traits can be granted by systems or jobs, but are not valid character-creation picks.
+    /// </summary>
+    [DataField]
+    public bool Hidden = false;
 
     [DataField]
     public List<CharacterRequirement> Requirements = new();

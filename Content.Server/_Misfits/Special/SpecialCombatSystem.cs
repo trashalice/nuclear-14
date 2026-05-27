@@ -62,6 +62,10 @@ public sealed class SpecialCombatSystem : EntitySystem
 
         var damage = args.BaseDamage;
 
+        // Innate mob melee is unarmed. Use gentler Strength scaling than held weapons.
+        if (uid == args.User)
+            ApplyStrengthUnarmedModifier(args.User, ref damage, special);
+
         // Melee weapons use the same Luck outcome curve as ranged weapons.
         TryApplyLuckDamageOutcome(args.User, ref damage, special);
 
@@ -78,6 +82,18 @@ public sealed class SpecialCombatSystem : EntitySystem
             return;
 
         var multiplier = 1f + delta * tuning.StrengthMeleeDamageMultiplierPerPoint;
+        damage *= MathF.Max(0.1f, multiplier);
+    }
+
+    private void ApplyStrengthUnarmedModifier(EntityUid user, ref DamageSpecifier damage, SpecialComponent special)
+    {
+        var tuning = _special.GetTuning();
+        var delta = _special.GetCurvedEffectDelta(user, SpecialStat.Strength, special);
+
+        if (delta == 0f)
+            return;
+
+        var multiplier = 1f + delta * tuning.StrengthUnarmedDamageMultiplierPerPoint;
         damage *= MathF.Max(0.1f, multiplier);
     }
 
@@ -126,7 +142,7 @@ public sealed class SpecialCombatSystem : EntitySystem
         // Every hit rolls the full configured chance; magazine-fed weapons no
         // longer divide crit chance by ammo capacity.
         var delta = _special.GetCurvedEffectDelta(user, SpecialStat.Luck, special);
-        var shotChance = tuning.LuckSingleShotCriticalChanceAtTen * delta / SharedSpecialSystem.GetCurvedEffectDelta(SpecialProfile.Maximum);
+        var shotChance = delta * tuning.LuckSingleShotCriticalChancePerPoint;
 
         if (weapon != null && HasComp<RevolverAmmoProviderComponent>(weapon.Value))
             shotChance *= 2f;

@@ -14,6 +14,7 @@
       species:
       - Human
       - Ghoul
+      - GhoulGlowing
     - !type:CharacterDepartmentTimeRequirement # #Misfits Tweak - re-enable timelock, 10h Townsfolk requirement
       department: Townsfolk
       min: 36000 # 10 hours

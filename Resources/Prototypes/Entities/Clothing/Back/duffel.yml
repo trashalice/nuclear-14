@@ -13,6 +13,7 @@
   - type: ClothingSpeedModifier
     walkModifier: 1
     sprintModifier: 0.9
+  - type: StrengthIgnoreClothingSlowdown
   - type: HeldSpeedModifier
 
 - type: entity

@@ -1,5 +1,8 @@
 # Misfits — trait display strings for Pets perk tree
 
+trait-name-FiremanCarry = Fireman Carry
+trait-description-FiremanCarry = You can pick people up and drag them without losing speed.
+
 trait-name-N14PetDogCompanion = Dog Companion
 trait-description-N14PetDogCompanion =
     You have a loyal dog companion that follows and obeys you.

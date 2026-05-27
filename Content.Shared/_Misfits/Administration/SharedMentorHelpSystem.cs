@@ -15,7 +15,8 @@ public abstract class SharedMentorHelpSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeNetworkEvent<MentorHelpTextMessage>(OnMentorHelpTextMessage);
+        // Mentor help has been retired; leave the shared message hook disabled.
+        return;
     }
 
     protected virtual void OnMentorHelpTextMessage(MentorHelpTextMessage message, EntitySessionEventArgs eventArgs)
