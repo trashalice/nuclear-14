@@ -21,7 +21,7 @@
       sex: Male
     - !type:CharacterGenderRequirement
       gender: Male
-  startingGear: CaesarLegionDeanGear
+  startingGear: CaesarLegionForgeMasterGear
   alwaysUseSpawner: true
   icon: "JobIconlegionerDean"
   supervisors: job-name-caesar-legion-supervisors
@@ -38,6 +38,23 @@
         accent: latin
   - !type:AddTraitSpecial
     traits: [ LanguageLatin ]
+
+- type: startingGear
+  id: CeasarLegionForgeMasterGear
+  equipment:
+    jumpsuit: N14ClothingUniformJumpsuitLegionnaire
+    ears: N14ClothingHeadsetLegion
+    neck: ClothingNeckRedScarf
+    eyes: N14ClothingEyesGlassesWelding
+    back: N14ClothingBackpackMilitary
+    shoes: N14ClothingBootsBlack
+    head: N14ClothingHeadHatDeanRecruitHelmet
+    outerClothing: N14ClothingOuterDeanLegionnaireRecruitArmor
+    gloves: N14ClothingHandsGlovesTribal
+    belt: N14Gladius
+    pocket1: LegionDeanloadoutkits
+    pocket2: N14WeaponPistol10mmPipe
+    id: N14IDLegionaryMedalForgemaster 
 
 - type: playTimeTracker
   id: CaesarLegionForgemaster

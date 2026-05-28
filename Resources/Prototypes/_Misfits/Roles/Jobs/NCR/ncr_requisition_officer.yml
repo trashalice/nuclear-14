@@ -18,7 +18,7 @@
       department: NCR
       min: 72000 # 20 hours
   weight: 105
-  startingGear: NCRPlatoonLeaderGear
+  startingGear: NCRRequisitionOfficerGear
   icon: "JobIconNcrLeader"
   supervisors: job-supervisors-ncr-commander
   requireAdminNotify: true
@@ -37,7 +37,7 @@
           - NCR
 
 - type: startingGear
-  id: NCRPlatoonLeaderGear
+  id: NCRRequisitionOfficerGear
   equipment:
     head: N14ClothingHeadHatNCRBeretOfficer
     back: N14ClothingBackpackNCR
@@ -50,7 +50,7 @@
     ears: N14ClothingHeadsetNCR
     pocket1: NCRLTloadoutkits
     pocket2: RadioHandheld
-    id: N14IDNCRDogtagOfficer
+    id: N14IDNCRDogtagNCRRO
   innerClothingSkirt: N14ClothingOfficerUniformNCRDesert
   satchel: N14ClothingBackpackSatchelNCRFilled
   storage:

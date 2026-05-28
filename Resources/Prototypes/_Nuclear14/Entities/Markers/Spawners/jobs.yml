@@ -398,18 +398,6 @@
       - state: green
       - state: platoonlead
 
-- type: entity
-  id: N14SpawnPointNCRRO
-  parent: N14SpawnPointNCRCadet
-  name: Requisition Officer
-  components:
-  - type: SpawnPoint
-    job_id: NCRRO
-  - type: Sprite
-    layers:
-      - state: green
-      - state: platoonlead
-
 # Tribals
 - type: entity
   id: N14SpawnPointTribal
