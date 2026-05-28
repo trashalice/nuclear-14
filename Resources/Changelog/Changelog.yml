@@ -5949,3 +5949,10 @@ Entries:
   id: 5971
   time: '2026-05-28T10:24:30.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/623
+- author: Tytos
+  changes:
+    - type: Add
+      message: Added Legion forgemaster and NCRRO roles
+  id: 5972
+  time: '2026-05-28T10:25:24.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/620
