@@ -60,16 +60,17 @@
   category: Speech
   points: -2
   requirements:
-  # Misfits Fix: CharacterTraitRequirement block removed — all referenced N14ExtremeAug* traits are commented out
-  #- !type:CharacterTraitRequirement
-  #  inverted: true
-  #  traits:
-  #  - N14ExtremeAugKnight
-  #  - N14ExtremeAugScribe
-  #  - N14ExtremeAugPaladin
   - !type:CharacterDepartmentRequirement
     departments:
     - BrotherhoodOfSteel
+  - !type:CharacterDepartmentRequirement # Misfit Change
+    inverted: true
+    jobs:
+    - BoSMidScribe
+    - BOSSeniorScribe
+    - BoSWestScribe
+    - BoSMidPaladinCommander
+    - BoSHeadKnight
   functions:
   - !type:TraitModifyLanguages
     languagesSpoken:
@@ -103,19 +104,14 @@
     - NCRStaffSergeant
     - NCRNCO
     - NCRRO
-#    - CaravanLeader
-#    - BoSWashingtonCommander
-#    - BoSWashingtonPaladin
     - BoSMidPaladinCommander
     - BoSMidPaladin
-    # Forge-Change-Start
     - NCRWS
     - NCREngineer
     - NCRMedic
     - NCRPrivateFirstClass
     - NCRSoldier
     - NCRCadet
-    #- BoSMidInquisitor # Misfits Fix: job prototype commented out
     - BoSMidScribe
     - BoSMidKnight
     - BoSMidSquire
@@ -134,8 +130,6 @@
     - CaesarLegionLegionnaireRecruit
     - CaesarLegionHoundmaster
     - CaesarLegionAuxilia
-    # #Misfits Change: CaesarLegionRecruit removed — Legionnaire covers entry-level.
-    # Forge-Change-End
     - Overseer
     - VaultSecurity
   - !type:CharacterTraitRequirement
