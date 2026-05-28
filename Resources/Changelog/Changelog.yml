@@ -6014,3 +6014,10 @@ Entries:
   id: 5976
   time: '2026-05-28T19:11:23.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/626
+- author: Dpellowski
+  changes:
+    - type: Tweak
+      message: SM Fix
+  id: 5977
+  time: '2026-05-28T20:56:46.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/627
