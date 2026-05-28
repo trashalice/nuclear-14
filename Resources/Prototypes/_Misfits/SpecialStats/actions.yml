@@ -1,0 +1,12 @@
+- type: entity
+  parent: ActionBase
+  id: ActionToggleSpecialMedicalHud
+  name: Toggle medical insight
+  description: Toggle the medical HUD granted by maximum Intelligence.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    icon: { sprite: Clothing/Eyes/Hud/med.rsi, state: icon }
+    iconOn: { sprite: Clothing/Eyes/Hud/med.rsi, state: icon }
+    event: !type:SpecialMedicalHudToggleActionEvent
+    useDelay: 0.25
