@@ -1,6 +1,5 @@
 using Content.Server.Tools;
 using Content.Server.Weapons.Ranged.Systems;
-using Content.Shared.Humanoid;
 using Content.Shared.Tools.Components;
 using Content.Shared.Damage.Events;
 using Content.Shared.Nyanotrasen.Abilities.Oni;
@@ -13,8 +12,6 @@ namespace Content.Server.Abilities.Oni
 {
     public sealed class OniSystem : SharedOniSystem
     {
-        private const float MutantMeleeDamageCeiling = 160f;
-
         [Dependency] private readonly ToolSystem _toolSystem = default!;
         [Dependency] private readonly GunSystem _gunSystem = default!;
 
@@ -62,19 +59,6 @@ namespace Content.Server.Abilities.Oni
         {
             if (!TryComp<OniComponent>(args.User, out var oni))
                 return;
-
-            // Super Mutants and Nightkin use logarithmic outgoing melee scaling before Oni multipliers.
-            if (TryComp<HumanoidAppearanceComponent>(args.User, out var appearance) &&
-                (appearance.Species == "SuperMutant" || appearance.Species == "Nightkin"))
-            {
-                var baseDamage = args.Damage.GetTotal().Float();
-                if (baseDamage > 0f)
-                {
-                    var logCurveDamage = MutantMeleeDamageCeiling * MathF.Log(baseDamage + 1f) / MathF.Log(MutantMeleeDamageCeiling + 1f);
-                    var targetDamage = MathF.Min(MathF.Max(logCurveDamage, baseDamage), MutantMeleeDamageCeiling);
-                    args.Damage *= targetDamage / baseDamage;
-                }
-            }
 
             args.Modifiers.Add(oni.MeleeModifiers);
         }

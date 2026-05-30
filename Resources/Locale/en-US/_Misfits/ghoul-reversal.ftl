@@ -22,8 +22,8 @@ ghoulify-on-death-self = The fatal dose of radiation tears through your body —
 ghoulify-on-death-others = collapses from radiation... then rises again, skin twisted and eyes hollow — now a ghoul
 
 # Legacy keys (ghoul-on-death-*) — kept for reference; system now uses ghoulify-on-death-* keys above.
-# ghoul-on-death-self = The fatal dose of radiation tears through your body — but instead of killing you, it transforms you. You are a ghoul now.
-# ghoul-on-death-others = {THE($target)} collapses from the radiation... but rises again, skin twisted and eyes hollow. They've become a ghoul!
+#ghoul-on-death-self = The fatal dose of radiation tears through your body — but instead of killing you, it transforms you. You are a ghoul now.
+#ghoul-on-death-others = {THE($target)} collapses from the radiation... but rises again, skin twisted and eyes hollow. They've become a ghoul!
 
 # Reagent guidebook
 reagent-effect-guidebook-ghoul-reversal = reverse ghoulification if administered within 12 hours of exposure ({ $chance ->

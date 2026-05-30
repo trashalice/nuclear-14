@@ -16,7 +16,7 @@ objectives-objective-fail = {$objective} | [color={$markupColor}]Failure![/color
 
 objectives-in-custody = [bold][color=red]| IN CUSTODY | [/color][/bold]
 
-# Misfits Change
+#Misfits Change
 objective-issuer-ncr = [color=#cc2f2f]NCR[/color]
 objective-issuer-brotherhoodofsteel = [color=#4f81bd]Brotherhood of Steel[/color]
 # #Misfits Change - Caesar's Legion issuer label for the C character menu objectives panel

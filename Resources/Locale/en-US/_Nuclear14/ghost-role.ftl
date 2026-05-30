@@ -8,13 +8,13 @@ ghost-role-information-n14pet-eyebot-name = Eyebot Companion
 
 ghost-role-information-n14pet-eyebot-mbos-name = Brotherhood of Steel Eyebot
 
-# ghost-role-information-n14pet-eyebot-wbos-name = Washington Eyebot #Misfits Change /Comment-out/: Washington BoS removed
+#ghost-role-information-n14pet-eyebot-wbos-name = Washington Eyebot #Misfits Change /Comment-out/: Washington BoS removed
 
 ghost-role-information-n14pet-dog-name = Dog Follower
 
 ghost-role-information-n14pet-dog-mbos-name = Tactical Dog Follower
 
-# ghost-role-information-n14pet-dog-wbos-name = Cybernetic Dog Follower #Misfits Change /Comment-out/: Washington BoS removed
+#ghost-role-information-n14pet-dog-wbos-name = Cybernetic Dog Follower #Misfits Change /Comment-out/: Washington BoS removed
 
 ghost-role-information-n14pet-dog-cc-name = Guard Dog Follower
 

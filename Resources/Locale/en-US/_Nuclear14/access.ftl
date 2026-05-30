@@ -68,9 +68,9 @@ id-card-access-level-legion-veteran-decanus = Legion Veteran Decanus Access
 id-card-access-level-legion-centurion = Legion Centurion Access
 id-card-access-level-legion-legate = Legion Legate Access
 
-# Misfits Change /Comment-out/: Washington BoS access levels removed — will create new prototypes.
-# id-card-access-level-washington-commander = WBoS Office
-# id-card-access-level-washington-paladin = WBoS Suits
-# id-card-access-level-washington-knight = WBoS Armory
-# id-card-access-level-washington-scribe = WBoS Labs
-# id-card-access-level-washington-initiate = WBoS Gates
+#Misfits Change /Comment-out/: Washington BoS access levels removed — will create new prototypes.
+#id-card-access-level-washington-commander = WBoS Office
+#id-card-access-level-washington-paladin = WBoS Suits
+#id-card-access-level-washington-knight = WBoS Armory
+#id-card-access-level-washington-scribe = WBoS Labs
+#id-card-access-level-washington-initiate = WBoS Gates

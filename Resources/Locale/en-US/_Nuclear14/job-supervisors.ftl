@@ -2,11 +2,11 @@
 job-supervisors-bos-mid-knight = the Head Knight, Head Paladin, and Elder
 job-supervisors-bos-mid = the Elder and the chapter heads
 job-supervisors-bos-mid-commander = the Elder
-# Misfits Change /Comment-out/: Washington BoS supervisor strings removed — will create new prototypes.
-# job-supervisors-bos-wash-initiate = the Brotherhood chain of command
-# job-supervisors-bos-wash-knight = the Head Knight, Head Paladin, and Elder
-# job-supervisors-bos-wash = the Elder and the chapter heads
-# job-supervisors-bos-wash-commander = the Elder
+#Misfits Change /Comment-out/: Washington BoS supervisor strings removed — will create new prototypes.
+#job-supervisors-bos-wash-initiate = the Brotherhood chain of command
+#job-supervisors-bos-wash-knight = the Head Knight, Head Paladin, and Elder
+#job-supervisors-bos-wash = the Elder and the chapter heads
+#job-supervisors-bos-wash-commander = the Elder
 job-supervisors-caravan = the caravan leader
 job-supervisors-caravan-leader = your greed & Blue Line Co. leadership
 job-supervisors-ncr = the NCR chain of command

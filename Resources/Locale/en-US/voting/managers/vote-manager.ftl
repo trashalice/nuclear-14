@@ -16,7 +16,7 @@ ui-vote-restart-abstain = Abstain
 # #Misfits Change: Vote to extend the round.
 ui-vote-extend-title = Extend round
 # Misfits Change - wasteland theme: shuttle → train
-# ui-vote-extend-succeeded = Extend vote passed — round extended by { $minutes } minutes. Shuttle recalled.
+#ui-vote-extend-succeeded = Extend vote passed — round extended by { $minutes } minutes. Shuttle recalled.
 ui-vote-extend-succeeded = Extend vote passed — round extended by { $minutes } minutes. Train recalled.
 ui-vote-extend-failed = Extend vote failed: { $yes }/{ $total } voted yes (need { $needed } for majority).
 ui-vote-extend-yes = Yes

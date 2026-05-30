@@ -244,23 +244,23 @@ undecided-loadout-category-veteran-ranger-marksman-description =
 
 # Brotherhood Kits
 
-# Misfits Change /Tweak/: Initiate kit simplified to wattz pistol only + stimpak.
-# Misfits Tweak: Removed rank prefix so the kit name is role-neutral.
+#Misfits Change /Tweak/: Initiate kit simplified to wattz pistol only + stimpak.
+#Misfits Tweak: Removed rank prefix so the kit name is role-neutral.
 undecided-loadout-category-mbos-init-las-name = Sidearm Kit
 undecided-loadout-category-mbos-init-las-description =
     A cache containing belongings of a Brotherhood chapter member.
     Includes 1 AEP-7, 2 energy cells, 1 roll of gauze, 1 stimpak,
     and 1 K ration MRE.
 
-# Misfits Tweak: Removed rank prefix so the kit name is role-neutral.
+#Misfits Tweak: Removed rank prefix so the kit name is role-neutral.
 undecided-loadout-category-mbos-init-bal-name = Carbine Kit
 undecided-loadout-category-mbos-init-bal-description =
     A cache containing belongings of a Brotherhood chapter member.
     Includes 1 old carbine, 3 5.56 magazines, 1 AEP-7, 2 energy
     cells, 1 roll of gauze, and 1 K ration MRE.
 
-# Misfits Change /Tweak/: Knight kits now include stimpak.
-# Misfits Tweak: Removed rank prefix so the kit name is role-neutral.
+#Misfits Change /Tweak/: Knight kits now include stimpak.
+#Misfits Tweak: Removed rank prefix so the kit name is role-neutral.
 undecided-loadout-category-mbos-kni-las-name = Laser Kit
 undecided-loadout-category-mbos-kni-las-description =
     A cache containing belongings of a Brotherhood chapter member.
@@ -268,14 +268,14 @@ undecided-loadout-category-mbos-kni-las-description =
     2 12.7mm pistol magazines, 1 roll of gauze, 1 stimpak,
     and 1 K ration MRE.
 
-# Misfits Tweak: Removed rank prefix so the kit name is role-neutral.
+#Misfits Tweak: Removed rank prefix so the kit name is role-neutral.
 undecided-loadout-category-mbos-kni-bal-name = Carbine Kit
 undecided-loadout-category-mbos-kni-bal-description =
     A cache containing belongings of a Brotherhood chapter member.
     Includes 1 old carbine, 3 5.56 magazines, 1 AEP-7, 2 energy
     cells, 1 roll of gauze, 1 stimpak, and 1 K ration MRE.
 
-# Misfits Tweak: Removed rank prefix so the kit name is role-neutral.
+#Misfits Tweak: Removed rank prefix so the kit name is role-neutral.
 undecided-loadout-category-mbos-scribe-medic-name = Medical Kit
 undecided-loadout-category-mbos-scribe-medic-description =
     A cache containing belongings of a Brotherhood chapter member.
@@ -283,7 +283,7 @@ undecided-loadout-category-mbos-scribe-medic-description =
     1 health analyzer, 1 stack of ointment, 1 super stimpak,
     1 sterile mask, 1 roll of gauze, and 1 K ration MRE.
 
-# Misfits Tweak: Removed rank prefix so the kit name is role-neutral.
+#Misfits Tweak: Removed rank prefix so the kit name is role-neutral.
 undecided-loadout-category-mbos-scribe-field-name = Field Kit
 undecided-loadout-category-mbos-scribe-field-description =
     A cache containing belongings of a Brotherhood chapter member.
@@ -291,7 +291,7 @@ undecided-loadout-category-mbos-scribe-field-description =
     1 field coat, 1 Brotherhood webbing, 1 stack of ointment,
     1 roll of gauze, and 1 K ration MRE.
 
-# Misfits Tweak: Removed rank prefix so the kit name is role-neutral.
+#Misfits Tweak: Removed rank prefix so the kit name is role-neutral.
 undecided-loadout-category-mbos-scribe-engineer-name = Engineer Kit
 undecided-loadout-category-mbos-scribe-engineer-description =
     A cache containing belongings of a Brotherhood chapter member.
@@ -299,8 +299,8 @@ undecided-loadout-category-mbos-scribe-engineer-description =
     1 filled utility belt, 1 stack of ointment,
     1 welding goggles, 1 roll of gauze, and 1 K ration MRE.
 
-# Misfits Change /Tweak/: Paladin laser kit replaced with auto shotgun + laser pistol sidearm.
-# Misfits Tweak: Removed rank prefix so the kit name is role-neutral.
+#Misfits Change /Tweak/: Paladin laser kit replaced with auto shotgun + laser pistol sidearm.
+#Misfits Tweak: Removed rank prefix so the kit name is role-neutral.
 undecided-loadout-category-mbos-pal-las-name = Shotgun Kit
 undecided-loadout-category-mbos-pal-las-description =
     A cache containing belongings of a Brotherhood chapter member.
@@ -308,14 +308,14 @@ undecided-loadout-category-mbos-pal-las-description =
     2 energy cells, 1 roll of gauze, 1 stimpak,
     and 1 K ration MRE.
 
-# Misfits Tweak: Removed rank prefix so the kit name is role-neutral.
+#Misfits Tweak: Removed rank prefix so the kit name is role-neutral.
 undecided-loadout-category-mbos-pal-bal-name = Ballistic Kit
 undecided-loadout-category-mbos-pal-bal-description =
     A cache containing belongings of a Brotherhood chapter member.
     Includes 1 assault carbine, 3 5.56 magazines, 1 AEP-7, 2 energy
     cells, 1 roll of gauze, 1 stimpak, and 1 K ration MRE.
 
-# Misfits Change /Tweak/: Replaced Wattz 2000 sniper with Bozar GRA across all ranks.
+#Misfits Change /Tweak/: Replaced Wattz 2000 sniper with Bozar GRA across all ranks.
 undecided-loadout-category-mbos-pal-sni-name = Advanced Laser Kit
 undecided-loadout-category-mbos-pal-sni-description =
     A cache containing belongings of a Brotherhood chapter member.
@@ -323,7 +323,7 @@ undecided-loadout-category-mbos-pal-sni-description =
     1 12.7mm pistol, 2 12.7mm pistol magazines, 1 roll of gauze,
     1 stimpak, and 1 K ration MRE.
 
-# Misfits Tweak: Removed rank prefix so the kit name is role-neutral.
+#Misfits Tweak: Removed rank prefix so the kit name is role-neutral.
 undecided-loadout-category-mbos-pal-pla-name = Automatic Laser Kit
 undecided-loadout-category-mbos-pal-pla-description =
     A cache containing belongings of a Brotherhood chapter member.
@@ -332,76 +332,76 @@ undecided-loadout-category-mbos-pal-pla-description =
     and 1 K ration MRE.
 
 
-# Misfits Change /Comment-out/: Washington BoS kit locale removed — will create new prototypes.
+#Misfits Change /Comment-out/: Washington BoS kit locale removed — will create new prototypes.
 ## Washington Kits
 #
-# undecided-loadout-category-wbos-init-pla-name = Initiate Laser Kit
-# undecided-loadout-category-wbos-init-pla-description =
+#undecided-loadout-category-wbos-init-pla-name = Initiate Laser Kit
+#undecided-loadout-category-wbos-init-pla-description =
 #    A cache containing belongings of a Brotherhood Initiate.
 #    Includes 1 crude laser rifle, 3 microfusion cells, 1 Webley pistol,
 #    2 9mm pistol magazines, 1 roll of gauze, and 1 K ration MRE.
 #
-# undecided-loadout-category-wbos-init-bal-name = Initiate Ballistic Kit
-# undecided-loadout-category-wbos-init-bal-description =
+#undecided-loadout-category-wbos-init-bal-name = Initiate Ballistic Kit
+#undecided-loadout-category-wbos-init-bal-description =
 #    A cache containing belongings of a Brotherhood Initiate.
 #    Includes 1 old carbine, 3 5.56 magazines, 1 AEP-7, 2
 #    energy cells, 1 roll of gauze, and 1 K ration MRE.
 #
-# undecided-loadout-category-wbos-kni-pla-name = Knight Laser Kit
-# undecided-loadout-category-wbos-kni-pla-description =
+#undecided-loadout-category-wbos-kni-pla-name = Knight Laser Kit
+#undecided-loadout-category-wbos-kni-pla-description =
 #    A cache containing belongings of a Brotherhood Knight.
 #    Includes 1 laser rifle, 3 microfusion cells, 1 Webley pistol,
 #    2 9mm pistol magazines, 1 roll of gauze, 1 K ration MRE.
 #
-# undecided-loadout-category-wbos-kni-bal-name = Knight Ballistic Kit
-# undecided-loadout-category-wbos-kni-bal-description =
+#undecided-loadout-category-wbos-kni-bal-name = Knight Ballistic Kit
+#undecided-loadout-category-wbos-kni-bal-description =
 #    A cache containing belongings of a Brotherhood Knight.
 #    Includes 1 assault carbine, 3 5.56 magazines, 1 AEP-7,
 #    2 energy cells, 1 roll of gauze, and 1 K ration MRE.
 #
-# undecided-loadout-category-wbos-scribe-medic-name = Scribe Medical Kit
-# undecided-loadout-category-wbos-scribe-medic-description =
+#undecided-loadout-category-wbos-scribe-medic-name = Scribe Medical Kit
+#undecided-loadout-category-wbos-scribe-medic-description =
 #    A cache containing belongings of a Brotherhood Scribe.
 #    Includes 1 AEP-7, 2 energy cells, 1 pair of nitrile gloves,
 #    1 medical robe, 1 filled medical belt, 1 stack of ointment, 1
 #    super stimpak, 1 sterile mask, 1 roll of gauze, and 1 K ration MRE.
 #
-# undecided-loadout-category-wbos-scribe-field-name = Scribe Field Kit
-# undecided-loadout-category-wbos-scribe-field-description =
+#undecided-loadout-category-wbos-scribe-field-name = Scribe Field Kit
+#undecided-loadout-category-wbos-scribe-field-description =
 #    A cache containing belongings of a Brotherhood Scribe.
 #    Includes 1 AEP-7, 2 energy cells, 1 pair of combat gloves,
 #    1 field coat, 1 Brotherhood webbing, 1 stack of ointment,
 #    1 roll of gauze, and 1 K ration MRE.
 #
-# undecided-loadout-category-wbos-scribe-engineer-name = Scribe Engineer Kit
-# undecided-loadout-category-wbos-scribe-engineer-description =
+#undecided-loadout-category-wbos-scribe-engineer-name = Scribe Engineer Kit
+#undecided-loadout-category-wbos-scribe-engineer-description =
 #    A cache containing belongings of a Brotherhood Scribe.
 #    Includes 1 AEP-7, 2 energy cells, 1 pair of insulated gloves,
 #    1 technical vest, 1 filled utility belt, 1 stack of ointment,
 #    1 welding goggles, 1 roll of gauze, and 1 K ration MRE.
 #
-# undecided-loadout-category-wbos-pal-pla-name = Paladin Automatic Laser Kit
-# undecided-loadout-category-wbos-pal-pla-description =
+#undecided-loadout-category-wbos-pal-pla-name = Paladin Automatic Laser Kit
+#undecided-loadout-category-wbos-pal-pla-description =
 #    A cache containing belongings of a Brotherhood Paladin.
 #    Includes 1 automatic laser rifle, 3 high-capacity power cells,
 #    1 Webley pistol, 2 9mm pistol magazines, 1 roll of gauze,
 #    1 stimpak and 1 K ration MRE.
 #
-# undecided-loadout-category-wbos-pal-bal-name = Paladin Ballistic Kit
-# undecided-loadout-category-wbos-pal-bal-description =
+#undecided-loadout-category-wbos-pal-bal-name = Paladin Ballistic Kit
+#undecided-loadout-category-wbos-pal-bal-description =
 #    A cache containing belongings of a Brotherhood Paladin.
 #    Includes 1 assault carbine, 3 5.56 magazines, 1 AEP-7,
 #    2 energy cells, 1 roll of gauze, 1 stimpak, and 1 K ration MRE.
 #
-# undecided-loadout-category-wbos-pal-sni-name = Paladin Sniper Kit
-# undecided-loadout-category-wbos-pal-sni-description =
+#undecided-loadout-category-wbos-pal-sni-name = Paladin Sniper Kit
+#undecided-loadout-category-wbos-pal-sni-description =
 #    A cache containing belongings of a Brotherhood Paladin.
 #    Includes 1 F2 marksman rifle, 3 7.62 short magazines,
 #    1 AEP-7, 2 energy cells, 1 roll of gauze,
 #    1 stimpak, and 1 K ration MRE.
 #
-# undecided-loadout-category-wbos-pal-las-name = Paladin Laser Kit
-# undecided-loadout-category-wbos-pal-las-description =
+#undecided-loadout-category-wbos-pal-las-name = Paladin Laser Kit
+#undecided-loadout-category-wbos-pal-las-description =
 #    A cache containing belongings of a Brotherhood Paladin.
 #    Includes 1 AER-9, 3 microfusion cells, 1 AEP-7,
 #    2 energy cells, 1 roll of gauze, 1 stimpak, and 1 K ration MRE.

@@ -1,4 +1,4 @@
-# Misfits Change — Guidebook locale overrides
+#Misfits Change — Guidebook locale overrides
 guide-entry-rules = Server Rules
 guide-entry-nuclear14 = Misfits: Nuclear Wasteland
 

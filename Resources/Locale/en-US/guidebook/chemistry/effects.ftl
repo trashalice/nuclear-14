@@ -339,7 +339,7 @@ reagent-effect-guidebook-innoculate-zombie-infection =
         *[other] cure
     } an ongoing zombie infection, and provides immunity to future infections
 
-reagent-effect-guidebook-reduce-rotting =
+reagent-effect-guidebook-reduce-rotting = 
     { $chance ->
         [1] Regenerates
         *[other] regenerate
@@ -378,7 +378,7 @@ reagent-effect-guidebook-add-moodlet =
 
 reagent-effect-guidebook-purify-evil = Purifies evil powers
 
-# Misfits Change
+#Misfits Change
 reagent-effect-guidebook-add-to-solution-reaction =
     { $chance ->
         [1] Adds

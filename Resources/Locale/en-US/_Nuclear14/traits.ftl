@@ -103,14 +103,14 @@ trait-description-N14PetPigrat =
     Pigrats don't eat a lot and are common enough that it's easy to replace them, or you can protect them for their mutated cuteness.
     (The trait creates a ghost role for another player, there is guarantee that someone takes it.)
 
-trait-name-N14PetAnt = Muleant (Pet)
+trait-name-N14PetAnt = Muleant (Pet) 
 trait-description-N14PetAnt =
     You (might) have a giant ant that follows and obeys you.
     The company somehow domesticated a giant ant queen. Eventually this lead to you getting a loyal insect friend with bags on its back to carry your burdens.
     (The trait creates a ghost role for another player, there is guarantee that someone takes it.)
 
 trait-name-N14PetDog = Dog Companion
-trait-description-N14PetDog =
+trait-description-N14PetDog = 
     You (might) have a dog companion that follows and obeys you.
     You are followed along by a canine friend. It doesn't matter if you tamed it, or purchased it. It's a human's best friend!
     (The trait creates a ghost role for another player, there is guarantee that someone takes it.)
@@ -133,9 +133,9 @@ trait-description-N14PetDogMBoS =
     Your little buddy was taught tactics and has a vest to keep him safe. You might even be able to store stuff in it.
     (The trait creates a ghost role for another player, there is guarantee that someone takes it.)
 
-# Misfits Change /Comment-out/: Washington BoS pet traits removed — will create new prototypes.
-# trait-name-N14PetDogWBoS = Cybernetic Dog
-# trait-description-N14PetDogWBoS =
+#Misfits Change /Comment-out/: Washington BoS pet traits removed — will create new prototypes.
+#trait-name-N14PetDogWBoS = Cybernetic Dog
+#trait-description-N14PetDogWBoS =
 #    You (might) have a cybernetic canine that follows and obeys you.
 #    This dog is not your best friend, it's a mutilated killing machine. At least it's immune to radiation poisoning.
 #    (The trait creates a ghost role for another player, there is guarantee that someone takes it.)
@@ -152,9 +152,9 @@ trait-description-N14PetEyebotMBoS =
     It cannot carry stuff for you, but has a laser weapon and can play tunes from the town's frequency.
     (The trait creates a ghost role for another player, there is guarantee that someone takes it.)
 
-# Misfits Change /Comment-out/: Washington BoS eyebot trait removed — will create new prototypes.
-# trait-name-N14PetEyebotWBoS = Eyebot Follower
-# trait-description-N14PetEyebotWBoS =
+#Misfits Change /Comment-out/: Washington BoS eyebot trait removed — will create new prototypes.
+#trait-name-N14PetEyebotWBoS = Eyebot Follower
+#trait-description-N14PetEyebotWBoS =
 #    You (might) have an Eyebot that follows and obeys you.
 #    It cannot carry stuff for you, but has a laser weapon and can play tunes from the town's frequency.
 #    (The trait creates a ghost role for another player, there is guarantee that someone takes it.)
@@ -303,7 +303,7 @@ trait-description-N14ExtremeAugPaladin =
     On top of that you are able to communicate via an encoded language.
 
 trait-name-N14Pickpocket = Pickpocket
-trait-description-N14Pickpocket =
+trait-description-N14Pickpocket = 
     You are really good at taking people's things without consent. You steal from them faster and there is a chance it doesn't even get noticed.
 
 trait-name-N14Muted = Muted
