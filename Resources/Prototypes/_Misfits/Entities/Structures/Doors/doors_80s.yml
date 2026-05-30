@@ -1,7 +1,6 @@
 ﻿
 # head doors
 
-
 - type: entity
   parent: N14DoorWoodSlanted
   id: MisfitsDoorWoodSecureLocked80sHead
@@ -10,7 +9,7 @@
   - type: AccessReader
     access: [["80sHead"]]
   - type: Wires
-    layoutId: Ai
+    layoutId: AirlockCargo
 
 # regular access doors
 
