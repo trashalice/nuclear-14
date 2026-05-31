@@ -24,6 +24,7 @@ using Content.Shared.NPC;
 using Content.Shared.NPC.Components;
 using Content.Shared.NPC.Systems;
 using Content.Shared.Movement.Components;
+using Content.Shared.Pointing;
 using Content.Shared.Projectiles;
 using Content.Server.Weapons.Ranged.Events;
 using Content.Shared.Popups;
@@ -87,6 +88,7 @@ namespace Content.Server.NPC.Systems
             SubscribeLocalEvent<FollowerCommanderComponent, AttackAttemptEvent>(OnCommanderAttackAttempt);
             SubscribeLocalEvent<FollowerCommanderComponent, DamageChangedEvent>(OnCommanderDamaged);
             SubscribeLocalEvent<FollowerCommanderComponent, DisarmedEvent>(OnCommanderDisarmed);
+            SubscribeLocalEvent<FollowerCommanderComponent, AfterPointedAtEvent>(OnCommanderPointedAt);
             SubscribeLocalEvent<ProjectileComponent, AfterProjectileHitEvent>(OnCommanderProjectileHit);
             SubscribeLocalEvent<FollowerCommanderComponent, HitscanHitEntityEvent>(OnCommanderHitscanHit);
             SubscribeLocalEvent<RecruitedFollowerComponent, DamageChangedEvent>(OnFollowerDamaged);
@@ -820,6 +822,11 @@ namespace Content.Server.NPC.Systems
         private void OnCommanderDisarmed(Entity<FollowerCommanderComponent> ent, ref DisarmedEvent args)
         {
             IssueNeutralEscortTarget(ent.Owner, args.Source, "CommanderDisarmed");
+        }
+
+        private void OnCommanderPointedAt(Entity<FollowerCommanderComponent> ent, ref AfterPointedAtEvent args)
+        {
+            IssueNeutralEscortTarget(ent.Owner, args.Pointed, "CommanderPointed");
         }
 
         private void OnFollowerDamaged(Entity<RecruitedFollowerComponent> ent, ref DamageChangedEvent args)
