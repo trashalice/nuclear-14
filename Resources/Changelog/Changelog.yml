@@ -6243,3 +6243,12 @@ Entries:
   id: 5996
   time: '2026-05-31T22:39:32.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/641
+- author: pierow
+  changes:
+    - type: Add
+      message: >-
+        C-27's now can speak/understand Brotherhood Code/Latin/Chinese, and
+        understand (not speak) Tribal in addition.
+  id: 5997
+  time: '2026-05-31T23:38:57.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/652
