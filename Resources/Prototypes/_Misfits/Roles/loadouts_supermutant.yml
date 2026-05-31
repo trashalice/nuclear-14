@@ -17,6 +17,7 @@
         - SuperMutantNCRRanger
         - SuperMutantNCRTrooper
         - SuperMutantTribal
+        - SuperMutantFollowerDoctor
   items:
     - ClothingSuperMutantGladiatorLoincloth
 
@@ -36,6 +37,7 @@
         - SuperMutantNCRRanger
         - SuperMutantNCRTrooper
         - SuperMutantTribal
+        - SuperMutantFollowerDoctor
   items:
     - ClothingSuperMutantSkullHelmetTribal
 
@@ -55,6 +57,7 @@
         - SuperMutantNCRRanger
         - SuperMutantNCRTrooper
         - SuperMutantTribal
+        - SuperMutantFollowerDoctor
   items:
     - ClothingSuperMutantTribalGloves
 
@@ -74,6 +77,7 @@
         - SuperMutantNCRRanger
         - SuperMutantNCRTrooper
         - SuperMutantTribal
+        - SuperMutantFollowerDoctor
   items:
     - ClothingSuperMutantZootSuit
 
@@ -93,6 +97,7 @@
         - SuperMutantNCRRanger
         - SuperMutantNCRTrooper
         - SuperMutantTribal
+        - SuperMutantFollowerDoctor
   items:
     - ClothingSuperMutantZootHat
 
@@ -112,6 +117,7 @@
         - SuperMutantNCRRanger
         - SuperMutantNCRTrooper
         - SuperMutantTribal
+        - SuperMutantFollowerDoctor
   items:
     - ClothingSuperMutantZootBoot
 
@@ -131,6 +137,7 @@
         - SuperMutantNCRRanger
         - SuperMutantNCRTrooper
         - SuperMutantTribal
+        - SuperMutantFollowerDoctor
   items:
     - ClothingSuperMutantVaultSuit
 
@@ -150,6 +157,7 @@
         - SuperMutantNCRRanger
         - SuperMutantNCRTrooper
         - SuperMutantTribal
+        - SuperMutantFollowerDoctor
   items:
     - ClothingSuperMutantTribalLoincloth
 
@@ -170,6 +178,7 @@
         - SuperMutantNCRRanger
         - SuperMutantNCRTrooper
         - SuperMutantTribal
+        - SuperMutantFollowerDoctor
   items:
     - ClothingSuperMutantGladiatorArmor
 
@@ -215,6 +224,7 @@
         - SuperMutantNCRRanger
         - SuperMutantNCRTrooper
         - SuperMutantTribal
+        - SuperMutantFollowerDoctor
   items:
     - ClothingSuperMutantOutfitC
 
@@ -234,6 +244,7 @@
         - SuperMutantNCRRanger
         - SuperMutantNCRTrooper
         - SuperMutantTribal
+        - SuperMutantFollowerDoctor
   items:
     - ClothingSuperMutantGladiatorBoots
 
@@ -253,6 +264,7 @@
         - SuperMutantNCRRanger
         - SuperMutantNCRTrooper
         - SuperMutantTribal
+        - SuperMutantFollowerDoctor
   items:
     - ClothingSuperMutantGladiatorHelmet
 
@@ -272,6 +284,7 @@
         - SuperMutantNCRRanger
         - SuperMutantNCRTrooper
         - SuperMutantTribal
+        - SuperMutantFollowerDoctor
   items:
     - ClothingSuperMutantNeck
 
@@ -291,6 +304,7 @@
         - SuperMutantNCRRanger
         - SuperMutantNCRTrooper
         - SuperMutantTribal
+        - SuperMutantFollowerDoctor
   items:
     - ClothingSuperMutantNeckTrinket
 
@@ -310,5 +324,6 @@
         - SuperMutantNCRRanger
         - SuperMutantNCRTrooper
         - SuperMutantTribal
+        - SuperMutantFollowerDoctor
   items:
     - ClothingSuperMutantNeckCapeTribal
