@@ -6141,3 +6141,10 @@ Entries:
   id: 5989
   time: '2026-05-31T03:06:53.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/642
+- author: pierow
+  changes:
+    - type: Fix
+      message: SM Follower Armored Coat Suit Storage now works!
+  id: 5990
+  time: '2026-05-31T13:49:38.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/645
