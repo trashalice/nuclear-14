@@ -528,9 +528,9 @@
   description: A large Labcoat with a bulletproof vest inside.
   components:
   - type: Sprite
-    sprite: _Misfits/Clothing/SuperMutant/follower_armored_labcoat.rsi
+    sprite: _Misfits/Clothing/SuperMutant/follower_Armored_labcoat.rsi
   - type: Clothing
-    sprite: _Misfits/Clothing/SuperMutant/follower_armored_labcoat.rsi
+    sprite: _Misfits/Clothing/SuperMutant/follower_Armored_labcoat.rsi
   - type: Tag
     tags:
     - SuperMutantWearable
