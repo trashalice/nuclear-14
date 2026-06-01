@@ -198,3 +198,37 @@
   - type: GrantShadowStrike
     soundOnUse:
       path: /Audio/Items/Handling/book_pickup.ogg
+
+# Eighties riding manual - grants the Riding trait. Admin-spawn only.
+- type: entity
+  name: "Eighties motorcycle riding manual"
+  id: TrainingManualEightiesRider
+  parent: BaseItem
+  description: "A grease-stained Eighties booklet full of road signs, clutch diagrams, and hard-earned advice on keeping a wasteland motorcycle upright when the road turns ugly."
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/books.rsi
+    layers:
+    - state: paper
+    - state: cover_base
+      color: "#245C91"
+    - state: decor_wingette
+      color: "#D9B44A"
+    - state: icon_text
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+      - Book
+  - type: EmitSoundOnPickup
+    sound: /Audio/SimpleStation14/Items/Handling/book_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/SimpleStation14/Items/Handling/book_drop.ogg
+  - type: GrantTrait
+    trait: N14RidingPerk
+    learnMessage: grant-trait-riding-learned
+    alreadyKnownMessage: grant-trait-riding-already-known
+    alreadyKnownComponents:
+      - type: RidingPerk
+    soundOnUse:
+      path: /Audio/Items/Handling/book_pickup.ogg

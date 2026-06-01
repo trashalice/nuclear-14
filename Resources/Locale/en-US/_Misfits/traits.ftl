@@ -41,8 +41,8 @@ trait-description-N14PetCentaur =
 
 trait-name-N14RidingPerk = Riding
 trait-description-N14RidingPerk =
-    You know how to saddle up wasteland pack animals.
-    Brahmin and brahdo will let you ride them instead of throwing a fit the moment you reach for the straps.
+    You know how to handle wasteland motorcycles.
+    Old engines, bad roads, and improvised frames are familiar enough that you can keep a bike moving without wrecking yourself.
 
 trait-name-LanguageTribalGeneral = Tribal Language
 trait-description-LanguageTribalGeneral = You can understand and speak the local Tribal language. Were you from the Tribe?

@@ -13,6 +13,7 @@
       volume: -6
   temperature: 400
   duration: 600
+  chance: 1
   visibilityClearRadius: 5
   visibilityClearBuffer: 2
   showMessage: true

@@ -35,6 +35,7 @@ public sealed class WeatherSystem : SharedWeatherSystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
 
     private const float WeatherEffectInterval = 1f;
+    private const string DefaultWeatherPrototype = "Default";
     private static readonly TimeSpan RandomWeatherMinDelay = TimeSpan.FromMinutes(30);
     private static readonly TimeSpan RandomWeatherMaxDelay = TimeSpan.FromMinutes(60);
     private static readonly TimeSpan RandomWeatherMinDuration = TimeSpan.FromMinutes(5);
@@ -58,6 +59,10 @@ public sealed class WeatherSystem : SharedWeatherSystem
             Loc.GetString("cmd-randomweather-desc"),
             Loc.GetString("cmd-randomweather-help"),
             RandomWeatherCommand);
+        _console.RegisterCommand("nextweather",
+            Loc.GetString("cmd-nextweather-desc"),
+            Loc.GetString("cmd-nextweather-help"),
+            NextWeatherCommand);
     }
 
     public override void Update(float frameTime)
@@ -70,7 +75,7 @@ public sealed class WeatherSystem : SharedWeatherSystem
             return;
         }
 
-        if (WeatherRunning())
+        if (WeatherEventRunning())
         {
             _nextRandomWeatherTime = null;
             return;
@@ -224,13 +229,16 @@ public sealed class WeatherSystem : SharedWeatherSystem
         return CanWeatherAffect(gridUid, grid, tile, roof);
     }
 
-    private bool WeatherRunning()
+    private bool WeatherEventRunning()
     {
         var query = EntityQueryEnumerator<WeatherComponent>();
-        while (query.MoveNext(out var uid, out var comp))
+        while (query.MoveNext(out _, out var comp))
         {
-            if (comp.Weather.Count > 0)
+            foreach (var (protoId, _) in comp.Weather)
             {
+                if (protoId == DefaultWeatherPrototype)
+                    continue;
+
                 return true;
             }
         }
@@ -301,6 +309,71 @@ public sealed class WeatherSystem : SharedWeatherSystem
         {
             shell.WriteLine($"Picked {weather.ID} to run on map {map}");
         }
+    }
+
+    [AdminCommand(AdminFlags.Admin)]
+    private void NextWeatherCommand(IConsoleShell shell, string argStr, string[] args)
+    {
+        if (!_config.GetCVar(CCVars.AutoWeather))
+        {
+            shell.WriteLine(Loc.GetString("cmd-nextweather-auto-disabled"));
+            return;
+        }
+
+        if (_gameTicker.RunLevel != GameRunLevel.InRound)
+        {
+            shell.WriteLine(Loc.GetString("cmd-nextweather-not-in-round"));
+            return;
+        }
+
+        if (TryWriteActiveWeather(shell))
+            return;
+
+        if (_nextRandomWeatherTime == null)
+            ScheduleNextRandomWeather();
+
+        if (_nextRandomWeatherTime is not { } nextWeatherTime)
+        {
+            shell.WriteLine(Loc.GetString("cmd-nextweather-not-scheduled"));
+            return;
+        }
+
+        var remaining = nextWeatherTime - Timing.CurTime;
+        if (remaining < TimeSpan.Zero)
+            remaining = TimeSpan.Zero;
+
+        shell.WriteLine(Loc.GetString("cmd-nextweather-scheduled",
+            ("time", FormatWeatherTime(remaining))));
+    }
+
+    private bool TryWriteActiveWeather(IConsoleShell shell)
+    {
+        var found = false;
+        var query = EntityQueryEnumerator<WeatherComponent>();
+        while (query.MoveNext(out _, out var comp))
+        {
+            foreach (var (protoId, data) in comp.Weather)
+            {
+                if (protoId == DefaultWeatherPrototype)
+                    continue;
+
+                found = true;
+                var ending = data.EndTime == null
+                    ? Loc.GetString("cmd-nextweather-active-indefinite")
+                    : Loc.GetString("cmd-nextweather-active-ending",
+                        ("time", FormatWeatherTime(data.EndTime.Value - Timing.CurTime)));
+
+                shell.WriteLine(Loc.GetString("cmd-nextweather-active",
+                    ("weather", protoId),
+                    ("state", data.State),
+                    ("ending", ending)));
+            }
+        }
+
+        if (found)
+            shell.WriteLine(Loc.GetString("cmd-nextweather-active-note"));
+
+        return found;
     }
 
     private (WeatherPrototype?, MapId) SetRandomWeather()
@@ -378,6 +451,20 @@ public sealed class WeatherSystem : SharedWeatherSystem
             curr += proto.Chance;
         }
         return null;
+    }
+
+    private static string FormatWeatherTime(TimeSpan time)
+    {
+        if (time < TimeSpan.Zero)
+            time = TimeSpan.Zero;
+
+        if (time.TotalHours >= 1)
+            return $"{(int) time.TotalHours}h {time.Minutes}m {time.Seconds}s";
+
+        if (time.TotalMinutes >= 1)
+            return $"{time.Minutes}m {time.Seconds}s";
+
+        return $"{time.Seconds}s";
     }
 
     private CompletionResult WeatherCompletion(IConsoleShell shell, string[] args)
