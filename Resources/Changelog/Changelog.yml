@@ -6296,3 +6296,16 @@ Entries:
   id: 6001
   time: '2026-06-01T01:47:05.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/644
+- author: Lucky
+  changes:
+    - type: Tweak
+      message: Moved the FotA building away from the front and to the east of town.
+    - type: Tweak
+      message: More 80s building.
+    - type: Tweak
+      message: >-
+        NCR: Chem doors are medic locked, a part of the training grounds made
+        way for some brahmin and a chicken.
+  id: 6002
+  time: '2026-06-01T19:55:40.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/656
