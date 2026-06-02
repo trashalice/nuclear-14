@@ -6357,3 +6357,10 @@ Entries:
   id: 6006
   time: '2026-06-02T00:18:08.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/660
+- author: pierow
+  changes:
+    - type: Tweak
+      message: Changes .308 Clip Size from 1x2 to 1x1 (and adds description)
+  id: 6007
+  time: '2026-06-02T01:35:24.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/659
