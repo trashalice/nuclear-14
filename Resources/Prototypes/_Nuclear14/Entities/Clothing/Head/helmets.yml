@@ -669,6 +669,9 @@
   - type: Clothing
     sprite: _Nuclear14/Clothing/Head/FalloutHelmets/falloutradsuit.rsi
   - type: IdentityBlocker
+  - type: BreathMask
+  - type: GasFilterMask
+  - type: IngestionBlocker
   - type: Armor
     modifiers:
       coefficients:

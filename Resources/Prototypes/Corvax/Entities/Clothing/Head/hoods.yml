@@ -40,6 +40,9 @@
   - type: Clothing
     sprite: Corvax/Clothing/Head/Hoods/enclavehelmetrad.rsi
   - type: IdentityBlocker
+  - type: BreathMask
+  - type: GasFilterMask
+  - type: IngestionBlocker
   - type: Armor
     modifiers:
       coefficients:

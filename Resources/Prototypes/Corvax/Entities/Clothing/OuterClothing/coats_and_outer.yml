@@ -32,6 +32,9 @@
       coefficients:
         Heat: 0.90
         Radiation: 0.001
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 1
   - type: ToggleableClothing
     clothingPrototype: N14ClothingHeadHatHelmetRadHelmetEnclave
     slot: head
