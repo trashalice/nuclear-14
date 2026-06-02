@@ -6364,3 +6364,10 @@ Entries:
   id: 6007
   time: '2026-06-02T01:35:24.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/659
+- author: Bradysgaming
+  changes:
+    - type: Add
+      message: Added Mars
+  id: 6008
+  time: '2026-06-02T20:08:33.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/663
