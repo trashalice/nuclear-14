@@ -297,6 +297,32 @@
       - state: green
       - state: slave
 
+- type: entity
+  id: SpawnPointCaesarLegionCitizen
+  parent: SpawnPointJobBase
+  name: Legion civilian
+  components:
+  - type: SpawnPoint
+    job_id: CaesarLegionCitizen
+  - type: Sprite
+    sprite: Corvax/Markers/jobs.rsi
+    layers:
+      - state: green
+      - state: slave
+
+- type: entity
+  id: SpawnPointCaesarLegionTrader
+  parent: SpawnPointJobBase
+  name: Legion trader
+  components:
+  - type: SpawnPoint
+    job_id: CaesarLegionTrader
+  - type: Sprite
+    sprite: Corvax/Markers/jobs.rsi
+    layers:
+      - state: green
+      - state: slave
+
 #Misfits Change /Comment-out/: Washington BoS Corvax spawner removed — job no longer exists.
 #- type: entity
 #  id: SpawnPointBoSMidSerf

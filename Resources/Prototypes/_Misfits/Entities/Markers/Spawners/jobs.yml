@@ -1083,3 +1083,27 @@
     sprite: Corvax/Markers/jobs.rsi
     layers:
       - state: green
+
+- type: entity
+  parent: SpawnPointJobBase
+  id: MisfitsSpawnPointNCRCitizen
+  name: NCR Citizen
+  components:
+  - type: SpawnPoint
+    job_id: NCRCitizen
+  - type: Sprite
+    sprite: Corvax/Markers/jobs.rsi
+    layers:
+      - state: green
+
+- type: entity
+  parent: SpawnPointJobBase
+  id: MisfitsSpawnPointNCRTrader
+  name: NCR Trader
+  components:
+  - type: SpawnPoint
+    job_id: NCRTrader
+  - type: Sprite
+    sprite: Corvax/Markers/jobs.rsi
+    layers:
+      - state: green

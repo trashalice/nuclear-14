@@ -53,6 +53,8 @@
         - NCRPrivateFirstClass
         - NCRSoldier
         - NCRCadet
+        - NCRCitizen
+        - NCRTrader
 #        - CaravanGuard
         #- BoSWashingtonCommander #Misfits Change /Comment-out/: Washington BoS removed
         #- BoSWashingtonPaladin
@@ -80,6 +82,8 @@
         - CaesarLegionLegionnaireRecruit
         - CaesarLegionHoundmaster
         - CaesarLegionAuxilia
+        - CaesarLegionCitizen
+        - CaesarLegionTrader
         # #Misfits Change: CaesarLegionRecruit removed — Legionnaire covers entry-level.
         # Forge-Change-End
         - VaultSecurity

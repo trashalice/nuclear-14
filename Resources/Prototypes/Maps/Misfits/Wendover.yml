@@ -79,6 +79,8 @@
           NCRSoldier: [ 4, 4 ]
           NCRCadet: [ 7, 7 ]
           NCRPisoner : [ 2, 2 ]
+          NCRCitizen : [ 4, 4 ]
+          NCRTrader : [ 1, 1 ]
           NCRMilitaryPoliceSergeant: [ 1, 1 ]
           NCRMilitaryPoliceRecruit: [ 2, 2 ]
           NCRMilitaryPoliceCaptain: [ 1, 1 ]
@@ -126,6 +128,8 @@
           CaesarLegionHoundmaster: [ 1, 1 ] # Forge-Legion
           # #Misfits Change: CaesarLegionRecruit slot removed — CaesarLegionLegionnaireRecruit (line 103) already covers entry-level.
           CaesarLegionAuxilia: [ 4, 4 ] # #Misfits Change - activated
+          CaesarLegionCitizen: [ 4, 4 ] #
+          CaesarLegionTrader: [ 1, 1 ] # 
           CaesarLegionSlave: [ 4, 4 ] # Forge-Legion
           # #Misfits Change - Khan removed (deactivated); Eighties expanded to 5-rank department.
           EightiesTheBlock:  [ 0, 0 ] # leader, 1 slot. set to 1 when ready.

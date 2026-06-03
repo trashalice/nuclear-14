@@ -40,6 +40,10 @@ job-description-caesar-legion-priestess-of-mars = Serve as a sacred woman of the
 # #Misfits Change: Legion Recruit removed — replaced by Legionnaire as the entry-level rank.
 # job-name-caesar-legion-recruit = Legion Recruit
 # job-description-caesar-legion-recruit = Enter the Legion at its lowest free rank and prove you deserve to join the legionaries.
+job-name-caesar-legion-citizen = Legion Civilian
+job-description-ceasar-legion-citizen = You are a citizen of a tribute town within Caesar's Legion. you follow legion law and Mars, but are neither a slave nor a Legionary.
+job-name-caesar-legion-trader = Legion Trader
+job-description-ceasar-legion-trader = you are a caravaneer who works with and in Legion Territory. its always been safer than the NCR routes.
 job-name-caesar-legion-slave = Legion Slave
 job-description-caesar-legion-slave = You are a slave of Caesar's Legion. Obey, survive, and remember that your life belongs to your masters.
 

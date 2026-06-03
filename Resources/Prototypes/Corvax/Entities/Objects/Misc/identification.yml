@@ -39,6 +39,44 @@
 
 - type: entity
   parent: N14IDPassportBlank
+  id: N14IDLegionaryBadgeCitizen
+  name: Distinctive Sign
+  description: "A Sign of the red bull, this one is given to Citizen's of Legion Tribute towns. protecting them from slavery and allowing them to travel in Legion lands."
+  components:
+  - type: Sprite
+    sprite: Corvax/Objects/Misc/identification.rsi
+    state: sign
+  - type: IdCard # #Misfits Add - display "medallion" instead of default "ID card"
+    nameLocId: n14-id-medallion-name
+    fullNameLocId: n14-id-medallion-full-name
+  - type: PresetIdCard
+    job: CaesarLegionCitizen
+  #Misfits Add - IdCardLegion enables this badge to appear on the Centurion's tactical map terminal
+  - type: Tag
+    tags:
+    - IdCardLegion
+
+- type: entity
+  parent: N14IDPassportBlank
+  id: N14IDLegionaryBadgeTrader
+  name: Distinctive Sign
+  description: "A Sign of the red bull, this one is given to Caravaneers that trade in Legion lands."
+  components:
+  - type: Sprite
+    sprite: Corvax/Objects/Misc/identification.rsi
+    state: sign
+  - type: IdCard # #Misfits Add - display "medallion" instead of default "ID card"
+    nameLocId: n14-id-medallion-name
+    fullNameLocId: n14-id-medallion-full-name
+  - type: PresetIdCard
+    job: CaesarLegionTrader
+  #Misfits Add - IdCardLegion enables this badge to appear on the Centurion's tactical map terminal
+  - type: Tag
+    tags:
+    - IdCardLegion
+
+- type: entity
+  parent: N14IDPassportBlank
   id: N14IDLegionaryBadgeRecruit
   name: distinctive sign
   description: "The sign of a Legion recruit."

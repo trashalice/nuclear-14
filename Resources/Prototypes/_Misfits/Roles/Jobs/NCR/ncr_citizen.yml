@@ -1,0 +1,54 @@
+- type: job
+  id: NCRCitizen
+  setPreference: true
+  hideIfPlaytimeRequirementsNotMet: false # #Misfits Tweak - all jobs visible in selection
+  jobWhitelistBypassesRoleTimers: true # #Misfits Change
+  weight: 1
+  showBorder: true
+  overrideConsoleVisibility: true
+  canBeAntag: false
+  name: job-name-ncr-citizen 
+  description: job-description-ncr-citizen
+  playTimeTracker: NCRCitizen
+  requirements: # TEMP REMOVED - all requirements removed
+   # - !type:MinPlayersRequirement
+   #   min: 55
+    - !type:CharacterSpeciesRequirement
+      species:
+      - Human
+      - Ghoul
+      - GhoulGlowing
+   # - !type:CharacterOverallTimeRequirement
+   #   min: 3600
+  startingGear: NCRCitizenGear
+  icon: "JobIconNcrCadet"
+  supervisors: job-supervisors-ncr-prisoners
+  alwaysUseSpawner: true
+  access:
+  - NCR
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: NpcFactionMember
+        factions:
+          - Wastelander
+          - NCR
+
+- type: startingGear
+  id: NCRCitizenGear
+  equipment:
+    ears: MisfitsClothingHeadsetWastelandScrap
+    jumpsuit: N14ClothingUniformJumpsuitRags
+    back: N14ClothingBackpackHiking
+    shoes: N14ClothingShoesBlack
+    id: N14IDNCRPassportCitizen
+  innerClothingSkirt: N14ClothingUniformJumpskirtFalloutBlack
+  satchel: N14ClothingBackpackSatchelWastelanderFilled
+  duffelbag: N14ClothingBackpackDuffelFilled  
+  storage:
+    back:
+    - N14BoxPlasticFilledWastelander
+    
+
+- type: playTimeTracker
+  id: NCRCitizen

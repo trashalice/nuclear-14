@@ -1,0 +1,55 @@
+- type: job
+  id: CaesarLegionCitizen
+  setPreference: true
+  hideIfPlaytimeRequirementsNotMet: false # #Misfits Tweak - all jobs visible in selection
+  jobWhitelistBypassesRoleTimers: true # #Misfits Change
+  weight: 10
+  showBorder: true
+  name: job-name-caesar-legion-citizen
+  description: job-description-caesar-legion-citizen
+  playTimeTracker: CaesarLegionCitizen
+  requirements:
+  - !type:MinPlayersRequirement
+    min: 0
+  - !type:CharacterSpeciesRequirement
+    species:
+    - Human
+  - !type:CharacterOverallTimeRequirement
+    min: 0
+  startingGear: CaesarLegionCitizenGear
+  alwaysUseSpawner: true
+  icon: "JobIconlegionerRecruit"
+  supervisors: job-supervisors-caesar-legion-slave
+  canBeAntag: false
+  accessGroups:
+  - CaesarLegionSlave
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: NpcFactionMember
+        factions:
+          - Wastelander
+          - CaesarLegion
+      - type: ReplacementAccent
+        accent: latin
+  - !type:AddTraitSpecial
+    traits: [ LanguageLatin ]
+
+- type: startingGear
+  id: CaesarLegionCitizenGear
+  equipment:
+    ears: MisfitsClothingHeadsetWastelandScrap
+    jumpsuit: N14ClothingUniformJumpsuitRags
+    id: N14IDLegionaryBadgeCitizen
+    back: N14ClothingBackpackHiking
+    shoes: N14ClothingShoesBlack
+  innerClothingSkirt: N14ClothingUniformJumpskirtFalloutBlack
+  satchel: N14ClothingBackpackSatchelWastelanderFilled
+  duffelbag: N14ClothingBackpackDuffelFilled  # N14TODO: Trader bag
+  storage:
+    back:
+    - N14BoxPlasticFilledWastelander
+
+
+- type: playTimeTracker
+  id: CaesarLegionCitizen
