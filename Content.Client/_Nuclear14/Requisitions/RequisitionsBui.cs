@@ -943,7 +943,12 @@ public sealed class RequisitionsBui : BoundUserInterface
             foreach (var output in outputs)
             {
                 row.AddChild(new Control { MinWidth = 4 });
-                row.AddChild(MakeIcon(output.Id, 28));
+
+                var outputProto = output.Id;
+                var icon = MakeIcon(outputProto, 28);
+                icon.TooltipSupplier = _ => BuildCrateTooltip(outputProto);
+                icon.MouseFilter = Control.MouseFilterMode.Pass;
+                row.AddChild(icon);
             }
         }
 
