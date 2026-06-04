@@ -45,6 +45,7 @@
     back: N14ClothingBackpackExplorer # Corvax-Change
     shoes: N14ClothingBootsLeather
     id: N14IDBartenderTown
+    pocket1: DrinkShaker
   innerClothingSkirt: N14ClothingUniformJumpsuitBartenderAlt #placeholder
   satchel: N14ClothingBackpackSatchelWastelanderFilled
   duffelbag: N14ClothingBackpackDuffelFilled
