@@ -1,0 +1,380 @@
+- type: entity
+  id: N14ASRSAccountVault
+  parent: N14ASRSAccount
+  name: Vault-Tec requisitions account
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: RequisitionsAccount
+    group: Vault
+    startingBalance: 6000
+    gain: 25
+
+- type: entity
+  parent: N14BaseCargoElevator
+  id: N14CargoElevatorVault
+  suffix: Vault, Lowered
+  components:
+  - type: RequisitionsElevator
+    group: Vault
+    accountProto: N14ASRSAccountVault
+
+- type: entity
+  parent: N14BaseRequisitionsConsole
+  id: N14ASRSConsoleVault
+  name: Vault RobCo Supply Terminal
+  suffix: Vault
+  components:
+  - type: AccessReader
+    access: [ [ "VaultDweller" ] ]
+  - type: RequisitionsComputer
+    group: Vault
+    accountProto: N14ASRSAccountVault
+    acceptedCurrency: PrewarMoney
+    sellEntries:
+    - item: N14DrinkNukaColaEmpty
+      value: 5
+    bounties:
+    - id: VaultScrapGold
+      item: N14ScrapGold
+      amount: 15
+      rewardCrate: N14CrateRequisitionsVaultPipboy
+    categories:
+    - name: n14-requisitions-category-apparel
+      entries:
+      - cost: 200
+        crate: N14CrateRequisitionsVaultSuits
+      - cost: 200
+        crate: N14CrateRequisitionsVaultPacks
+    - name: n14-requisitions-category-equipment
+      entries:
+      - cost: 1500
+        stock: 3
+        crate: N14CrateRequisitionsVaultPipboy
+      - cost: 400
+        crate: N14CrateRequisitionsVaultPowerCells
+    - name: n14-requisitions-category-security
+      entries:
+      - cost: 1500
+        crate: N14CrateRequisitionsVaultSidearm
+      - cost: 1000
+        crate: N14CrateRequisitionsVaultSecArmor
+      - cost: 500
+        stock: 2
+        crate: N14CrateRequisitionsVaultLaser
+    - name: n14-requisitions-category-maintenance
+      entries:
+      - cost: 400
+        crate: N14CrateRequisitionsVaultTools
+    - name: n14-requisitions-category-medical
+      entries:
+      - cost: 800
+        crate: N14CrateRequisitionsVaultMedical
+      - cost: 800
+        crate: N14CrateRequisitionsVaultChems
+      - cost: 1000
+        crate: N14CrateRequisitionsVaultSurgical
+      - cost: 800
+        crate: N14CrateRequisitionsVaultMedkits
+    - name: n14-requisitions-category-provisions
+      entries:
+      - cost: 200
+        crate: N14CrateRequisitionsVaultProvisions
+      - cost: 200
+        crate: N14CrateRequisitionsVaultNuka
+      - cost: 200
+        crate: N14CrateRequisitionsVaultPizzaParty
+      - cost: 200
+        crate: N14CrateRequisitionsVaultCanned
+
+# Apparel
+- type: entity
+  parent: N14CrateRequisitions
+  id: N14CrateRequisitionsVaultSuits
+  name: vault jumpsuit crate
+  components:
+  - type: Icon
+    sprite: _Nuclear14/Structures/Storage/Crates/vaultstandard.rsi
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Storage/Crates/vaultstandard.rsi
+  - type: StorageFill
+    contents:
+    - id: N14ClothingUniformJumpsuitVault
+      amount: 4
+
+- type: entity
+  parent: N14CrateRequisitions
+  id: N14CrateRequisitionsVaultPacks
+  name: vault backpack crate
+  components:
+  - type: Icon
+    sprite: _Nuclear14/Structures/Storage/Crates/vaultstandard.rsi
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Storage/Crates/vaultstandard.rsi
+  - type: RequisitionsCrate
+    reward: 50
+  - type: StorageFill
+    contents:
+    - id: N14ClothingBackpackVaultBlue
+    - id: N14ClothingBackpackVaultGreen
+    - id: N14ClothingBackpackVaultOrange
+    - id: N14ClothingBackpackVaultRed
+
+# Equipment
+- type: entity
+  parent: N14CrateRequisitions
+  id: N14CrateRequisitionsVaultPipboy
+  name: Pip-Boy crate
+  components:
+  - type: Icon
+    sprite: _Nuclear14/Structures/Storage/Crates/vaultbig.rsi
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Storage/Crates/vaultbig.rsi
+  - type: RequisitionsCrate
+    reward: 50
+  - type: StorageFill
+    contents:
+    - id: N14Pipboy
+      amount: 1
+
+- type: entity
+  parent: N14CrateRequisitions
+  id: N14CrateRequisitionsVaultPowerCells
+  name: power cell crate
+  components:
+  - type: Icon
+    sprite: _Nuclear14/Structures/Storage/Crates/vaultstandard.rsi
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Storage/Crates/vaultstandard.rsi
+  - type: StorageFill
+    contents:
+    - id: N14PowerCellSmall
+      amount: 5
+
+# Security
+- type: entity
+  parent: N14CrateRequisitions
+  id: N14CrateRequisitionsVaultSidearm
+  name: security sidearm crate
+  components:
+  - type: Icon
+    sprite: _Nuclear14/Structures/Storage/Crates/armycrate.rsi
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Storage/Crates/armycrate.rsi
+  - type: RequisitionsCrate
+    reward: 50
+  - type: StorageFill
+    contents:
+    - id: N14WeaponPistol10mm
+      amount: 1
+    - id: N14MagazinePistol10mm
+      amount: 3
+
+- type: entity
+  parent: N14CrateRequisitions
+  id: N14CrateRequisitionsVaultSecArmor
+  name: security armor crate
+  components:
+  - type: Icon
+    sprite: _Nuclear14/Structures/Storage/Crates/armycrate.rsi
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Storage/Crates/armycrate.rsi
+  - type: RequisitionsCrate
+    reward: 50
+  - type: StorageFill
+    contents:
+    - id: N14ClothingOuterVaultSecVest
+    - id: N14ClothingHeadHatVaultRiot
+
+- type: entity
+  parent: N14CrateRequisitions
+  id: N14CrateRequisitionsVaultLaser
+  name: laser sidearm crate
+  components:
+  - type: Icon
+    sprite: _Nuclear14/Structures/Storage/Crates/armycrate.rsi
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Storage/Crates/armycrate.rsi
+  - type: RequisitionsCrate
+    reward: 50
+  - type: StorageFill
+    contents:
+    - id: N14WeaponLaserPistol
+      amount: 1
+    - id: N14MicrofusionCellRed
+      amount: 3
+
+# Maintenance
+- type: entity
+  parent: N14CrateRequisitions
+  id: N14CrateRequisitionsVaultTools
+  name: maintenance toolkit crate
+  components:
+  - type: Icon
+    sprite: _Nuclear14/Structures/Storage/Crates/vaultcrate.rsi
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Storage/Crates/vaultcrate.rsi
+  - type: StorageFill
+    contents:
+    - id: N14Wrench
+    - id: N14Screwdriver
+    - id: N14Multitool
+    - id: N14Welder
+    - id: N14Flashlight
+
+# Medical
+- type: entity
+  parent: N14CrateRequisitions
+  id: N14CrateRequisitionsVaultMedical
+  name: vault medical crate
+  components:
+  - type: Icon
+    sprite: _Nuclear14/Structures/Storage/Crates/medicalcrate.rsi
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Storage/Crates/medicalcrate.rsi
+  - type: RequisitionsCrate
+    reward: 50
+  - type: StorageFill
+    contents:
+    - id: N14Stimpak
+      amount: 5
+    - id: N14RadAwayBloodbag
+      amount: 3
+
+- type: entity
+  parent: N14CrateRequisitions
+  id: N14CrateRequisitionsVaultChems
+  name: chems crate
+  components:
+  - type: Icon
+    sprite: _Nuclear14/Structures/Storage/Crates/medicalcrate.rsi
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Storage/Crates/medicalcrate.rsi
+  - type: RequisitionsCrate
+    reward: 0
+  - type: StorageFill
+    contents:
+    - id: N14RadXPill
+      amount: 5
+    - id: N14BuffoutCanisterFilled
+    - id: N14MentatsCanisterFilled
+
+- type: entity
+  parent: N14CrateRequisitions
+  id: N14CrateRequisitionsVaultSurgical
+  name: surgical tools crate
+  components:
+  - type: Icon
+    sprite: _Nuclear14/Structures/Storage/Crates/medicalcrate.rsi
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Storage/Crates/medicalcrate.rsi
+  - type: RequisitionsCrate
+    reward: 50
+  - type: StorageFill
+    contents:
+    - id: N14Scalpel
+    - id: N14Hemostat
+    - id: N14Cautery
+    - id: N14Retractor
+    - id: N14BoneGel
+
+- type: entity
+  parent: N14CrateRequisitions
+  id: N14CrateRequisitionsVaultMedkits
+  name: medkit crate
+  components:
+  - type: Icon
+    sprite: _Nuclear14/Structures/Storage/Crates/medicalcrate.rsi
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Storage/Crates/medicalcrate.rsi
+  - type: RequisitionsCrate
+    reward: 50
+  - type: StorageFill
+    contents:
+    - id: N14MedkitFilled
+    - id: N14MedkitBruteFilled
+    - id: N14MedkitRadiationFilled
+
+# Provisions
+- type: entity
+  parent: N14CrateRequisitions
+  id: N14CrateRequisitionsVaultProvisions
+  name: vault provisions crate
+  components:
+  - type: Icon
+    sprite: _Nuclear14/Structures/Storage/Crates/vaultstandard.rsi
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Storage/Crates/vaultstandard.rsi
+  - type: RequisitionsCrate
+    reward: 50
+  - type: StorageFill
+    contents:
+    - id: DrinkWaterBottleFull
+      amount: 4
+    - id: N14DrinkNukaColaBottleFull
+      amount: 4
+
+- type: entity
+  parent: N14CrateRequisitions
+  id: N14CrateRequisitionsVaultNuka
+  name: Nuka-Cola variety crate
+  components:
+  - type: Icon
+    sprite: _Nuclear14/Structures/Storage/Crates/vaultstandard.rsi
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Storage/Crates/vaultstandard.rsi
+  - type: RequisitionsCrate
+    reward: 50
+  - type: StorageFill
+    contents:
+    - id: N14DrinkNukaCola
+    - id: N14DrinkNukaColaCherry
+    - id: N14DrinkNukaColaGrape
+    - id: N14DrinkNukaColaOrange
+    - id: N14DrinkNukaColaQuantum
+
+- type: entity
+  parent: N14CrateRequisitions
+  id: N14CrateRequisitionsVaultPizzaParty
+  name: pizza party crate
+  components:
+  - type: Icon
+    sprite: _Nuclear14/Structures/Storage/Crates/vaultstandard.rsi
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Storage/Crates/vaultstandard.rsi
+  - type: RequisitionsCrate
+    reward: 50
+  - type: StorageFill
+    contents:
+    - id: N14CookedFoodPizzaMargherita
+      amount: 2
+    - id: N14CookedFoodPizzaMeat
+      amount: 2
+    - id: N14CookedFoodPizzaVegetable
+      amount: 2
+    - id: N14CookedFoodPizzaMushroom
+      amount: 2
+    - id: N14DrinkNukaColaBottleFull
+      amount: 4
+    - id: ClothingHeadHatPartyRed
+    - id: ClothingHeadHatPartyYellow
+    - id: ClothingHeadHatPartyGreen
+    - id: ClothingHeadHatPartyBlue
+
+- type: entity
+  parent: N14CrateRequisitions
+  id: N14CrateRequisitionsVaultCanned
+  name: canned goods crate
+  components:
+  - type: Icon
+    sprite: _Nuclear14/Structures/Storage/Crates/vaultstandard.rsi
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Storage/Crates/vaultstandard.rsi
+  - type: RequisitionsCrate
+    reward: 50
+  - type: StorageFill
+    contents:
+    - id: N14FoodInstamash
+    - id: N14FoodBlamcomaccheese
+    - id: N14FoodCram
+    - id: N14FoodPorkBeans
+    - id: N14FoodSalisburysteak

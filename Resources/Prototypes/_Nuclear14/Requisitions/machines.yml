@@ -1,0 +1,142 @@
+- type: entity
+  parent: PaperCargoInvoice
+  id: N14PaperRequisitionInvoice
+  name: requisition invoice
+  components:
+  - type: RequisitionsInvoice
+
+- type: entity
+  id: N14ASRSAccount
+  name: requisitions account
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: RequisitionsAccount
+    startingBalance: 0
+    gain: 100
+    gainEvery: 60
+
+- type: entity
+  parent: CrateGenericSteel
+  id: N14CrateRequisitions
+  abstract: true
+  components:
+  - type: RequisitionsCrate
+    reward: 100
+
+- type: entity
+  parent: N14BaseComputer
+  id: N14BaseRequisitionsConsole
+  abstract: true
+  name: requisitions terminal
+  description: A terminal for ordering and selling supplies through the storage elevator.
+  components:
+  - type: ActivatableUI
+    key: enum.N14RequisitionsUIKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.N14RequisitionsUIKey.Key:
+        type: RequisitionsBui
+  - type: ActivatableUIRequiresAccess
+  - type: AccessReader
+    access: [ [ "Cargo" ] ]
+  - type: CargoSellBlacklist
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#b89f25"
+
+- type: entity
+  id: N14BaseCargoElevator
+  abstract: true
+  name: cargo elevator
+  suffix: Lowered
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    sprite: _Nuclear14/Effects/elevator.rsi
+    drawdepth: LowFloors
+    layers:
+    - state: supply_elevator_lowered
+      map: [ "enum.N14RequisitionsElevatorLayers.Base" ]
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-2.3,-2.3,2.3,2.3"
+        layer:
+        - MidImpassable
+        mask:
+        - ItemMask
+        density: 1000
+        hard: false
+  - type: Chasm
+  - type: StepTrigger
+    requiredTriggeredSpeed: 0
+    intersectRatio: 1
+    blacklist:
+      tags:
+      - Catwalk
+  - type: RequisitionsElevator
+  - type: CargoSellBlacklist
+  - type: WarpPoint
+    location: the pit
+
+- type: entity
+  id: N14ASRSRailing
+  name: retractable railing
+  description: That looks like it doesn't open easily.
+  suffix: Raised
+  components:
+  - type: Transform
+    anchored: false
+    noRot: false
+  - type: Sprite
+    sprite: _Nuclear14/Structures/railing.rsi
+    offset: 0,0.5
+    layers:
+    - state: raised
+      map: [ "enum.N14RequisitionsRailingLayers.Base" ]
+    noRot: true
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,-0.3"
+        layer:
+        - TableLayer
+        mask:
+        - TableMask
+        density: 1000
+  - type: Climbable
+  - type: RequisitionsRailing
+    mode: Raised
+  - type: CargoSellBlacklist
+
+- type: entity
+  id: N14ASRSGear
+  name: gear
+  description: ""
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    sprite: _Nuclear14/Structures/gear.rsi
+    layers:
+    - state: base
+      map: [ "enum.N14RequisitionsGearLayers.Base" ]
+  - type: RequisitionsGear
+  - type: CargoSellBlacklist
