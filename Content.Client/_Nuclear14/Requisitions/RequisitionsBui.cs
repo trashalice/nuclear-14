@@ -34,6 +34,7 @@ public sealed class RequisitionsBui : BoundUserInterface
     private RequisitionsComputerComponent? _state;
     private RequisitionsWindow? _window;
     private int? _selectedCategory;
+    private bool _confirmLower;
 
     public RequisitionsBui(EntityUid owner, Enum uiKey) : base(owner, uiKey)
     {
@@ -107,8 +108,6 @@ public sealed class RequisitionsBui : BoundUserInterface
         if (_window == null)
             return;
 
-        // The product list structure depends on the catalog, filters, and per-crate stock; the
-        // affordability/quantity state is refreshed cheaply on every pass.
         var search = _window.SearchBar.Text.Trim();
         var sig = $"{_selectedCategory}|{search}|{CategoriesSignature()}|{DictSignature(_state?.Purchased)}";
         if (RenderChanged("products", sig))
@@ -417,6 +416,7 @@ public sealed class RequisitionsBui : BoundUserInterface
 
         if (_state.Busy || _state.PlatformLowered is Preparing or Lowering or Raising)
         {
+            _confirmLower = false;
             _window.PlatformButton.Text = Loc.GetString("n14-requisitions-platform-busy");
             return;
         }
@@ -424,14 +424,18 @@ public sealed class RequisitionsBui : BoundUserInterface
         switch (_state.PlatformLowered)
         {
             case Lowered:
+                _confirmLower = false;
                 _window.PlatformButton.Text = Loc.GetString("n14-requisitions-platform-raise");
                 _window.PlatformButton.Disabled = false;
                 break;
             case Raised:
-                _window.PlatformButton.Text = Loc.GetString("n14-requisitions-platform-lower");
+                _window.PlatformButton.Text = _confirmLower
+                    ? Loc.GetString("n14-requisitions-platform-lower-confirm")
+                    : Loc.GetString("n14-requisitions-platform-lower");
                 _window.PlatformButton.Disabled = false;
                 break;
             default:
+                _confirmLower = false;
                 _window.PlatformButton.Text = Loc.GetString("n14-requisitions-platform-missing");
                 break;
         }
@@ -448,6 +452,13 @@ public sealed class RequisitionsBui : BoundUserInterface
                 SendMessage(new RequisitionsPlatformMsg(true));
                 break;
             case Raised:
+                if (_state.PlatformSaleValue > 0 && !_confirmLower)
+                {
+                    _confirmLower = true;
+                    _window!.PlatformButton.Text = Loc.GetString("n14-requisitions-platform-lower-confirm");
+                    return;
+                }
+                _confirmLower = false;
                 SendMessage(new RequisitionsPlatformMsg(false));
                 break;
         }

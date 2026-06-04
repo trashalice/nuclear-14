@@ -11,6 +11,7 @@ n14-requisitions-unlinked = [color=#cf2f2f][bold]● Not linked — no elevator 
 # Platform
 n14-requisitions-platform-raise = Raise platform
 n14-requisitions-platform-lower = Lower platform
+n14-requisitions-platform-lower-confirm = Confirm sell?
 n14-requisitions-platform-busy = Terminal is busy
 n14-requisitions-platform-missing = No platform
 

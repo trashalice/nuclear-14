@@ -18,14 +18,11 @@ namespace Content.Server._Nuclear14.Requisitions
 
         private void PrintInvoice(EntityUid requisitionOrder, EntityCoordinates coordinates, string paperwork)
         {
-            // Create a sheet of paper to write the order details on
-            // Order information sprinkled with flavor text
             var printedPaper = EntityManager.SpawnEntity(paperwork, coordinates);
 
             if (!TryComp<PaperComponent>(printedPaper, out var paper))
                 return;
 
-            // Generate random serial and lot number
             var serialNum = _random.Next(10000, 999999);
             var lotNum = _random.Next(10, 99);
 
@@ -33,16 +30,13 @@ namespace Content.Server._Nuclear14.Requisitions
             uint weight = 10;
             var contentList = new FormattedMessage();
 
-            // if its a crate
             if (TryComp(requisitionOrder, out ContainerManagerComponent? containerComp))
             {
-                // list order content
                 foreach (var container in containerComp.Containers.Values)
                 {
                     var entityIndex = 0;
                     var contentCount = container.ContainedEntities.Count;
 
-                    // Filter and count each entity type
                     var content = container.ContainedEntities.GroupBy(
                         item => MetaData(item).EntityName,
                         item => item,
@@ -60,7 +54,6 @@ namespace Content.Server._Nuclear14.Requisitions
 
                     foreach (var entity in content)
                     {
-                        // If its just the same name as the like the one on crate, ignore it.
                         if (entity.Name == orderName)
                             continue;
 
@@ -89,7 +82,6 @@ namespace Content.Server._Nuclear14.Requisitions
                 ("lot", lotNum),
                 ("serialNumber", $"{serialNum:000000}")), paper);
 
-            // attempt to attach the label to the item
             if (TryComp<PaperLabelComponent>(requisitionOrder, out var label))
             {
                 _slots.TryInsert(requisitionOrder, label.LabelSlot, printedPaper, null);
