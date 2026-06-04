@@ -87,7 +87,7 @@
   # Entry
   - NCRCadet             # NCR Recruit             | _Misfits/Roles/Jobs/NCR/ncr_recruit.yml
   # Special
-  - NCRPisoner           # NCR Prisoner            | _Misfits/Roles/Jobs/NCR/ncr_prisoner.yml
+  - NCRPrisoner           # NCR Prisoner            | _Misfits/Roles/Jobs/NCR/ncr_prisoner.yml
   - NCRCitizen           # NCR Citizen             | _Misfits/Roles/Jobs/NCR/ncr_citizen.yml # Misfits Add
   - NCRTrader            # NCR Trader              | _Misfits/Roles/Jobs/NCR/ncr_trader.yml # Misfits Add
   # Special roles outside the visible ladder (hidden from character creation):

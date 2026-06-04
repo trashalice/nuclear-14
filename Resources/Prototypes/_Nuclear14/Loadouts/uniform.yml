@@ -44,7 +44,7 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
 
 - type: loadout
   id: N14LoadoutUniformJumpsuitDetectiveAlt

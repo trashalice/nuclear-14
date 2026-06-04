@@ -272,17 +272,17 @@
 #      - state: inquisitor
 
 - type: entity
-  id: SpawnPointNCRPisoner
+  id: SpawnPointNCRPrisoner
   parent: SpawnPointJobBase
-  name: NCR Pisoner spawner
+  name: NCR Prisoner spawner
   components:
   - type: SpawnPoint
-    job_id: NCRPisoner
+    job_id: NCRPrisoner
   - type: Sprite
     sprite: Corvax/Markers/jobs.rsi
     layers:
       - state: green
-      - state: prisoner
+      - state: Prisoner
 
 - type: entity
   id: SpawnPointCaesarLegionSlave

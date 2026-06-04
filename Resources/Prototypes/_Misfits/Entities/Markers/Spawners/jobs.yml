@@ -540,7 +540,7 @@
   name: NCR Prisoner
   components:
   - type: SpawnPoint
-    job_id: NCRPisoner
+    job_id: NCRPrisoner
   - type: Sprite
     sprite: Corvax/Markers/jobs.rsi
     layers:

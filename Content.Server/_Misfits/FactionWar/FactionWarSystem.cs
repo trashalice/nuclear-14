@@ -86,7 +86,7 @@ public sealed class FactionWarSystem : EntitySystem
     /// <summary>Jobs that should never be auto-enlisted even if their faction is at war.</summary>
     private static readonly HashSet<string> AutoEnlistJobExemptions = new()
     {
-        "NCRPisoner",
+        "NCRPrisoner",
         "CaesarLegionSlave",
         "CaesarLegionFrumentarii"
     };

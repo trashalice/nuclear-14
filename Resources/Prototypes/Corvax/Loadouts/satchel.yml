@@ -13,7 +13,7 @@
       - Overseer
       - VaultDweller
       - VaultSecurity
-      - NCRPisoner
+      - NCRPrisoner
     - !type:CharacterItemGroupRequirement
       group: N14LodaoutBags
   items:
@@ -36,7 +36,7 @@
       - Overseer
       - VaultDweller
       - VaultSecurity
-      - NCRPisoner
+      - NCRPrisoner
     - !type:CharacterItemGroupRequirement
       group: N14LodaoutBags
   items:
@@ -55,7 +55,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
-      - NCRPisoner
+      - NCRPrisoner
     - !type:CharacterDepartmentRequirement
       inverted: true
       departments:
@@ -78,7 +78,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
-      - NCRPisoner
+      - NCRPrisoner
     - !type:CharacterDepartmentRequirement
       inverted: true
       departments:

@@ -79,7 +79,7 @@
           NCRPrivateFirstClass: [ 4, 4 ]
           NCRSoldier: [ 4, 4 ]
           NCRCadet: [ 7, 7 ]
-          NCRPisoner : [ 2, 2 ]
+          NCRPrisoner : [ 2, 2 ]
           NCRCitizen : [ 4, 4 ]
           NCRTrader : [ 1, 1 ]
           NCRMilitaryPoliceSergeant: [ 1, 1 ]

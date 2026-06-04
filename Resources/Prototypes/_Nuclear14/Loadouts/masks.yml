@@ -10,7 +10,7 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
   items:
     - ClothingMaskBat
 
@@ -26,7 +26,7 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
   items:
     - ClothingMaskBear
 
@@ -42,7 +42,7 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
   items:
     - ClothingMaskFox
 
@@ -58,7 +58,7 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
   items:
     - ClothingMaskBee
 
@@ -74,7 +74,7 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
   items:
     - ClothingMaskJackal
 
@@ -90,7 +90,7 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
   items:
     - ClothingMaskRat
 
@@ -106,7 +106,7 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
   items:
     - ClothingMaskRaven
 
@@ -124,7 +124,7 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
   items:
     - N14ClothingMaskWhiteBalaclava
 
@@ -142,6 +142,6 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
   items:
     - N14ClothingMaskBreather

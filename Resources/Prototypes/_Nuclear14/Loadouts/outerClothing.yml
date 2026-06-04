@@ -10,7 +10,7 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
   items:
     - ClothingOuterGhostSheet
 
@@ -26,7 +26,7 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
   items:
     - N14ClothingOuterJacketLettermanRed
 
@@ -42,7 +42,7 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
   items:
     - N14ClothingOuterJacketLettermanBrown
 
@@ -59,7 +59,7 @@
 #       jobs:
 #       - BoSMidSerf
 #       - CaesarLegionSlave
-#       - NCRPisoner
+#       - NCRPrisoner
 #   items:
 #     -  N14ClothingOuterConusrobe   # Forge-Change replacement with the fanatic version
 
@@ -75,7 +75,7 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
   items:
     -  N14ClothingOuterFlannelRed
 
@@ -91,7 +91,7 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
   items:
     -  N14ClothingOuterFlannelAqua
 
@@ -107,7 +107,7 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
   items:
     -  N14ClothingOuterFlannelBrown
 
@@ -127,7 +127,7 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
   items:
     -  N14ClothingOuterCoatFollowerLab
 
@@ -148,7 +148,7 @@
 #      jobs:
 #      - BoSMidSerf
 #      - CaesarLegionSlave
-#      - NCRPisoner
+#      - NCRPrisoner
 #  items:
 #    - N14ClothingOuterCoatWinterArmored
 #
@@ -169,7 +169,7 @@
 #      jobs:
 #      - BoSMidSerf
 #      - CaesarLegionSlave
-#      - NCRPisoner
+#      - NCRPrisoner
 #  items:
 #    - N14ClothingOuterBattlecoatCoat
 #
@@ -190,7 +190,7 @@
 #      jobs:
 #      - BoSMidSerf
 #      - CaesarLegionSlave
-#      - NCRPisoner
+#      - NCRPrisoner
 #  items:
 #    - N14ClothingOuterBattlecoatTan
 #
@@ -206,7 +206,7 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -230,7 +230,7 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
   items:
     - N14ClothingOuterCoatLeatherDuster
 
@@ -246,7 +246,7 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -266,7 +266,7 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
   items:
     - N14ClothingOuterCoatLeatherCoat
 
@@ -283,7 +283,7 @@
 #      jobs:
 #      - BoSMidSerf
 #      - CaesarLegionSlave
-#      - NCRPisoner
+#      - NCRPrisoner
 #  items:
 #    - N14ClothingOuterTownCoat
 #
@@ -304,7 +304,7 @@
 #      jobs:
 #      - BoSMidSerf
 #      - CaesarLegionSlave
-#      - NCRPisoner
+#      - NCRPrisoner
 #  items:
 #    - N14ClothingOuterTownMediumCoat
 #
@@ -325,7 +325,7 @@
 #      jobs:
 #      - BoSMidSerf
 #      - CaesarLegionSlave
-#      - NCRPisoner
+#      - NCRPrisoner
 #  items:
 #    - N14ClothingOuterLeatherArmor
 #
@@ -346,7 +346,7 @@
 #      jobs:
 #      - BoSMidSerf
 #      - CaesarLegionSlave
-#      - NCRPisoner
+#      - NCRPrisoner
 #  items:
 #    - N14ClothingOuterMetalArmor
 #
@@ -367,7 +367,7 @@
 #      jobs:
 #      - BoSMidSerf
 #      - CaesarLegionSlave
-#      - NCRPisoner
+#      - NCRPrisoner
 #  items:
 #    - N14ClothingOuterTribalArmor
 #
@@ -388,7 +388,7 @@
 #      jobs:
 #      - BoSMidSerf
 #      - CaesarLegionSlave
-#      - NCRPisoner
+#      - NCRPrisoner
 #  items:
 #    - N14ClothingOuterTribalArmorHeavy
 #
@@ -409,7 +409,7 @@
 #      jobs:
 #      - BoSMidSerf
 #      - CaesarLegionSlave
-#      - NCRPisoner
+#      - NCRPrisoner
 #  items:
 #    - N14ClothingOuterRaiderBadlands
 #
@@ -430,7 +430,7 @@
 #      jobs:
 #      - BoSMidSerf
 #      - CaesarLegionSlave
-#      - NCRPisoner
+#      - NCRPrisoner
 #  items:
 #    - N14ClothingOuterRaiderBlastmaster
 #
@@ -450,7 +450,7 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
   items:
     - N14ClothingOuterHarperCoat
 
@@ -474,7 +474,7 @@
 #      jobs:
 #      - BoSMidSerf
 #      - CaesarLegionSlave
-#      - NCRPisoner
+#      - NCRPrisoner
 #  items:
 #    - N14ClothingScavengerHeavyArmor
 #

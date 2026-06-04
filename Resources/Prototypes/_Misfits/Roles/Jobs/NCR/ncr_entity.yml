@@ -226,15 +226,15 @@
 
 - type: entity
   parent: N14MobHumanNCRCadet
-  id: N14MobHumanNCRPisoner
-  name: NCRPisoner
+  id: N14MobHumanNCRPrisoner
+  name: NCRPrisoner
   components:
     - type: Icon
       state: soldier
     - type: RandomHumanoidAppearance
       randomizeName: true
     - type: Loadout
-      prototypes: [NCRPisonerGear]
+      prototypes: [NCRPrisonerGear]
     - type: NpcFactionMember
       factions:
       - Wastelander

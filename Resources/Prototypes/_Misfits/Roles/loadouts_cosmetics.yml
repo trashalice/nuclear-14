@@ -20,7 +20,7 @@
       jobs:
         - BoSMidSerf
         - CaesarLegionSlave
-        - NCRPisoner
+        - NCRPrisoner
   items:
     - ClothingNeckDesertMask
 
@@ -37,7 +37,7 @@
       jobs:
         - BoSMidSerf
         - CaesarLegionSlave
-        - NCRPisoner
+        - NCRPrisoner
   items:
     - ClothingNeckRedScarf
 
@@ -54,7 +54,7 @@
       jobs:
         - BoSMidSerf
         - CaesarLegionSlave
-        - NCRPisoner
+        - NCRPrisoner
   items:
     - ClothingNeckBlueScarf
 
@@ -71,7 +71,7 @@
       jobs:
         - BoSMidSerf
         - CaesarLegionSlave
-        - NCRPisoner
+        - NCRPrisoner
   items:
     - ClothingNeckGreenScarf
 
@@ -88,7 +88,7 @@
       jobs:
         - BoSMidSerf
         - CaesarLegionSlave
-        - NCRPisoner
+        - NCRPrisoner
   items:
     - ClothingNeckOrangeScarf
 
@@ -105,7 +105,7 @@
       jobs:
         - BoSMidSerf
         - CaesarLegionSlave
-        - NCRPisoner
+        - NCRPrisoner
   items:
     - ClothingNeckBrownScarf
 
@@ -122,7 +122,7 @@
       jobs:
         - BoSMidSerf
         - CaesarLegionSlave
-        - NCRPisoner
+        - NCRPrisoner
   items:
     - ClothingNeckPatriotScarf
 
@@ -145,7 +145,7 @@
       jobs:
         - BoSMidSerf
         - CaesarLegionSlave
-        - NCRPisoner
+        - NCRPrisoner
   items:
     - N14ClothingNeckTownGuardMantle
 
@@ -163,7 +163,7 @@
       jobs:
         - BoSMidSerf
         - CaesarLegionSlave
-        - NCRPisoner
+        - NCRPrisoner
   items:
     - N14ClothingEyesGlassesPilot
 
@@ -181,7 +181,7 @@
       jobs:
         - BoSMidSerf
         - CaesarLegionSlave
-        - NCRPisoner
+        - NCRPrisoner
         - VaultDweller   # Vault gets their own gated version (N14LoadoutHandsGlovesDriver)
         - VaultSecurity
         - VaultEngineer
@@ -204,7 +204,7 @@
       jobs:
         - BoSMidSerf
         - CaesarLegionSlave
-        - NCRPisoner
+        - NCRPrisoner
   items:
     - N14ClothingHandsGlovesBlackBiker
 
@@ -220,7 +220,7 @@
       jobs:
         - BoSMidSerf
         - CaesarLegionSlave
-        - NCRPisoner
+        - NCRPrisoner
   items:
     - N14ClothingHandsGlovesBrownBiker
 
@@ -240,7 +240,7 @@
       jobs:
         - BoSMidSerf
         - CaesarLegionSlave
-        - NCRPisoner
+        - NCRPrisoner
   items:
     - N14ClothingHandsGlovesMountie
 
@@ -256,7 +256,7 @@
       jobs:
         - BoSMidSerf
         - CaesarLegionSlave
-        - NCRPisoner
+        - NCRPrisoner
         - VaultDweller
         - VaultEngineer
         - Overseer
@@ -275,7 +275,7 @@
 #      jobs:
 #        - BoSMidSerf
 #        - CaesarLegionSlave
-#        - NCRPisoner
+#        - NCRPrisoner
 #  items:
 #   - N14ClothingHandsGlovesNitrile
 
@@ -291,7 +291,7 @@
 #      jobs:
 #        - BoSMidSerf
 #        - CaesarLegionSlave
-#        - NCRPisoner
+#        - NCRPrisoner
 # items:
 #    - N14ClothingHandsGlovesNitrilePurple
 
@@ -311,7 +311,7 @@
       jobs:
         - BoSMidSerf
         - CaesarLegionSlave
-        - NCRPisoner
+        - NCRPrisoner
   items:
     - N14ClothingHandsGlovesPatrol
 
@@ -373,7 +373,7 @@
       jobs:
         - BoSMidSerf
         - CaesarLegionSlave
-        - NCRPisoner
+        - NCRPrisoner
   items:
     - N14ClothingEyesGlassesGoggles
 
@@ -393,7 +393,7 @@
       jobs:
         - BoSMidSerf
         - CaesarLegionSlave
-        - NCRPisoner
+        - NCRPrisoner
   items:
     - N14ClothingHeadHatWoodBoonie
 
@@ -411,7 +411,7 @@
       jobs:
         - BoSMidSerf
         - CaesarLegionSlave
-        - NCRPisoner
+        - NCRPrisoner
   items:
     - N14ClothingHeadHatWinterBoonie
 
@@ -429,7 +429,7 @@
       jobs:
         - BoSMidSerf
         - CaesarLegionSlave
-        - NCRPisoner
+        - NCRPrisoner
   items:
     - N14ClothingHeadHatDesertBoonie
 
@@ -447,7 +447,7 @@
       jobs:
         - BoSMidSerf
         - CaesarLegionSlave
-        - NCRPisoner
+        - NCRPrisoner
   items:
     - N14ClothingHeadHatArmyBeret
 
@@ -465,7 +465,7 @@
       jobs:
         - BoSMidSerf
         - CaesarLegionSlave
-        - NCRPisoner
+        - NCRPrisoner
   items:
     - N14ClothingHeadHatArmyBeretAirborne
 
@@ -483,7 +483,7 @@
       jobs:
         - BoSMidSerf
         - CaesarLegionSlave
-        - NCRPisoner
+        - NCRPrisoner
   items:
     - N14ClothingHeadHatArmyBeretSpecial
 
@@ -500,7 +500,7 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -808,7 +808,7 @@
       jobs:
         - BoSMidSerf
         - CaesarLegionSlave
-        - NCRPisoner
+        - NCRPrisoner
         - VaultDoctor
         - VaultSecurity
         - VaultEngineer
@@ -829,7 +829,7 @@
       jobs:
         - BoSMidSerf
         - CaesarLegionSlave
-        - NCRPisoner
+        - NCRPrisoner
   items:
     - N14ClothingBootsLeather
 

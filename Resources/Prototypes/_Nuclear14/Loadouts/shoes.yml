@@ -10,7 +10,7 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
   items:
     - N14ClothingShoesBlack
 
@@ -26,7 +26,7 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
   items:
     - N14ClothingShoesBrown
 
@@ -42,7 +42,7 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -62,7 +62,7 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
   items:
     - N14ClothingBootsCowboy
 
@@ -78,7 +78,7 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
   items:
     - N14ClothingBootsBlack
 
@@ -94,6 +94,6 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
   items:
     - N14ClothingBootsCombat

@@ -1,5 +1,5 @@
 - type: job
-  id: NCRPisoner
+  id: NCRPrisoner
   setPreference: true
   hideIfPlaytimeRequirementsNotMet: false # #Misfits Tweak - all jobs visible in selection
   jobWhitelistBypassesRoleTimers: true # #Misfits Change
@@ -19,7 +19,7 @@
       - Ghoul
    # - !type:CharacterOverallTimeRequirement
    #   min: 3600
-  startingGear: NCRPisonerGear
+  startingGear: NCRPrisonerGear
   icon: "JobIconNCRPrisoner"
   supervisors: job-supervisors-ncr-prisoners
   alwaysUseSpawner: true
@@ -34,7 +34,7 @@
           - NCR
 
 - type: startingGear
-  id: NCRPisonerGear
+  id: NCRPrisonerGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitPrisoner
     shoes: N14ClothingShoesBlack

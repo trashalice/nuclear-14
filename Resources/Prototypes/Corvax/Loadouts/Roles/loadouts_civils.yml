@@ -6,7 +6,7 @@
   requirements:
     - !type:CharacterJobRequirement
       jobs:
-        - NCRPisoner
+        - NCRPrisoner
     - !type:CharacterPlaytimeRequirement
       tracker: NCRPrisoner
       min: 72000 # 1200 minutes

@@ -10,7 +10,7 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
   items:
     - N14ClothingHeadHatBaseball
 
@@ -26,7 +26,7 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
   items:
     - N14ClothingHeadHatTrucker
 
@@ -42,7 +42,7 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
   items:
     - N14ClothingHeadHatBeanie
 
@@ -58,7 +58,7 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -78,7 +78,7 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -98,7 +98,7 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -118,7 +118,7 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
   items:
     - N14ClothingHeadHatArmyCap
 
@@ -134,7 +134,7 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
   items:
     - N14ClothingHeadHatCowboyGrey
 
@@ -150,7 +150,7 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
   items:
     - N14ClothingHeadHatCowboyGreyBanded
 
@@ -166,7 +166,7 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
   items:
     - N14ClothingHeadHatCowboyBrown
 
@@ -183,7 +183,7 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -204,7 +204,7 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:

@@ -386,7 +386,7 @@
     - !type:CharacterJobRequirement # Forge-Change
       inverted: true
       jobs:
-      - NCRPisoner
+      - NCRPrisoner
   functions:
     # #Misfits Fix - Use TraitSpawnEntity so multiple pet ghost roles can coexist
     - !type:TraitSpawnEntity

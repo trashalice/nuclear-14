@@ -208,7 +208,7 @@
       jobs:
       - BoSMidSerf
       - CaesarLegionSlave
-      - NCRPisoner
+      - NCRPrisoner
   items:
     - N14ClothingBeltUtilityFilled
 
@@ -263,6 +263,6 @@
 #      jobs:
 #      - BoSMidSerf
 #      - CaesarLegionSlave
-#      - NCRPisoner
+#      - NCRPrisoner
 #  items:
 #    - N14CurrencyCap100

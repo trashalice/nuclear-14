@@ -52,7 +52,7 @@
     node: bracelet
   - type: ClothingFactionAndRoleAdd
     faction: NCR
-    role: NCRPisoner
+    role: NCRPrisoner
 
 #Misfits Change /Comment-out/: BoS bandages removed — consolidated into _Misfits BoS structure.
 #MARK: BoS
