@@ -6443,3 +6443,21 @@ Entries:
   id: 6016
   time: '2026-06-04T02:43:28.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/684
+- author: paige404
+  changes:
+    - type: Add
+      message: >-
+        Added the Treyebot, a tribal eyebot pet available for tribe characters.
+        Its laser doesn't work anymore, but it's got a cool knife strapped to
+        it. Sprites by beepbopbopedy!
+    - type: Add
+      message: >-
+        Added Protectron Spirit-Tender, an agricultural robot that was adopted
+        and modified over generations by the tribe. It is now a valued shaman,
+        even if its medical treatments give you tetanus. Sprites by
+        beepbopbopedy!
+    - type: Fix
+      message: Eyebots are not longer made of meat.
+  id: 6017
+  time: '2026-06-04T13:27:02.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/688
