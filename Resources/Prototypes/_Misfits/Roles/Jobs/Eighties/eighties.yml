@@ -51,15 +51,12 @@
     head: N14ClothingHeadHatBeanie
     ears: MisfitsClothingHeadsetWastelandScrap
     back: N14ClothingBackpackMilitary
-    suitstorage: N14WeaponSMG45
-    pocket1: N14WeaponRevolver44TribalUpgraded
+    pocket1: EightiesTheBlockloadoutkits
+    pocket2: VehicleKeyMotorbike
     belt: ClothingBeltMilitary
   storage:
     back:
     - N14BoxPlasticFilledWastelander
-    belt:
-    - Magazine45SubMachineGun
-    - Magazine45SubMachineGun
 
 - type: playTimeTracker
   id: EightiesTheBlock
@@ -111,14 +108,12 @@
     head: N14ClothingHeadHatBeanie
     ears: MisfitsClothingHeadsetWastelandScrap
     back: N14ClothingBackpackMilitary
-    suitstorage: N14WeaponSMG45
+    pocket1: EightiesCylindersloadoutkits
+    pocket2: VehicleKeyMotorbike
     belt: ClothingBeltMilitary
   storage:
     back:
     - N14BoxPlasticFilledWastelander
-    belt:
-    - Magazine45SubMachineGun
-    - Magazine45SubMachineGun
 
 - type: playTimeTracker
   id: EightiesCylinders
@@ -169,14 +164,12 @@
     head: N14ClothingHeadHatBeanie
     ears: MisfitsClothingHeadsetWastelandScrap
     back: N14ClothingBackpackMilitary
-    suitstorage: N14WeaponSMG45
+    pocket1: EightiesPistonsloadoutkits
+    pocket2: VehicleKeyMotorbike
     belt: ClothingBeltMilitary
   storage:
     back:
     - N14BoxPlasticFilledWastelander
-    belt:
-    - Magazine45SubMachineGun
-    - Magazine45SubMachineGun
 
 - type: playTimeTracker
   id: EightiesPistons
@@ -227,14 +220,12 @@
     head: N14ClothingHeadHatBeanie
     ears: MisfitsClothingHeadsetWastelandScrap
     back: N14ClothingBackpackMilitary
-    suitstorage: N14WeaponSMG45
+    pocket1: EightiesOilersloadoutkits
+    pocket2: VehicleKeyMotorbike
     belt: ClothingBeltMilitary
   storage:
     back:
     - N14BoxPlasticFilledWastelander
-    belt:
-    - Magazine45SubMachineGun
-    - Magazine45SubMachineGun
 
 - type: playTimeTracker
   id: EightiesOilers
@@ -285,14 +276,12 @@
     head: N14ClothingHeadHatBeanie
     ears: MisfitsClothingHeadsetWastelandScrap
     back: N14ClothingBackpackMilitary
-    suitstorage: N14WeaponSMG45
+    pocket1: EightiesRoadRashloadoutkits
+    pocket2: VehicleKeyMotorbike
     belt: ClothingBeltMilitary
   storage:
     back:
     - N14BoxPlasticFilledWastelander
-    belt:
-    - Magazine45SubMachineGun
-    - Magazine45SubMachineGun
 
 - type: playTimeTracker
   id: EightiesRoadRash

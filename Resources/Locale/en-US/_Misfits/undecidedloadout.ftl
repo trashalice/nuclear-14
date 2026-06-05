@@ -777,3 +777,80 @@ undecided-loadout-category-misfits-priestess-order-desc =
     2 Bolas, a box of handcuffs, 2 muzzles.
     2 Collars, with keys, a police baton,
     2 K rations, and a ceramic flask.
+
+undecided-loadout-category-misfits-eighties-block-road-captain-name = Road Captain Kit
+undecided-loadout-category-misfits-eighties-block-road-captain-description =
+    Includes a .45 SMG with 4 magazines, an upgraded .44 revolver
+    with 2 speedloaders, a radio, 2 smoke grenades, Psycho,
+    a stimpak, gauze, and a flare.
+
+undecided-loadout-category-misfits-eighties-block-boss-brawler-name = Boss Brawler Kit
+undecided-loadout-category-misfits-eighties-block-boss-brawler-description =
+    Includes a sledgehammer, a .45 pistol with 4 magazines,
+    a frag grenade, a smoke grenade, Psycho, a stimpak,
+    gauze, and a flare.
+
+undecided-loadout-category-misfits-eighties-block-lead-foot-name = Lead Foot Kit
+undecided-loadout-category-misfits-eighties-block-lead-foot-description =
+    Includes a 10mm SMG with 4 magazines, a combat knife,
+    a radio, a smoke grenade, Psycho, a stimpak, gauze, and a flare.
+
+undecided-loadout-category-misfits-eighties-cylinders-tommy-name = Cylinders Tommy Kit
+undecided-loadout-category-misfits-eighties-cylinders-tommy-description =
+    Includes a .45 SMG with 3 magazines, a combat knife,
+    a smoke grenade, a stimpak, gauze, and a flare.
+
+undecided-loadout-category-misfits-eighties-cylinders-shotcaller-name = Cylinders Shotcaller Kit
+undecided-loadout-category-misfits-eighties-cylinders-shotcaller-description =
+    Includes an upgraded .44 revolver with 3 speedloaders,
+    a radio, 2 smoke grenades, Psycho, a stimpak, gauze, and a flare.
+
+undecided-loadout-category-misfits-eighties-cylinders-road-marshal-name = Cylinders Road Marshal Kit
+undecided-loadout-category-misfits-eighties-cylinders-road-marshal-description =
+    Includes a 10mm SMG with 3 magazines, a hatchet,
+    a smoke grenade, a stimpak, gauze, and a flare.
+
+undecided-loadout-category-misfits-eighties-pistons-skirmisher-name = Pistons Skirmisher Kit
+undecided-loadout-category-misfits-eighties-pistons-skirmisher-description =
+    Includes a pipe 10mm SMG with 3 magazines, a combat knife,
+    a stimpak, gauze, and a flare.
+
+undecided-loadout-category-misfits-eighties-pistons-scattergun-name = Pistons Scattergun Kit
+undecided-loadout-category-misfits-eighties-pistons-scattergun-description =
+    Includes a pump shotgun, a box of 12 gauge shells,
+    a hatchet, a stimpak, gauze, and a flare.
+
+undecided-loadout-category-misfits-eighties-pistons-blade-name = Pistons Blade Kit
+undecided-loadout-category-misfits-eighties-pistons-blade-description =
+    Includes a machete, a 9mm pistol with 3 magazines,
+    Psycho, a stimpak, gauze, and a flare.
+
+undecided-loadout-category-misfits-eighties-oilers-mechanic-name = Oilers Mechanic Kit
+undecided-loadout-category-misfits-eighties-oilers-mechanic-description =
+    Includes a filled mechanical toolbox, a pipe 10mm pistol
+    with 3 magazines, 2 flares, a stimpak, and gauze.
+
+undecided-loadout-category-misfits-eighties-oilers-firebug-name = Oilers Firebug Kit
+undecided-loadout-category-misfits-eighties-oilers-firebug-description =
+    Includes a sawed-off shotgun, a box of 12 gauge shells,
+    2 smoke grenades, 2 flares, a stimpak, and gauze.
+
+undecided-loadout-category-misfits-eighties-oilers-patch-name = Oilers Patch Kit
+undecided-loadout-category-misfits-eighties-oilers-patch-description =
+    Includes a 9mm pistol with 2 magazines, 2 stimpaks,
+    2 gauze packs, and a flare.
+
+undecided-loadout-category-misfits-eighties-road-rash-runner-name = Road Rash Runner Kit
+undecided-loadout-category-misfits-eighties-road-rash-runner-description =
+    Includes a 9mm pistol with 2 magazines, a combat knife,
+    a stimpak, gauze, and a flare.
+
+undecided-loadout-category-misfits-eighties-road-rash-scrapper-name = Road Rash Scrapper Kit
+undecided-loadout-category-misfits-eighties-road-rash-scrapper-description =
+    Includes a baseball bat, a pipe 10mm pistol with 2 magazines,
+    a stimpak, gauze, and a flare.
+
+undecided-loadout-category-misfits-eighties-road-rash-lookout-name = Road Rash Lookout Kit
+undecided-loadout-category-misfits-eighties-road-rash-lookout-description =
+    Includes a 9mm pistol, a box of 9mm ammo, a tribal knife,
+    a smoke grenade, 2 flares, a stimpak, and gauze.
