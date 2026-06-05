@@ -58,3 +58,16 @@
     sprite: _Nuclear14/Clothing/Neck/townrainmantle.rsi
   - type: StaticPrice
     price: 50
+
+- type: entity
+  parent: ClothingNeckBase
+  id: N14ClothingNeckROmantleNCR
+  name: Requisitons Officer's mantle
+  description: A golden threaded mantle bestowed to stationed Requisitons Officers by the Quartermasters corps.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Clothing/Neck/NCRROmantle.rsi
+  - type: Clothing
+    sprite: _Nuclear14/Clothing/Neck/NCRROmantle.rsi
+  - type: StaticPrice
+    price: 50

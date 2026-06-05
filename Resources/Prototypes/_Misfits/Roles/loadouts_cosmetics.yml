@@ -577,6 +577,17 @@
   items:
     - N14ClothingHeadHatNCRBeretQM
 
+- type: loadout
+  id: MisfitsLoadoutNeckNCRmantleQM
+  category: Accessories
+  cost: 1
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - NCRRO
+  items:
+    - N14ClothingNeckROmantleNCR
+
 # === Head: NCR Rangers ===
 
 - type: loadout

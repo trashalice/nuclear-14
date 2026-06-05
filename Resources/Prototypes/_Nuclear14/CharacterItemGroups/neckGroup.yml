@@ -30,6 +30,8 @@
     - type: loadout
       id: MisfitsLoadoutNeckTownGuardMantle # #Misfits Add - cosmetic army rain mantle
     - type: loadout
+      id: MisfitsLoadoutNeckNCRmantleQM # #Misfits Add - cosmetic NCR Requisitons Officer's mantle
+    - type: loadout
       id: ClothingNeckShawl
     - type: loadout # #Misfits Add - NCR faction cloaks and mantles
       id: MisfitsLoadoutNeckCloakNCR
