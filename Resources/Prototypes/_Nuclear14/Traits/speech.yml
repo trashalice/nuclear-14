@@ -99,6 +99,7 @@
     - NCRVeteranRanger
     - NCRFieldRanger
     - NCRPatrolRanger
+    - NCRRangerRecruit
     - NCRDoctor
     - NCRFirstSergeant
     - NCRStaffSergeant
@@ -109,6 +110,7 @@
     - BoSMidPaladinCommander
     - BoSMidPaladin
     - NCRWS
+    - NCRHeavyTrooper
     - NCREngineer
     - NCRMedic
     - NCRPrivateFirstClass
