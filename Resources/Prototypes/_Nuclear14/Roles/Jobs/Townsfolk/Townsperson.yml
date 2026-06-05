@@ -32,7 +32,7 @@
   id: TownspersonGear
   equipment:
     jumpsuit: N14ClothingUniformJumpsuitSettlerRags
-    ears: MisfitsClothingHeadsetWastelandScrap
+    ears: MisfitsClothingHeadsetTown
     back: N14ClothingBackpackExplorer # Corvax-Change
     shoes: N14ClothingShoesBlack
     id: N14IDPassportTownsfolk

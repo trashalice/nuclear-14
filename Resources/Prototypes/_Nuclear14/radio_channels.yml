@@ -112,6 +112,16 @@
   color: "#5cbf82"
   longRange: true
 
+# #Misfits Add — Bazaar Townsfolk private radio channel
+# longRange: true so it works without a dedicated telecomms server on the map
+- type: radioChannel
+  id: Townsfolk
+  name: Bazaar
+  keycode: 't'
+  frequency: 6767
+  color: "#019a64"
+  longRange: true
+
 # Zetan
 
 # - type: radioChannel

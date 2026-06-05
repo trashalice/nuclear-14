@@ -36,7 +36,7 @@
   id: TownDoctorGear
   equipment:
     jumpsuit: N14ClothingUniformJumpsuitWastelandDoc
-    ears: MisfitsClothingHeadsetWastelandScrap
+    ears: MisfitsClothingHeadsetTown
     back: N14ClothingBackpackExplorer # Corvax-Change
     shoes: N14ClothingShoesBlack
     gloves: N14ClothingHandsGlovesNitrile

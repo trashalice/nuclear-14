@@ -34,7 +34,7 @@
   id: TownMechanicGear
   equipment:
     jumpsuit: N14ClothingUniformJumpsuitMechanic
-    ears: MisfitsClothingHeadsetWastelandScrap
+    ears: MisfitsClothingHeadsetTown
     back: N14ClothingBackpackExplorer # Forge-Change
     shoes: N14ClothingShoesBlack
     id: N14IDPassportTownMechanic # Forge-Change

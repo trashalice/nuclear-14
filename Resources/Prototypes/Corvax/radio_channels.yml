@@ -1,12 +1,4 @@
 - type: radioChannel
-  id: Bazaar
-  name: chat-radio-bazaar
-  keycode: 't'  # #Misfits Change — was 'x', now :t for town/bazaar
-  frequency: 6996
-  color: "#f8aa01"
-  longRange: true
-
-- type: radioChannel
   id: Wasteland
   name: chat-radio-wasteland
   keycode: 'r'

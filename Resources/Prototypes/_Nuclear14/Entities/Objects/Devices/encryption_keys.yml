@@ -152,3 +152,19 @@
     layers:
     - state: crypt_gray
     - state: med_label
+
+# #Misfits Add — Bazaar Townsfolk private encryption key
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyTown
+  name: Town encryption key
+  description: An encryption key used by the Bazaar Townsfolk.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Townsfolk
+    defaultChannel: Townsfolk
+  - type: Sprite
+    layers:
+    - state: crypt_gray
+    - state: com_label

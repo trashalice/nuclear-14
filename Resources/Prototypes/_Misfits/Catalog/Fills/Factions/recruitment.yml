@@ -86,7 +86,7 @@
   - type: StorageFill
     contents:
     - id: BoxIDTown
-    - id: BoxHeadsetWasteland
+    - id: BoxEncryptionKeyTown
     - id: N14AccessConfigurator
     - id: SheetSteel10
     - id: MaterialCloth10

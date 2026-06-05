@@ -30,3 +30,20 @@
     sprite: _Misfits/Clothing/Ears/Headsets/scrap.rsi
   - type: Clothing
     sprite: _Misfits/Clothing/Ears/Headsets/scrap.rsi
+
+# Misfits Add - Town Bazaar radio
+- type: entity
+  parent: MisfitsClothingHeadsetWastelandScrap
+  id: MisfitsClothingHeadsetTown
+  name: town headset
+  description: A compact headset issued to trusted members of the Bazaar. Tuned to the local town frequency.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyWastelandGlobal
+      - EncryptionKeyTown
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/centcom.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/centcom.rsi

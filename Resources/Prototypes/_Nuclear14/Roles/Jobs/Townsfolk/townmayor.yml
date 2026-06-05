@@ -36,7 +36,7 @@
   id: TownMayorGear
   equipment:
     jumpsuit: N14ClothingUniformJumpsuitCheckered
-    ears: MisfitsClothingHeadsetWastelandScrap
+    ears: MisfitsClothingHeadsetTown
     back: N14ClothingBackpackExplorer # Corvax-Change
     shoes: N14ClothingShoesBrown
     id: N14IDBadgeTownMayor
@@ -48,6 +48,7 @@
   storage: # Corvax-Change
     back:
     - N14BoxPlasticFilledWastelander
+    - BoxEncryptionKeyTown
 
 - type: playTimeTracker
   id: TownMayor

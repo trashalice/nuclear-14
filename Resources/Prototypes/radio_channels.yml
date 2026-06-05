@@ -90,10 +90,3 @@
   color: "#2ed2fd"
   longRange: true
 
-- type: radioChannel
-  id: Freelance
-  name: chat-radio-freelance
-  # keycode: 'f'  # Misfits — disabled
-  frequency: 1984
-  color: "#f6ce64"
-  longRange: true
