@@ -6549,3 +6549,10 @@ Entries:
   id: 6024
   time: '2026-06-06T04:38:42.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/705
+- author: Vinny-Shick
+  changes:
+    - type: Add
+      message: Added a new mantle for the RO of the NCR
+  id: 6025
+  time: '2026-06-06T04:39:06.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/704
