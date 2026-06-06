@@ -150,6 +150,7 @@
   id: C27GearGeneric
   equipment:
     jumpsuit: ClothingC27Chassis
+    ears: MisfitsClothingHeadsetWastelandScrap
     id: N14ClothingNeckDogtags
 
 # NCR: chassis jumpsuit + Light NCR kit + NCR headset + NCR soldier dogtag.
