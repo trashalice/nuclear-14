@@ -280,7 +280,6 @@
               Piercing: -0.20
               Heat: -0.20
               Shock: -0.20
-              Cold: -0.20
               Caustic: -0.20
               Asphyxiation: -0.35 # Last longer in crit, takes a WHIIILE to get back up.
               Bloodloss: -0.10
