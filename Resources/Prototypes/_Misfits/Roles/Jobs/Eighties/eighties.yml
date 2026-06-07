@@ -47,7 +47,7 @@
   equipment:
     bandage: NCClothingBandageRaiders
     id: MisfitsEightiesIDCardHead
-    hands: N14ClothingHandsGlovesBlackBiker
+    gloves: N14ClothingHandsGlovesBlackBiker
     jumpsuit: MisfitsClothingTheBlockPants
     outerClothing: MisfitsClothingOuterTheBlockArmor
     mask: MisfitsClothingTheBlockMask
@@ -109,10 +109,11 @@
   equipment:
     bandage: NCClothingBandageRaiders
     id: MisfitsEightiesIDCard
+    gloves: N14ClothingHandsGlovesBlackBiker
     jumpsuit: N14ClothingUniformJumpsuitBrahminFarmer
-    outerClothing: MisfitsClothingOuterEightiesArmor
+    outerClothing: MisfitsClothingOuterEightiesArmorHeavyElite
     ears: MisfitsClothingHeadsetEighties
-    shoes: N14ClothingShoesRaider
+    shoes: ClothingShoesBootsJack
     neck: ClothingNeckBlackScarf
     head: N14ClothingHeadHatBeanie
     back: N14ClothingBackpackMilitary
@@ -169,8 +170,9 @@
     bandage: NCClothingBandageRaiders
     id: MisfitsEightiesIDCard
     jumpsuit: N14ClothingUniformJumpsuitBrahminFarmer
-    outerClothing: MisfitsClothingOuterEightiesArmor
-    shoes: N14ClothingShoesRaider
+    gloves: N14ClothingHandsGlovesBlackBiker
+    outerClothing: MisfitsClothingOuterEightiesArmorHeavy
+    shoes: ClothingShoesBootsJack
     neck: ClothingNeckBlackScarf
     head: N14ClothingHeadHatBeanie
     ears: MisfitsClothingHeadsetEighties
@@ -228,8 +230,9 @@
     bandage: NCClothingBandageRaiders
     id: MisfitsEightiesIDCard
     jumpsuit: N14ClothingUniformJumpsuitBrahminFarmer
-    outerClothing: MisfitsClothingOuterEightiesArmor
-    shoes: N14ClothingShoesRaider
+    gloves: N14ClothingHandsGlovesBlackBiker
+    outerClothing: MisfitsClothingOuterEightiesArmorHeavyBoss
+    shoes: ClothingShoesBootsJack
     neck: ClothingNeckBlackScarf
     head: N14ClothingHeadHatBeanie
     ears: MisfitsClothingHeadsetEighties
@@ -288,8 +291,9 @@
     bandage: NCClothingBandageRaiders
     id: MisfitsEightiesIDCard
     jumpsuit: N14ClothingUniformJumpsuitBrahminFarmer
+    gloves: N14ClothingHandsGlovesBlackBiker
     outerClothing: MisfitsClothingOuterEightiesArmor
-    shoes: N14ClothingShoesRaider
+    shoes: ClothingShoesBootsJack
     neck: ClothingNeckBlackScarf
     head: N14ClothingHeadHatBeanie
     ears: MisfitsClothingHeadsetEighties
