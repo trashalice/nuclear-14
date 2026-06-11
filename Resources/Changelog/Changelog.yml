@@ -6565,3 +6565,10 @@ Entries:
   id: 6026
   time: '2026-06-06T08:16:36.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/707
+- author: Vixting
+  changes:
+    - type: Fix
+      message: Fix beaker transfer not being updated on the lcient
+  id: 6027
+  time: '2026-06-06T16:58:46.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/708
