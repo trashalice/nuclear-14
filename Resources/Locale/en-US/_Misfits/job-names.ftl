@@ -115,6 +115,10 @@ job-description-follower-guard = You protect the Followers' clinic, escort docto
 job-name-follower-volunteer = Followers Volunteer
 job-description-follower-volunteer = You are new to the Followers. You believe knowledge and compassion can outlast bullets and bombs. Prove it — learn from those above you and help anyone who needs it.
 
+# #Misfits Add - Supermutant Follower Doctor job locale.
+job-name-supermutant-follower-doctor = Supermutant Follower Doctor
+job-description-supermutant-follower-doctor = A SuperMutant trained in the ways of medicine.
+
 # #Misfits Add — Western BoS chapter command-tier jobs (Elder + Head Scribe).
 # These keys were commented out in the Corvax locale when the Corvax west-BoS chapter
 # was removed, but the Misfits bos_elder.yml and bos_headscribe.yml prototypes still reference them.
