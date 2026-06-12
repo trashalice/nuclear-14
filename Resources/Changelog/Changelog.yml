@@ -6801,3 +6801,10 @@ Entries:
   id: 6049
   time: '2026-06-11T20:11:09.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/757
+- author: Cythisiax
+  changes:
+    - type: Fix
+      message: Removed faction base access from NCR and Legion civilians/traders.
+  id: 6050
+  time: '2026-06-12T17:46:08.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/769
