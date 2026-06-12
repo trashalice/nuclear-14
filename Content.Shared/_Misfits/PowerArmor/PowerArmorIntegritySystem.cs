@@ -34,6 +34,16 @@ namespace Content.Shared._Misfits.PowerArmor;
 /// </summary>
 public sealed class PowerArmorIntegritySystem : EntitySystem
 {
+    // #Misfits Fix - Biological/internal damage types that bypass armor integrity entirely.
+    private static readonly HashSet<string> BypassTypes = new()
+    {
+        "Asphyxiation",
+        "Bloodloss",
+        "Cellular",
+        "Poison",
+        "Radiation",
+    };
+
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly ExamineSystemShared _examine = default!;
@@ -133,8 +143,8 @@ public sealed class PowerArmorIntegritySystem : EntitySystem
             var brokenShare = new DamageSpecifier();
             foreach (var (type, amount) in args.Args.Damage.DamageDict)
             {
-                // #Misfits Fix - Radiation bypasses armor entirely; only affects the wearer.
-                if (type == "Radiation")
+                // #Misfits Fix - Biological damage bypasses armor entirely.
+                if (BypassTypes.Contains(type))
                 {
                     brokenShare.DamageDict[type] = amount;
                     continue;
@@ -171,8 +181,8 @@ public sealed class PowerArmorIntegritySystem : EntitySystem
                 continue;
             }
 
-            // #Misfits Fix - Radiation bypasses armor integrity entirely; only affects the wearer.
-            if (type == "Radiation")
+            // #Misfits Fix - Biological damage bypasses armor integrity entirely.
+            if (BypassTypes.Contains(type))
             {
                 playerShare.DamageDict[type] = amount;
                 continue;
