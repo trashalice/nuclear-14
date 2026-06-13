@@ -349,3 +349,10 @@
   items:
     - SprayPaintWhite
 
+- type: loadout
+  id: LoadoutSprayPaintGreen
+  category: Items
+  cost: 1
+  items:
+    - SprayPaintGreen
+
