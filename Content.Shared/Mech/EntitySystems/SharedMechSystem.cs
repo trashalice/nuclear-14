@@ -26,11 +26,7 @@ using Content.Shared.CCVar;
 using Content.Shared._Goobstation.CCVar;
 using Content.Shared.Emag.Systems;
 using Content.Shared.Weapons.Ranged.Events;
-using Content.Shared.Hands.Components;
-using Content.Shared.Hands.EntitySystems;
-using Content.Shared.Inventory.VirtualItem;
 using Robust.Shared.Configuration;
-using Content.Shared.Implants.Components;
 
 namespace Content.Shared.Mech.EntitySystems;
 
@@ -50,8 +46,6 @@ public abstract class SharedMechSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!; // Goobstation Change
-    [Dependency] private readonly SharedVirtualItemSystem _virtualItem = default!; // Goobstation Change
     [Dependency] private readonly IConfigurationManager _config = default!; // Goobstation Change
 
     // Goobstation: Local variable for checking if mech guns can be used out of them.
@@ -73,6 +67,8 @@ public abstract class SharedMechSystem : EntitySystem
         SubscribeLocalEvent<MechPilotComponent, GetMeleeWeaponEvent>(OnGetMeleeWeapon);
         SubscribeLocalEvent<MechPilotComponent, CanAttackFromContainerEvent>(OnCanAttackFromContainer);
         SubscribeLocalEvent<MechPilotComponent, AttackAttemptEvent>(OnAttackAttempt);
+        SubscribeLocalEvent<MechPilotComponent, AccessibleOverrideEvent>(OnAccessibleOverride);
+        SubscribeLocalEvent<MechPilotComponent, InRangeOverrideEvent>(OnInRangeOverride);
         SubscribeLocalEvent<MechPilotComponent, EntGotRemovedFromContainerMessage>(OnEntGotRemovedFromContainer);
         SubscribeLocalEvent<MechEquipmentComponent, ShotAttemptedEvent>(OnShotAttempted); // Goobstation
         Subs.CVar(_config, GoobCVars.MechGunOutsideMech, value => _canUseMechGunOutside = value, true); // Goobstation
@@ -396,7 +392,6 @@ public abstract class SharedMechSystem : EntitySystem
         SetupUser(uid, toInsert.Value);
         _container.Insert(toInsert.Value, component.PilotSlot);
         UpdateAppearance(uid, component);
-        UpdateHands(toInsert.Value, uid, true); // Goobstation
         return true;
     }
 
@@ -421,55 +416,9 @@ public abstract class SharedMechSystem : EntitySystem
         RemoveUser(uid, pilot.Value);
         _container.RemoveEntity(uid, pilot.Value);
         UpdateAppearance(uid, component);
-        UpdateHands(pilot.Value, uid, false); // Goobstation
         return true;
     }
 
-    // Goobstation Change Start
-    private void UpdateHands(EntityUid uid, EntityUid mech, bool active)
-    {
-        if (!TryComp<HandsComponent>(uid, out var handsComponent))
-            return;
-
-        if (active)
-            BlockHands(uid, mech, handsComponent);
-        else
-            FreeHands(uid, mech);
-    }
-
-    private void BlockHands(EntityUid uid, EntityUid mech, HandsComponent handsComponent)
-    {
-        var freeHands = 0;
-        foreach (var hand in _hands.EnumerateHands(uid, handsComponent))
-        {
-            if (hand.HeldEntity == null)
-            {
-                freeHands++;
-                continue;
-            }
-
-            // Is this entity removable? (they might have handcuffs on)
-            if (HasComp<UnremoveableComponent>(hand.HeldEntity) && hand.HeldEntity != mech)
-                continue;
-
-            _hands.DoDrop(uid, hand, true, handsComponent);
-            freeHands++;
-            if (freeHands == 2)
-                break;
-        }
-        if (_virtualItem.TrySpawnVirtualItemInHand(mech, uid, out var virtItem1))
-            EnsureComp<UnremoveableComponent>(virtItem1.Value);
-
-        if (_virtualItem.TrySpawnVirtualItemInHand(mech, uid, out var virtItem2))
-            EnsureComp<UnremoveableComponent>(virtItem2.Value);
-    }
-
-    private void FreeHands(EntityUid uid, EntityUid mech)
-    {
-        _virtualItem.DeleteInHandsMatching(uid, mech);
-    }
-
-    // Goobstation Change End
     private void OnGetMeleeWeapon(EntityUid uid, MechPilotComponent component, GetMeleeWeaponEvent args)
     {
         if (args.Handled)
@@ -492,6 +441,32 @@ public abstract class SharedMechSystem : EntitySystem
     {
         if (args.Target == component.Mech)
             args.Cancel();
+    }
+
+    private void OnAccessibleOverride(EntityUid uid, MechPilotComponent component, ref AccessibleOverrideEvent args)
+    {
+        if (args.User != uid ||
+            !TryComp<MechComponent>(component.Mech, out var mech) ||
+            mech.CurrentSelectedEquipment != null)
+        {
+            return;
+        }
+
+        args.Handled = true;
+        args.Accessible = _interaction.IsAccessible(component.Mech, args.Target);
+    }
+
+    private void OnInRangeOverride(EntityUid uid, MechPilotComponent component, ref InRangeOverrideEvent args)
+    {
+        if (args.User != uid ||
+            !TryComp<MechComponent>(component.Mech, out var mech) ||
+            mech.CurrentSelectedEquipment != null)
+        {
+            return;
+        }
+
+        args.Handled = true;
+        args.InRange = _interaction.InRangeUnobstructed(component.Mech, args.Target);
     }
 
     // Goobstation: Prevent guns being used out of mechs if CCVAR is set.

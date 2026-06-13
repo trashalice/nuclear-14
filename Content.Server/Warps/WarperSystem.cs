@@ -8,6 +8,7 @@ using Content.Shared._Misfits.NPC.Components;
 using Content.Shared.Examine;
 using Content.Shared.Ghost;
 using Content.Shared.Interaction;
+using Content.Shared.Mech.Components;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Systems;
 using Robust.Shared.Physics;
@@ -63,6 +64,10 @@ public sealed class WarperSystem : EntitySystem
 
     private bool TryWarpUser(EntityUid uid, WarperComponent component, EntityUid user, EntityUid target)
     {
+        var warpEntity = user;
+        if (TryComp<MechPilotComponent>(user, out var pilot))
+            warpEntity = pilot.Mech;
+
         if (component.ID is null)
         {
             Log.Debug("Warper has no destination");
@@ -100,25 +105,25 @@ public sealed class WarperSystem : EntitySystem
         }
 
         // Forge-Change-Start
-        if (TryComp(user, out PullerComponent? puller) && puller.Pulling != null)
+        if (TryComp(warpEntity, out PullerComponent? puller) && puller.Pulling != null)
         {
             var pullerItem = puller.Pulling.Value;
             _sharedTransform.SetCoordinates(pullerItem, destXform.Coordinates);
             _sharedTransform.AttachToGridOrMap(pullerItem);
-            _sharedTransform.SetCoordinates(user, destXform.Coordinates);
-            _sharedTransform.AttachToGridOrMap(user);
-            _pullingSystem.TryStartPull(user, pullerItem); // Throws a client error, not critical but unpleasant.
+            _sharedTransform.SetCoordinates(warpEntity, destXform.Coordinates);
+            _sharedTransform.AttachToGridOrMap(warpEntity);
+            _pullingSystem.TryStartPull(warpEntity, pullerItem); // Throws a client error, not critical but unpleasant.
         }
 
         else
         {
-            _sharedTransform.SetCoordinates(user, destXform.Coordinates);
-            _sharedTransform.AttachToGridOrMap(user);
+            _sharedTransform.SetCoordinates(warpEntity, destXform.Coordinates);
+            _sharedTransform.AttachToGridOrMap(warpEntity);
         }
 
-        if (HasComp<PhysicsComponent>(user))
+        if (HasComp<PhysicsComponent>(warpEntity))
         {
-            _physics.SetLinearVelocity(user, Vector2.Zero);
+            _physics.SetLinearVelocity(warpEntity, Vector2.Zero);
         }
         // Forge-Change-End
 

@@ -135,7 +135,9 @@ public abstract partial class SharedGunSystem : EntitySystem
             !_combatMode.IsInCombatMode(user))
             return;
 
-        if (TryComp<MechPilotComponent>(user.Value, out var mechPilot))
+        if (TryComp<MechPilotComponent>(user.Value, out var mechPilot) &&
+            TryComp<MechComponent>(mechPilot.Mech, out var mech) &&
+            mech.CurrentSelectedEquipment.HasValue)
             user = mechPilot.Mech;
 
         if (!TryGetGun(user.Value, out var ent, out var gun) ||
@@ -159,7 +161,9 @@ public abstract partial class SharedGunSystem : EntitySystem
         if (user == null)
             return;
 
-        if (TryComp<MechPilotComponent>(user.Value, out var mechPilot))
+        if (TryComp<MechPilotComponent>(user.Value, out var mechPilot) &&
+            TryComp<MechComponent>(mechPilot.Mech, out var mech) &&
+            mech.CurrentSelectedEquipment.HasValue)
             user = mechPilot.Mech;
 
         if (!TryGetGun(user.Value, out var ent, out var gun))
@@ -335,6 +339,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         }
 
         var fromCoordinates = Transform(user).Coordinates;
+        var ignoredEntity = GetShotIgnoreEntity(user);
 
         // #Misfits Add: apply per-gun origin offset (e.g. Assaultron head beam)
         if (gun.ShootOffset != Vector2.Zero)
@@ -459,8 +464,20 @@ public abstract partial class SharedGunSystem : EntitySystem
         var projectile = EnsureComp<ProjectileComponent>(uid);
         Projectiles.SetShooter(uid, projectile, user ?? gunUid);
         projectile.Weapon = gunUid;
+        projectile.ExtraIgnoredEntity = GetShotIgnoreEntity(user);
 
         TransformSystem.SetWorldRotation(uid, direction.ToWorldAngle() + projectile.Angle);
+    }
+
+    protected EntityUid? GetShotIgnoreEntity(EntityUid? user)
+    {
+        if (user is not { } shooter)
+            return null;
+
+        if (!TryComp<MechPilotComponent>(shooter, out var mechPilot))
+            return shooter;
+
+        return mechPilot.Mech;
     }
 
     protected abstract void Popup(string message, EntityUid? uid, EntityUid? user);

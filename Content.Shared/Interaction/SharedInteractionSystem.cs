@@ -17,6 +17,7 @@ using Content.Shared.Interaction.Events;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Item;
+using Content.Shared.Mech.Components;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Systems;
@@ -391,6 +392,14 @@ namespace Content.Shared.Interaction
         {
             if (_relayQuery.TryComp(user, out var relay) && relay.RelayEntity is not null)
             {
+                if (TryComp<MechPilotComponent>(user, out var mechPilot) &&
+                    relay.RelayEntity.Value == mechPilot.Mech &&
+                    TryComp<MechComponent>(mechPilot.Mech, out var mechComp) &&
+                    mechComp.CurrentSelectedEquipment == null)
+                {
+                    goto SkipRelay;
+                }
+
                 // TODO this needs to be handled better. This probably bypasses many complex can-interact checks in weird roundabout ways.
                 if (_actionBlockerSystem.CanInteract(user, target))
                 {
@@ -404,6 +413,8 @@ namespace Content.Shared.Interaction
                     return;
                 }
             }
+
+        SkipRelay:
 
             if (target != null && Deleted(target.Value))
                 return;
