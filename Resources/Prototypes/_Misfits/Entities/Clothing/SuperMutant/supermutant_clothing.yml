@@ -540,3 +540,74 @@
         Blunt: 0.75
         Slash: 0.75
         Piercing: 0.70
+
+# Scavenged Armor Set
+
+- type: entity
+  parent: [ClothingOuterBase, AllowSuitStorageClothing]
+  id: ClothingSuperMutantScavengedArmor
+  name: supermutant scavenged armor
+  description: A cobbled together suit of armor scavenged from a ruined suit of T-45, completely non-functional due to integral systems being torn out to better fit its new wearer.
+  components:
+  - type: Sprite
+    sprite: _Misfits/Clothing/SuperMutant/scavenged_armor.rsi
+  - type: Clothing
+    sprite: _Misfits/Clothing/SuperMutant/scavenged_armor.rsi
+  - type: Tag
+    tags:
+    - SuperMutantWearable
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.70
+        Slash: 0.70
+        Piercing: 0.75
+
+- type: entity
+  parent: ClothingShoesBase
+  id: ClothingSuperMutantScavengedBoots
+  name: supermutant scavenged boots
+  description: Boots scavenged from a ruined suit of T-45, bit of a tight squeeze to fit into but good protection against stepping on nails.
+  components:
+  - type: Sprite
+    sprite: _Misfits/Clothing/SuperMutant/scavenged_boots.rsi
+  - type: Clothing
+    sprite: _Misfits/Clothing/SuperMutant/scavenged_boots.rsi
+  - type: Tag
+    tags:
+    - SuperMutantWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingSuperMutantScavengedHelmet
+  name: supermutant scavenged helmet
+  description: A hollowed out T-45 helmet made to fit a Supermutants head. Even the helmets lenses have been removed.
+  components:
+  - type: Sprite
+    sprite: _Misfits/Clothing/SuperMutant/scavenged_helmet.rsi
+  - type: Clothing
+    sprite: _Misfits/Clothing/SuperMutant/scavenged_helmet.rsi
+  - type: Tag
+    tags:
+    - SuperMutantWearable
+  - type: Armor 
+    modifiers:
+      coefficients:
+        Blunt: 0.80
+        Slash: 0.80
+        Piercing: 0.85
+
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingSuperMutantScavengedGloves
+  name: supermutant Scavenged Gloves
+  description: Armored Gauntlets once attached to a full suit of T-45. Will probably need a really big can opener to get the new wearer out of them.
+  components:
+  - type: Sprite
+    sprite: _Misfits/Clothing/SuperMutant/scavenged_gloves.rsi
+  - type: Clothing
+    sprite: _Misfits/Clothing/SuperMutant/scavenged_gloves.rsi
+  - type: Tag
+    tags:
+    - SuperMutantWearable
+
