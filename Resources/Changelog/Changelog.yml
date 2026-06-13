@@ -6842,3 +6842,36 @@ Entries:
   id: 6054
   time: '2026-06-12T18:11:19.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/763
+- author: Billus
+  changes:
+    - type: Add
+      message: Added Bozar to BOS BPs. rejoice.
+    - type: Add
+      message: Added caustic instead of shock to plasma weapons.
+    - type: Remove
+      message: >-
+        Removed recovery component from super stims you are no longer immortal
+        while on them.
+    - type: Tweak
+      message: Buffed all PAs. if i missed one ping me in disc.
+    - type: Tweak
+      message: >-
+        brotherhood kits massively standardized. Big paladins lost some fun shit
+        so the little knights could have better kits.
+    - type: Tweak
+      message: >-
+        BP costs for certain items tweaked. Such as NCR marksman carbine and BOS
+        AER-9 auto.
+    - type: Remove
+      message: 'Super sledge is removed from the game '
+    - type: Tweak
+      message: >-
+        the above is a lie. the super sledge is not removed. the prices to make
+        it for legion and yuma were massively increased.
+    - type: Tweak
+      message: dirty stim does less rads now
+    - type: Tweak
+      message: decreased ROF on vet ranger AMR by 0.3 RPS. from 1.2 to 0.9.
+  id: 6055
+  time: '2026-06-13T00:14:12.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/773
