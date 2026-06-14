@@ -6944,3 +6944,10 @@ Entries:
   id: 6062
   time: '2026-06-14T00:56:05.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/794
+- author: Cythisiax
+  changes:
+    - type: Fix
+      message: Missile bullets from revolvers & plasma weapons.
+  id: 6063
+  time: '2026-06-14T03:57:25.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/795
