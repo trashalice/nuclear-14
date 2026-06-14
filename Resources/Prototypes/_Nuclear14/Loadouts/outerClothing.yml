@@ -388,7 +388,7 @@
   items:
     - N14ClothingOuterTribalArmorHeavy
 
- 
+
 - type: loadout
   id: N14LoadoutOuterRaiderBadlands
   category: Outer
@@ -486,7 +486,7 @@
       inverted: true
       departments:
       - Vault
-    - !type:CharacterJobRequirement 
+    - !type:CharacterJobRequirement
       inverted: true
       jobs:
       - BoSMidSerf
@@ -506,7 +506,7 @@
       inverted: true
       departments:
       - Vault
-    - !type:CharacterJobRequirement 
+    - !type:CharacterJobRequirement
       inverted: true
       jobs:
       - BoSMidSerf
@@ -527,7 +527,7 @@
       inverted: true
       departments:
       - Vault
-    - !type:CharacterJobRequirement 
+    - !type:CharacterJobRequirement
       inverted: true
       jobs:
       - BoSMidSerf
@@ -548,7 +548,7 @@
       inverted: true
       departments:
       - Vault
-    - !type:CharacterJobRequirement 
+    - !type:CharacterJobRequirement
       inverted: true
       jobs:
       - BoSMidSerf
@@ -568,7 +568,7 @@
       inverted: true
       departments:
       - Vault
-    - !type:CharacterJobRequirement 
+    - !type:CharacterJobRequirement
       inverted: true
       jobs:
       - BoSMidSerf
@@ -589,7 +589,7 @@
       inverted: true
       departments:
       - Vault
-    - !type:CharacterJobRequirement 
+    - !type:CharacterJobRequirement
       inverted: true
       jobs:
       - BoSMidSerf
@@ -609,7 +609,7 @@
       inverted: true
       departments:
       - Vault
-    - !type:CharacterJobRequirement 
+    - !type:CharacterJobRequirement
       inverted: true
       jobs:
       - BoSMidSerf
@@ -629,7 +629,7 @@
       inverted: true
       departments:
       - Vault
-    - !type:CharacterJobRequirement 
+    - !type:CharacterJobRequirement
       inverted: true
       jobs:
       - BoSMidSerf
@@ -650,7 +650,7 @@
       inverted: true
       departments:
       - Vault
-    - !type:CharacterJobRequirement 
+    - !type:CharacterJobRequirement
       inverted: true
       jobs:
       - BoSMidSerf
@@ -658,7 +658,7 @@
       - NCRPrisoner
   items:
     - N14ClothingOuterRaiderCombat1
-    
+
 - type: loadout
   id: N14LoadoutOuterCombatArmorChinese
   category: Outer
@@ -667,14 +667,14 @@
     - !type:CharacterTraitRequirement
       traits:
       - LanguageChinese
-      - LanguageNerd 
+      - LanguageNerd
     - !type:CharacterItemGroupRequirement
       group: N14LoadoutOuter
     - !type:CharacterDepartmentRequirement
       inverted: true
       departments:
       - Vault
-    - !type:CharacterJobRequirement 
+    - !type:CharacterJobRequirement
       inverted: true
       jobs:
       - BoSMidSerf
@@ -691,14 +691,14 @@
     - !type:CharacterTraitRequirement
       traits:
       - LanguageChinese
-      - LanguageNerd 
+      - LanguageNerd
     - !type:CharacterItemGroupRequirement
       group: N14LoadoutOuter
     - !type:CharacterDepartmentRequirement
       inverted: true
       departments:
       - Vault
-    - !type:CharacterJobRequirement 
+    - !type:CharacterJobRequirement
       inverted: true
       jobs:
       - BoSMidSerf
@@ -721,7 +721,7 @@
       inverted: true
       departments:
       - Vault
-    - !type:CharacterJobRequirement 
+    - !type:CharacterJobRequirement
       inverted: true
       jobs:
       - BoSMidSerf
@@ -743,7 +743,7 @@
       inverted: true
       departments:
       - Vault
-    - !type:CharacterJobRequirement 
+    - !type:CharacterJobRequirement
       inverted: true
       jobs:
       - BoSMidSerf
@@ -765,7 +765,7 @@
       inverted: true
       departments:
       - Vault
-    - !type:CharacterJobRequirement 
+    - !type:CharacterJobRequirement
       inverted: true
       jobs:
       - BoSMidSerf
@@ -775,3 +775,29 @@
     - N14ClothingOuterCoatDuster
 
 
+## Power Armor Idk
+
+
+- type: loadout
+  id: LoadoutBoSMidwest
+  category: Roles
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - BoSPaladin
+  items:
+    - N14ClothingOuterPowerArmorMidwest
+
+- type: loadout
+  id: LoadoutBoSMidwestSilver
+  category: Roles
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - BoSMidPaladin
+  items:
+    - N14ClothingOuterPowerArmorMidwestSilver
