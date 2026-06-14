@@ -75,14 +75,20 @@
     rotAfter: 3600
   - type: Hunger
     baseDecayRate: 0.024 # #Misfits Add - 3x human default (0.008) to reflect massive size / accelerated metabolism
-    starvationDamage:
+    starvationDamage:    # Misfits Change - use custom Starvation type
       types:
-        Cold: 0.15 # Misfits Change - use Cold damage for Malnutrition instead of custom Starvation type (no brute/bleed from hunger)
+        Starvation: 0.15
+    recoveryDamage:      # Misfits Add
+      types:
+        Starvation: -0.30
     starvingSlowdownModifier: 0.5
   - type: Thirst
-    dehydrationDamage:
+    dehydrationDamage:   # Misfits Add - Dehydration damage
       types:
-        Cold: 0.15 # Misfits Change - use Cold damage for Dehydration instead of custom Dehydration type (no brute/bleed from thirst)
+        Dehydration: 0.15
+    recoveryDamage:      # Misfits Add - Dehydration damage
+      types:
+        Dehydration: -0.30
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: SuperMutant

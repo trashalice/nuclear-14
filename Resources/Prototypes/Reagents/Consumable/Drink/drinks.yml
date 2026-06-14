@@ -466,6 +466,10 @@
       effects:
       - !type:SatiateThirst
         factor: 4
+      - !type:HealthChange # Misfits Add
+        damage:
+          types:
+            Dehydration: -0.5
 
 - type: reagent
   id: Ice

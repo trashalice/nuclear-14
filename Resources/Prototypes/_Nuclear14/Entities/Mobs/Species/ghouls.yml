@@ -66,14 +66,20 @@
   - type: Perishable
     rotAfter: 3600 # An entire in-game day.
   - type: Hunger
-    starvationDamage:
+    starvationDamage:   # Misfits Change - use custom Starvation type
       types:
-        Cold: 0.15 # Misfits Change - use Cold damage for Malnutrition instead of custom Starvation type (no brute/bleed from hunger)
+        Starvation: 0.15
+    recoveryDamage:     # Misfits Add
+      types:
+        Starvation: -0.30
     starvingSlowdownModifier: 0.5
   - type: Thirst
-    dehydrationDamage:
+    dehydrationDamage:  # Misfits Add - Dehydration damage
       types:
-        Cold: 0.15 # Misfits Change - use Cold damage for Dehydration instead of custom Dehydration type (no brute/bleed from thirst)
+        Dehydration: 0.15
+    recoveryDamage:     # Misfits Add - Dehydration damage
+      types:
+        Dehydration: -0.30
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Ghoul
@@ -166,13 +172,20 @@
   - type: Perishable
     rotAfter: 3600 # An entire in-game day.
   - type: Hunger
-    starvationDamage:
+    starvationDamage:    # Misfits Change - use custom Starvation type
       types:
-        Cold: 0.5 # Misfits Change - use Cold damage instead of Starvation+Bloodloss (no brute/bleed from hunger)
+        Starvation: 0.5
+    recoveryDamage:      # Misfits Add
+      types:
+        Starvation: -0.5
+    starvingSlowdownModifier: 0.5
   - type: Thirst
-    dehydrationDamage:
+    dehydrationDamage:   # Misfits Add - Dehydration damage
       types:
-        Cold: 0.25 # Misfits Change - use Cold damage for Dehydration instead of custom Dehydration type (glowing ghouls dehydrate faster)
+        Dehydration: 0.25
+    recoveryDamage:      # Misfits Add - Dehydration damage
+      types:
+        Dehydration: -0.35
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: GhoulGlowing

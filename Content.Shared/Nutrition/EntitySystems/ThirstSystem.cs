@@ -245,16 +245,26 @@ public sealed class ThirstSystem : EntitySystem
         }
     }
 
-    // Misfits Add - Applies dehydration damage each tick when at ThirstThreshold.Dead,
-    // mirroring the starvation damage pattern in HungerSystem.
+    // Misfits Add - Applies dehydration damage each tick, mirroring the starvation damage pattern in HungerSystem.
     private void DoContinuousThirstEffects(EntityUid uid, ThirstComponent component)
     {
-        // #Misfits Tweak - Dehydration damage removed; only movement speed reduction remains.
-         if (component.CurrentThirstThreshold <= ThirstThreshold.Dead &&
-             component.DehydrationDamage is { } damage &&
-             _mobState.IsAlive(uid))
-         {
-             _damageable.TryChangeDamage(uid, damage, true, false);
-         }
+        // Misfits: deal dehydration damage at or below Parched, no damage at Thirsty, and recover damage at Okay
+        switch (component.CurrentThirstThreshold)
+        {
+            case <= ThirstThreshold.Parched:
+            {
+                if (component.DehydrationDamage is { } damage &&
+                    _mobState.IsAlive(uid))
+                    _damageable.TryChangeDamage(uid, damage, true, false);
+                break;
+            }
+            case >= ThirstThreshold.Okay:
+            {
+                if (component.RecoveryDamage is { } damage &&
+                    !_mobState.IsDead(uid))
+                    _damageable.TryChangeDamage(uid, damage, true, false);
+                break;
+            }
+        }
     }
 }

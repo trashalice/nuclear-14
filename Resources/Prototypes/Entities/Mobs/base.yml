@@ -111,6 +111,9 @@
     - Piercing
     - Heat
     - Shock
+    - Caustic       # Misfits Add
+    - Starvation    # Misfits Add
+    - Dehydration   # Misfits Add
   - type: DamageOnHighSpeedImpact
     damage:
       types:

@@ -8,6 +8,10 @@
       effects:
       - !type:SatiateThirst
         factor: 3
+      - !type:HealthChange # Misfits Add
+        damage:
+          types:
+            Dehydration: -0.3
   reactiveEffects:
     Extinguish:
       methods: [ Touch ]
@@ -54,6 +58,11 @@
       - !type:AdjustReagent
         reagent: Ethanol
         amount: 0.06
+      - !type:HealthChange # Misfits Add
+        probability: 0.5
+        damage:
+          types:
+            Dehydration: -0.2
   reactiveEffects:
     Flammable:
       methods: [ Touch ]

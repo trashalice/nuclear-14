@@ -358,7 +358,20 @@
   - type: PersistentCurrency # Misfits - Currency wallet
   - type: PersistentPlayerData # Misfits Add - SPECIAL stats, kill/death/round tracking, character history
   - type: Ungibbable  # Misfits Add - No more gibbing
-
+  - type: Hunger # Misfits Change - admeme species like felinids and vulps will starve
+    starvationDamage:
+      types:
+        Starvation: 0.15
+    recoveryDamage:
+      types:
+        Starvation: -0.30
+  - type: Thirst    # Misfits Change - admeme species will dehydrate
+    dehydrationDamage:
+      types:
+        Dehydration: 0.25
+    recoveryDamage:
+      types:
+        Dehydration: -0.35
 - type: entity
   save: false
   id: BaseSpeciesDummy

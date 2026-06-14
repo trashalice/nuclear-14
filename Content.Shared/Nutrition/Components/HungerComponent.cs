@@ -108,10 +108,17 @@ public sealed partial class HungerComponent : Component
     public float DeadHungerSlowdownModifier = 0.40f;
 
     /// <summary>
-    /// Damage dealt when your current threshold is at HungerThreshold.Dead
+    /// Damage dealt when your current threshold is at or below HungerThreshold.Starving
     /// </summary>
     [DataField("starvationDamage")]
     public DamageSpecifier? StarvationDamage;
+
+    // Misfits Add
+    /// <summary>
+    /// Damage recovered when your current threshold is at or above HungerThreshold.Peckish
+    /// </summary>
+    [DataField("recoveryDamage")]
+    public DamageSpecifier? RecoveryDamage;
 
     /// <summary>
     /// The time when the hunger will update next.

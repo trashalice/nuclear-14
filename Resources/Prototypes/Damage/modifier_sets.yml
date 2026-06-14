@@ -249,6 +249,8 @@
     Bloodloss: 0.0 # no double dipping
     Cellular: 0.0
     Caustic: 0.0
+    Starvation: 0.0 # Misfits Add
+    Dehydration: 0.0 # Misfits Add
 
 - type: damageModifierSet
   id: SlimePet # Very survivable slimes

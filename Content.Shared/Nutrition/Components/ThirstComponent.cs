@@ -63,10 +63,17 @@ public sealed partial class ThirstComponent : Component
 
     // Misfits Add - Damage applied each second at ThirstThreshold.Dead, mirroring HungerComponent.StarvationDamage.
     /// <summary>
-    /// Damage dealt each update tick when at ThirstThreshold.Dead.
+    /// Damage dealt each update tick when at ThirstThreshold.Parched.
     /// </summary>
     [DataField("dehydrationDamage")]
     public DamageSpecifier? DehydrationDamage;
+
+    // Misfits Add
+    /// <summary>
+    /// Damage recovered when your current threshold is at or above ThirstThreshold.Okay
+    /// </summary>
+    [DataField("recoveryDamage")]
+    public DamageSpecifier? RecoveryDamage;
 
     // Misfits Add - Separate, harsher slowdown at Dead threshold so the player crawls rather than outright dies.
     /// <summary>

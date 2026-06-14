@@ -670,6 +670,10 @@
           factor: 6
         - !type:ModifyBloodLevel
           amount: 6
+        - !type:HealthChange # Misfits Add
+          damage:
+            types:
+              Dehydration: -1
 
 - type: reagent
   id: Siderlac
