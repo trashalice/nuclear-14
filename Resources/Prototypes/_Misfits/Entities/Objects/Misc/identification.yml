@@ -1,0 +1,21 @@
+# #Misfits Add - Admin/Sysadmin ID cards for debugging and access terminal administration.
+
+- type: entity
+  parent: N14IDPassportBlank
+  id: N14IDCardAdmin
+  name: admin ID card
+  description: A debug ID card with universal access. Use with the access terminal to grant any access level.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Objects/Misc/identification.rsi
+    state: passport_blank
+  - type: Access
+    groups:
+    - AllAccessN14
+  - type: Clothing
+    sprite: _Nuclear14/Objects/Misc/identification.rsi
+  - type: IdCard
+  - type: Tag
+    tags:
+    - DoorBumpOpener

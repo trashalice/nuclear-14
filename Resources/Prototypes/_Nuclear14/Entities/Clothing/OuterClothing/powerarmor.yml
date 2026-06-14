@@ -12,7 +12,7 @@
   # Repair with a welder to restore the pool and re-enable absorption.
   - type: Damageable
   - type: PowerArmorIntegrity
-    maxIntegrity: 400 # #Misfits Tweak: By Bill, 400 durability for a little more standing power.
+    maxIntegrity: 500 # #Misfits Tweak: By Bill, 500 durability for a little more standing power.
     brokenBleedthroughRatio: 1.0  # #Misfits Add - when broken, only armor coefficients apply
   - type: Repairable
     fuelCost: 10
@@ -39,11 +39,11 @@
   - type: Armor # #Misfits Tweak: Added Heat and Piercing coefficients — pre-reduces damage before integrity absorption so PA stays above Centurion/Vet.Ranger at all integrity levels.
     modifiers:
       coefficients:
-        Blunt: 0.75
-        Slash: 0.75
-        Piercing: 0.75
-        Heat: 0.75
-        Caustic: 0.75
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.7
+        Heat: 0.7
+        Caustic: 0.7
         Radiation: 0.6
   - type: UserInterface
     interfaces:
@@ -73,7 +73,7 @@
     reflects:
       - SmallCaliber
       - MediumCaliber
-    reflectProb: 0.3
+    reflectProb: 0.4
     reflectProbByType:
       MediumCaliber: 0.15
     innate: true
@@ -102,7 +102,7 @@
   components:
   - type: PowerArmorIntegrity
     brokenBleedthroughRatio: 1.0  # #Misfits Add - when broken, only armor coefficients apply
-    maxIntegrity: 480 # #Misfits Tweak: By Bill, 480 durability.
+    maxIntegrity: 580 # #Misfits Tweak: By Bill, 580 durability.
   - type: Sprite
     sprite: _Nuclear14/Clothing/OuterClothing/PowerArmor/t51.rsi
   - type: Clothing
@@ -110,11 +110,11 @@
   - type: Armor # #Misfits Tweak: Added Heat and Piercing coefficients — pre-reduces damage before integrity absorption so PA stays above Centurion/Vet.Ranger at all integrity levels.
     modifiers:
       coefficients:
-        Blunt: 0.70
-        Slash: 0.70
-        Piercing: 0.70
-        Heat: 0.70
-        Caustic: 0.75
+        Blunt: 0.60
+        Slash: 0.60
+        Piercing: 0.60
+        Heat: 0.60
+        Caustic: 0.65
         Radiation: 0.6
   - type: UserInterface
     interfaces:
@@ -137,7 +137,7 @@
   components:
   - type: PowerArmorIntegrity
     brokenBleedthroughRatio: 1.0  # #Misfits Add - when broken, only armor coefficients apply
-    maxIntegrity: 480 # #Misfits Tweak: By Bill, 480 durability.
+    maxIntegrity: 500 # #Misfits Tweak: By Bill, 500 durability.
   - type: Sprite
     sprite: _Misfits/Clothing/OuterClothing/PowerArmor/Mutant_PA.rsi
   - type: Clothing
@@ -178,7 +178,7 @@
   components:
   - type: PowerArmorIntegrity
     brokenBleedthroughRatio: 1.0  # #Misfits Add - when broken, only armor coefficients apply
-    maxIntegrity: 445 # #Misfits Tweak: By Bill, 445 durability.
+    maxIntegrity: 545 # #Misfits Tweak: By Bill, 545 durability.
   - type: Sprite
     sprite: _Nuclear14/Clothing/OuterClothing/PowerArmor/t60.rsi
   - type: Clothing
@@ -186,11 +186,11 @@
   - type: Armor # #Misfits Tweak: Added Heat and Piercing coefficients — pre-reduces damage before integrity absorption so PA stays above Centurion/Vet.Ranger at all integrity levels.
     modifiers:
       coefficients:
-        Blunt: 0.725
-        Slash: 0.725
-        Piercing: 0.725
-        Heat: 0.725
-        Caustic: 0.75
+        Blunt: 0.65
+        Slash: 0.65
+        Piercing: 0.65
+        Heat: 0.65
+        Caustic: 0.65
         Radiation: 0.6
   - type: UserInterface
     interfaces:
@@ -233,7 +233,7 @@
     reflects:
       - SmallCaliber
       - Energy
-    reflectProb: 0.3
+    reflectProb: 0.40
     innate: true
     spread: 90
   - type: UserInterface
@@ -255,7 +255,7 @@
   components:
   - type: PowerArmorIntegrity
     brokenBleedthroughRatio: 1.0  # #Misfits Add - when broken, only armor coefficients apply
-    maxIntegrity: 460 # #Misfits Tweak: By Bill, 460 a little better than T60 but not T51.
+    maxIntegrity: 560 # #Misfits Tweak: By Bill, 460 a little better than T60 but not T51.
   - type: Sprite
     sprite: _Nuclear14/Clothing/OuterClothing/PowerArmor/advanced1.rsi
   - type: Clothing
@@ -267,7 +267,7 @@
         Slash: 0.65
         Piercing: 0.65
         Heat: 0.65
-        Caustic: 0.75
+        Caustic: 0.6
         Radiation: 0.6
   - type: ExplosionResistance
     damageCoefficient: 0.08 # #Misfits Tweak: X-01 advanced plating — ~10 HP at ground zero
@@ -284,7 +284,7 @@
   - type: Reflect # #Misfits Change Tweak: X-01 advanced armor ricochets small-caliber rounds at 30% (innate).
     reflects:
       - SmallCaliber
-    reflectProb: 0.3
+    reflectProb: 0.55
     innate: true
     spread: 90
 
@@ -296,7 +296,7 @@
   components:
   - type: PowerArmorIntegrity
     brokenBleedthroughRatio: 1.0  # #Misfits Add - when broken, only armor coefficients apply
-    maxIntegrity: 485 # #Misfits Tweak: X-02 durability.
+    maxIntegrity: 585 # #Misfits Tweak: X-02 durability.
   - type: Sprite
     sprite: _Nuclear14/Clothing/OuterClothing/PowerArmor/advanced2.rsi
   - type: Clothing
@@ -341,7 +341,7 @@
   - type: Reflect # #Misfits Change Tweak: X-02 armor ricochets small-caliber rounds at 30% (innate).
     reflects:
       - SmallCaliber
-    reflectProb: 0.3
+    reflectProb: 0.55
     innate: true
     spread: 90
 
@@ -352,7 +352,7 @@
   description: A deep black suit of Enclave-manufactured heavy power armor based on pre-war designs such as the T-51 and improving off of data gathered by post-war designs such as the X-01. Most commonly fielded on the East Coast, no suit rivals its strength.
   components:
   - type: PowerArmorIntegrity
-    maxIntegrity: 500 # #Misfits Tweak: Hellfire durability.
+    maxIntegrity: 600 # #Misfits Tweak: Hellfire durability.
   - type: Sprite
     sprite: _Nuclear14/Clothing/OuterClothing/PowerArmor/hellfire.rsi
   - type: Clothing
@@ -360,11 +360,11 @@
   - type: Armor # #Misfits Tweak: Added Heat and Piercing coefficients — pre-reduces damage before integrity absorption so PA stays above Centurion/Vet.Ranger at all integrity levels.
     modifiers:
       coefficients:
-        Blunt: 0.70
-        Slash: 0.70
-        Piercing: 0.70
-        Heat: 0.70
-        Caustic: 0.75
+        Blunt: 0.60
+        Slash: 0.60
+        Piercing: 0.60
+        Heat: 0.60
+        Caustic: 0.55
         Radiation: 0.5
   - type: ExplosionResistance
     damageCoefficient: 0.06 # #Misfits Tweak: Hellfire designed for combat — best blast resistance, ~7 HP at ground zero
@@ -387,7 +387,7 @@
   components:
   - type: PowerArmorIntegrity
     brokenBleedthroughRatio: 1.0  # #Misfits Add - when broken, only armor coefficients apply
-    maxIntegrity: 300 # #Misfits Tweak: +150 flat integrity buff
+    maxIntegrity: 400 # #Misfits Tweak: +150 flat integrity buff
   - type: Sprite
     sprite: _Nuclear14/Clothing/OuterClothing/PowerArmor/raider.rsi
   - type: Clothing
@@ -395,10 +395,10 @@
   - type: Armor # #Misfits Tweak: Added Heat and Piercing coefficients — pre-reduces damage before integrity absorption so PA stays above Centurion/Vet.Ranger at all integrity levels.
     modifiers:
       coefficients:
-        Blunt: 0.80
-        Slash: 0.80
-        Piercing: 0.80
-        Heat: 0.80
+        Blunt: 0.75
+        Slash: 0.75
+        Piercing: 0.75
+        Heat: 0.75
         Caustic: 0.75
         Radiation: 0.65
   - type: ExplosionResistance
@@ -416,7 +416,7 @@
   - type: Reflect # #Misfits Change Tweak: Raider power armor ricochets small-caliber rounds at 30% (innate).
     reflects:
       - SmallCaliber
-    reflectProb: 0.3
+    reflectProb: 0.35
     innate: true
     spread: 90
   - type: ClothingSpeedModifier # Forge-Change
@@ -431,7 +431,7 @@
   components:
   - type: PowerArmorIntegrity
     brokenBleedthroughRatio: 1.0  # #Misfits Add - when broken, only armor coefficients apply
-    maxIntegrity: 400 # #Misfits Tweak: +150 flat integrity buff
+    maxIntegrity: 500 # #Misfits Tweak: +150 flat integrity buff
   - type: Sprite
     sprite: _Nuclear14/Clothing/OuterClothing/PowerArmor/midwest.rsi
   - type: Clothing
@@ -439,11 +439,11 @@
   - type: Armor # #Misfits Tweak: Added Heat and Piercing coefficients — pre-reduces damage before integrity absorption so PA stays above Centurion/Vet.Ranger at all integrity levels.
     modifiers:
       coefficients:
-        Blunt: 0.725
-        Slash: 0.725
-        Piercing: 0.725
-        Heat: 0.725
-        Caustic: 0.75
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.7
+        Heat: 0.7
+        Caustic: 0.7
         Radiation: 0.6
   - type: ExplosionResistance
     damageCoefficient: 0.12 # #Misfits Tweak: Midwest BoS blast resistance — ~14 HP at ground zero
@@ -478,7 +478,7 @@
   components:
   - type: PowerArmorIntegrity
     brokenBleedthroughRatio: 1.0  # #Misfits Add - when broken, only armor coefficients apply
-    maxIntegrity: 485 # #Misfits Tweak: Very slightly above standard T-51.
+    maxIntegrity: 585 # #Misfits Tweak: Very slightly above standard T-51.
   - type: Sprite
     sprite: _Nuclear14/Clothing/OuterClothing/PowerArmor/midwestcommander.rsi
   - type: Clothing
@@ -486,11 +486,11 @@
   - type: Armor # #Misfits Tweak: Added Heat and Piercing coefficients — pre-reduces damage before integrity absorption so PA stays above Centurion/Vet.Ranger at all integrity levels.
     modifiers:
       coefficients:
-        Blunt: 0.695
-        Slash: 0.695
-        Piercing: 0.695
-        Heat: 0.695
-        Caustic: 0.745
+        Blunt: 0.645
+        Slash: 0.645
+        Piercing: 0.645
+        Heat: 0.645
+        Caustic: 0.7
         Radiation: 0.595
   - type: ExplosionResistance
     damageCoefficient: 0.118 # #Misfits Tweak: Very slightly above standard T-51 blast resistance.
@@ -509,7 +509,7 @@
   components:
   - type: PowerArmorIntegrity
     brokenBleedthroughRatio: 1.0  # #Misfits Add - when broken, only armor coefficients apply
-    maxIntegrity: 490 # #Misfits Tweak: By Bill, little more durability than normal T-51
+    maxIntegrity: 590 # #Misfits Tweak: By Bill, little more durability than normal T-51
   - type: Sprite
     sprite: _Nuclear14/Clothing/OuterClothing/PowerArmor/t51bc.rsi
   - type: Clothing
@@ -517,11 +517,11 @@
   - type: Armor # #Misfits Tweak: Added Heat and Piercing coefficients — pre-reduces damage before integrity absorption so PA stays above Centurion/Vet.Ranger at all integrity levels.
     modifiers:
       coefficients:
-        Blunt: 0.675
-        Slash: 0.675
-        Piercing: 0.675
-        Heat: 0.675
-        Caustic: 0.75
+        Blunt: 0.575
+        Slash: 0.575
+        Piercing: 0.575
+        Heat: 0.575
+        Caustic: 0.675
         Radiation: 0.6
   - type: TemperatureProtection
     coefficient: 0.5
@@ -552,7 +552,7 @@
   - type: Reflect # #Misfits Change Tweak: T-51BC ricochets small-caliber rounds at 30% (innate).
     reflects:
       - SmallCaliber
-    reflectProb: 0.3
+    reflectProb: 0.55
     innate: true
     spread: 90
 
@@ -595,7 +595,7 @@
   - type: Reflect # #Misfits Change Tweak: Salvaged NCR T-45 ricochets small-caliber rounds at 30% (innate).
     reflects:
       - SmallCaliber
-    reflectProb: 0.3
+    reflectProb: 0.4
     innate: true
     spread: 90
 
@@ -688,7 +688,7 @@
   components:
   - type: PowerArmorIntegrity
     brokenBleedthroughRatio: 1.0  # #Misfits Add - when broken, only armor coefficients apply
-    maxIntegrity: 485 # #Misfits Tweak: By Bill, a little better than T51 but not as good as T51BC
+    maxIntegrity: 585 # #Misfits Tweak: By Bill, a little better than T51 but not as good as T51BC
   - type: Sprite
     sprite: _Nuclear14/Clothing/OuterClothing/PowerArmor/t51washelite.rsi
   - type: Clothing
@@ -696,11 +696,11 @@
   - type: Armor # #Misfits Tweak: Added Heat and Piercing coefficients — pre-reduces damage before integrity absorption so PA stays above Centurion/Vet.Ranger at all integrity levels.
     modifiers:
       coefficients:
-        Blunt: 0.675
-        Slash: 0.675
-        Piercing: 0.675
-        Heat: 0.675
-        Caustic: 0.75
+        Blunt: 0.575
+        Slash: 0.575
+        Piercing: 0.575
+        Heat: 0.575
+        Caustic: 0.575
         Radiation: 0.6
   - type: UserInterface
     interfaces:

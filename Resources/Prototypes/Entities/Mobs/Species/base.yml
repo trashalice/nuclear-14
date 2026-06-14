@@ -357,6 +357,7 @@
     power: 0.6 # A minimum size felinid will have 30% blood, a minimum size vulp will have 60%, a maximum size oni will have ~200%
   - type: PersistentCurrency # Misfits - Currency wallet
   - type: PersistentPlayerData # Misfits Add - SPECIAL stats, kill/death/round tracking, character history
+  - type: Ungibbable  # Misfits Add - No more gibbing
 
 - type: entity
   save: false

@@ -208,8 +208,8 @@
   # Command (Whitelisted)
   - CaesarLegionLegate          # Legate              | _Misfits/Roles/Jobs/CaesarLegion/legion_legate.yml # #Misfits Add
   - CaesarLegionCenturion       # Centurion           | _Misfits/Roles/Jobs/CaesarLegion/legion_centurion.yml # #Misfits Add
-  # Support Officers #Misfits Add: Orator and Priestess sit in their own tier between Command and NCOs.
-  - CaesarLegionOrator          # Orator              | _Misfits/Roles/Jobs/CaesarLegion/legion_orator.yml # #Misfits Add
+  # Support Officers #Misfits Add: Optio and Priestess sit in their own tier between Command and NCOs.
+  - CaesarLegionOptio          # Optio                | _Misfits/Roles/Jobs/CaesarLegion/legion_optio.yml # #Misfits Add
   - CaesarLegionPriestessOfMars # Priestess of Mars   | _Misfits/Roles/Jobs/CaesarLegion/legion_priestess_of_mars.yml # #Misfits Add
   # Senior NCOs
   - CaesarLegionVeteranDecanus  # Veteran Decanus     | _Misfits/Roles/Jobs/CaesarLegion/legion_veteran_decanus.yml # #Misfits Add

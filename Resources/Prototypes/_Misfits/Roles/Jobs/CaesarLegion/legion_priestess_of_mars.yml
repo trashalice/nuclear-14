@@ -65,7 +65,7 @@
           - CaesarLegionVeteranDecanus
           - CaesarLegionCenturion
           - CaesarLegionLegate
-          - CaesarLegionOrator
+          - CaesarLegionOptio
           - CaesarLegionPriestessOfMars
     - !type:AddTraitSpecial
       traits: [ LanguageLatin ]

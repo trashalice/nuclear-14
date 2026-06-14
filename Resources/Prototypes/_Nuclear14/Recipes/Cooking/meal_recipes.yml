@@ -128,6 +128,78 @@
   solids:
     N14FoodMeatRadroachFillet: 1
 
+- type: microwaveMealRecipe
+  id: N14RecipeSteakRadhog
+  name: radhog steak recipe
+  result: N14FoodMeatRadhogCooked
+  time: 15
+  solids:
+    N14FoodMeatRadhog: 1
+
+- type: microwaveMealRecipe
+  id: N14RecipeCutletRadhog
+  name: radhog cutlet recipe
+  result: N14FoodMeatRadhogCutletCooked
+  time: 5
+  solids:
+    N14FoodMeatRadhogCutlet: 1
+
+- type: microwaveMealRecipe
+  id: N14RecipeSteakPigrat
+  name: pigrat steak recipe
+  result: N14FoodMeatPigratCooked
+  time: 15
+  solids:
+    N14FoodMeatPigrat: 1
+
+- type: microwaveMealRecipe
+  id: N14RecipeSteakGeckoFire
+  name: fire gecko steak recipe
+  result: N14FoodMeatGeckoFireCooked
+  time: 15
+  solids:
+    N14FoodMeatGeckoFire: 1
+
+- type: microwaveMealRecipe
+  id: N14RecipeSteakGeckoGolden
+  name: golden gecko steak recipe
+  result: N14FoodMeatGeckoGoldenCooked
+  time: 15
+  solids:
+    N14FoodMeatGeckoGolden: 1
+
+- type: microwaveMealRecipe
+  id: N14RecipeIguana
+  name: cooked iguana recipe
+  result: N14FoodMeatIguanaCooked
+  time: 15
+  solids:
+    N14FoodMeatIguana: 1
+
+- type: microwaveMealRecipe
+  id: N14RecipeSquirrelMorsels
+  name: cooked squirrel bits recipe
+  result: N14FoodMeatSquirrelCooked
+  time: 15
+  solids:
+    N14FoodMeatSquirrel: 1
+
+- type: microwaveMealRecipe
+  id: N14RecipeSteakRadchicken
+  name: radchicken steak recipe
+  result: N14FoodMeatRadchickenCooked
+  time: 15
+  solids:
+    N14FoodMeatRadchicken: 1
+
+- type: microwaveMealRecipe
+  id: N14RecipeCutletRadchicken
+  name: radchicken cutlet recipe
+  result: N14FoodMeatRadchickenCutletCooked
+  time: 5
+  solids:
+    N14FoodMeatRadchickenCutlet: 1
+
 #THE GREAT DOWNSTREAM MIGRATION BEGINS HERE GANG
 
 - type: microwaveMealRecipe
@@ -301,6 +373,271 @@
   solids:
     N14CookedFoodBreadBun: 1
     N14FoodTofuSlice: 1
+
+- type: microwaveMealRecipe
+  id: N14RecipeDuckBurger
+  name: duck sandwich recipe
+  result: N14CookedFoodBurgerDuck
+  time: 10
+  solids:
+    N14CookedFoodBreadBun: 1
+    FoodMeatDuck: 1
+
+- type: microwaveMealRecipe
+  id: N14RecipeDuckBurgerUpstreamBun
+  name: duck sandwich recipe
+  result: N14CookedFoodBurgerDuck
+  time: 10
+  solids:
+    FoodBreadBun: 1
+    FoodMeatDuck: 1 #Misfits Add - cross-compat: upstream bun alternative
+
+#Cross-compat burgers (upstream bun + N14 meat / N14 bun + upstream meat)
+
+- type: microwaveMealRecipe
+  id: N14RecipePlainBurgerUpstreamBun
+  name: plain burger recipe
+  result: N14CookedFoodBurgerPlain
+  time: 10
+  solids:
+    FoodBreadBun: 1
+    N14FoodMeatRadRaw: 1 #Misfits Add - cross-compat: upstream bun + N14 meat
+
+- type: microwaveMealRecipe
+  id: N14RecipePlainBurgerUpstreamMeat
+  name: plain burger recipe
+  result: N14CookedFoodBurgerPlain
+  time: 10
+  solids:
+    N14CookedFoodBreadBun: 1
+    FoodMeat: 1 #Misfits Add - cross-compat: N14 bun + upstream meat
+
+- type: microwaveMealRecipe
+  id: N14RecipePlainBurgerBothUpstream
+  name: plain burger recipe
+  result: N14CookedFoodBurgerPlain
+  time: 10
+  solids:
+    FoodBreadBun: 1
+    FoodMeat: 1 #Misfits Add - cross-compat: upstream bun + upstream meat
+
+- type: microwaveMealRecipe
+  id: N14RecipeCheeseburgerUpstreamBun
+  name: cheeseburger recipe
+  result: N14CookedFoodBurgerCheese
+  time: 10
+  solids:
+    FoodBreadBun: 1
+    N14FoodMeatRadRaw: 1 #Misfits Add - cross-compat: upstream bun + N14 meat
+    N14FoodCheeseSlice: 1
+
+- type: microwaveMealRecipe
+  id: N14RecipeCheeseburgerUpstreamMeat
+  name: cheeseburger recipe
+  result: N14CookedFoodBurgerCheese
+  time: 10
+  solids:
+    N14CookedFoodBreadBun: 1
+    FoodMeat: 1 #Misfits Add - cross-compat: N14 bun + upstream meat
+    N14FoodCheeseSlice: 1
+
+- type: microwaveMealRecipe
+  id: N14RecipeCheeseburgerBothUpstream
+  name: cheeseburger recipe
+  result: N14CookedFoodBurgerCheese
+  time: 10
+  solids:
+    FoodBreadBun: 1
+    FoodMeat: 1 #Misfits Add - cross-compat: upstream bun + upstream meat
+    N14FoodCheeseSlice: 1
+
+- type: microwaveMealRecipe
+  id: N14RecipeBeargerUpstreamBun
+  name: bearger recipe
+  result: N14CookedFoodBurgerBear
+  time: 10
+  solids:
+    FoodBreadBun: 1
+    N14FoodMeatYaoguai: 1 #Misfits Add - cross-compat: upstream bun + N14 meat
+
+- type: microwaveMealRecipe
+  id: N14RecipeChickenSandwichUpstreamBun
+  name: chicken sandwich recipe
+  result: N14CookedFoodBurgerChicken
+  time: 10
+  reagents:
+    Mayo: 5
+  solids:
+    FoodBreadBun: 1
+    N14FoodMeatRadchicken: 1 #Misfits Add - cross-compat: upstream bun + N14 meat
+
+- type: microwaveMealRecipe
+  id: N14RecipeChickenSandwichUpstreamMeat
+  name: chicken sandwich recipe
+  result: N14CookedFoodBurgerChicken
+  time: 10
+  reagents:
+    Mayo: 5
+  solids:
+    N14CookedFoodBreadBun: 1
+    FoodMeatChicken: 1 #Misfits Add - cross-compat: N14 bun + upstream meat
+
+- type: microwaveMealRecipe
+  id: N14RecipeCrabBurgerUpstreamBun
+  name: crab burger recipe
+  result: N14CookedFoodBurgerCrab
+  time: 10
+  solids:
+    FoodBreadBun: 1
+    N14FoodMeatMirelurkClaw: 2 #Misfits Add - cross-compat: upstream bun + N14 meat
+
+- type: microwaveMealRecipe
+  id: N14RecipeFiveBurgerUpstreamBun
+  name: five alarm burger recipe
+  result: N14CookedFoodBurgerFive
+  time: 10
+  solids:
+    FoodBreadBun: 1
+    N14FoodMeatRadRaw: 1 #Misfits Add - cross-compat: upstream bun + N14 meat
+    N14FloraProduceWildGlowpepper: 3
+
+- type: microwaveMealRecipe
+  id: N14RecipeFiveBurgerUpstreamMeat
+  name: five alarm burger recipe
+  result: N14CookedFoodBurgerFive
+  time: 10
+  solids:
+    N14CookedFoodBreadBun: 1
+    FoodMeat: 1 #Misfits Add - cross-compat: N14 bun + upstream meat
+    N14FloraProduceWildGlowpepper: 3
+
+- type: microwaveMealRecipe
+  id: N14RecipeBurgerMcribUpstreamBun
+  name: BBQ rib sandwich recipe
+  result: N14CookedFoodBurgerMcrib
+  time: 10
+  solids:
+    FoodBreadBun: 1
+    N14CookedFoodMealRibs: 1
+    N14FoodOnionRedSlice: 1 #Misfits Add - cross-compat: upstream bun alternative
+
+- type: microwaveMealRecipe
+  id: N14RecipeSuperBiteBurgerUpstreamBun
+  name: super bite burger recipe
+  result: N14CookedFoodBurgerSuper
+  time: 25
+  reagents:
+    TableSalt: 5
+  solids:
+    FoodBreadBun: 1
+    N14FoodMeatRadRaw: 2 #Misfits Add - cross-compat: upstream bun + N14 meat
+    N14FoodCheeseSlice: 2
+    N14FloraProduceWildTato: 2
+    N14FoodEggChicken: 2
+
+- type: microwaveMealRecipe
+  id: N14RecipeSuperBiteBurgerUpstreamMeat
+  name: super bite burger recipe
+  result: N14CookedFoodBurgerSuper
+  time: 25
+  reagents:
+    TableSalt: 5
+  solids:
+    N14CookedFoodBreadBun: 1
+    FoodMeat: 2 #Misfits Add - cross-compat: N14 bun + upstream meat
+    N14FoodCheeseSlice: 2
+    N14FloraProduceWildTato: 2
+    N14FoodEggChicken: 2
+
+- type: microwaveMealRecipe
+  id: N14RecipeBigBiteBurgerUpstreamBun
+  name: big bite burger recipe
+  result: N14CookedFoodBurgerBig
+  time: 15
+  solids:
+    FoodBreadBun: 1
+    N14FoodMeatRadRaw: 2 #Misfits Add - cross-compat: upstream bun + N14 meat
+    N14FoodCheeseSlice: 1
+    N14FloraProduceWildTato: 1
+    N14FoodOnionRedSlice: 2
+
+- type: microwaveMealRecipe
+  id: N14RecipeBigBiteBurgerUpstreamMeat
+  name: big bite burger recipe
+  result: N14CookedFoodBurgerBig
+  time: 15
+  solids:
+    N14CookedFoodBreadBun: 1
+    FoodMeat: 2 #Misfits Add - cross-compat: N14 bun + upstream meat
+    N14FoodCheeseSlice: 1
+    N14FloraProduceWildTato: 1
+    N14FoodOnionRedSlice: 2
+
+- type: microwaveMealRecipe
+  id: N14RecipeBaconBurgerUpstreamBun
+  name: bacon burger recipe
+  result: N14CookedFoodBurgerBacon
+  time: 10
+  solids:
+    FoodBreadBun: 1
+    FoodMeatBacon: 1 #Misfits Add - cross-compat: upstream bun alternative
+    N14FoodCheeseSlice: 2
+
+- type: microwaveMealRecipe
+  id: N14RecipeCarpBurgerUpstreamBun
+  name: fillet-o-carp burger recipe
+  result: N14CookedFoodBurgerCarp
+  time: 10
+  solids:
+    FoodBreadBun: 1
+    FoodMeatFish: 1 #Misfits Add - cross-compat: upstream bun alternative
+    N14FoodCheeseSlice: 1
+
+- type: microwaveMealRecipe
+  id: N14RecipeRatBurgerUpstreamBun
+  name: rat burger recipe
+  result: N14CookedFoodBurgerRat
+  time: 10
+  solids:
+    FoodBreadBun: 1
+    FoodMeatRat: 1 #Misfits Add - cross-compat: upstream bun alternative
+
+- type: microwaveMealRecipe
+  id: N14RecipeBurgerMcguffinUpstreamBun
+  name: McGuffin recipe
+  result: N14CookedFoodBurgerMcguffin
+  time: 10
+  solids:
+    FoodBreadBun: 1
+    N14FoodCheeseSlice: 1
+    N14FoodEggChicken: 2 #Misfits Add - cross-compat: upstream bun alternative
+
+- type: microwaveMealRecipe
+  id: N14RecipeAppendixBurgerUpstreamBun
+  name: appendix burger recipe
+  result: N14CookedFoodBurgerAppendix
+  time: 10
+  solids:
+    FoodBreadBun: 1
+    OrganHumanAppendix: 1 #Misfits Add - cross-compat: upstream bun alternative
+
+- type: microwaveMealRecipe
+  id: N14RecipeBrainBurgerUpstreamBun
+  name: brain burger recipe
+  result: N14CookedFoodBurgerBrain
+  time: 10
+  solids:
+    FoodBreadBun: 1
+    OrganHumanBrain: 1 #Misfits Add - cross-compat: upstream bun alternative
+
+- type: microwaveMealRecipe
+  id: N14RecipeTofuBurgerUpstreamBun
+  name: tofu burger recipe
+  result: N14CookedFoodBurgerTofu
+  time: 10
+  solids:
+    FoodBreadBun: 1
+    N14FoodTofuSlice: 1 #Misfits Add - cross-compat: upstream bun alternative
 
 #Breads & Sandwiches
 

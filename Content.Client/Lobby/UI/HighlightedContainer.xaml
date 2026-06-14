@@ -1,8 +1,10 @@
 <PanelContainer
     xmlns="https://spacestation14.io"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:style="clr-namespace:Content.Client.Stylesheets"
     xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client">
     <PanelContainer.PanelOverride>
-        <graphics:StyleBoxFlat BackgroundColor="#2F2F35"
+        <graphics:StyleBoxFlat BackgroundColor="{x:Static style:StyleNano.PipBoyPanelBg}"
                                ContentMarginTopOverride="10"
                                ContentMarginBottomOverride="10"
                                ContentMarginLeftOverride="10"

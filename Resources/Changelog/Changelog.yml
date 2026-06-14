@@ -4764,7 +4764,7 @@ Entries:
       message: >-
         Shifted some entities in the Followers utility shed to make it more
         accessible, as the shelf containing body bags and other useful items
-        itself was not able to be accessed before. 
+        itself was not able to be accessed before.
   id: 5852
   time: '2026-05-10T07:24:49.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/464
@@ -4948,7 +4948,7 @@ Entries:
     - type: Fix
       message: >-
         HP and SP now require 10 hours of squire, just like regular paladin.
-        this wont impact anyone who meets the new paladin requirements. 
+        this wont impact anyone who meets the new paladin requirements.
   id: 5870
   time: '2026-05-12T23:54:47.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/491
@@ -5044,7 +5044,7 @@ Entries:
       message: >-
         Ported upstream botany fixes / changes. Majority of mutations are no
         longer persistent & can be rerolled. Can now examine plants to see
-        obvious mutations. 
+        obvious mutations.
     - type: Remove
       message: Atmos related & teleporting mutations have been disabled
   id: 5881
@@ -5410,7 +5410,7 @@ Entries:
     - type: Tweak
       message: >-
         Turned the Experimental X-01 Power Armor into a living, unremoveable
-        casket. 
+        casket.
   id: 5918
   time: '2026-05-20T22:29:54.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/563
@@ -5430,7 +5430,7 @@ Entries:
       message: >-
         laser assaultron now has less damaging laser but it can be fired several
         times on a battery instead of once. total damage if you land every laser
-        is theoretically higher, but takes multiple shots. 
+        is theoretically higher, but takes multiple shots.
   id: 5919
   time: '2026-05-21T00:57:33.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/566
@@ -5607,11 +5607,11 @@ Entries:
       message: >-
         Added very light doafters to injectors. chemical syringes do not have a
         doafter but cannot be crafted anymore. These are special items meant for
-        medics to use for quick healing. 
+        medics to use for quick healing.
     - type: Fix
       message: >-
         chance asked for 80s to just need waster playtime so I obliged. Road
-        Rash now only needs 10 hours of  wastelander playtime. 
+        Rash now only needs 10 hours of  wastelander playtime.
     - type: Add
       message: NCR now gets a 40mm grenade in their T3 ammo BP
     - type: Tweak
@@ -6572,3 +6572,415 @@ Entries:
   id: 6027
   time: '2026-06-06T16:58:46.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/708
+- author: Bill
+  changes:
+    - type: Fix
+      message: Fixed a small .308 overpressure mag bug
+    - type: Tweak
+      message: upped .308 sniper mag capacity to 10
+  id: 6028
+  time: '2026-06-06T22:02:18.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/711
+- author: qevie
+  changes:
+    - type: Tweak
+      message: >-
+        More ranger recruit slots. Go my chuddies, you can finally get ranger
+        time.
+  id: 6029
+  time: '2026-06-06T22:02:48.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/709
+- author: Squagg
+  changes:
+    - type: Fix
+      message: >-
+        Fixed some diagonal and slanted structures having their intended
+        rotations corrected incorrectly.
+    - type: Fix
+      message: >-
+        Fixed admin-spawned/cloned player bodies not receiving the selected
+        character profile's SPECIAL values.
+  id: 6030
+  time: '2026-06-07T15:04:49.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/716
+- author: Sirius
+  changes:
+    - type: Add
+      message: >-
+        A vinyl record player and radio station setup was added to the
+        broadcasting room for town reporters. 
+    - type: Add
+      message: >-
+        A stage for live performances was added to the bar, a second bar counter
+        was added, and some new shelving was installed to store some spare
+        drinks and supplies.
+    - type: Remove
+      message: >-
+        The shelves and lockers being robbed at round start due to their public
+        access have been replaced and removed. No more stealing from the
+        bartenders.
+  id: 6031
+  time: '2026-06-07T15:05:15.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/712
+- author: Bradysgaming
+  changes:
+    - type: Add
+      message: Added roundstart gloves boots and armor for 80's roles
+  id: 6032
+  time: '2026-06-07T22:11:29.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/722
+- author: Bradysgaming
+  changes:
+    - type: Remove
+      message: Removed Cold from unnatural regen, cant take the easy way anymore!
+  id: 6033
+  time: '2026-06-07T22:24:09.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/723
+- author: RedBookcase
+  changes:
+    - type: Tweak
+      message: >-
+        Removed Cigarette pack whitelist. Store your lighters freely in your
+        packs once more.
+  id: 6034
+  time: '2026-06-08T21:06:21.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/717
+- author: NajaTheNaja
+  changes:
+    - type: Fix
+      message: fixed fish and cazador shop contracts
+  id: 6035
+  time: '2026-06-09T22:47:44.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/733
+- author: paige404
+  changes:
+    - type: Fix
+      message: Fixed some unexpected behavior in the tribal accent
+  id: 6036
+  time: '2026-06-09T22:49:17.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/731
+- author: Big Block Bill
+  changes:
+    - type: Add
+      message: Added 1 damage to 7.62
+    - type: Tweak
+      message: made 22lr actually usable as a caliber (it still sucks.)
+    - type: Remove
+      message: Removed 1 damage from 5.56
+    - type: Tweak
+      message: >-
+        Nerfed plasma weapons a bit, the shots still hit the same the guns just
+        fire slower.
+    - type: Tweak
+      message: >-
+        changed out 80s kits for my version at the request of brady, we will see
+        how they perform.
+    - type: Tweak
+      message: nerfed deagle by 0.5 ROF, down from 3 to 2.5
+  id: 6037
+  time: '2026-06-09T22:52:43.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/730
+- author: Tytos
+  changes:
+    - type: Tweak
+      message: Renamed Orator to Optio and tweaked loadout.
+  id: 6038
+  time: '2026-06-10T00:44:25.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/721
+- author: NajaTheNaja
+  changes:
+    - type: Add
+      message: Olive oil to loadout options
+  id: 6039
+  time: '2026-06-10T00:44:57.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/734
+- author: OliOliOnsiPree
+  changes:
+    - type: Add
+      message: 8++ tribal warpaint markings
+  id: 6040
+  time: '2026-06-10T21:16:49.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/741
+- author: HungryCuban
+  changes:
+    - type: Fix
+      message: Fixed right click instant unbuckle (port from goob)
+  id: 6041
+  time: '2026-06-10T21:36:21.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/735
+- author: Bradysgaming
+  changes:
+    - type: Tweak
+      message: >-
+        Locked olive oil loadout item to roles you'd expect to find cooking
+        sometimes.
+  id: 6042
+  time: '2026-06-11T00:36:25.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/745
+- author: Squagg
+  changes:
+    - type: Tweak
+      message: Security admins can now manage panic bunker settings.
+  id: 6043
+  time: '2026-06-11T00:37:45.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/732
+- author: Bradysgaming
+  changes:
+    - type: Add
+      message: >-
+        Added chained boots for prisoners. (60% speed debuff and takes 1 minute
+        to unequip.) (still needs sprites so pretend for now) (craftable for
+        NCR)
+  id: 6044
+  time: '2026-06-11T01:22:43.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/743
+- author: Oli
+  changes:
+    - type: Add
+      message: Slouch Hat Added to NCR + Rangers Loadouts
+  id: 6045
+  time: '2026-06-11T01:23:13.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/744
+- author: Cythisiax
+  changes:
+    - type: Add
+      message: Added 80s faction to /raid request system
+    - type: Add
+      message: Added admin ID card with AllAccess tag
+    - type: Add
+      message: Added 3x hunger drain rate for Super Mutants
+    - type: Fix
+      message: Ghosts can no longer declare or receive war declarations
+    - type: Fix
+      message: CaesarLegionRecruit access level now properly applies to trysettag
+    - type: Fix
+      message: >-
+        Super Mutant melee damage now uses proper log scaling instead of flat 2x
+        multiplier (capped at 200f)
+    - type: Tweak
+      message: Removed redundant SuperMutantMeleeSystem (already handled by OniSystem)
+  id: 6046
+  time: '2026-06-11T01:32:51.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/746
+- author: cythisiax
+  changes:
+    - type: Add
+      message: >-
+        Added cross-compatible bun + meat burger recipes (upstream bun now works
+        with N14 meats and vice versa)
+    - type: Add
+      message: >-
+        Added microwave cooking recipes for radhog, pigrat, fire gecko, golden
+        gecko, iguana, squirrel, and radchicken etc.
+    - type: Add
+      message: >-
+        Added craftable duck burger recipe just because it was there. Not sure
+        there are even ducks on tile lol.
+    - type: Fix
+      message: Fixed FoodBreadBun and N14CookedFoodBreadBun not being cross-compatible.
+  id: 6047
+  time: '2026-06-11T02:45:50.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/747
+- author: Squagg
+  changes:
+    - type: Add
+      message: Pins can now be attached to uniforms and outer clothing.
+    - type: Tweak
+      message: Rank pins attached to clothing now apply rank titles.
+    - type: Tweak
+      message: Examining someone with a rank pin now shows their rank directly.
+  id: 6048
+  time: '2026-06-11T20:08:35.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/750
+- author: Cythisiax
+  changes:
+    - type: Fix
+      message: >-
+        Radiation no longer drains power armor integrity. It only affects the
+        wearer, reduced by armor coefficients.
+  id: 6049
+  time: '2026-06-11T20:11:09.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/757
+- author: Cythisiax
+  changes:
+    - type: Fix
+      message: Removed faction base access from NCR and Legion civilians/traders.
+  id: 6050
+  time: '2026-06-12T17:46:08.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/769
+- author: pierow
+  changes:
+    - type: Tweak
+      message: >-
+        C-27 Wastelander now spawns in with Light Armor, Light Helmet and a
+        basic welder.
+  id: 6051
+  time: '2026-06-12T17:46:46.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/771
+- author: Ablankmann
+  changes:
+    - type: Fix
+      message: The automatic Wasteland Announcement is now less redundant.
+  id: 6052
+  time: '2026-06-12T18:02:04.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/759
+- author: Cythisiax
+  changes:
+    - type: Add
+      message: Added pet companion variants and cat perk options
+    - type: Fix
+      message: Added owner approval for companion ghost-role requests
+  id: 6053
+  time: '2026-06-12T18:08:56.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/770
+- author: Cythisiax
+  changes:
+    - type: Fix
+      message: >-
+        Bloodloss, Radiation, and other biological damage no longer drain power
+        armor integrity. They only affect the wearer.
+  id: 6054
+  time: '2026-06-12T18:11:19.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/763
+- author: Billus
+  changes:
+    - type: Add
+      message: Added Bozar to BOS BPs. rejoice.
+    - type: Add
+      message: Added caustic instead of shock to plasma weapons.
+    - type: Remove
+      message: >-
+        Removed recovery component from super stims you are no longer immortal
+        while on them.
+    - type: Tweak
+      message: Buffed all PAs. if i missed one ping me in disc.
+    - type: Tweak
+      message: >-
+        brotherhood kits massively standardized. Big paladins lost some fun shit
+        so the little knights could have better kits.
+    - type: Tweak
+      message: >-
+        BP costs for certain items tweaked. Such as NCR marksman carbine and BOS
+        AER-9 auto.
+    - type: Remove
+      message: 'Super sledge is removed from the game '
+    - type: Tweak
+      message: >-
+        the above is a lie. the super sledge is not removed. the prices to make
+        it for legion and yuma were massively increased.
+    - type: Tweak
+      message: dirty stim does less rads now
+    - type: Tweak
+      message: decreased ROF on vet ranger AMR by 0.3 RPS. from 1.2 to 0.9.
+  id: 6055
+  time: '2026-06-13T00:14:12.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/773
+- author: Cythisiax
+  changes:
+    - type: Add
+      message: >-
+        First pass conversion of power armor variants to real mech-based
+        implementations. Not my pseudo-shitcode.
+    - type: Tweak
+      message: >-
+        Moved power armor durability and damage handling off custom shit
+        integrity logic and into mech damage coefs. Literally just ONE file for
+        tuning.
+  id: 6056
+  time: '2026-06-13T00:14:48.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/772
+- author: Cythisiax
+  changes:
+    - type: Add
+      message: Gun & meleeweapon blacklist to parent N14MobPetCat.
+  id: 6057
+  time: '2026-06-13T17:04:22.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/776
+- author: pierow
+  changes:
+    - type: Fix
+      message: Fixes going sideways randomly during gameplay. (Maybe...)
+  id: 6058
+  time: '2026-06-13T17:10:14.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/782
+- author: Squagg
+  changes:
+    - type: Add
+      message: >-
+        Redesigned the character SPECIAL screen with a Pip-Boy-style layout,
+        segmented stat gauges, and an optional info button showing each stat's
+        effects.
+    - type: Tweak
+      message: >-
+        Reskinned the lobby and character setup menus with a Fallout-inspired
+        Pip-Boy terminal theme.
+  id: 6059
+  time: '2026-06-13T17:13:18.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/783
+- author: Vixting
+  changes:
+    - type: Add
+      message: >-
+        Adds a overwatch tab to overseer terminal that allows you to observe
+        members of the vault (those with vault ID)
+    - type: Add
+      message: Adds overseer terminal only accessible with overseer ID
+  id: 6060
+  time: '2026-06-13T22:43:39.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/789
+- author: paige404
+  changes:
+    - type: Tweak
+      message: Player robots are no longer gibbable.
+  id: 6061
+  time: '2026-06-13T23:51:34.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/791
+- author: pierow
+  changes:
+    - type: Fix
+      message: >-
+        Player mobs no longer go vertical standing state when recovering from
+        stamina while crit/dead.
+  id: 6062
+  time: '2026-06-14T00:56:05.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/794
+- author: Cythisiax
+  changes:
+    - type: Fix
+      message: Missile bullets from revolvers & plasma weapons.
+  id: 6063
+  time: '2026-06-14T03:57:25.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/795
+- author: Squagg
+  changes:
+    - type: Add
+      message: >-
+        You can now pick a UI color theme (Pip-Boy Green, Dark Mode, Amber,
+        Vault Blue, or Classic Gold) from the options menu.
+  id: 6064
+  time: '2026-06-14T03:57:45.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/790
+- author: Bradysgaming
+  changes:
+    - type: Tweak
+      message: Buffed all deathclaws
+    - type: Tweak
+      message: Buffed Mirelurks
+    - type: Tweak
+      message: Buffed Maypoles
+    - type: Tweak
+      message: Most wasteland wildlife will now fight back
+    - type: Tweak
+      message: >-
+        Buffed Xeno npcs to reflect to our damage (idk if they get used for an
+        event they wont suck ig)
+  id: 6065
+  time: '2026-06-14T04:02:32.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/796
+- author: Wazura
+  changes:
+    - type: Tweak
+      message: Loadouts
+  id: 6066
+  time: '2026-06-14T04:08:46.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/787

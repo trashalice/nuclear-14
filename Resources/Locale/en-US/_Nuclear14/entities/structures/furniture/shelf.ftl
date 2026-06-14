@@ -1,0 +1,12 @@
+ent-N14ShelfWood1 = wooden shelf
+    .desc = A dusty old shelf.
+ent-N14ShelfWood = tall wooden shelf
+    .desc = A tall wooden shelf for storing items.
+ent-N14ShelfWoodShowcase = wooden showcase shelves
+    .desc = A wooden stand for showing things off.
+ent-N14ShelfWoodStand = wooden stand
+    .desc = A stand, not a sit. Missing a TV.
+ent-N14ShelfWoodStandSmall = small wooden stand
+    .desc = A small stand. For small people.
+ent-N14ShelfWoodClothesRack = clothes rack
+    .desc = A wooden rack for storing clothes.

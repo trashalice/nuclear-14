@@ -1,17 +1,17 @@
 - type: job
-  id: CaesarLegionOrator
+  id: CaesarLegionOptio
   setPreference: true
   hideIfPlaytimeRequirementsNotMet: false # #Misfits Tweak - all jobs visible in selection
   jobWhitelistBypassesRoleTimers: true # #Misfits Change
   weight: 180
   showBorder: true  # Starts the "Support Officers" tier block below Centurion/Legate
-  name: job-name-caesar-legion-orator
-  description: job-description-caesar-legion-orator
-  playTimeTracker: CaesarLegionOrator
+  name: job-name-caesar-legion-optio
+  description: job-description-caesar-legion-optio
+  playTimeTracker: CaesarLegionOptio
   requirements:
     - !type:CharacterDepartmentTimeRequirement # #Misfits Tweak - T4 faction timelock (12h Legion)
       department: CaesarLegion
-      min: 43200 # 12 hours
+      min: 72000 # 
     #- !type:CharacterPlaytimeRequirement # TEMP REMOVED
     #  tracker: CaesarLegionRecruit
     #  min: 18000 # 5 hours
@@ -22,13 +22,13 @@
       sex: Male
     - !type:CharacterGenderRequirement
       gender: Male
-  startingGear: CaesarLegionOratorGear
+  startingGear: CaesarLegionOptioGear
   alwaysUseSpawner: true
   icon: "JobIconlegionerVenator"
   supervisors: job-name-caesar-legion-other
   canBeAntag: false
   accessGroups:
-  - CaesarLegionOrator
+  - CaesarLegionOptio
   special:
   - !type:AddComponentSpecial
     components:
@@ -57,13 +57,13 @@
         - CaesarLegionVeteranDecanus
         - CaesarLegionCenturion
         - CaesarLegionLegate
-        - CaesarLegionOrator
+        - CaesarLegionOptio
         - CaesarLegionPriestessOfMars
   - !type:AddTraitSpecial
     traits: [ LanguageLatin ]
 
 - type: startingGear
-  id: CaesarLegionOratorGear
+  id: CaesarLegionOptioGear
   equipment:
     jumpsuit: N14ClothingUniformJumpsuitLegionnaire
     ears: N14ClothingHeadsetLegion
@@ -72,12 +72,12 @@
     back: N14ClothingBackpackMilitary
     shoes: N14ClothingShoesKaligi
     head: N14ClothingHeadHatLegionHood
-    outerClothing: N14ClothingOuterLegionnaireOratorArmor
+    outerClothing: N14ClothingOuterLegionnaireOptioArmor
     gloves: N14ClothingHandsGlovesTribal
     belt: N14Gladius
     suitstorage: N14PilumSpear
-    pocket1: LegionOratorloadoutkits
-    id: N14IDLegionaryMedalOrator
+    pocket1: LegionOptioloadoutkits
+    id: N14IDLegionaryMedalOptio
   innerClothingSkirt: N14ClothingUniformJumpsuitLegionnaireOther
   storage:
     back:
@@ -85,4 +85,4 @@
     - N14HealingPowder
 
 - type: playTimeTracker
-  id: CaesarLegionOrator
+  id: CaesarLegionOptio

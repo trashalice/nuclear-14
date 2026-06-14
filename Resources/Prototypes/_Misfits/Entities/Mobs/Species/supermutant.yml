@@ -74,6 +74,7 @@
   - type: Perishable
     rotAfter: 3600
   - type: Hunger
+    baseDecayRate: 0.024 # #Misfits Add - 3x human default (0.008) to reflect massive size / accelerated metabolism
     starvationDamage:
       types:
         Cold: 0.15 # Misfits Change - use Cold damage for Malnutrition instead of custom Starvation type (no brute/bleed from hunger)
@@ -119,10 +120,10 @@
   - type: Oni
     modifiers:
       coefficients:
-        Blunt: 1.0
-        Slash: 1.0
-        Piercing: 1.0
-        Shock: 1.0
+        Blunt: 2.0
+        Slash: 2.0
+        Piercing: 2.0
+        Shock: 2.0
   - type: MeleeThrowOnHit
     speed: 15
     lifetime: 0.025

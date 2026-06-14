@@ -104,7 +104,7 @@
     - ExplorerRaiderSet
 
 - type: entity
-  id: LegionOratorloadoutkits
+  id: LegionOptioloadoutkits
   name: kit
   description: "please only take one."
   parent: LegionCenturionloadoutkits
@@ -114,9 +114,9 @@
     state: base
   - type: UndecidedLoadoutBackpack
     possibleSets:
-    - OratorPreacherSet
-    - OratorDefenderSet
-    - OratorInquisitorSet
+    - OptioPreacherSet
+    - OptioDefenderSet
+    - OptioInquisitorSet
 
 - type: entity
   id: LegionHoundmasterloadoutkits
@@ -660,34 +660,34 @@
   - KitExplorerRaider
 
 - type: UndecidedLoadoutBackpackSet
-  id: OratorPreacherSet
-  name: undecided-loadout-category-corvax-orator-preacher-name
-  description: undecided-loadout-category-corvax-orator-preacher-description
+  id: OptioPreacherSet
+  name: undecided-loadout-category-corvax-optio-preacher-name
+  description: undecided-loadout-category-corvax-optio-preacher-description
   sprite:
     sprite: Corvax/Objects/Misc/kits.rsi
     state: base
   content:
-  - KitOratorPreacher
+  - KitOptioPreacher
 
 - type: UndecidedLoadoutBackpackSet
-  id: OratorDefenderSet
-  name: undecided-loadout-category-corvax-orator-defender-name
-  description: undecided-loadout-category-corvax-orator-defender-description
+  id: OptioDefenderSet
+  name: undecided-loadout-category-corvax-optio-defender-name
+  description: undecided-loadout-category-corvax-optio-defender-description
   sprite:
     sprite: Corvax/Objects/Misc/kits.rsi
     state: base
   content:
-  - KitOratorDefender
+  - KitOptioDefender
 
 - type: UndecidedLoadoutBackpackSet
-  id: OratorInquisitorSet
-  name: undecided-loadout-category-corvax-orator-inquisitor-name
-  description: undecided-loadout-category-corvax-orator-inquisitor-description
+  id: OptioInquisitorSet
+  name: undecided-loadout-category-corvax-optio-inquisitor-name
+  description: undecided-loadout-category-corvax-optio-inquisitor-description
   sprite:
     sprite: Corvax/Objects/Misc/kits.rsi
     state: base
   content:
-  - KitOratorInquisitor
+  - KitOptioInquisitor
 
 - type: UndecidedLoadoutBackpackSet
   id: HoundmasterHunterSet

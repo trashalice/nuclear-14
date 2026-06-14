@@ -37,13 +37,13 @@
     weight: 50
   - id: caravan_contract_N14MobGhoulFeral
     weight: 50
-  - id: caravan_contract_N14CookedFoodEggDeathclawBoiled
-    weight: 50
+  # - id: caravan_contract_N14CookedFoodEggDeathclawBoiled- you're not finding one blud -pierow
+    # weight: 50
   - id: caravan_contract_N14MobDeathclawMetal
     weight: 50
   - id: caravan_contract_N14SuperSledgeHammer
     weight: 50
-  - id: caravan_contract_N14MobCazadorWave
+  - id: caravan_contract_N14MobCazador
     weight: 50
   - id: caravan_contract_N14MobRaiderBoss
     weight: 50
@@ -52,12 +52,12 @@
   - id: caravan_contract_N14FloraProduceWildBrocFlower
     weight: 50
   # Misfits Add — new contracts: Easy
-  - id: caravan_contract_N14FoodCannedFish
-    weight: 50
+  #- id: caravan_contract_N14FoodCannedFish # fish aint mapped
+  #  weight: 50
   - id: caravan_contract_N14FoodEggChicken
     weight: 50
-  - id: caravan_contract_N14MobJackal
-    weight: 50
+  # - id: caravan_contract_N14MobJackal - removed, impossible to complete -pierow
+    # weight: 50
   - id: caravan_contract_N14Whip
     weight: 50
   # Misfits Add — new contracts: Medium
@@ -72,31 +72,42 @@
   - id: caravan_contract_N14PilumSpear
     weight: 50
   # Misfits Add — new contracts: Hard
-  - id: caravan_contract_N14MobDeathclawicy
-    weight: 50
+  #- id: caravan_contract_N14MobDeathclawicy -this is impossible; not mapped in. We're in Utah for god's sake man! -pierow
+    #weight: 50
   - id: caravan_contract_N14MobRadMirelurk
     weight: 50
   # Misfits Add — new Gold contracts
   - id: caravan_contract_N14Gladius
     weight: 50
-  - id: caravan_contract_N14WeaponLaserRifleYk42b
-    weight: 50
+  #- id: caravan_contract_N14WeaponLaserRifleYk42b -another impossible contract; item not obtainable -pierow
+    #weight: 50
   - id: caravan_contract_N14VeteranLegionArmor
     weight: 50
   # Misfits Add — new Mithril contract
-  - id: caravan_contract_N14MobCazadorWaveLarge
-    weight: 50
+  # - id: caravan_contract_N14MobCazador #removed, just buggy -pierow
+    # weight: 50
   # Misfits Add — new Diamond contracts
   - id: caravan_contract_N14MobDeathclawGrandHunt
     weight: 50
   - id: caravan_contract_N14WeaponPlasmaRifleDelivery
     weight: 50
+  - id: caravan_contract_N14VaultPDA #5 new contracts -pierow  N14CurrencyPrewar
+    weight: 50
+  - id: caravan_contract_N14ChineseSword 
+    weight: 50
+  - id: caravan_contract_N14HolotapeQuestGECK
+    weight: 50
+  - id: caravan_contract_N14HolotapeEnclave
+    weight: 50
+  - id: caravan_contract_N14CurrencyPrewar
+    weight: 50
+
 
 - type: storeContractsPreset
   id: PresetBazar
-  # #Misfits Change — retier system: 6 tiers replace Easy/Medium/Hard
+  # #Misfits Change — retier system: 6 tiers replace Easy/Medium/Hard -TWEAKED, lower tiers more abundent, higher tiers more scarce
   limits:
-    Bronze: 3
+    Bronze: 5
     Iron: 3
     Silver: 2
     Gold: 2
@@ -517,12 +528,12 @@
       id: caravan_gold
 
 - type: storeContract
-  id: caravan_contract_N14MobCazadorWave
+  id: caravan_contract_N14MobCazador
   name: "Cazador"
   description: "Bring back the cazador bodies."
   difficulty: Gold
   targets:
-  - id: N14MobCazadorWave
+  - id: N14MobCazador
     required: 3
   rewards:
   - type: Currency
@@ -571,23 +582,23 @@
     - type: Pool
       id: caravan_diamond
 
-- type: storeContract
-  id: caravan_contract_N14CookedFoodEggDeathclawBoiled
-  name: "Deathclaw Delicacy"
-  description: "A gourmet with peculiar taste urgently needs a boiled deathclaw egg. Good luck sourcing one."
-  difficulty: Mithril
-  targets:
-  - id: N14CookedFoodEggDeathclawBoiled
-    required: 1
-  rewards:
-  - type: Currency
-    id: Caps
-    amount: { min: 600, max: 1000 }
-  - type: Pool
-    amount: { min: 1, max: 3 }
-    options:
-    - type: Pool
-      id: caravan_mithril
+# - type: storeContract -removed, see above
+  # id: caravan_contract_N14CookedFoodEggDeathclawBoiled
+  # name: "Deathclaw Delicacy"
+  # description: "A gourmet with peculiar taste urgently needs a boiled deathclaw egg. Good luck sourcing one."
+  # difficulty: Mithril
+  # targets:
+  # - id: N14CookedFoodEggDeathclawBoiled
+    # required: 1
+  # rewards:
+  # - type: Currency
+    # id: Caps
+    # amount: { min: 600, max: 1000 }
+  # - type: Pool
+    # amount: { min: 1, max: 3 }
+    # options:
+    # - type: Pool
+      # id: caravan_mithril
 
 # Misfits Add — new Easy contracts
 - type: storeContract
@@ -626,23 +637,23 @@
     - type: Pool
       id: caravan_bronze
 
-- type: storeContract
-  id: caravan_contract_N14MobJackal
-  name: "Jackal Pack"
-  description: "Those damn jackals are harassing the locals. Come back with proof you cleared them out."
-  difficulty: Iron
-  targets:
-  - id: N14MobJackal
-    required: { min: 3, max: 6 }
-  rewards:
-  - type: Currency
-    id: Caps
-    amount: { min: 80, max: 120 }
-  - type: Pool
-    amount: { min: 1, max: 3 }
-    options:
-    - type: Pool
-      id: caravan_iron
+# - type: storeContract - removed, unmapped -pierow
+  # id: caravan_contract_N14MobJackal
+  # name: "Jackal Pack"
+  # description: "Those damn jackals are harassing the locals. Come back with proof you cleared them out."
+  # difficulty: Iron
+  # targets:
+  # - id: N14MobJackal
+    # required: { min: 3, max: 6 }
+  # rewards:
+  # - type: Currency
+    # id: Caps
+    # amount: { min: 80, max: 120 }
+  # - type: Pool
+    # amount: { min: 1, max: 3 }
+    # options:
+    # - type: Pool
+      # id: caravan_iron
 
 - type: storeContract
   id: caravan_contract_N14Whip
@@ -753,24 +764,24 @@
     - type: Pool
       id: caravan_silver_nonweapons
 
-# Misfits Add — new Hard contracts
-- type: storeContract
-  id: caravan_contract_N14MobDeathclawicy
-  name: "Icy Deathclaw"
-  description: "A pale terror has been spotted north. Kill it and bring proof."
-  difficulty: Mithril
-  targets:
-  - id: N14MobDeathclawicy
-    required: 1
-  rewards:
-  - type: Currency
-    id: Caps
-    amount: { min: 600, max: 1000 }
-  - type: Pool
-    amount: { min: 1, max: 3 }
-    options:
-    - type: Pool
-      id: caravan_mithril
+# # Misfits Add — new Hard contracts
+# - type: storeContract -removed, see above
+  # id: caravan_contract_N14MobDeathclawicy
+  # name: "Icy Deathclaw"
+  # description: "A pale terror has been spotted north. Kill it and bring proof."
+  # difficulty: Mithril
+  # targets:
+  # - id: N14MobDeathclawicy
+    # required: 1
+  # rewards:
+  # - type: Currency
+    # id: Caps
+    # amount: { min: 600, max: 1000 }
+  # - type: Pool
+    # amount: { min: 1, max: 3 }
+    # options:
+    # - type: Pool
+      # id: caravan_mithril
 
 - type: storeContract
   id: caravan_contract_N14MobRadMirelurk
@@ -810,23 +821,23 @@
     - type: Pool
       id: caravan_gold_nonweapons
 
-- type: storeContract
-  id: caravan_contract_N14WeaponLaserRifleYk42b
-  name: "Laser Technology"
-  description: "Pre-war energy weapons are in high demand. Bring us a YK-42b laser rifle."
-  difficulty: Gold
-  targets:
-  - id: N14WeaponLaserRifleYk42b
-    required: 1
-  rewards:
-  - type: Currency
-    id: Caps
-    amount: { min: 400, max: 650 }
-  - type: Pool
-    amount: { min: 1, max: 3 }
-    options:
-    - type: Pool
-      id: caravan_gold_nonweapons
+# - type: storeContract -removed, see above
+  # id: caravan_contract_N14WeaponLaserRifleYk42b
+  # name: "Laser Technology"
+  # description: "Pre-war energy weapons are in high demand. Bring us a YK-42b laser rifle."
+  # difficulty: Gold
+  # targets:
+  # - id: N14WeaponLaserRifleYk42b
+    # required: 1
+  # rewards:
+  # - type: Currency
+    # id: Caps
+    # amount: { min: 400, max: 650 }
+  # - type: Pool
+    # amount: { min: 1, max: 3 }
+    # options:
+    # - type: Pool
+      # id: caravan_gold_nonweapons
 
 - type: storeContract
   id: caravan_contract_N14VeteranLegionArmor
@@ -848,23 +859,23 @@
 
 # Misfits Add — new Mithril tier contract
 
-- type: storeContract
-  id: caravan_contract_N14MobCazadorWaveLarge
-  name: "Cazador Nest"
-  description: "A full cazador nest has been spotted. We need five dead to clear it properly."
-  difficulty: Mithril
-  targets:
-  - id: N14MobCazadorWave
-    required: 5
-  rewards:
-  - type: Currency
-    id: Caps
-    amount: { min: 800, max: 1200 }
-  - type: Pool
-    amount: { min: 2, max: 4 }
-    options:
-    - type: Pool
-      id: caravan_mithril
+# - type: storeContract -this is just broke and never works. better off not having it tbh -pierow
+  # id: caravan_contract_N14MobCazador
+  # name: "Cazador Nest"
+  # description: "A full cazador nest has been spotted. We need five dead to clear it properly."
+  # difficulty: Mithril
+  # targets:
+  # - id: N14MobCazador
+    # required: 5
+  # rewards:
+  # - type: Currency
+    # id: Caps
+    # amount: { min: 800, max: 1200 }
+  # - type: Pool
+    # amount: { min: 2, max: 4 }
+    # options:
+    # - type: Pool
+      # id: caravan_mithril
 
 # Misfits Add — new Diamond tier contracts
 
@@ -903,3 +914,95 @@
     options:
     - type: Pool
       id: caravan_diamond
+
+#Misfits Add - more contracts to compensate for the ones removes and then some ---pierow
+- type: storeContract
+  id: caravan_contract_N14VaultPDA
+  name: "Vault Science"
+  description: "A researcher is paying a fortune for a couple of functional pipboys. Specifically, from Vault 14; no others will suffice. Don't ask what they need it for."
+  difficulty: Diamond
+  targets:
+  - id: N14VaultPDA
+    required: 2
+  rewards:
+  - type: Currency
+    id: Caps
+    amount: { min: 1500, max: 2000 }
+  - type: Pool
+    amount: { min: 2, max: 4 }
+    options:
+    - type: Pool
+      id: caravan_diamond
+
+- type: storeContract
+  id: caravan_contract_N14ChineseSword
+  name: "Black Maarket Dealings"
+  description: "The Ghoul Liberation Army is looking to restock their arsenal. Think you can turn a blind eye?"
+  difficulty: Gold
+  targets:
+  - id: N14ChineseSword
+    required: 3
+  rewards:
+  - type: Currency
+    id: Caps
+    amount: { min: 700, max: 1200 }
+  - type: Pool
+    amount: { min: 1, max: 3 }
+    options:
+    - type: Pool
+      id: caravan_gold
+
+- type: storeContract
+  id: caravan_contract_N14HolotapeQuestGECK
+  name: "REDACTED"
+  description: "A client named J████ F██████ is requesting a copy of the GECK on a holotape. What in tarnation is a GECK...?"
+  difficulty: Mithril
+  targets:
+  - id: N14HolotapeQuestGECK
+    required: 1
+  rewards:
+  - type: Currency
+    id: Caps
+    amount: { min: 1800, max: 2500 }
+  - type: Pool
+    amount: { min: 2, max: 4 }
+    options:
+    - type: Pool
+      id: caravan_mithril
+
+- type: storeContract
+  id: caravan_contract_N14HolotapeEnclave
+  name: "REDACTED"
+  description: "Someone claiming they're from the United States Secret Service asked for this holotape. No questions asked."
+  difficulty: Diamond
+  targets:
+  - id: N14HolotapeEnclave
+    required: 1
+  rewards:
+  - type: Currency
+    id: Caps
+    amount: { min: 2000, max: 2700 }
+  - type: Pool
+    amount: { min: 2, max: 4 }
+    options:
+    - type: Pool
+      id: caravan_diamond
+
+- type: storeContract
+  id: caravan_contract_N14CurrencyPrewar
+  name: "Currency Exchange"
+  description: "These vaulties keep boasting it has value. Perhaps we should invest?"
+  difficulty: Mithril
+  targets:
+  - id: N14CurrencyPrewar
+    required: 1000
+  rewards:
+  - type: Currency
+    id: Caps
+    amount: { min: 600, max: 1100 }
+  - type: Pool
+    amount: { min: 2, max: 4 }
+    options:
+    - type: Pool
+      id: caravan_mithril
+

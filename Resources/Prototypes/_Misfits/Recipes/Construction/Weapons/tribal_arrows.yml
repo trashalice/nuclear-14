@@ -1,0 +1,48 @@
+# #Misfits Add - Construction graphs for tribal arrow variants.
+# Tribal arrow: heavy war tip, needs more metal and bone.
+# Broadhead: razor-edged, needs glass shards for the cutting edge.
+
+- type: constructionGraph
+  id: TribalArrow
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: TribalArrow
+      steps:
+      - material: MetalRod
+        amount: 1
+        doAfter: 2
+      - material: Cloth
+        amount: 1
+        doAfter: 1
+      - material: Bones
+        amount: 1
+        doAfter: 1
+
+  - node: TribalArrow
+    entity: N14ArrowTribal
+
+- type: constructionGraph
+  id: BroadHeadArrow
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: BroadHeadArrow
+      steps:
+      - material: MetalRod
+        amount: 1
+        doAfter: 2
+      - material: Cloth
+        amount: 1
+        doAfter: 1
+      - tag: GlassShard
+        name: Glass Shard
+        icon:
+          sprite: Objects/Materials/Shards/shard.rsi
+          state: shard1
+        doAfter: 1
+
+  - node: BroadHeadArrow
+    entity: N14ArrowBroadHead

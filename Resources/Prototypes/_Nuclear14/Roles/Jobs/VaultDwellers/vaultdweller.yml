@@ -14,6 +14,7 @@
   setPreference: true
   overrideConsoleVisibility: true
   canBeAntag: false
+  overwatchCategory: OverwatchGeneral
   playTimeTracker: VaultDweller
   startingGear: VaultDwellerGear
   alwaysUseSpawner: true

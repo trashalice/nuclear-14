@@ -9,6 +9,7 @@ using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Controls.FancyTree;
 using Content.Client.Verbs.UI;
 using Content.Shared.Verbs;
+using Content.Shared._Misfits.UI; // #Misfits Add - UI theme palette prototype
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
@@ -79,6 +80,16 @@ namespace Content.Client.Stylesheets
         public const string StyleClassLabelSmall = "LabelSmall";
         public const string StyleClassButtonBig = "ButtonBig";
 
+        // Pip-Boy terminal style classes (lobby + character selection retheme).
+        public const string StyleClassPipBoyButton = "PipBoy";
+        public const string StyleClassPipBoyPanel = "PipBoyPanel";
+        public const string StyleClassPipBoyHeading = "PipBoyHeading";
+        public const string StyleClassPipBoyLabel = "PipBoyLabel";
+        // #Misfits Add - Rule-driven chrome fills so they re-skin live on a theme swap (vs. baked-in colors).
+        public const string StyleClassPipBoyFill = "PipBoyFill";           // flat panel background
+        public const string StyleClassPipBoyHighlight = "PipBoyHighlight"; // selected/inset highlight
+        public const string StyleClassPipBoyDivider = "PipBoyDivider";     // thin accent divider bar
+
         public const string StyleClassPopupMessageSmall = "PopupMessageSmall";
         public const string StyleClassPopupMessageSmallCaution = "PopupMessageSmallCaution";
         public const string StyleClassPopupMessageMedium = "PopupMessageMedium";
@@ -88,18 +99,20 @@ namespace Content.Client.Stylesheets
 
         public static readonly Color PanelDark = Color.FromHex("#1E1E22");
 
-        public static readonly Color NanoGold = Color.FromHex("#A88B5E");
+        // #Misfits Change - Themeable accent (mutable so the UI theme can be swapped at runtime). Reassigned by ApplyPalette.
+        public static Color NanoGold = Color.FromHex("#33FF66");
         public static readonly Color GoodGreenFore = Color.FromHex("#31843E");
         public static readonly Color ConcerningOrangeFore = Color.FromHex("#A5762F");
         public static readonly Color DangerousRedFore = Color.FromHex("#BB3232");
         public static readonly Color DisabledFore = Color.FromHex("#5A5A5A");
 
-        public static readonly Color ButtonColorDefault = Color.FromHex("#464950");
+        // #Misfits Change - Themeable default button family (mutable for runtime theme swap). Reassigned by ApplyPalette.
+        public static Color ButtonColorDefault = Color.FromHex("#163E1E");
         public static readonly Color ButtonColorDefaultRed = Color.FromHex("#D43B3B");
-        public static readonly Color ButtonColorHovered = Color.FromHex("#575b61");
+        public static Color ButtonColorHovered = Color.FromHex("#205A2C");
         public static readonly Color ButtonColorHoveredRed = Color.FromHex("#DF6B6B");
-        public static readonly Color ButtonColorPressed = Color.FromHex("#3e6c45");
-        public static readonly Color ButtonColorDisabled = Color.FromHex("#292929");
+        public static Color ButtonColorPressed = Color.FromHex("#2E7D3F");
+        public static Color ButtonColorDisabled = Color.FromHex("#10240F");
 
         public static readonly Color ButtonColorCautionDefault = Color.FromHex("#8F6A33");
         public static readonly Color ButtonColorCautionHovered = Color.FromHex("#C0934E");
@@ -114,6 +127,39 @@ namespace Content.Client.Stylesheets
         public static readonly Color ButtonColorGoodDefault = Color.FromHex("#3E6C45");
         public static readonly Color ButtonColorGoodHovered = Color.FromHex("#31843E");
         public static readonly Color ButtonColorGoodDisabled = Color.FromHex("#164420");
+
+        // #Misfits Change - Themeable palette aliases used by the rethemed menus (mutable for runtime swap). Reassigned by ApplyPalette.
+        public static Color PipBoyGreen = Color.FromHex("#33FF66");
+        public static Color PipBoyGreenDim = Color.FromHex("#1E9C3D");
+        public static Color PipBoyPanelBg = Color.FromHex("#0C1F0E");
+        public static readonly Color PipBoyBgTint = Color.FromHex("#5CC46E");
+        public static Color PipBoyBtnDefault = Color.FromHex("#163E1E");
+        public static Color PipBoyBtnHovered = Color.FromHex("#205A2C");
+        public static Color PipBoyBtnPressed = Color.FromHex("#2E7D3F");
+        public static Color PipBoyBtnDisabled = Color.FromHex("#10240F");
+
+        // #Misfits Add - Applies a server-definable UI theme to the themeable color fields above.
+        /// <summary>
+        /// Applies a <see cref="UiThemePrototype"/> to the themeable color fields above. Call this BEFORE
+        /// constructing a new <see cref="StyleNano"/> (so its rules capture the colors), then have
+        /// the stylesheet manager reassign the rebuilt sheet to restyle the live UI.
+        /// </summary>
+        public static void ApplyPalette(UiThemePrototype p)
+        {
+            NanoGold = p.Accent;
+            ButtonColorDefault = p.ButtonDefault;
+            ButtonColorHovered = p.ButtonHovered;
+            ButtonColorPressed = p.ButtonPressed;
+            ButtonColorDisabled = p.ButtonDisabled;
+
+            PipBoyGreen = p.Accent;
+            PipBoyGreenDim = p.AccentDim;
+            PipBoyPanelBg = p.PanelBg;
+            PipBoyBtnDefault = p.ButtonDefault;
+            PipBoyBtnHovered = p.ButtonHovered;
+            PipBoyBtnPressed = p.ButtonPressed;
+            PipBoyBtnDisabled = p.ButtonDisabled;
+        }
 
         //NavMap
         public static readonly Color PointRed = Color.FromHex("#B02E26");
@@ -182,6 +228,10 @@ namespace Content.Client.Stylesheets
             var notoSansBold18 = resCache.NotoStack(variation: "Bold", size: 18);
             var notoSansBold20 = resCache.NotoStack(variation: "Bold", size: 20);
             var notoSansMono = resCache.GetFont("/EngineFonts/NotoSans/NotoSansMono-Regular.ttf", size: 12);
+            // Pip-Boy terminal fonts (reuse the engine monospace face, no new asset).
+            var pipBoyMono12 = resCache.GetFont("/EngineFonts/NotoSans/NotoSansMono-Regular.ttf", size: 12);
+            var pipBoyMono16 = resCache.GetFont("/EngineFonts/NotoSans/NotoSansMono-Regular.ttf", size: 16);
+            var pipBoyMono20 = resCache.GetFont("/EngineFonts/NotoSans/NotoSansMono-Regular.ttf", size: 20);
             var windowHeaderTex = resCache.GetTexture("/Textures/Interface/Nano/window_header.png");
             var windowHeader = new StyleBoxTexture
             {
@@ -706,6 +756,33 @@ namespace Content.Client.Stylesheets
                 Element<ContainerButton>().Class(ContainerButton.StyleClassButton).Class(ButtonDanger)
                     .Pseudo(ContainerButton.StylePseudoClassDisabled)
                     .Prop(Control.StylePropertyModulateSelf, ButtonColorDangerDisabled),
+
+                // Colors for the Pip-Boy terminal buttons (lobby + character selection).
+                Element<ContainerButton>().Class(ContainerButton.StyleClassButton).Class(StyleClassPipBoyButton)
+                    .Pseudo(ContainerButton.StylePseudoClassNormal)
+                    .Prop(Control.StylePropertyModulateSelf, PipBoyBtnDefault),
+
+                Element<ContainerButton>().Class(ContainerButton.StyleClassButton).Class(StyleClassPipBoyButton)
+                    .Pseudo(ContainerButton.StylePseudoClassHover)
+                    .Prop(Control.StylePropertyModulateSelf, PipBoyBtnHovered),
+
+                Element<ContainerButton>().Class(ContainerButton.StyleClassButton).Class(StyleClassPipBoyButton)
+                    .Pseudo(ContainerButton.StylePseudoClassPressed)
+                    .Prop(Control.StylePropertyModulateSelf, PipBoyBtnPressed),
+
+                Element<ContainerButton>().Class(ContainerButton.StyleClassButton).Class(StyleClassPipBoyButton)
+                    .Pseudo(ContainerButton.StylePseudoClassDisabled)
+                    .Prop(Control.StylePropertyModulateSelf, PipBoyBtnDisabled),
+
+                // Pip-Boy button label: monospace, phosphor green.
+                new StyleRule(new SelectorChild(
+                        new SelectorElement(typeof(ContainerButton), new[] {StyleClassPipBoyButton}, null, null),
+                        new SelectorElement(typeof(Label), null, null, null)),
+                    new[]
+                    {
+                        new StyleProperty(Label.StylePropertyFont, pipBoyMono16),
+                        new StyleProperty(Label.StylePropertyFontColor, PipBoyGreen),
+                    }),
 
                 // Colors for confirm buttons confirm states.
                 Element<ConfirmButton>()
@@ -1403,6 +1480,32 @@ namespace Content.Client.Stylesheets
                 Element<PanelContainer>().Class(ClassAngleRect)
                     .Prop(PanelContainer.StylePropertyPanel, BaseAngleRect)
                     .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#252525")),
+
+                // Pip-Boy terminal panel (lobby + character selection): green-black fill.
+                Element<PanelContainer>().Class(StyleClassPipBoyPanel)
+                    .Prop(PanelContainer.StylePropertyPanel, BaseAngleRect)
+                    .Prop(Control.StylePropertyModulateSelf, PipBoyPanelBg),
+
+                // Pip-Boy heading: large monospace, phosphor green.
+                Element<Label>().Class(StyleClassPipBoyHeading)
+                    .Prop(Label.StylePropertyFont, pipBoyMono20)
+                    .Prop(Label.StylePropertyFontColor, PipBoyGreen),
+
+                // Pip-Boy body label: monospace, dim green.
+                Element<Label>().Class(StyleClassPipBoyLabel)
+                    .Prop(Label.StylePropertyFont, pipBoyMono12)
+                    .Prop(Label.StylePropertyFontColor, PipBoyGreenDim),
+
+                // #Misfits Add - Rule-driven themed chrome fills. The StyleBoxFlat is captured at sheet-build
+                // time, so rebuilding the sheet on a palette change re-skins these live.
+                Element<PanelContainer>().Class(StyleClassPipBoyFill)
+                    .Prop(PanelContainer.StylePropertyPanel, new StyleBoxFlat { BackgroundColor = PipBoyPanelBg }),
+
+                Element<PanelContainer>().Class(StyleClassPipBoyHighlight)
+                    .Prop(PanelContainer.StylePropertyPanel, new StyleBoxFlat { BackgroundColor = PipBoyBtnDefault }),
+
+                Element<PanelContainer>().Class(StyleClassPipBoyDivider)
+                    .Prop(PanelContainer.StylePropertyPanel, new StyleBoxFlat { BackgroundColor = PipBoyGreen }),
 
                 Element<PanelContainer>().Class("BackgroundOpenRight")
                     .Prop(PanelContainer.StylePropertyPanel, BaseButtonOpenRight)

@@ -11,3 +11,91 @@
   components:
   - type: Sprite
     sprite: _Misfits/Objects/Weapons/Guns/Bow/tribal_bow.rsi
+
+# #Misfits Add - War Bow: heavy draw weight, slower but hits harder with a higher projectile speed.
+- type: entity
+  parent: BaseBow
+  id: N14WarBow
+  name: war bow
+  description: A heavy-draw tribal war bow reinforced with braided sinew and bone laminates. Slower to fire but the arrows fly with devastating force.
+  components:
+  - type: Sprite
+    sprite: _Misfits/Objects/Weapons/Guns/Bow/tribal_bow.rsi
+  - type: Gun
+    fireRate: 0.8
+    projectileSpeed: 45.5
+  - type: Wieldable
+    wieldedSpeedModifier: 0.8
+  - type: Appearance
+  - type: ItemMapper
+    spriteLayers:
+    - arrow
+    - plunger
+    mapLayers:
+      arrow:
+        whitelist:
+          tags:
+          - Arrow
+      plunger:
+        whitelist:
+          tags:
+          - Plunger
+  - type: GenericVisualizer
+    visuals:
+      enum.WieldableVisuals.Wielded:
+        arrow:
+          True: { state: wielded-arrow }
+          False: { state: unwielded-arrow }
+        plunger:
+          True: { state: wielded-plunger }
+          False: { state: unwielded-plunger }
+        base:
+          True: { state: wielded }
+          False: { state: unwielded }
+  - type: Construction
+    graph: TribalWarBow
+    node: TribalWarBow
+
+# #Misfits Add - Recurve Bow: lighter and faster, favored by tribal hunters for quick follow-up shots.
+- type: entity
+  parent: BaseBow
+  id: N14RecurveBow
+  name: recurve bow
+  description: A compact recurve bow with reflexed limb tips, designed for rapid shooting at the cost of raw stopping power. Popular among tribal hunters who value speed over force.
+  components:
+  - type: Sprite
+    sprite: _Misfits/Objects/Weapons/Guns/Bow/tribal_bow.rsi
+  - type: Gun
+    fireRate: 1.2
+    projectileSpeed: 29.75
+  - type: Wieldable
+    wieldedSpeedModifier: 0.95
+  - type: Appearance
+  - type: ItemMapper
+    spriteLayers:
+    - arrow
+    - plunger
+    mapLayers:
+      arrow:
+        whitelist:
+          tags:
+          - Arrow
+      plunger:
+        whitelist:
+          tags:
+          - Plunger
+  - type: GenericVisualizer
+    visuals:
+      enum.WieldableVisuals.Wielded:
+        arrow:
+          True: { state: wielded-arrow }
+          False: { state: unwielded-arrow }
+        plunger:
+          True: { state: wielded-plunger }
+          False: { state: unwielded-plunger }
+        base:
+          True: { state: wielded }
+          False: { state: unwielded }
+  - type: Construction
+    graph: TribalRecurveBow
+    node: TribalRecurveBow

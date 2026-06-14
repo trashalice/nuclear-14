@@ -1,7 +1,8 @@
 <DefaultWindow xmlns="https://spacestation14.io"
+               xmlns:viewport="clr-namespace:Content.Client.Viewport"
                Title="TERMINAL"
-               MinSize="480 380"
-               SetSize="520 500">
+               MinSize="680 480"
+               SetSize="860 620">
     <!-- Green-on-black Vault-Tec ASCII terminal aesthetic -->
     <!-- Background and separator styling applied in code-behind -->
     <PanelContainer Name="BackgroundPanel" VerticalExpand="True" HorizontalExpand="True">
@@ -23,6 +24,7 @@
                 <Button Name="LinksTabButton" Text="[ LINKS ]" MinWidth="80" Visible="False" />
                 <!-- #Misfits Add - Database tab button for the faction-shared knowledge database -->
                 <Button Name="DatabaseTabButton" Text="[ DATABASE ]" MinWidth="100" Visible="False" />
+                <Button Name="OverwatchTabButton" Text="[ OVERWATCH ]" MinWidth="110" Visible="False" />
             </BoxContainer>
 
             <!-- ═══ DATA TAB content ═══ -->
@@ -138,6 +140,74 @@
                 <!-- Action bar (rebuilt per view in code-behind) -->
                 <PanelContainer Name="SepDatabaseActions" MinHeight="1" HorizontalExpand="True" />
                 <BoxContainer Name="DatabaseActionsBar" Orientation="Horizontal" SeparationOverride="6" />
+            </BoxContainer>
+
+            <!-- OVERWATCH TAB -->
+            <BoxContainer Name="OverwatchPanel" Orientation="Vertical" VerticalExpand="True" SeparationOverride="4" Visible="False">
+                <BoxContainer Orientation="Horizontal" SeparationOverride="8" HorizontalExpand="True">
+                    <Label Name="OverwatchHeaderLabel"
+                           Text="VAULT PERSONNEL MONITOR"
+                           FontColorOverride="#33FF33"
+                           StyleClasses="monospace"
+                           HorizontalExpand="True" />
+                    <Label Name="OverwatchSignalLabel"
+                           Text="UPLINK READY"
+                           FontColorOverride="#1a5c1a"
+                           StyleClasses="monospace"
+                           HorizontalAlignment="Right" />
+                </BoxContainer>
+                <PanelContainer Name="SepOverwatch" MinHeight="1" HorizontalExpand="True" />
+                <BoxContainer Orientation="Horizontal" VerticalExpand="True" SeparationOverride="8">
+                    <BoxContainer Orientation="Vertical" MinWidth="360" MaxWidth="420" SeparationOverride="4">
+                        <RichTextLabel Name="OverwatchRosterSummaryLabel"
+                                       StyleClasses="monospace"
+                                       HorizontalExpand="True" />
+                        <LineEdit Name="OverwatchSearchBar"
+                                  PlaceHolder="Search linked personnel..."
+                                  HorizontalExpand="True" />
+                        <Label Name="OverwatchNoPersonnelLabel"
+                               Text="No eligible personnel found."
+                               FontColorOverride="#33FF33"
+                               StyleClasses="monospace" />
+                        <ScrollContainer VerticalExpand="True" HorizontalExpand="True" HScrollEnabled="False">
+                            <BoxContainer Name="OverwatchPersonnelList"
+                                          Orientation="Vertical"
+                                          SeparationOverride="6"
+                                          HorizontalExpand="True" />
+                        </ScrollContainer>
+                    </BoxContainer>
+
+                    <PanelContainer MinWidth="1" VerticalExpand="True" />
+
+                    <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" SeparationOverride="6">
+                        <Button Name="OverwatchStopWatchingButton"
+                                Text="[ STOP WATCH ]"
+                                HorizontalAlignment="Left"
+                                MinWidth="140" />
+                        <LayoutContainer Name="OverwatchCameraViewBox"
+                                         MinSize="320 220"
+                                         HorizontalExpand="True"
+                                         VerticalExpand="True">
+                            <viewport:ScalingViewport Name="OverwatchCameraView"
+                                                      VerticalExpand="True"
+                                                      HorizontalExpand="True"
+                                                      MouseFilter="Ignore" />
+                            <PanelContainer Name="OverwatchCameraFallback"
+                                            VerticalExpand="True"
+                                            HorizontalExpand="True">
+                                <Label Name="OverwatchCameraFallbackLabel"
+                                       Text="NO ACTIVE CAMERA FEED"
+                                       FontColorOverride="#1a5c1a"
+                                       StyleClasses="monospace"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center" />
+                            </PanelContainer>
+                        </LayoutContainer>
+                        <RichTextLabel Name="OverwatchStatusLabel"
+                                       StyleClasses="monospace"
+                                       HorizontalExpand="True" />
+                    </BoxContainer>
+                </BoxContainer>
             </BoxContainer>
         </BoxContainer>
     </PanelContainer>

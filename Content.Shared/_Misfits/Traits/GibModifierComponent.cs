@@ -5,11 +5,15 @@ public sealed partial class GibModifierComponent : Component
 {
 
     [DataField]
-    [ViewVariables]
+    [ViewVariables(VVAccess.ReadWrite)]
     public float GibThresholdMultiplier = 1f;
 
     [DataField]
-    [ViewVariables]
+    [ViewVariables(VVAccess.ReadWrite)]
     public float SeverThresholdMultiplier = 1f;
+
+    [DataField]
+    [ViewVariables(VVAccess.ReadWrite)]
+    public bool Ungibbable = false;
 
 }

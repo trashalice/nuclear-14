@@ -7,7 +7,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 23
+        Piercing: 24
   # Misfits Add - 7.62mm full-power military rifle; excellent range retention
   - type: BallisticDamageFalloff
     falloffStartTiles: 10.0

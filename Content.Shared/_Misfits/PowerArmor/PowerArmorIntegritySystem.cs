@@ -14,6 +14,7 @@ using Content.Shared.Rounding;
 using Content.Shared.Verbs;
 using Robust.Shared.Containers;
 using Robust.Shared.Network;
+using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
 namespace Content.Shared._Misfits.PowerArmor;
@@ -34,8 +35,24 @@ namespace Content.Shared._Misfits.PowerArmor;
 /// </summary>
 public sealed class PowerArmorIntegritySystem : EntitySystem
 {
+    // Shitmed relays one hit through inventory twice: once from part damage and
+    // once from the body-level damage pass. Cache the wearer-facing split so the
+    // second relay keeps the same reduced damage without charging integrity again.
+    private (GameTick Tick, EntityUid Armor, EntityUid? Origin, FixedPoint2 OriginalTotal, DamageSpecifier WearerShare)? _lastSplit;
+
+    // #Misfits Fix - Biological/internal damage types that bypass armor integrity entirely.
+    private static readonly HashSet<string> BypassTypes = new()
+    {
+        "Asphyxiation",
+        "Bloodloss",
+        "Cellular",
+        "Poison",
+        "Radiation",
+    };
+
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly INetManager _net = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly ExamineSystemShared _examine = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly AlertsSystem _alerts = default!;
@@ -125,6 +142,19 @@ public sealed class PowerArmorIntegritySystem : EntitySystem
     private void OnDamageModify(EntityUid uid, PowerArmorIntegrityComponent comp,
         InventoryRelayedEvent<DamageModifyEvent> args)
     {
+        var curTick = _timing.CurTick;
+        var originalTotal = args.Args.OriginalDamage.GetTotal();
+
+        if (_lastSplit is { } cached &&
+            cached.Tick == curTick &&
+            cached.Armor == uid &&
+            cached.Origin == args.Args.Origin &&
+            cached.OriginalTotal == originalTotal)
+        {
+            args.Args.Damage = new DamageSpecifier(cached.WearerShare);
+            return;
+        }
+
         // #Misfits Change - broken armor: ArmorComponent stays active (coefficients still apply).
         // Apply BrokenBleedthroughRatio (20%) so the wearer takes only 20% of post-coefficient damage.
         // OLD behavior: returned early → ArmorComponent had been removed → wearer took full damage.
@@ -133,9 +163,16 @@ public sealed class PowerArmorIntegritySystem : EntitySystem
             var brokenShare = new DamageSpecifier();
             foreach (var (type, amount) in args.Args.Damage.DamageDict)
             {
+                // #Misfits Fix - Biological damage bypasses armor entirely.
+                if (BypassTypes.Contains(type))
+                {
+                    brokenShare.DamageDict[type] = amount;
+                    continue;
+                }
                 // Pass healing (negative values) through unchanged; only cap incoming damage.
                 brokenShare.DamageDict[type] = amount <= 0 ? amount : amount * comp.BrokenBleedthroughRatio;
             }
+            _lastSplit = (curTick, uid, args.Args.Origin, originalTotal, new DamageSpecifier(brokenShare));
             args.Args.Damage = brokenShare;
             return;
         }
@@ -165,6 +202,13 @@ public sealed class PowerArmorIntegritySystem : EntitySystem
                 continue;
             }
 
+            // #Misfits Fix - Biological damage bypasses armor integrity entirely.
+            if (BypassTypes.Contains(type))
+            {
+                playerShare.DamageDict[type] = amount;
+                continue;
+            }
+
             var toPlayer = amount * comp.BleedthroughRatio;
             var toArmor = amount - toPlayer;
 
@@ -179,6 +223,8 @@ public sealed class PowerArmorIntegritySystem : EntitySystem
             armorShare.DamageDict[type] = toArmor;
             playerShare.DamageDict[type] = toPlayer;
         }
+
+        _lastSplit = (curTick, uid, args.Args.Origin, originalTotal, new DamageSpecifier(playerShare));
 
         // Only the 1.5% bleedthrough reaches the wearer.
         args.Args.Damage = playerShare;

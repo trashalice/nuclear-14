@@ -15,10 +15,14 @@ using Content.Server.Mind;
 using Content.Server.Roles.Jobs;
 using Content.Shared._Misfits.FactionWar;
 using Content.Shared.GameTicking;
+using Content.Shared.Ghost;
 using Content.Shared.Mind.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.NPC.Systems;
+using Content.Shared.Popups;
+using Content.Shared.Standing;
+using Content.Shared.Stunnable;
 using Robust.Server.Player;
 using Robust.Shared.Console;
 using Robust.Shared.Enums;
@@ -49,9 +53,11 @@ public sealed class FactionWarSystem : EntitySystem
     [Dependency] private readonly IConsoleHost     _conHost       = default!;
     [Dependency] private readonly IPlayerManager   _playerManager = default!;
     [Dependency] private readonly IGameTiming      _gameTiming    = default!;
-    [Dependency] private readonly JobSystem        _jobs          = default!;
-    [Dependency] private readonly MindSystem       _minds         = default!;
-    [Dependency] private readonly NpcFactionSystem _npcFaction    = default!;
+    [Dependency] private readonly JobSystem         _jobs          = default!;
+    [Dependency] private readonly MindSystem        _minds         = default!;
+    [Dependency] private readonly NpcFactionSystem  _npcFaction    = default!;
+    [Dependency] private readonly SharedPopupSystem _popup         = default!;
+    [Dependency] private readonly SharedStunSystem  _stun          = default!;
 
     // ── Constants ──────────────────────────────────────────────────────────
 
@@ -127,6 +133,9 @@ public sealed class FactionWarSystem : EntitySystem
     /// </summary>
     private readonly HashSet<ICommonSession> _panelOpenSessions = new();
 
+    /// <summary>Participants who have surrendered, keyed by character entity.</summary>
+    private readonly HashSet<NetEntity> _surrenderedParticipants = new();
+
     // ── Performance gates ──────────────────────────────────────────────────
 
     private float _participantResyncAccumulator;
@@ -173,6 +182,9 @@ public sealed class FactionWarSystem : EntitySystem
         // Warjoin panel & enlistment.
         SubscribeNetworkEvent<FactionWarJoinPanelRequestEvent>(OnWarJoinPanelRequest);
         SubscribeNetworkEvent<PlayerWarJoinRequestEvent>(OnWarJoinRequest);
+
+        // Surrender.
+        SubscribeNetworkEvent<PlayerWarSurrenderRequestEvent>(OnSurrenderRequest);
 
         // Admin force-war GUI.
         SubscribeNetworkEvent<PlayerWarForceRequestEvent>(OnForceWarRequest);
@@ -403,6 +415,13 @@ public sealed class FactionWarSystem : EntitySystem
             return;
         }
 
+        // #Misfits Fix - Ghosts cannot declare war
+        if (HasComp<GhostComponent>(playerEntity))
+        {
+            SendResult(player, false, "Ghosts cannot declare war.");
+            return;
+        }
+
         if (msg.TargetPlayer == player.UserId)
         {
             SendResult(player, false, "You cannot declare war on yourself.");
@@ -445,6 +464,13 @@ public sealed class FactionWarSystem : EntitySystem
         if (targetSession.AttachedEntity is not { } targetEntity)
         {
             SendResult(player, false, "Target player is not yet in-game.");
+            return;
+        }
+
+        // #Misfits Fix - Cannot declare war on ghosts
+        if (HasComp<GhostComponent>(targetEntity))
+        {
+            SendResult(player, false, "Cannot declare war on ghosts.");
             return;
         }
 
@@ -927,6 +953,73 @@ public sealed class FactionWarSystem : EntitySystem
         SendJoinResult(player, true, $"You have joined the war on the side of {sideName}.");
     }
 
+    // ── Surrender ───────────────────────────────────────────────────────────
+
+    private void OnSurrenderRequest(PlayerWarSurrenderRequestEvent msg, EntitySessionEventArgs args)
+    {
+        var player = args.SenderSession;
+
+        if (player.Status != SessionStatus.InGame || player.AttachedEntity is not { } surrEntity)
+        {
+            _chat.DispatchServerMessage(player, "You must be in-game to surrender.");
+            return;
+        }
+
+        var surrNetEntity = GetNetEntity(surrEntity);
+
+        // Check if this entity is a war participant in an active war
+        if (!_warParticipants.TryGetValue(surrNetEntity, out var participantEntry))
+        {
+            _chat.DispatchServerMessage(player, "You are not in a war.");
+            return;
+        }
+
+        if (!_activeWars.TryGetValue(participantEntry.WarKey, out var war) || war.Phase != WarPhase.Active)
+        {
+            _chat.DispatchServerMessage(player, "The war is not active.");
+            return;
+        }
+
+        // Already surrendered
+        if (_surrenderedParticipants.Contains(surrNetEntity))
+        {
+            _chat.DispatchServerMessage(player, "You have already surrendered.");
+            return;
+        }
+
+        // Mark as surrendered
+        _surrenderedParticipants.Add(surrNetEntity);
+
+        // Drop all held weapons
+        RaiseLocalEvent(surrEntity, new DropHandItemsEvent());
+
+        // Paralyze them (stun only) — they can still see, hear, and type in chat
+        _stun.TryStun(surrEntity, TimeSpan.FromHours(1), true);
+
+        // Broadcast updated participant info so overlays update
+        BroadcastParticipants();
+
+        // Local flavortext popup only — no server-wide announcement
+        _popup.PopupEntity("You have surrendered. You are now at your enemy's mercy.", surrEntity, surrEntity);
+
+        // Send a direct server message to the surrendering player's chatbox
+        _chat.DispatchServerMessage(player, "You have surrendered. You are now at your enemy's mercy.");
+
+        // Notify all other participants in the same war that this player surrendered
+        var surrName = Name(surrEntity);
+        foreach (var (otherNetEntity, _) in war.Participants)
+        {
+            if (otherNetEntity == surrNetEntity)
+                continue;
+
+            var otherUid = GetEntity(otherNetEntity);
+            if (!TryComp<ActorComponent>(otherUid, out var actor))
+                continue;
+
+            _chat.DispatchServerMessage(actor.PlayerSession, $"{surrName} has surrendered. They are now at your mercy.");
+        }
+    }
+
     // ── Admin commands ─────────────────────────────────────────────────────
 
     private void WarEndCommand(IConsoleShell shell, string argStr, string[] args)
@@ -1130,6 +1223,7 @@ public sealed class FactionWarSystem : EntitySystem
         _activeWars.Clear();
         _warActivationTimes.Clear();
         _warParticipants.Clear();
+        _surrenderedParticipants.Clear();
         _playerWarCooldowns.Clear();
         _ceasefireCooldowns.Clear();
         _pendingCeasefireProposals.Clear();
@@ -1235,7 +1329,10 @@ public sealed class FactionWarSystem : EntitySystem
             .Select(kvp => kvp.Key)
             .ToList();
         foreach (var entity in toRemove)
+        {
             _warParticipants.Remove(entity);
+            _surrenderedParticipants.Remove(entity);
+        }
 
         war.History.Add(new WarHistoryEvent
         {
@@ -1303,6 +1400,7 @@ public sealed class FactionWarSystem : EntitySystem
                 {
                     Side = side,
                     WarKey = war.WarKey,
+                    Surrendered = _surrenderedParticipants.Contains(netEntity),
                 };
             }
         }

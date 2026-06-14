@@ -13,6 +13,11 @@ public sealed partial class CCVars
     public static readonly CVarDef<string> UILayout =
         CVarDef.Create("ui.layout", "Separated", CVar.CLIENTONLY | CVar.ARCHIVE);
 
+    // #Misfits Add - Selected UI color theme id (see misfitsUiTheme prototypes). Drives the swappable
+    // stylesheet palette chosen from the options menu; client-saved so it follows the player.
+    public static readonly CVarDef<string> UiThemePalette =
+        CVarDef.Create("ui.theme_palette", "pipboy_green", CVar.CLIENTONLY | CVar.ARCHIVE);
+
     public static readonly CVarDef<string> OverlayScreenChatSize =
         CVarDef.Create("ui.overlay_chat_size", "", CVar.CLIENTONLY | CVar.ARCHIVE);
 

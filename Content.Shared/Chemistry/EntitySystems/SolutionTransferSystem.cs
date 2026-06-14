@@ -35,7 +35,11 @@ public sealed class SolutionTransferSystem : EntitySystem
 
         SubscribeLocalEvent<SolutionTransferComponent, GetVerbsEvent<AlternativeVerb>>(AddSetTransferVerbs);
         SubscribeLocalEvent<SolutionTransferComponent, AfterInteractEvent>(OnAfterInteract);
-        SubscribeLocalEvent<SolutionTransferComponent, TransferAmountSetValueMessage>(OnTransferAmountSetValueMessage);
+
+        Subs.BuiEvents<SolutionTransferComponent>(TransferAmountUiKey.Key, subs =>
+        {
+            subs.Event<TransferAmountSetValueMessage>(OnTransferAmountSetValueMessage);
+        });
     }
 
     private void OnTransferAmountSetValueMessage(Entity<SolutionTransferComponent> ent, ref TransferAmountSetValueMessage message)

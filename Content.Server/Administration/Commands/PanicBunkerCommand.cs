@@ -5,6 +5,7 @@ using Robust.Shared.Console;
 
 namespace Content.Server.Administration.Commands;
 
+[AdminCommand(AdminFlags.Admin)]
 [AdminCommand(AdminFlags.Server)]
 public sealed class PanicBunkerCommand : LocalizedCommands
 {
@@ -47,6 +48,7 @@ public sealed class PanicBunkerCommand : LocalizedCommands
     }
 }
 
+[AdminCommand(AdminFlags.Admin)]
 [AdminCommand(AdminFlags.Server)]
 public sealed class PanicBunkerDisableWithAdminsCommand : LocalizedCommands
 {
@@ -67,6 +69,7 @@ public sealed class PanicBunkerDisableWithAdminsCommand : LocalizedCommands
     }
 }
 
+[AdminCommand(AdminFlags.Admin)]
 [AdminCommand(AdminFlags.Server)]
 public sealed class PanicBunkerEnableWithoutAdminsCommand : LocalizedCommands
 {
@@ -87,6 +90,7 @@ public sealed class PanicBunkerEnableWithoutAdminsCommand : LocalizedCommands
     }
 }
 
+[AdminCommand(AdminFlags.Admin)]
 [AdminCommand(AdminFlags.Server)]
 public sealed class PanicBunkerCountDeadminnedCommand : LocalizedCommands
 {
@@ -107,6 +111,7 @@ public sealed class PanicBunkerCountDeadminnedCommand : LocalizedCommands
     }
 }
 
+[AdminCommand(AdminFlags.Admin)]
 [AdminCommand(AdminFlags.Server)]
 public sealed class PanicBunkerShowReasonCommand : LocalizedCommands
 {
@@ -127,6 +132,7 @@ public sealed class PanicBunkerShowReasonCommand : LocalizedCommands
     }
 }
 
+[AdminCommand(AdminFlags.Admin)]
 [AdminCommand(AdminFlags.Server)]
 public sealed class PanicBunkerMinAccountAgeCommand : LocalizedCommands
 {
@@ -139,7 +145,8 @@ public sealed class PanicBunkerMinAccountAgeCommand : LocalizedCommands
         if (args.Length == 0)
         {
             var current = _cfg.GetCVar(CCVars.PanicBunkerMinAccountAge);
-            shell.WriteLine(Loc.GetString("panicbunker-command-min-account-age-is", ("hours", current / 60)));
+            shell.WriteLine(Loc.GetString("panicbunker-command-min-account-age-is", ("hours", current)));
+            return;
         }
 
         if (args.Length > 1)
@@ -154,11 +161,12 @@ public sealed class PanicBunkerMinAccountAgeCommand : LocalizedCommands
             return;
         }
 
-        _cfg.SetCVar(CCVars.PanicBunkerMinAccountAge, hours * 60);
+        _cfg.SetCVar(CCVars.PanicBunkerMinAccountAge, hours);
         shell.WriteLine(Loc.GetString("panicbunker-command-min-account-age-set", ("hours", hours)));
     }
 }
 
+[AdminCommand(AdminFlags.Admin)]
 [AdminCommand(AdminFlags.Server)]
 public sealed class PanicBunkerMinOverallHoursCommand : LocalizedCommands
 {
@@ -172,6 +180,7 @@ public sealed class PanicBunkerMinOverallHoursCommand : LocalizedCommands
         {
             var current = _cfg.GetCVar(CCVars.PanicBunkerMinOverallHours);
             shell.WriteLine(Loc.GetString("panicbunker-command-min-overall-hours-is", ("hours", current)));
+            return;
         }
 
         if (args.Length > 1)
@@ -187,6 +196,6 @@ public sealed class PanicBunkerMinOverallHoursCommand : LocalizedCommands
         }
 
         _cfg.SetCVar(CCVars.PanicBunkerMinOverallHours, hours);
-        shell.WriteLine(Loc.GetString("panicbunker-command-overall-hours-age-set", ("hours", hours)));
+        shell.WriteLine(Loc.GetString("panicbunker-command-min-overall-hours-set", ("hours", hours)));
     }
 }

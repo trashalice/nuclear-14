@@ -1,3 +1,4 @@
+/*
 using Content.Shared.Humanoid;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Wieldable.Components;
@@ -12,7 +13,8 @@ public sealed class SuperMutantMeleeSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<GetMeleeDamageEvent>(OnGetMeleeDamage);
+        // Disabled: log curve logic moved to OniSystem.OnGetMeleeDamage.
+        // SubscribeLocalEvent<GetMeleeDamageEvent>(OnGetMeleeDamage);
     }
 
     private void OnGetMeleeDamage(ref GetMeleeDamageEvent args)
@@ -37,3 +39,4 @@ public sealed class SuperMutantMeleeSystem : EntitySystem
         args.Damage *= targetDamage / baseDamage;
     }
 }
+*/

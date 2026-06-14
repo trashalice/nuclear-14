@@ -46,7 +46,7 @@ public sealed class WastelandStreetFightingSystem : EntitySystem
                 // Applies brute damage and a short stun — low-down dirty kick to the shin
                 ApplyDamage(uid, target, combo.ExtraDamage, combo.DamageType);
                 _stun.TryStun(target, TimeSpan.FromSeconds(combo.ParalyzeTime), true);
-                _popup.PopupEntity(Loc.GetString("martial-arts-wasteland-dirty-kick", ("target", target)), uid, uid, PopupType.Small);
+                _popup.PopupEntity(Loc.GetString("martial-arts-wasteland-dirty-kick", ("target", target)), target, uid, PopupType.Medium);
                 break;
 
             case "WastelandWheelThrow":
@@ -54,7 +54,7 @@ public sealed class WastelandStreetFightingSystem : EntitySystem
                 if (!TryComp<GrabIntentComponent>(uid, out var grabber) ||
                     grabber.GrabStage < GrabStage.Hard)
                 {
-                    _popup.PopupEntity(Loc.GetString("martial-arts-wasteland-no-grab"), uid, uid, PopupType.Small);
+                    _popup.PopupEntity(Loc.GetString("martial-arts-wasteland-no-grab"), target, uid, PopupType.Medium);
                     break;
                 }
 
@@ -65,7 +65,7 @@ public sealed class WastelandStreetFightingSystem : EntitySystem
                 _grabServer.ThrowGrabbedEntity(uid, grabber, target, throwDir.Normalized() * combo.ThrownSpeed);
                 ApplyDamage(uid, target, combo.ExtraDamage, combo.DamageType);
                 _stun.TryKnockdown(target, TimeSpan.FromSeconds(combo.ParalyzeTime), true);
-                _popup.PopupEntity(Loc.GetString("martial-arts-wasteland-wheel-throw", ("target", target)), uid, uid, PopupType.Medium);
+                _popup.PopupEntity(Loc.GetString("martial-arts-wasteland-wheel-throw", ("target", target)), target, uid, PopupType.Medium);
                 break;
 
             case "WastelandEyePoke":
@@ -74,7 +74,7 @@ public sealed class WastelandStreetFightingSystem : EntitySystem
                     TimeSpan.FromSeconds(combo.ParalyzeTime), true, "TemporaryBlindness");
                 if (combo.StaminaDamage > 0)
                     _stamina.TakeStaminaDamage(target, combo.StaminaDamage, source: uid);
-                _popup.PopupEntity(Loc.GetString("martial-arts-wasteland-eye-poke", ("target", target)), uid, uid, PopupType.Medium);
+                _popup.PopupEntity(Loc.GetString("martial-arts-wasteland-eye-poke", ("target", target)), target, uid, PopupType.Medium);
                 break;
         }
     }

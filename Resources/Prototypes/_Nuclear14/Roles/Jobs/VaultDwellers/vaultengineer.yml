@@ -16,6 +16,7 @@
   setPreference: true
   overrideConsoleVisibility: true
   canBeAntag: false
+  overwatchCategory: OverwatchEngineering
   playTimeTracker: VaultEngineer
   startingGear: VaultEngineerGear
   alwaysUseSpawner: true

@@ -1,5 +1,6 @@
 using Content.Shared.Access.Components;
 using Content.Shared.Examine;
+using Content.Shared._Misfits.Pets;
 using Content.Shared.Inventory;
 using Content.Shared.PDA;
 using Content.Shared.Verbs;
@@ -49,6 +50,12 @@ public sealed class IdExaminableSystem : EntitySystem
     {
         if (_inventorySystem.TryGetSlotEntity(uid, "id", out var idUid))
         {
+            if (TryComp(idUid, out PetCollarComponent? _) &&
+                (!TryComp<TransformComponent>(idUid.Value, out var xform) || !TryComp<PetCollarHolderComponent>(xform.ParentUid, out _)))
+            {
+                return null;
+            }
+
             // PDA
             if (EntityManager.TryGetComponent(idUid, out PdaComponent? pda) &&
                 TryComp<IdCardComponent>(pda.ContainedId, out var id))

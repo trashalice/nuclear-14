@@ -425,3 +425,9 @@ accent-tribal-words-replace-138 = detklaws
 
 accent-tribal-words-139 = myself
 accent-tribal-words-replace-139 = meself
+
+accent-tribal-words-140 = rad damage
+accent-tribal-words-replace-140 = gost sickness
+
+accent-tribal-words-141 = than
+accent-tribal-words-replace-141 = dan

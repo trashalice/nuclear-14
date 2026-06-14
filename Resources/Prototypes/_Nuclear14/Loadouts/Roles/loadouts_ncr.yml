@@ -24,6 +24,7 @@
         - NCRWS
         - NCRHeavyTrooper
         - NCRCadet
+        - NCRRO
 
         - NCRRangerRecruit
         - NCRFieldRanger
@@ -50,6 +51,7 @@
         - NCRWS
         - NCRHeavyTrooper
         - NCRCadet
+        - NCRRO
 
         - NCRRangerRecruit
         - NCRFieldRanger
@@ -76,6 +78,7 @@
         - NCRWS
         - NCRHeavyTrooper
         - NCRCadet
+        - NCRRO
 
         - NCRRangerRecruit
         - NCRFieldRanger
@@ -102,6 +105,7 @@
         - NCRWS
         - NCRHeavyTrooper
         - NCRCadet
+        - NCRRO
 
         - NCRRangerRecruit
         - NCRFieldRanger
@@ -128,6 +132,7 @@
         - NCRWS
         - NCRHeavyTrooper
         - NCRCadet
+        - NCRRO
 
         - NCRRangerRecruit
         - NCRFieldRanger
@@ -294,6 +299,7 @@
         - NCRVeteranRanger
         - NCRCitizen
         - NCRTrader
+        - NCRRO
   items:
     - N14ClothingUniformDesertPants
 
@@ -325,6 +331,7 @@
         - NCRVeteranRanger
         - NCRCitizen
         - NCRTrader
+        - NCRRO
   items:
     - N14ClothingUniformDesertPantsFull
 
@@ -354,6 +361,7 @@
         - NCRFieldRanger
         - NCRPatrolRanger
         - NCRVeteranRanger
+        - NCRRO
   items:
     - ClothingBeltNCRHarness
 

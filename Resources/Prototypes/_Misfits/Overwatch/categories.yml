@@ -1,0 +1,34 @@
+- type: overwatchCategory
+  id: OverwatchCommand
+  name: overwatch-category-command
+  sortOrder: 0
+
+- type: overwatchCategory
+  id: OverwatchSecurity
+  name: overwatch-category-security
+  sortOrder: 1
+
+- type: overwatchCategory
+  id: OverwatchMedical
+  name: overwatch-category-medical
+  sortOrder: 2
+
+- type: overwatchCategory
+  id: OverwatchEngineering
+  name: overwatch-category-engineering
+  sortOrder: 3
+
+- type: overwatchCategory
+  id: OverwatchRobotics
+  name: overwatch-category-robotics
+  sortOrder: 4
+
+- type: overwatchCategory
+  id: OverwatchGeneral
+  name: overwatch-category-general
+  sortOrder: 5
+
+- type: overwatchCategory
+  id: OverwatchUnassigned
+  name: overwatch-category-unassigned
+  sortOrder: 6

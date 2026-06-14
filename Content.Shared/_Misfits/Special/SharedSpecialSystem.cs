@@ -3,6 +3,7 @@ using Content.Shared._Misfits.Special.Prototypes;
 using Content.Shared.Chemistry;
 using Content.Shared.Ghost;
 using Content.Shared.Movement.Systems;
+using Content.Shared.Preferences;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
@@ -344,6 +345,18 @@ public sealed class SharedSpecialSystem : EntitySystem
         Dirty(uid, component);
         RaiseSpecialChanged(uid);
         return true;
+    }
+
+    /// <summary>
+    /// Ensures SPECIAL runtime state exists and copies authoritative base values from a character profile.
+    /// </summary>
+    public bool TryApplyProfileBaseValues(EntityUid uid, HumanoidCharacterProfile profile, SpecialComponent? component = null)
+    {
+        if (!UsesSpecialStats(uid))
+            return false;
+
+        component ??= EnsureComp<SpecialComponent>(uid);
+        return TrySetBaseValues(uid, profile.Special, component);
     }
 
     public bool TryModifyTemporary(

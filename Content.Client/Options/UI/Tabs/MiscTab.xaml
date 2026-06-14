@@ -9,6 +9,12 @@
                 <Label Text="{Loc 'ui-options-general-ui-style'}"
                        FontColorOverride="{xNamespace:Static s:StyleNano.NanoGold}"
                        StyleClasses="LabelKeyText"/>
+                <!-- #Misfits Add - UI color theme dropdown -->
+                <BoxContainer Orientation="Horizontal">
+                    <Label Text="{Loc 'ui-options-ui-theme'}" />
+                    <Control MinSize="4 0" />
+                    <OptionButton Name="UiThemeOption" />
+                </BoxContainer>
                 <BoxContainer Orientation="Horizontal">
                     <Label Text="{Loc 'ui-options-hud-theme'}" />
                     <Control MinSize="4 0" />

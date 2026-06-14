@@ -39,7 +39,7 @@ public sealed class TribalWarriorSystem : EntitySystem
         if (!_combatMode.IsInCombatMode(uid))
             return;
 
-        _popup.PopupEntity(Loc.GetString("martial-arts-tribal-no-guns"), uid, uid, PopupType.Small);
+        _popup.PopupEntity(Loc.GetString("martial-arts-tribal-no-guns"), uid, uid, PopupType.Medium);
         args.Cancel();
     }
 
@@ -67,12 +67,12 @@ public sealed class TribalWarriorSystem : EntitySystem
                 if (gnashStacks >= MaxGnashStacks)
                 {
                     // Max stacks reached — release a powerful surge and reset
-                    _popup.PopupEntity(Loc.GetString("martial-arts-tribal-gnash-surge"), uid, uid, PopupType.Large);
+                    _popup.PopupEntity(Loc.GetString("martial-arts-tribal-gnash-surge"), target, uid, PopupType.Large);
                     comboComp.ConsecutiveGnashes = 0;
                 }
                 else
                 {
-                    _popup.PopupEntity(Loc.GetString("martial-arts-tribal-gnash", ("target", target), ("stacks", gnashStacks + 1)), uid, uid, PopupType.Small);
+                    _popup.PopupEntity(Loc.GetString("martial-arts-tribal-gnash", ("target", target), ("stacks", gnashStacks + 1)), target, uid, PopupType.Medium);
                 }
                 break;
 
@@ -83,14 +83,14 @@ public sealed class TribalWarriorSystem : EntitySystem
                 _stun.TryKnockdown(target, TimeSpan.FromSeconds(combo.ParalyzeTime), true);
                 if (combo.StaminaDamage > 0)
                     _stamina.TakeStaminaDamage(target, combo.StaminaDamage, source: uid);
-                _popup.PopupEntity(Loc.GetString("martial-arts-tribal-war-cry", ("target", target)), uid, uid, PopupType.Medium);
+                _popup.PopupEntity(Loc.GetString("martial-arts-tribal-war-cry", ("target", target)), target, uid, PopupType.Medium);
                 break;
 
             case "TribalTribeStomp":
                 // Double disarm opening into a stomp — knocks down and deals damage
                 ApplyDamage(uid, target, combo.ExtraDamage, combo.DamageType);
                 _stun.TryStun(target, TimeSpan.FromSeconds(combo.ParalyzeTime), true);
-                _popup.PopupEntity(Loc.GetString("martial-arts-tribal-tribe-stomp", ("target", target)), uid, uid, PopupType.Medium);
+                _popup.PopupEntity(Loc.GetString("martial-arts-tribal-tribe-stomp", ("target", target)), target, uid, PopupType.Medium);
                 break;
         }
     }

@@ -71,6 +71,7 @@
       - Piercing
       - Heat
       - Shock
+      - Caustic
     locPrefix: silicon
   - type: UserInterface
     interfaces:

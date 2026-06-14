@@ -506,8 +506,8 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      250: Critical
-      300: Dead
+      400: Critical
+      500: Dead
   - type: Stamina
     critThreshold: 999
   - type: SlowOnDamage
@@ -534,7 +534,7 @@
     damage:
       types:
         Blunt: 15
-        Slash: 15
+        Slash: 25
         Piercing: 5
     range: 2
   - type: IdleSound #Misfits Change
@@ -596,9 +596,9 @@
   - type: Butcherable
     spawned:
     - id: N14FoodMeatRadRaw
-      amount: 8
+      amount: 12
     - id: N14MaterialRawLeather1
-      amount: 6
+      amount: 8
 
 #MARK: Albino Deathclaw
 - type: entity
@@ -629,8 +629,8 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      300: Critical
-      350: Dead
+      500: Critical
+      750: Dead
   - type: SlowOnDamage
     speedModifierThresholds:
       100: 1.1
@@ -691,6 +691,38 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: deathclawmetal
       sprite: _Nuclear14/Mobs/Animals/deathclawmetal.rsi
+  - type: MeleeWeapon
+    altDisarm: false
+    hidden: true
+    soundHit:
+      collection: N14DeathclawAttack #Misfits Change
+    angle: 60
+    animation: WeaponArcClaw
+    wideAnimation: WeaponArcClaw
+    damage:
+      types:
+        Blunt: 15
+        Slash: 25
+        Piercing: 7
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      500: Critical
+      750: Dead
+  - type: Reflect
+    reflects:
+      - SmallCaliber
+      - MediumCaliber
+    reflectProb: 0.3
+    reflectProbByType:
+      SmallCaliber: 0.4
+      MediumCaliber: 0.2
+    innate: true
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      100: 1.1
+      150: 1.15
+      200: 1.2
   - type: DamageStateVisuals
     states:
       Alive:
@@ -705,6 +737,7 @@
       params:
         volume: -3
         maxDistance: 10
+
 
 # Fatass, aka the Lurker
 - type: entity

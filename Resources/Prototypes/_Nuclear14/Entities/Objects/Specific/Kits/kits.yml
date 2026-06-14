@@ -1241,7 +1241,7 @@
   - type: SpawnItemsOnUse
     items:
       - id: N14WeaponLaserRifleAuto # misfits change by bill; makes it easier to balance paladin kits, AER14 too much roundstart.
-      - id: N14MicrofusionCellBlue
+      - id: N14MicrofusionCell
         amount: 1
       - id: N14WeaponPistol12mm
       - id: N14MagazinePistol12mm

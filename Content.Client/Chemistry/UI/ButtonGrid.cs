@@ -84,6 +84,7 @@ public sealed class ButtonGrid : GridContainer
         {
             var btn = new Button();
             btn.Text = button;
+            btn.Mode = BaseButton.ActionMode.Press;
             btn.OnPressed += _ =>
             {
                 if (RadioGroup)

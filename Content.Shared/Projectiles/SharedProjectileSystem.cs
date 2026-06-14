@@ -194,7 +194,10 @@ public abstract partial class SharedProjectileSystem : EntitySystem
 
     private void PreventCollision(EntityUid uid, ProjectileComponent component, ref PreventCollideEvent args)
     {
-        if (component.IgnoreShooter && (args.OtherEntity == component.Shooter || args.OtherEntity == component.Weapon))
+        if (component.IgnoreShooter &&
+            (args.OtherEntity == component.Shooter ||
+             args.OtherEntity == component.Weapon ||
+             args.OtherEntity == component.ExtraIgnoredEntity))
         {
             args.Cancelled = true;
         }

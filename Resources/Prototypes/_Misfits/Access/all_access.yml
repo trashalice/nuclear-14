@@ -1,0 +1,169 @@
+# #Misfits Add - Comprehensive all-access group for admin/debug use.
+# Includes every accessLevel defined across all prototype folders.
+# Excludes VaultControlsPanel (deliberately restricted to Overseer only).
+# Excludes syndicate/antag-only levels (NuclearOperative, SyndicateAgent) — admin card shouldn't flag as antag.
+
+- type: accessGroup
+  id: AllAccessN14
+  tags:
+  # ── Standard SS14 (mirrors upstream AllAccess) ──
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - HeadOfSecurity
+  - ResearchDirector
+  - Command
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Lawyer
+  - Engineering
+  - Medical
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - Service
+  - Maintenance
+  - External
+  - Janitor
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  # ── Nyanotrasen / DeltaV / Goobstation additions ──
+  - Mail
+  - Orders
+  - Mantis
+  - Paramedic
+  - Psychologist
+  - Boxer
+  - Clown
+  - Library
+  - Mime
+  - Musician
+  - Reporter
+  - Zookeeper
+  - Justice
+  - ChiefJustice
+  - Prosecutor
+  - Corpsman
+  - Journalism
+  - NanotrasenRepresentative
+  - BlueshieldOfficer
+  - Magistrate
+  # ── N14: Townies & Wasteland ──
+  - TownieLaw
+  - TownieMayor
+  - TownieShopkeeper
+  - TownieDoctor
+  - TownieMechanic
+  - WastelandBartender
+  - WastelandReporter
+  - TownsPerson
+  - InnRoomOne
+  - InnRoomTwo
+  - InnRoomThree
+  - WastelandChaplain
+  - WastelandFarmer
+  # ── N14: Tribals ──
+  - TribeMember
+  - TribeChief
+  # ── N14: Followers of the Apocalypse ──
+  - FollowersApocalypse
+  - FotA
+  - FotADoctor
+  - FotAHead
+  # ── N14: Zetan ──
+  - ZetanCaptain
+  - Zetan
+  # ── N14: Enclave ──
+  - Enclave
+  - EnclaveNCO
+  - EnclaveOfficer
+  - EnclaveCommand
+  - EnclaveScience
+  # ── N14: NCR ──
+  - NCR
+  - NCRSGT
+  - NCRMedic
+  - NCRLT
+  - NCRRanger
+  - NCRCaptain
+  - NCRMajor
+  # ── N14: Vault ──
+  - VaultOverseer
+  - VaultGatekeeper
+  - VaultSecurity
+  - VaultMedical
+  - VaultChemistry
+  - VaultEngineer
+  - VaultDweller
+  # ── N14: Legion (Corvax) ──
+  - CaesarLegion
+  - CaesarLegionSlave
+  - CaesarLegionRecruit
+  - CaesarLegionHoundmaster
+  - CaesarLegionFrumentarii
+  - CaesarLegionVexillarius
+  - CaesarLegionExplorer
+  - CaesarLegionOptio
+  - CaesarLegionLegionnaireRecruit
+  - CaesarLegionLegionnaireWarrior
+  - CaesarLegionLegionnaireVeteran
+  - CaesarLegionDean
+  - CaesarLegionVeteranDecanus
+  - CaesarLegionCenturion
+  - CaesarLegionLegate
+  # ── N14: BoS Washington ──
+  - WashingtonCommander
+  - WashingtonPaladin
+  - WashingtonKnight
+  - WashingtonScribe
+  - WashingtonInitiate
+  - BOSWashington
+  # ── N14: BoS Midwest ──
+  - PaladinCommander
+  - Paladin
+  - Knight
+  - Scribe
+  - BoSMidwest
+  # ── N14: BoS (Misfits unified) ──
+  - BOS
+  - BOSInitiate
+  - BOSSquire
+  - BOSScribe
+  - BOSKnight
+  - BOSPaladin
+  - BOSSeniorScribe
+  - BOSSeniorKnight
+  - BOSSeniorPaladin
+  - BOSHeadScribe
+  - BOSHeadKnight
+  - BOSHeadPaladin
+  - BOSElder
+  # ── N14: 80s ──
+  - 80s
+  - 80sHead
+  - 80sSlave
+  # ── N14: Keys ──
+  - IronKey
+  - BronzeKey
+  - BrassKey
+  - LegionBrassKey
+  - SilverKey
+  # ── N14: Dungeons / Bunkers ──
+  - DungeonBunkerA1
+  - DungeonBunkerA2
+  - DungeonBunkerA3
+  - DungeonBlue
+  - DungeonYellow
+  - DungeonRed
+  - DungeonCommon
+  - AncientBunker

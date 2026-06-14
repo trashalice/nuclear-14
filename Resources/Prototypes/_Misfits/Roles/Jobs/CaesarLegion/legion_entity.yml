@@ -91,13 +91,13 @@
 
 - type: entity
   parent: MobHuman
-  id: N14MobHumanCaesarLegionOrator
-  name: Legion Orator
+  id: N14MobHumanCaesarLegionOptio
+  name: Legion Optio
   components:
     - type: RandomHumanoidAppearance
       randomizeName: true
     - type: Loadout
-      prototypes: [CaesarLegionOratorGear]
+      prototypes: [CaesarLegionOptioGear]
     - type: NpcFactionMember
       factions:
       - CaesarLegion

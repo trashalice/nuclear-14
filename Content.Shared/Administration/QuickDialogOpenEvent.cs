@@ -24,16 +24,28 @@ public sealed class QuickDialogOpenEvent : EntityEventArgs
     public List<QuickDialogEntry> Prompts;
 
     /// <summary>
+    /// Optional text to show on the confirm button.
+    /// </summary>
+    public string? OkText;
+
+    /// <summary>
+    /// Optional text to show on the cancel button.
+    /// </summary>
+    public string? CancelText;
+
+    /// <summary>
     /// The buttons presented for the user.
     /// </summary>
     public QuickDialogButtonFlag Buttons = QuickDialogButtonFlag.OkButton | QuickDialogButtonFlag.CancelButton;
 
-    public QuickDialogOpenEvent(string title, List<QuickDialogEntry> prompts, int dialogId, QuickDialogButtonFlag buttons)
+    public QuickDialogOpenEvent(string title, List<QuickDialogEntry> prompts, int dialogId, QuickDialogButtonFlag buttons, string? okText = null, string? cancelText = null)
     {
         Title = title;
         Prompts = prompts;
         Buttons = buttons;
         DialogId = dialogId;
+        OkText = okText;
+        CancelText = cancelText;
     }
 }
 

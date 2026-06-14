@@ -106,7 +106,7 @@
   order: 21 # hidden from main selector, used by Robot Model picker
   whitelistRequired: true
   restrictedCustomization: true
-  jobWhitelistUnlock: SyntheticProtectron
+  jobWhitelistUnlock: SyntheticProtectronTribal
   restrictedJobs:
   - SyntheticProtectronTribal
   sprites: RobotSprites

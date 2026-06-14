@@ -1,4 +1,5 @@
 using Content.Shared.Access;
+using Content.Shared._Misfits.Overwatch;
 using Content.Shared.Customization.Systems;
 using Content.Shared.Dataset;
 using Content.Shared.Players.PlayTimeTracking;
@@ -184,6 +185,9 @@ namespace Content.Shared.Roles
 
         [DataField]
         public bool ApplyTraits = true;
+
+        [DataField]
+        public ProtoId<OverwatchCategoryPrototype>? OverwatchCategory { get; private set; }
     }
 
     /// <summary>

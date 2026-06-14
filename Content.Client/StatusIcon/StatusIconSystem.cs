@@ -69,25 +69,39 @@ public sealed class StatusIconSystem : SharedStatusIconSystem
     /// For overlay to check if an entity can be seen.
     /// </summary>
     public bool IsVisible(Entity<MetaDataComponent> ent, StatusIconData data)
+{
+    var viewer = _playerManager.LocalSession?.AttachedEntity;
+
+    // the status icon overlay may draw before the local client is attached to
+    // an entity, especially during connect/knockdown. do NOT run
+    // component or whitelist checks against a null viewer.
+    if (viewer == null)
     {
-        var viewer = _playerManager.LocalSession?.AttachedEntity;
-
-        // Always show our icons to our entity
-        if (viewer == ent.Owner)
-            return true;
-
-        if (data.VisibleToGhosts && HasComp<GhostComponent>(viewer))
-            return true;
-
         if (data.HideInContainer && (ent.Comp.Flags & MetaDataFlags.InContainer) != 0)
             return false;
 
-        if (data.HideOnStealth && TryComp<StealthComponent>(ent, out var stealth) && stealth.Enabled)
+        if (data.HideOnStealth && TryComp<StealthComponent>(ent.Owner, out var nullViewerStealth) && nullViewerStealth.Enabled)
             return false;
 
-        if (data.ShowTo != null && !_entityWhitelist.IsValid(data.ShowTo, viewer))
-            return false;
-
-        return true;
+        return data.ShowTo == null;
     }
+
+    // always show our icons to our own entity. 10 int mains be like:
+    if (viewer.Value == ent.Owner)
+        return true;
+
+    if (data.VisibleToGhosts && HasComp<GhostComponent>(viewer.Value))
+        return true;
+
+    if (data.HideInContainer && (ent.Comp.Flags & MetaDataFlags.InContainer) != 0)
+        return false;
+
+    if (data.HideOnStealth && TryComp<StealthComponent>(ent.Owner, out var stealth) && stealth.Enabled)
+        return false;
+
+    if (data.ShowTo != null && !_entityWhitelist.IsValid(data.ShowTo, viewer.Value))
+        return false;
+
+    return true;
+}
 }

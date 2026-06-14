@@ -21,8 +21,6 @@
   icon: "JobIconlegionerRecruit"
   supervisors: job-supervisors-caesar-legion-slave
   canBeAntag: false
-  accessGroups:
-  - CaesarLegionSlave
   special:
   - !type:AddComponentSpecial
     components:

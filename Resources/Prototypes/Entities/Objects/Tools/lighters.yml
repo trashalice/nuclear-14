@@ -41,6 +41,9 @@
       visible: false
       shader: unshaded
       map: [ "flame" ]
+  - type: Tag
+    tags:
+    - Lighter
   - type: Appearance
   - type: RandomSprite
     available:

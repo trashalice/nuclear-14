@@ -27,7 +27,16 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      300: Dead
+      320: Dead
+  - type: Reflect # #Misfits Change Tweak: Small-caliber rounds (sub-5.56mm) ricochet off power armor at 30% chance. Innate - always active regardless of movement.
+    reflects:
+      - SmallCaliber
+      - MediumCaliber
+    reflectProb: 0.3
+    reflectProbByType:
+      SmallCaliber: 0.5
+      MediumCaliber: 0.4
+    innate: true
   - type: DamageStateVisuals
     states:
       Alive:

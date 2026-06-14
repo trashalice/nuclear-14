@@ -1,6 +1,10 @@
 using Content.Shared._Misfits.Holotape;
+using Content.Shared._Misfits.Overwatch;
+using Content.Client.Eye;
 using JetBrains.Annotations;
+using Robust.Client.GameObjects;
 using Robust.Client.UserInterface;
+using Robust.Shared.Graphics;
 
 // #Misfits Add - Client BUI for the holotape/terminal viewer.
 // Creates the green-on-black terminal window and receives content state from server.
@@ -16,10 +20,13 @@ namespace Content.Client._Misfits.Holotape;
 [UsedImplicitly]
 public sealed class HolotapeBoundUserInterface : BoundUserInterface
 {
+    private readonly EyeLerpingSystem _eyeLerpingSystem;
     private HolotapeWindow? _window;
+    private EntityUid? _currentOverwatchTarget;
 
     public HolotapeBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
     {
+        _eyeLerpingSystem = EntMan.System<EyeLerpingSystem>();
     }
 
     protected override void Open()
@@ -47,6 +54,11 @@ public sealed class HolotapeBoundUserInterface : BoundUserInterface
         _window.OnInvokeLinkPort += portId =>
         {
             SendMessage(new InvokeTerminalLinkPortMessage(portId));
+        };
+
+        _window.OnOverwatchAction += (type, targetNumber) =>
+        {
+            SendMessage(new OverwatchConsoleMessage(type, targetNumber));
         };
 
         // #Misfits Add - Wire database events to send BUI messages to server.
@@ -93,5 +105,48 @@ public sealed class HolotapeBoundUserInterface : BoundUserInterface
 
         // #Misfits Add - Update the DATABASE tab (faction-shared knowledge base)
         _window.UpdateDatabase(cast.Database);
+
+        var eye = ResolveOverwatchEye(cast.Overwatch);
+        _window.UpdateOverwatch(cast.Overwatch, eye);
+    }
+
+    private IEye? ResolveOverwatchEye(OverwatchConsoleState? state)
+    {
+        var target = EntMan.GetEntity(state?.WatchedEntity);
+        if (target == null)
+        {
+            ClearOverwatchTarget();
+            return null;
+        }
+
+        if (_currentOverwatchTarget == null)
+        {
+            _eyeLerpingSystem.AddEye(target.Value);
+            _currentOverwatchTarget = target;
+        }
+        else if (_currentOverwatchTarget != target)
+        {
+            _eyeLerpingSystem.RemoveEye(_currentOverwatchTarget.Value);
+            _eyeLerpingSystem.AddEye(target.Value);
+            _currentOverwatchTarget = target;
+        }
+
+        return EntMan.TryGetComponent<EyeComponent>(target, out var eye) ? eye.Eye : null;
+    }
+
+    private void ClearOverwatchTarget()
+    {
+        if (_currentOverwatchTarget == null)
+            return;
+
+        _eyeLerpingSystem.RemoveEye(_currentOverwatchTarget.Value);
+        _currentOverwatchTarget = null;
+    }
+
+    protected override void Dispose(bool disposing)
+    {
+        ClearOverwatchTarget();
+
+        base.Dispose(disposing);
     }
 }

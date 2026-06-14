@@ -1,0 +1,107 @@
+- type: marking
+  id: tribalpaintstripe
+  bodyPart: Face
+  markingCategory: Face
+  speciesRestriction: [Human, Ghoul]
+  sprites:
+  - sprite: _Misfits/Mobs/Customization/tribal_warpaint.rsi
+    state: tribalpaintstripe
+
+- type: marking
+  id: tribalpaintprongs
+  bodyPart: Face
+  markingCategory: Face
+  speciesRestriction: [Human, Ghoul]
+  sprites:
+  - sprite: _Misfits/Mobs/Customization/tribal_warpaint.rsi
+    state: tribalpaintprongs
+
+- type: marking
+  id: tribalpainttears
+  bodyPart: Face
+  markingCategory: Face
+  speciesRestriction: [Human, Ghoul]
+  sprites:
+  - sprite: _Misfits/Mobs/Customization/tribal_warpaint.rsi
+    state: tribalpainttears
+
+- type: marking
+  id: tribalpaintwhitestripe
+  bodyPart: Face
+  markingCategory: Face
+  speciesRestriction: [Human, Ghoul]
+  sprites:
+  - sprite: _Misfits/Mobs/Customization/tribal_warpaint.rsi
+    state: tribalpaintwhitestripe
+
+- type: marking
+  id: tribalpaintclaw
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Human, Ghoul]
+  sprites:
+  - sprite: _Misfits/Mobs/Customization/tribal_warpaint.rsi
+    state: tribalpaintclaw
+
+- type: marking
+  id: tribalpaintlizard
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Human, Ghoul]
+  sprites:
+  - sprite: _Misfits/Mobs/Customization/tribal_warpaint.rsi
+    state: tribalpaintlizard
+
+- type: marking
+  id: tribalpaintspider
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Human, Ghoul]
+  sprites:
+  - sprite: _Misfits/Mobs/Customization/tribal_warpaint.rsi
+    state: tribalpaintspider
+
+- type: marking
+  id: tribalpaintcazador
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Human, Ghoul]
+  sprites:
+  - sprite: _Misfits/Mobs/Customization/tribal_warpaint.rsi
+    state: tribalpaintcazador
+
+- type: marking
+  id: tribalpaintarmwrap_l_arm
+  bodyPart: LArm
+  markingCategory: LeftArm
+  speciesRestriction: [Human, Ghoul]
+  sprites:
+  - sprite: _Misfits/Mobs/Customization/tribal_warpaint.rsi
+    state: tribalpaintarmwrap_l_arm
+
+- type: marking
+  id: tribalpaintarmwrap_r_arm
+  bodyPart: RArm
+  markingCategory: RightArm
+  speciesRestriction: [Human, Ghoul]
+  sprites:
+  - sprite: _Misfits/Mobs/Customization/tribal_warpaint.rsi
+    state: tribalpaintarmwrap_r_arm
+
+- type: marking
+  id: tribalpaintlegwrap_l_leg
+  bodyPart: LLeg
+  markingCategory: LeftLeg
+  speciesRestriction: [Human, Ghoul]
+  sprites:
+  - sprite: _Misfits/Mobs/Customization/tribal_warpaint.rsi
+    state: tribalpaintlegwrap_l_leg
+
+- type: marking
+  id: tribalpaintlegwrap_r_leg
+  bodyPart: RLeg
+  markingCategory: RightLeg
+  speciesRestriction: [Human, Ghoul]
+  sprites:
+  - sprite: _Misfits/Mobs/Customization/tribal_warpaint.rsi
+    state: tribalpaintlegwrap_r_leg

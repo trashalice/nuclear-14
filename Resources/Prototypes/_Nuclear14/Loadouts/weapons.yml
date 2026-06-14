@@ -99,7 +99,46 @@
   items:
     - N14WeaponPistol45Colt
 
+- type: loadout
+  id: N14WeaponPistol10mm
+  category: Weapons
+  cost: 3
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutGuns
+    - !type:CharacterDepartmentRequirement 
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement 
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14WeaponPistol10mm
 
+
+- type: loadout
+  id: N14WeaponPistol12mm
+  category: Weapons
+  cost: 3
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutGuns
+    - !type:CharacterDepartmentRequirement 
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement 
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14WeaponPistol12mm
 
 
 - type: loadout
@@ -113,10 +152,6 @@
       - LanguageNerd 
     - !type:CharacterItemGroupRequirement
       group: N14LoadoutGuns
-    - !type:CharacterDepartmentRequirement
-      inverted: true
-      departments:
-      - Vault
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
@@ -175,12 +210,10 @@
 - type: loadout
   id: N14WeaponShotgunDoubleBarrel
   category: Weapons
-  cost: 2
+  cost: 3
   requirements:
-    - !type:OverallTimeRequirement
-      min: 3600
     - !type:CharacterItemGroupRequirement
-      group: N14LoadoutGuns
+      group: N14LoadoutGunsBig
     - !type:CharacterDepartmentRequirement # Corvax-Change
       inverted: true
       departments:
@@ -194,22 +227,339 @@
   items:
     - N14WeaponShotgunDoubleBarrel
 
+- type: loadout
+  id: N14WeaponShotgunCaravan
+  category: Weapons
+  cost: 3
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutGunsBig
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14WeaponShotgunCaravan
+
+
+- type: loadout
+  id: N14WeaponShotgun
+  category: Weapons
+  cost: 6
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutGunsBig
+    - !type:CharacterDepartmentRequirement 
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement 
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14WeaponShotgun
+
+    
+## SMGs
+
+- type: loadout
+  id: N14WeaponSMG9mm
+  category: Weapons
+  cost: 8
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutGunsBig
+    - !type:CharacterDepartmentRequirement 
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement 
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14WeaponSMG9mm
+
+- type: loadout
+  id: N14WeaponSMG10mm
+  category: Weapons
+  cost: 9
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutGunsBig
+    - !type:CharacterDepartmentRequirement 
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement 
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14WeaponSMG10mm
+
+- type: loadout
+  id: N14WeaponSMG10mmSuppressed
+  category: Weapons
+  cost: 10
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutGunsBig
+    - !type:CharacterDepartmentRequirement 
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement 
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14WeaponSMG10mmSuppressed
+
+- type: loadout
+  id: N14WeaponSMG10mmChinese
+  category: Weapons
+  cost: 9
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+      - LanguageChinese
+      - LanguageNerd 
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutGunsBig
+    - !type:CharacterDepartmentRequirement 
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement 
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14WeaponSMG10mmChinese
+
 ## Rifles
-#
+
+- type: loadout
+  id: N14WeaponRifle556R91
+  category: Weapons
+  cost: 12
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutGunsBig
+    - !type:CharacterDepartmentRequirement 
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement 
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14WeaponRifle556R91
+
+- type: loadout
+  id: N14WeaponRifle556Service
+  category: Weapons
+  cost: 10
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutGunsBig
+    - !type:CharacterDepartmentRequirement 
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement 
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14WeaponRifle556Service
+
+- type: loadout
+  id: N14WeaponRifle556CarbineOld
+  category: Weapons
+  cost: 10
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutGunsBig
+    - !type:CharacterDepartmentRequirement 
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement 
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14WeaponRifle556CarbineOld
+
+- type: loadout
+  id: N14WeaponRifle762M14
+  category: Weapons
+  cost: 12
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutGunsBig
+    - !type:CharacterDepartmentRequirement 
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement 
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14WeaponRifle762M14
+
+- type: loadout
+  id: N14WeaponRifle762Fal
+  category: Weapons
+  cost: 15
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutGunsBig
+    - !type:CharacterDepartmentRequirement 
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement 
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14WeaponRifle762Fal
+
+    
+- type: loadout
+  id: N14WeaponRifle762SKS
+  category: Weapons
+  cost: 11
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+      - LanguageChinese
+      - LanguageNerd 
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutGunsBig
+    - !type:CharacterDepartmentRequirement 
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement 
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14WeaponRifle762SKS
+
+- type: loadout
+  id: N14WeaponSniper556VarmintRifle
+  category: Weapons
+  cost: 7
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutGunsBig
+    - !type:CharacterDepartmentRequirement 
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement 
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14WeaponSniper556VarmintRifle
+
+
+
+## 308 Club
+
+- type: loadout
+  id: N14WeaponSniperHunting
+  category: Weapons
+  cost: 9
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutGunsBig
+    - !type:CharacterDepartmentRequirement 
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement 
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14WeaponSniperHunting
+
+- type: loadout
+  id: N14WeaponSniper44LeverCarbine
+  category: Weapons
+  cost: 9
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutGunsBig
+    - !type:CharacterDepartmentRequirement 
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement 
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14WeaponSniper44LeverCarbine
+
+## Makeshifts
+
 - type: loadout
   id: N14WeaponRifle556Pipe
   category: Weapons
   cost: 5
   requirements:
-    - !type:OverallTimeRequirement
-      min: 6800
     - !type:CharacterItemGroupRequirement
-      group: N14LoadoutGuns
-    - !type:CharacterDepartmentRequirement # Corvax-Change
+      group: N14LoadoutGunsBig
+    - !type:CharacterDepartmentRequirement 
       inverted: true
       departments:
       - Vault
-    - !type:CharacterJobRequirement # Forge-Change
+    - !type:CharacterJobRequirement 
       inverted: true
       jobs:
       - BoSMidSerf
@@ -217,6 +567,87 @@
       - NCRPrisoner
   items:
     - N14WeaponRifle556Pipe
+
+
+- type: loadout
+  id: N14WeaponSMG10mmPipe
+  category: Weapons
+  cost: 5
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutGunsBig
+    - !type:CharacterDepartmentRequirement 
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement 
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14WeaponSMG10mmPipe
+
+## Lasers
+
+
+- type: loadout
+  id: N14WeaponLaserPistol
+  category: Weapons
+  cost: 4
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutGuns
+    - !type:CharacterJobRequirement 
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14WeaponLaserPistol
+
+- type: loadout
+  id: N14WeaponLaserRevolver
+  category: Weapons
+  cost: 5
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutGuns
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement 
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14WeaponLaserRevolver
+
+- type: loadout
+  id: N14WeaponLaserRifleMakeshift
+  category: Weapons
+  cost: 7
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutGunsBig
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement 
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14WeaponLaserRifleMakeshift
+
 
 ## Ammo
 - type: loadout
@@ -345,7 +776,296 @@
     - N14MagazinePistol45
 
 
+- type: loadout
+  id: N14MagazinePistol12mm
+  category: Weapons
+  cost: 1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutAmmo
+    - !type:CharacterDepartmentRequirement 
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14MagazinePistol12mm
+
+# Laser
+
+- type: loadout
+  id: N14PowerCellSmall
+  category: Weapons
+  cost: 1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutAmmo
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14PowerCellSmall
+
+# Smg
+
+- type: loadout
+  id: N14MagazineSMG9mm
+  category: Weapons
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutAmmoBig
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14MagazineSMG9mm
+
+- type: loadout
+  id: N14BaseMagazine10mmSubMachineGun
+  category: Weapons
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutAmmoBig
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14BaseMagazine10mmSubMachineGun
+
+# ARs
+
+
+- type: loadout
+  id: Magazine762AmmoShort
+  category: Weapons
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutAmmoBig
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - Magazine762AmmoShort
+
+- type: loadout
+  id: Magazine556Rifle
+  category: Weapons
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutAmmoBig
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - Magazine556Rifle
+
+
+## Boxes of Ammo 
+
+
+- type: loadout
+  id: MagazineBox12gauge
+  category: Weapons
+  cost: 4
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutAmmoBox
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - MagazineBox12gauge
+
+- type: loadout
+  id: MagazineBox20gauge
+  category: Weapons
+  cost: 4
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutAmmoBox
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - MagazineBox20gauge
+
+- type: loadout
+  id: MagazineBox9mm
+  category: Weapons
+  cost: 4
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutAmmoBox
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - MagazineBox9mm
+
+- type: loadout
+  id: MagazineBox10mm
+  category: Weapons
+  cost: 4
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutAmmoBox
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - MagazineBox10mm
+
+- type: loadout
+  id: MagazineBox22
+  category: Weapons
+  cost: 4
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutAmmoBox
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - MagazineBox22
+
+- type: loadout
+  id: MagazineBox45
+  category: Weapons
+  cost: 4
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutAmmoBox
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - MagazineBox45
+
+- type: loadout
+  id: MagazineBox556
+  category: Weapons
+  cost: 5
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutAmmoBox
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - MagazineBox556
+
+
+- type: loadout
+  id: MagazineBox12
+  category: Weapons
+  cost: 5
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutAmmoBox
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - MagazineBox12
+
+- type: loadout
+  id: MagazineBox44
+  category: Weapons
+  cost: 5
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutAmmoBox
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - MagazineBox44
+
+- type: loadout
+  id: MagazineBox762
+  category: Weapons
+  cost: 5
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutAmmoBox
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - MagazineBox762
+
+- type: loadout
+  id: MagazineBox308
+  category: Weapons
+  cost: 5
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutAmmoBox
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - MagazineBox308
+
 ## Melee
+
 - type: loadout
   id: N14KitchenKnife
   category: Weapons

@@ -69,6 +69,12 @@
     sprite: _Nuclear14/Objects/Consumable/Smokeables/Cigarettes/marl.rsi
 
 - type: entity
+  parent: N14CigaretteMarlboro
+  id: N14CigaretteLuckyStrike
+  description: A Lucky Strike brand cigarette.
+  suffix: lucky strike
+
+- type: entity
   parent: N14Cigarette
   id: N14CigaretteRepublic
   description: A Republic brand cigarette.

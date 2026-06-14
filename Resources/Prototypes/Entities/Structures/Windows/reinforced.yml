@@ -144,6 +144,9 @@
     snap:
     - Window
   components:
+  - type: Tag
+    tags:
+    - ForceNoFixRotations
   - type: Sprite
     drawdepth: WallTops
     sprite: Structures/Windows/reinforced_window_diagonal.rsi

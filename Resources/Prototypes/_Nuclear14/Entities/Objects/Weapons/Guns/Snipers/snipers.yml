@@ -109,7 +109,7 @@
     maxAngle: 105
     angleIncrease: 4
     angleDecay: 16
-    fireRate: 1.2
+    fireRate: 0.9
     soundGunshot:
       collection: N14AntiMaterielGunshot
     selectedMode: SemiAuto

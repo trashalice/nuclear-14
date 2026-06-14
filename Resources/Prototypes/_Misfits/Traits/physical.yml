@@ -2,9 +2,29 @@
   id: MisfitsBloodyMess
   category: Physical
   points: 6
+  requirements:
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+    - MisfitsAdamantiumSkeleton
   functions:
   - !type:TraitReplaceComponent
     components:
     - type: GibModifier
       gibThresholdMultiplier: 0.5
       severThresholdMultiplier: 0.5
+
+- type: trait
+  id: MisfitsAdamantiumSkeleton
+  category: Physical
+  points: -4
+  requirements:
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+    - MisfitsBloodyMess
+  functions:
+  - !type:TraitReplaceComponent
+    components:
+    - type: GibModifier
+      ungibbable: true

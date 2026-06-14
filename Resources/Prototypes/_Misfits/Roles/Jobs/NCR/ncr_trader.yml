@@ -24,8 +24,6 @@
   icon: "JobIconNcrCadet"
   supervisors: job-supervisors-ncr-prisoners
   alwaysUseSpawner: true
-  access:
-  - NCR
   special:
   - !type:AddComponentSpecial
     components:

@@ -211,3 +211,92 @@
        - Vault
   items:
     - N14ClothingTribalRadstagSkull
+
+
+- type: loadout
+  id: N14ClothingHeadHatCombatHelmet
+  category: Head
+  cost: 4
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutHead
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+       - Vault
+  items:
+    - N14ClothingHeadHatCombatHelmet
+
+- type: loadout
+  id: N14ClothingHeadHatPressHelmet
+  category: Head
+  cost: 4
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutHead
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+       - Vault
+  items:
+    - N14ClothingHeadHatPressHelmet
+
+- type: loadout
+  id: N14ClothingHeadHatLightBaseballHelmet
+  category: Head
+  cost: 4
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutHead
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+       - Vault
+  items:
+    - N14ClothingHeadHatLightBaseballHelmet
+
+- type: loadout
+  id: N14ClothingHeadHatChineseHelmet
+  category: Head
+  cost: 4
+  exclusive: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+      - LanguageChinese
+      - LanguageNerd 
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutHead
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+       - Vault
+  items:
+    - N14ClothingHeadHatChineseHelmet

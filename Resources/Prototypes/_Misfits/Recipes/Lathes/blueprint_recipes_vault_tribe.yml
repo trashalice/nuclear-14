@@ -646,7 +646,7 @@
   availableFaction:
   - Tribe
   materials:
-    Wood: 1800
+    Wood: 3800
     N14Iron: 1200
     Leather: 500
     N14Gold: 250
@@ -688,7 +688,7 @@
   availableFaction:
   - Tribe
   materials:
-    Steel: 25000
+    Steel: 30000
     N14Iron: 3500
     Wood: 900
     Scrap: 5000

@@ -1,4 +1,5 @@
 using Content.Shared.Access.Systems;
+using Content.Shared.Roles;
 using Content.Shared.PDA;
 using Content.Shared.StatusIcon;
 using Robust.Shared.GameStates;
@@ -54,6 +55,10 @@ public sealed partial class IdCardComponent : Component
     [DataField]
     [AutoNetworkedField]
     public List<LocId> JobDepartments = new();
+
+    [DataField]
+    [Access(typeof(SharedIdCardSystem), typeof(SharedPdaSystem), typeof(SharedAgentIdCardSystem), Other = AccessPermissions.ReadWrite)]
+    public ProtoId<JobPrototype>? JobPrototype;
 
     /// <summary>
     /// Determines if accesses from this card should be logged by <see cref="AccessReaderComponent"/>

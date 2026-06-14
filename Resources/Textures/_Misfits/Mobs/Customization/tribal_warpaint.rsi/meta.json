@@ -1,0 +1,72 @@
+{
+    "version": 1,
+    "size": {"x": 32,"y": 32},
+    "license": "CC-BY-NC-SA-3.0",
+    "copyright": "Sprite by Sam and slightly modified by Superballs, Taken from Desert Rose 2 (https://github.com/DesertRose2/desertrose), a SS13 Fallout fork. Modified for SS14.",
+    "states": [
+        {
+            "name": "tribalpaintcazador",
+            "directions": 4
+        },
+        {
+            "name": "tribalpaintclaw",
+            "directions": 4
+        },
+        {
+            "name": "tribalpaintfacestripe",
+            "directions": 4
+        },
+        {
+            "name": "tribalpaintarmwrap_l_arm",
+            "directions": 4
+        },
+        {
+            "name": "tribalpaintlegwrap_l_leg",
+            "directions": 4
+        },
+        {
+            "name": "tribalpaintarmwrap_r_arm",
+            "directions": 4
+        },
+        {
+            "name": "tribalpaintlegwrap_r_leg",
+            "directions": 4
+        },
+        {
+            "name": "tribalpaintlizard",
+            "directions": 4
+        },
+        {
+            "name": "tribalpaintpriestess",
+            "directions": 4
+        },
+        {
+            "name": "tribalpaintstripe",
+            "directions": 4
+        },
+        {
+            "name": "tribalpaintspider",
+            "directions": 4
+        },
+        {
+            "name": "tribalpaintprongs",
+            "directions": 4
+        },
+        {
+            "name": "tribalpainttears",
+            "directions": 4
+        },
+        {
+            "name": "tribalpaintthorns",
+            "directions": 4
+        },
+        {
+            "name": "tribalpaintwhitestripe",
+            "directions": 4
+        },
+        {
+            "name": "wp_bowl",
+            "directions": 1
+        }
+    ]
+}

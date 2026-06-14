@@ -67,7 +67,7 @@ public sealed class LegionGladiatorialSystem : EntitySystem
         ApplyComboEffects(uid, target, combo);
         _throwing.TryThrow(target, dir * 3f, combo.ThrownSpeed, uid);
         _stun.TryKnockdown(target, TimeSpan.FromSeconds(combo.ParalyzeTime), true);
-        _popup.PopupEntity(Loc.GetString("martial-arts-legion-body-slam", ("target", target)), uid, uid, PopupType.Medium);
+        _popup.PopupEntity(Loc.GetString("martial-arts-legion-body-slam", ("target", target)), target, uid, PopupType.Medium);
     }
 
     /// <summary>Foot Sweep: Disarm+Disarm — sweep the legs, prone the target.</summary>
@@ -75,7 +75,7 @@ public sealed class LegionGladiatorialSystem : EntitySystem
     {
         ApplyComboEffects(uid, target, combo);
         _stun.TryKnockdown(target, TimeSpan.FromSeconds(combo.ParalyzeTime), true);
-        _popup.PopupEntity(Loc.GetString("martial-arts-legion-foot-sweep", ("target", target)), uid, uid, PopupType.Small);
+        _popup.PopupEntity(Loc.GetString("martial-arts-legion-foot-sweep", ("target", target)), target, uid, PopupType.Medium);
     }
 
     /// <summary>Crushing Blow: Harm+Harm+Harm — heavy consecutive strike, high blunt + stamina crash.</summary>
@@ -83,7 +83,7 @@ public sealed class LegionGladiatorialSystem : EntitySystem
     {
         ApplyComboEffects(uid, target, combo);
         _stun.TryStun(uid: target, time: TimeSpan.FromSeconds(combo.ParalyzeTime), refresh: true);
-        _popup.PopupEntity(Loc.GetString("martial-arts-legion-crushing-blow", ("target", target)), uid, uid, PopupType.Medium);
+        _popup.PopupEntity(Loc.GetString("martial-arts-legion-crushing-blow", ("target", target)), target, uid, PopupType.Medium);
     }
 
     /// <summary>Neck Grip: Grab while already at Suffocate — deals heavy damage and drops all items.</summary>
@@ -99,7 +99,7 @@ public sealed class LegionGladiatorialSystem : EntitySystem
         }
 
         ApplyComboEffects(uid, target, combo);
-        _popup.PopupEntity(Loc.GetString("martial-arts-legion-neck-grip", ("target", target)), uid, uid, PopupType.LargeCaution);
+        _popup.PopupEntity(Loc.GetString("martial-arts-legion-neck-grip", ("target", target)), target, uid, PopupType.LargeCaution);
     }
 
     private void ApplyComboEffects(EntityUid uid, EntityUid target, MisfitsComboPrototype combo)

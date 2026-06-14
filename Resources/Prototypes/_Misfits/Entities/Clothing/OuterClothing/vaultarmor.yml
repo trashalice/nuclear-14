@@ -10,6 +10,8 @@
     sprite: _Misfits/Clothing/OuterClothing/Armor/vaultcombatarmor.rsi
   - type: Clothing
     sprite: _Misfits/Clothing/OuterClothing/Armor/vaultcombatarmor.rsi
+  - type: IntegratedNightVisionArmor # #Misfits Add: Completes the vault NV set when worn with the vault combat helmet.
+    setId: vault-combat
   - type: Armor
     modifiers:
       coefficients:

@@ -135,7 +135,9 @@ public abstract partial class SharedGunSystem : EntitySystem
             !_combatMode.IsInCombatMode(user))
             return;
 
-        if (TryComp<MechPilotComponent>(user.Value, out var mechPilot))
+        if (TryComp<MechPilotComponent>(user.Value, out var mechPilot) &&
+            TryComp<MechComponent>(mechPilot.Mech, out var mech) &&
+            mech.CurrentSelectedEquipment.HasValue)
             user = mechPilot.Mech;
 
         if (!TryGetGun(user.Value, out var ent, out var gun) ||
@@ -159,7 +161,9 @@ public abstract partial class SharedGunSystem : EntitySystem
         if (user == null)
             return;
 
-        if (TryComp<MechPilotComponent>(user.Value, out var mechPilot))
+        if (TryComp<MechPilotComponent>(user.Value, out var mechPilot) &&
+            TryComp<MechComponent>(mechPilot.Mech, out var mech) &&
+            mech.CurrentSelectedEquipment.HasValue)
             user = mechPilot.Mech;
 
         if (!TryGetGun(user.Value, out var ent, out var gun))
@@ -335,6 +339,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         }
 
         var fromCoordinates = Transform(user).Coordinates;
+        var ignoredEntity = GetShotIgnoreEntity(user);
 
         // #Misfits Add: apply per-gun origin offset (e.g. Assaultron head beam)
         if (gun.ShootOffset != Vector2.Zero)
@@ -451,16 +456,36 @@ public abstract partial class SharedGunSystem : EntitySystem
         var physics = EnsureComp<PhysicsComponent>(uid);
         Physics.SetBodyStatus(uid, physics, BodyStatus.InAir);
 
-        var targetMapVelocity = gunVelocity + direction.Normalized() * speed;
-        var currentMapVelocity = Physics.GetMapLinearVelocity(uid, physics);
-        var finalLinear = physics.LinearVelocity + targetMapVelocity - currentMapVelocity;
-        Physics.SetLinearVelocity(uid, finalLinear, body: physics);
+        // #Misfits Fix - Prevent projectiles from inheriting parent physics (e.g. mount velocity).
+        // Revolvers and battery weapons spawn projectiles at the shooter's (mount-local) coordinates,
+        // making them transform children of dynamic entities like Brahdo mounts or motorcycles.
+        // This caused the projectile to inherit the mount's angular/linear velocity through the
+        // transform hierarchy, letting riders "steer" bullets mid-flight by rotating the mount.
+        // Ballistic weapons were not affected because they re-spawn at grid-level coordinates.
+        //
+        // Fix: reparent the projectile to the map and set map-level velocity directly,
+        // so parent physics cannot influence the projectile's trajectory.
+        var mapCoords = TransformSystem.GetMapCoordinates(uid);
+        TransformSystem.SetCoordinates(uid, TransformSystem.ToCoordinates(mapCoords));
+        Physics.SetLinearVelocity(uid, gunVelocity + direction.Normalized() * speed, body: physics);
 
         var projectile = EnsureComp<ProjectileComponent>(uid);
         Projectiles.SetShooter(uid, projectile, user ?? gunUid);
         projectile.Weapon = gunUid;
+        projectile.ExtraIgnoredEntity = GetShotIgnoreEntity(user);
 
         TransformSystem.SetWorldRotation(uid, direction.ToWorldAngle() + projectile.Angle);
+    }
+
+    protected EntityUid? GetShotIgnoreEntity(EntityUid? user)
+    {
+        if (user is not { } shooter)
+            return null;
+
+        if (!TryComp<MechPilotComponent>(shooter, out var mechPilot))
+            return shooter;
+
+        return mechPilot.Mech;
     }
 
     protected abstract void Popup(string message, EntityUid? uid, EntityUid? user);

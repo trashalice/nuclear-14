@@ -16,6 +16,7 @@
   setPreference: true
   overrideConsoleVisibility: true
   canBeAntag: false
+  overwatchCategory: OverwatchMedical
   playTimeTracker: VaultDoctor
   startingGear: VaultDoctorGear
   alwaysUseSpawner: true

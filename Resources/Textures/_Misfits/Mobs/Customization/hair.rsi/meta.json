@@ -15,6 +15,10 @@
 		{
             "name": "newyou",
             "directions": 4
+        },
+        {
+            "name": "doublebunM14",
+            "directions": 4
         }
     ]
 }

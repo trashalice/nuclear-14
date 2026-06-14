@@ -14,7 +14,7 @@
   # Repair with a welder to restore the pool and re-enable absorption.
   - type: Damageable
   - type: PowerArmorIntegrity
-    maxIntegrity: 200        # #Misfits Add - FAR lighter salvaged plating
+    maxIntegrity: 300        # #Misfits Add - FAR lighter salvaged plating
     brokenBleedthroughRatio: 1.0  # #Misfits Add - when broken, only armor coefficients apply (35% mitigation from plates alone)
     disableServosLock: true       # #Misfits Add - no servo-lock speed debuff when armor breaks
   - type: Repairable
@@ -63,7 +63,7 @@
     reflects:
       - SmallCaliber
       - MediumCaliber
-    reflectProb: 0.3
+    reflectProb: 0.35
     reflectProbByType:
       MediumCaliber: 0.10 #less armor. less reflect.
     innate: true

@@ -1,0 +1,323 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Misfits Nuclear Wasteland, sprites by Enchanted (Spoon/Avis)/enchantedcrocolisk",
+  "states": [
+    {
+      "name": "black",
+      "directions": 4,
+      "delays": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "name": "black_dead",
+      "delays": [
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "name": "browntabby",
+      "directions": 4,
+      "delays": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "name": "browntabby_dead",
+      "delays": [
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "name": "calico",
+      "directions": 4,
+      "delays": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "name": "calico_dead",
+      "delays": [
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "name": "gingertabby",
+      "directions": 4,
+      "delays": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "name": "gingertabby_dead",
+      "delays": [
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "name": "graytabby",
+      "directions": 4,
+      "delays": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "name": "graytabby_dead",
+      "delays": [
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "name": "mela",
+      "directions": 4,
+      "delays": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "name": "mela_dead",
+      "delays": [
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "name": "ocicat",
+      "directions": 4,
+      "delays": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "name": "ocicat_dead",
+      "delays": [
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "name": "siamese",
+      "directions": 4,
+      "delays": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "name": "siamese_dead",
+      "delays": [
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "name": "sphinx",
+      "directions": 4,
+      "delays": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "name": "sphinx_dead",
+      "delays": [
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "name": "spoon_thin",
+      "directions": 4,
+      "delays": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "name": "spoon_dead",
+      "delays": [
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "name": "tortie",
+      "directions": 4,
+      "delays": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "name": "tortie_dead",
+      "delays": [
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "name": "white",
+      "directions": 4,
+      "delays": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "name": "white_dead",
+      "delays": [
+        [
+          1
+        ]
+      ]
+    }
+  ]
+}

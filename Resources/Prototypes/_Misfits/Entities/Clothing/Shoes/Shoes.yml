@@ -1,0 +1,14 @@
+- type: entity
+  parent: ClothingShoesBase
+  id: MisfitsShackledBoots
+  name: Chained boots
+  description: Boots with chains on them to slow down prisoners.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Clothing/Shoes/FalloutShoes/blackshoes.rsi
+  - type: Clothing
+    sprite: _Nuclear14/Clothing/Shoes/FalloutShoes/blackshoes.rsi
+    unequipDelay: 60
+  - type: ClothingSpeedModifier
+    walkModifier: 0.4
+    sprintModifier: 0.4

@@ -1,5 +1,6 @@
 using Content.Server.UserInterface;
 using Content.Shared._Misfits.Holotape;
+using Content.Shared._Misfits.Overwatch;
 using Content.Shared.Dataset;
 using Content.Shared.DeviceLinking;
 using Content.Shared.GameTicking;
@@ -243,6 +244,8 @@ public sealed class HolotapeSystem : EntitySystem
         // and IDless characters get a NO ACCESS sentinel state from BuildState.
         var dbSystem = EntityManager.System<TerminalDatabaseSystem>();
         var databaseState = dbSystem.BuildState(uid, actor, openDatabaseDocumentId);
+        var overwatchState = EntityManager.System<Content.Server._Misfits.Overwatch.OverwatchConsoleSystem>()
+            .BuildUiState(uid);
 
         return new HolotapeBoundUserInterfaceState(
             title, content,
@@ -250,7 +253,8 @@ public sealed class HolotapeSystem : EntitySystem
             isHolotapeItem: false,
             hasLinkSource: hasLinkSource,
             linkPorts: linkPorts,
-            database: databaseState);
+            database: databaseState,
+            overwatch: overwatchState);
     }
 
     // #Misfits Add - Validate port exists on the terminal's DeviceLinkSourceComponent and invoke it.

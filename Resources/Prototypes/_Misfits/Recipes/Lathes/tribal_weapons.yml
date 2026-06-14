@@ -1,0 +1,50 @@
+# #Misfits Add - Lathe recipes for tribal bow and arrow variants.
+
+- type: latheRecipe
+  id: N14WarBow
+  icon:
+    sprite: _Misfits/Objects/Weapons/Guns/Bow/tribal_bow.rsi
+    state: unwielded
+  result: N14WarBow
+  category: N14Weapons
+  completetime: 16
+  materials:
+    Wood: 750
+    Cloth: 400
+
+- type: latheRecipe
+  id: N14RecurveBow
+  icon:
+    sprite: _Misfits/Objects/Weapons/Guns/Bow/tribal_bow.rsi
+    state: unwielded
+  result: N14RecurveBow
+  category: N14Weapons
+  completetime: 8
+  materials:
+    Wood: 400
+    Cloth: 200
+
+- type: latheRecipe
+  id: N14ArrowTribal
+  icon:
+    sprite: Objects/Weapons/Guns/Projectiles/arrows.rsi
+    state: tip
+  result: N14ArrowTribal
+  category: N14Ammo
+  completetime: 2
+  materials:
+    Steel: 25
+    Cloth: 10
+
+- type: latheRecipe
+  id: N14ArrowBroadHead
+  icon:
+    sprite: Objects/Weapons/Guns/Projectiles/arrows.rsi
+    state: tip
+  result: N14ArrowBroadHead
+  category: N14Ammo
+  completetime: 2
+  materials:
+    Steel: 25
+    Cloth: 10
+    Glass: 10

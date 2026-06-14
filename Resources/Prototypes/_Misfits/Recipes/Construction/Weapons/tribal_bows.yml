@@ -1,0 +1,45 @@
+# #Misfits Add - Construction graphs for tribal war bow and recurve bow.
+# War bow: heavier draw weight, needs more materials and longer crafting time.
+# Recurve: lighter, faster to craft with less material.
+
+- type: constructionGraph
+  id: TribalWarBow
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: TribalWarBow
+      steps:
+      - material: WoodPlank
+        amount: 15
+        doAfter: 6
+      - material: Cloth
+        amount: 8
+        doAfter: 4
+      - material: Bones
+        amount: 4
+        doAfter: 4
+
+  - node: TribalWarBow
+    entity: N14WarBow
+
+- type: constructionGraph
+  id: TribalRecurveBow
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: TribalRecurveBow
+      steps:
+      - material: WoodPlank
+        amount: 8
+        doAfter: 3
+      - material: Cloth
+        amount: 4
+        doAfter: 3
+      - material: Bones
+        amount: 2
+        doAfter: 2
+
+  - node: TribalRecurveBow
+    entity: N14RecurveBow

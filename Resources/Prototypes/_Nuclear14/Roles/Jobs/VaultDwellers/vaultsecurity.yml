@@ -18,6 +18,7 @@
   setPreference: true
   overrideConsoleVisibility: true
   canBeAntag: false
+  overwatchCategory: OverwatchSecurity
   startingGear: VaultSecurityGear
   alwaysUseSpawner: true
   icon: "JobIconVaultSecurity" # Forge-Change

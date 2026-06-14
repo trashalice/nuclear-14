@@ -107,6 +107,16 @@ public sealed partial class DialogWindow : FancyWindow
         OpenCentered();
     }
 
+    public void SetOkButtonText(string text)
+    {
+        OkButton.Text = text;
+    }
+
+    public void SetCancelButtonText(string text)
+    {
+        CancelButton.Text = text;
+    }
+
     private void Confirm()
     {
         var results = new Dictionary<string, string>();

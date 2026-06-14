@@ -85,7 +85,7 @@
 - type: loadout
   id: N14ClothingBootsCombat
   category: Shoes
-  cost: 3 # Corvax-Change
+  cost: 2 # Corvax-Change
   requirements:
     - !type:CharacterItemGroupRequirement
       group: N14LoadoutShoes

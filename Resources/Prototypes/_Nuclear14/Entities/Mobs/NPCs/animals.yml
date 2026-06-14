@@ -29,9 +29,9 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      50: Dead
+      70: Dead
   - type: Stamina
-    critThreshold: 60
+    critThreshold: 70
   - type: DamageStateVisuals
     states:
       Alive:
@@ -353,7 +353,6 @@
  #   tags:
   #  - Yaoguai
 
-#MARK: Passive Animals
 #MARK: Brahmin
 - type: entity
   name: brahmin
@@ -391,6 +390,26 @@
       path: /Audio/_NC/Effects/dismount-saddle.ogg
       params:
         volume: 20
+  - type: NPCRetaliation # Aggro on the attacker when damaged from any range
+    attackMemoryLength: 30
+  - type: HTN
+    rootTask:
+     task: RuminantHostileCompound
+    blackboard:
+     NavSmash: !type:Bool
+       true
+  - type: MeleeWeapon
+    range: 2
+    altDisarm: false
+    hidden: true
+    soundHit:
+      collection: MetalThud
+    angle: 60
+    animation: WeaponArcClaw
+    wideAnimation: WeaponArcClaw
+    damage:
+      types:
+        Blunt: 10
   - type: Mountable
   - type: Tag
     tags:
@@ -501,6 +520,7 @@
     - id: N14MaterialRawLeather1
       amount: 4
   - type: MeleeWeapon
+    range: 3 # big horn
     altDisarm: false
     hidden: true
     soundHit:
@@ -510,8 +530,15 @@
     wideAnimation: WeaponArcClaw
     damage:
       types:
-        Blunt: 8
-        Slash: 2
+        Blunt: 10
+        Slash: 8
+  - type: NPCRetaliation # Aggro on the attacker when damaged from any range
+  - type: HTN
+    rootTask:
+     task: RuminantHostileCompound
+    blackboard:
+     NavSmash: !type:Bool
+       true
   - type: SolutionContainerManager
     solutions:
       udder:
@@ -588,8 +615,8 @@
     wideAnimation: WeaponArcClaw
     damage:
       types:
-        Blunt: 6
-        Slash: 2
+        Blunt: 8
+        Slash: 5
   - type: SolutionContainerManager
     solutions:
       udder:
@@ -651,6 +678,7 @@
     - id: N14FoodMeatRadstag
       amount: 4
   - type: MeleeWeapon
+    range: 2
     altDisarm: false
     hidden: true
     soundHit:
@@ -660,8 +688,16 @@
     wideAnimation: WeaponArcClaw
     damage:
       types:
-        Blunt: 7
+        Blunt: 10
         Piercing: 1
+  - type: NPCRetaliation # Aggro on the attacker when damaged from any range
+    attackMemoryLength: 30
+  - type: HTN
+    rootTask:
+     task: RuminantHostileCompound
+    blackboard:
+     NavSmash: !type:Bool
+       true
  #- type: Reproductive
    #breedChance: 0.05
    #birthPopup: reproductive-birth-popup

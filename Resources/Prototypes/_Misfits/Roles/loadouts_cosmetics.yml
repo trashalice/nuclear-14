@@ -340,6 +340,7 @@
         - NCRCommander
         - NCRMajor
         - NCRDoctor
+        - NCRRO
   items:
     - N14ClothingHandsGlovesNCR
 
@@ -532,6 +533,7 @@
         - NCRCommander
         - NCRMajor
         - NCRDoctor
+        - NCRRO
   items:
     - N14ClothingHeadHatNCRSidecap
 
@@ -587,6 +589,36 @@
         - NCRRO
   items:
     - N14ClothingNeckROmantleNCR
+
+- type: loadout
+  id: MisfitsLoadoutHeadNCRSlouch
+  category: Accessories
+  cost: 1
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - NCRCommander
+        - NCRDoctor
+        - NCRExecutiveOfficer
+        - NCRPlatoonLeader
+        - NCRNCO
+        - NCREngineer
+        - NCRMedic
+        - NCRWS
+        - NCRHeavyTrooper
+        - NCRCadet
+        - NCRMilitaryPoliceRecruit
+        - NCRMilitaryPoliceSergeant
+        - NCRMilitaryPoliceCaptain
+        - NCRRangerRecruit
+        - NCRFieldRanger
+        - NCRPatrolRanger
+        - NCRVeteranRanger
+        - NCRCitizen
+        - NCRTrader
+        - NCRRO
+  items:
+    - N14ClothingHeadHatNCRSlouch
 
 # === Head: NCR Rangers ===
 
@@ -881,6 +913,135 @@
   items:
     - N14ClothingShoesRaider
 
+# === Head: Eighties bike helmets (color variants) ===
+# #Misfits Add - Eighties faction can pick a spiked bike helmet color via loadout
+
+- type: loadout
+  id: MisfitsLoadoutHeadEightiesHelmetBlue
+  category: Head
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - EightiesTheBlock
+        - EightiesCylinders
+        - EightiesPistons
+        - EightiesOilers
+        - EightiesRoadRash
+  items:
+    - MisfitsClothingHeadBikeHelmet
+
+- type: loadout
+  id: MisfitsLoadoutHeadEightiesHelmetWhite
+  category: Head
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - EightiesTheBlock
+        - EightiesCylinders
+        - EightiesPistons
+        - EightiesOilers
+        - EightiesRoadRash
+  items:
+    - MisfitsClothingHeadBikeHelmetWhite
+
+- type: loadout
+  id: MisfitsLoadoutHeadEightiesHelmetRed
+  category: Head
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - EightiesTheBlock
+        - EightiesCylinders
+        - EightiesPistons
+        - EightiesOilers
+        - EightiesRoadRash
+  items:
+    - MisfitsClothingHeadBikeHelmetRed
+
+- type: loadout
+  id: MisfitsLoadoutHeadEightiesHelmetBlack
+  category: Head
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - EightiesTheBlock
+        - EightiesCylinders
+        - EightiesPistons
+        - EightiesOilers
+        - EightiesRoadRash
+  items:
+    - MisfitsClothingHeadBikeHelmetBlack
+
+- type: loadout
+  id: MisfitsLoadoutHeadEightiesHelmetYellow
+  category: Head
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - EightiesTheBlock
+        - EightiesCylinders
+        - EightiesPistons
+        - EightiesOilers
+        - EightiesRoadRash
+  items:
+    - MisfitsClothingHeadBikeHelmetYellow
+
+- type: loadout
+  id: MisfitsLoadoutHeadEightiesHelmetOlive
+  category: Head
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - EightiesTheBlock
+        - EightiesCylinders
+        - EightiesPistons
+        - EightiesOilers
+        - EightiesRoadRash
+  items:
+    - MisfitsClothingHeadBikeHelmetOlive
+
+- type: loadout
+  id: MisfitsLoadoutHeadEightiesHelmetBeige
+  category: Head
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - EightiesTheBlock
+        - EightiesCylinders
+        - EightiesPistons
+        - EightiesOilers
+        - EightiesRoadRash
+  items:
+    - MisfitsClothingHeadBikeHelmetBeige
+
 # === Neck: NCR faction cloaks and mantles ===
 
 - type: loadout
@@ -907,6 +1068,7 @@
         - NCRCommander
         - NCRMajor
         - NCRDoctor
+        - NCRRO
   items:
     - N14ClothingNeckCloakNCR
 
@@ -934,6 +1096,7 @@
         - NCRCommander
         - NCRMajor
         - NCRDoctor
+        - NCRRO
   items:
     - N14ClothingNeckCloakNCRSnow
 

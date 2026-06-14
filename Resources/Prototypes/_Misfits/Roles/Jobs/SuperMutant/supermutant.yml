@@ -398,8 +398,8 @@
 - type: job
   id: SuperMutantFollowerDoctor
   jobWhitelistBypassesRoleTimers: true
-  name: Supermutant Follower Doctor
-  description: A SuperMutant trained in the ways of medicine.
+  name: job-name-supermutant-follower-doctor
+  description: job-description-supermutant-follower-doctor
   playTimeTracker: SuperMutantFollowerDoctor
   icon: JobIconPassenger
   supervisors: job-supervisors-follower-doctor

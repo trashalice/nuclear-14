@@ -1,0 +1,26 @@
+# #Misfits Add - Bell collar that doubles as the pet's ID card.
+# It sits in the pet's ID slot so the collar can carry a name and future access tags.
+
+- type: entity
+  parent: ClothingNeckBase
+  id: N14BellCollar
+  name: bell collar
+  description: A tagged collar for a companion animal.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Misc/bellcollar.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Misc/bellcollar.rsi
+    slots:
+    - idcard
+  - type: Item
+    size: Small
+    heldPrefix: default
+  - type: Access
+  - type: PetCollar
+  - type: IdCard
+    nameLocId: n14-id-bell-collar-name
+    fullNameLocId: n14-id-bell-collar-full-name
+  - type: Tag
+    tags:
+    - DoorBumpOpener

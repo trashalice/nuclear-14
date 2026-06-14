@@ -93,6 +93,20 @@
       id: MisfitsLoadoutHeadBrotherhoodBeret
     - type: loadout
       id: MisfitsLoadoutHeadBrotherhoodFieldCap
+    - type: loadout # #Misfits Add - Eighties bike helmet color variants
+      id: MisfitsLoadoutHeadEightiesHelmetBlue
+    - type: loadout
+      id: MisfitsLoadoutHeadEightiesHelmetWhite
+    - type: loadout
+      id: MisfitsLoadoutHeadEightiesHelmetRed
+    - type: loadout
+      id: MisfitsLoadoutHeadEightiesHelmetBlack
+    - type: loadout
+      id: MisfitsLoadoutHeadEightiesHelmetYellow
+    - type: loadout
+      id: MisfitsLoadoutHeadEightiesHelmetOlive
+    - type: loadout
+      id: MisfitsLoadoutHeadEightiesHelmetBeige
     - type: loadout # #Misfits Add - Enclave headwear
       id: MisfitsLoadoutHeadEnclaveIntel
     - type: loadout
@@ -135,3 +149,5 @@
       id: N14LoadoutUniversalHeadTribalCloakHood
     - type: loadout
       id: N14LoadoutUniversalHeadTribalCloakHoodBr
+    - type: loadout
+      id: N14ClothingHeadHatNCRSlouch

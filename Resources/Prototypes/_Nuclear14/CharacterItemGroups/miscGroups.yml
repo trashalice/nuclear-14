@@ -13,6 +13,8 @@
       id: N14LoadoutItemCigsCustom
     - type: loadout
       id: N14LoadoutItemCigsRepublics
+    - type: loadout
+      id: N14LoadoutItemCigsLuckyStrike
 
 - type: characterItemGroup
   id: N14LoadoutLighters

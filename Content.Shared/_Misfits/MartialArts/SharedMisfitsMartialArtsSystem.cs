@@ -28,6 +28,9 @@ public sealed class SharedMisfitsMartialArtsSystem : EntitySystem
 
         // Empty-hand interaction → Hug input type for styles like ShadowStrike
         SubscribeLocalEvent<CanPerformComboComponent, InteractHandEvent>(OnInteractHand);
+
+        // Client-side combo widget query — copy the ring buffer into the event for the overlay
+        SubscribeLocalEvent<CanPerformComboComponent, GetPerformedAttackTypesEvent>(OnGetPerformedAttackTypes);
     }
 
     // ---- Combo buffer management ----
@@ -76,6 +79,14 @@ public sealed class SharedMisfitsMartialArtsSystem : EntitySystem
         // Emit a Hug combo event so style systems can intercept it (e.g. ShadowStrike neck grab)
         var ev = new MisfitsComboAttackPerformedEvent(uid, args.Target, uid, MisfitsComboAttackType.Hug);
         RaiseLocalEvent(uid, ev);
+    }
+
+    /// <summary>
+    /// Copies the current combo attack history into the event for the client-side combo widget overlay.
+    /// </summary>
+    private void OnGetPerformedAttackTypes(EntityUid uid, CanPerformComboComponent comp, ref GetPerformedAttackTypesEvent args)
+    {
+        args.AttackTypes = new(comp.LastAttacks);
     }
 
     // ---- Combo matching ----

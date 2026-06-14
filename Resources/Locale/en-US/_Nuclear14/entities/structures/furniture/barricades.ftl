@@ -1,0 +1,10 @@
+ent-N14BarricadeMetal = metal barricade
+    .desc = A metal fortification.
+ent-N14BarricadeRazorwire = razorwire barricade
+    .desc = A razorwire fortification.
+ent-N14BarricadeWoodTall = wooden barricade
+    .desc = A tall wooden barricade.
+ent-N14BarricadeTanktrap = tank trap
+    .desc = A metal fabricated spike for blocking vehicles.
+ent-N14DecorConcreteBarrier = concrete barrier
+    .desc = A concrete barrier for stopping traffic.

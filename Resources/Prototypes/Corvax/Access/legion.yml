@@ -27,8 +27,8 @@
   name: id-card-access-level-legion-explorer
 
 - type: accessLevel
-  id: CaesarLegionOrator
-  name: id-card-access-level-legion-orator
+  id: CaesarLegionOptio
+  name: id-card-access-level-legion-optio
 
 - type: accessLevel
   id: CaesarLegionLegionnaireRecruit
@@ -104,12 +104,12 @@
   - CaesarLegionExplorer
 
 - type: accessGroup
-  id: CaesarLegionOrator
+  id: CaesarLegionOptio
   tags:
   - CaesarLegion
   - CaesarLegionSlave
   - CaesarLegionRecruit
-  - CaesarLegionOrator
+  - CaesarLegionOptio
 
 - type: accessGroup
   id: CaesarLegionLegionnaireRecruit
@@ -184,7 +184,7 @@
   - CaesarLegionFrumentarii
   - CaesarLegionVexillarius
   - CaesarLegionExplorer
-  - CaesarLegionOrator
+  - CaesarLegionOptio
   - CaesarLegionLegionnaireRecruit
   - CaesarLegionLegionnaireWarrior
   - CaesarLegionLegionnaireVeteran

@@ -204,7 +204,7 @@
   - type: Gun
     soundGunshot:
       collection: N14PlasmaPistolGunshot
-    fireRate: 1.5
+    fireRate: 1
   - type: FollowDistance
     backStrength: 6
   - type: StaticPrice
@@ -245,7 +245,7 @@
   - type: Gun
     soundGunshot:
       collection: N14PlasmaDefenderGunshot
-    fireRate: 2.5
+    fireRate: 1.5
   - type: FollowDistance
     backStrength: 6
   - type: StaticPrice
@@ -765,8 +765,8 @@
   components:
   - type: Wieldable
   - type: GunWieldBonus
-    minAngle: -24
-    maxAngle: -58
+    minAngle: -23
+    maxAngle: -53
   - type: Sprite
     scale: 0.8, 0.8
     sprite: _Nuclear14/Objects/Weapons/Guns/Battery/plasma_rifle_icon.rsi
@@ -819,7 +819,7 @@
   - type: Wieldable
   - type: GunWieldBonus
     minAngle: -23
-    maxAngle: -56
+    maxAngle: -50
   - type: Sprite
     scale: 0.8, 0.8
     sprite: _Nuclear14/Objects/Weapons/Guns/Battery/plasma_rifle_crude_icon.rsi
@@ -865,8 +865,8 @@
   components:
   - type: Wieldable
   - type: GunWieldBonus
-    minAngle: -23
-    maxAngle: -55
+    minAngle: -21
+    maxAngle: -53
   - type: Sprite
     scale: 0.8, 0.8
     sprite: _Nuclear14/Objects/Weapons/Guns/Battery/plasma_urban_icon.rsi
@@ -899,7 +899,7 @@
     steps: 3
     zeroVisible: true
   - type: Gun
-    fireRate: 3
+    fireRate: 2.5
     soundGunshot:
       collection: N14PlasmaAutoRifleGunshot
     selectedMode: SemiAuto
@@ -951,7 +951,7 @@
     steps: 5
     zeroVisible: true
   - type: Gun
-    fireRate: 2 # #Misfits Tweak - reduced from 6; shotgun pacing (1 spread burst per 0.5s)
+    fireRate: 1 # #Misfits Tweak - reduced from 6; shotgun pacing (1 spread burst per 0.5s) THIS THING EATS PEOPLE ALIVE
     soundGunshot:
       collection: N14MultiplasGunshot
     selectedMode: SemiAuto # #Misfits Fix - was Burst; Multiplas fires multiple bolts simultaneously like a shotgun

@@ -121,6 +121,7 @@
   components:
   - type: Blueprint
     recipes:
+    - MisfitsShackledBoots
     - N14BPNCRArmorVestSnow
     - N14BPNCRArmorVestWoods
     - N14BPNCRArmorVestDesert
@@ -372,7 +373,6 @@
   - type: Blueprint
     recipes:
     - N14BPLegionArmorVeteranArmor
-    - N14BPLegionArmorOratorArmor
     - N14BPLegionArmorDeanRecruitArmor
     - N14BPLegionArmorReconnaissanceArmor
     # #Misfits Add - paired veteran headgear (hunter hoods and trophy skulls)
@@ -507,6 +507,7 @@
     - N14BPBoSWeaponLaserRifleWattz2000 # #Misfits Change - moved from T3 to T4
     - N14BPBoSWeaponLaserRifleWattz3000
     - N14BPBoSWeaponLaserRifleAER12 # #Misfits Add - AER-12 amber beam at T4
+    - N14BPBoSWeaponBozarGRA
 
 # #Misfits Change - RCW moved to T3; AER-15 added to T5
 - type: entity

@@ -12,7 +12,7 @@
       department: CaesarLegion
       min: 57600 # 16 hours
     #- !type:CharacterPlaytimeRequirement # TEMP REMOVED
-    #  tracker: CaesarLegionOrator
+    #  tracker: CaesarLegionOptio
     #  min: 18000 # 5 hours
     - !type:CharacterSpeciesRequirement
       species:

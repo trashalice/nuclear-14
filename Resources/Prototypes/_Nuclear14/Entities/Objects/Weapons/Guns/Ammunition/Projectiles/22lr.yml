@@ -11,9 +11,9 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 8
+        Piercing: 10
   # Misfits Add - .22 LR is a small rimfire round; loses energy quickly at range
   - type: BallisticDamageFalloff
-    falloffStartTiles: 3.0
-    maxFalloffTiles: 9.0
-    minDamageMultiplier: 0.35
+    falloffStartTiles: 5.0
+    maxFalloffTiles: 10.0
+    minDamageMultiplier: 0.45

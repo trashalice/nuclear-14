@@ -17,6 +17,17 @@
 
 - type: entity
   parent: ClothingHeadBase
+  id: N14ClothingHeadHatNCRSlouch
+  name: NCR slouch hat
+  description: An irregular issue NCR sun hat, the left side of the brim is pinned to the crown for ease with shouldering rifles
+  components:
+  - type: Sprite
+    sprite: _Misfits/Clothing/Head/sloachhead.rsi
+  - type: Clothing
+    sprite: _Misfits/Clothing/Head/sloachhead.rsi
+
+- type: entity
+  parent: ClothingHeadBase
   id: MisfitsClothingHeadAntlerSkull
   name: antler skullcap
   description: An antler skull headdress traditionally worn by the spiritually inclined.

@@ -39,7 +39,7 @@
     impactEffect: BulletPlasmaImpactEffect
     damage:
       types:
-        Shock: 18
+        Caustic: 18
         Radiation: 2
         Structural: 50
     soundHit:
@@ -57,7 +57,7 @@
     impactEffect: BulletPlasmaImpactEffect
     damage:
       types:
-        Shock: 15
+        Caustic: 15
         Structural: 25
     soundHit:
       path: "/Audio/Weapons/Guns/Hits/energy_meat1.ogg"
@@ -74,7 +74,7 @@
     impactEffect: BulletPlasmaImpactEffect
     damage:
       types:
-        Shock: 35
+        Caustic: 35
         Radiation: 5
         Structural: 100
     soundHit:

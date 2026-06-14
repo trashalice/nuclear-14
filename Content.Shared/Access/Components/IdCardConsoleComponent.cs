@@ -75,6 +75,7 @@ public sealed partial class IdCardConsoleComponent : Component
         "NCRLT",
         "NCRRanger",
         "CaesarLegion", // Misfit: Legion Start
+        "CaesarLegionRecruit", // #Misfits Add - Cell door gate access for Legion IDs
         "CaesarLegionSlave",
         "CaesarLegionFrumentarii",
         "CaesarLegionVexillarius",
@@ -83,7 +84,7 @@ public sealed partial class IdCardConsoleComponent : Component
         "CaesarLegionLegionnaireVeteran",
         "CaesarLegionDean",
         "CaesarLegionVeteranDecanus",
-        "CaesarLegionOrator",
+        "CaesarLegionOptio",
         "CaesarLegionCenturion",
         "BOS", // Misfit: BOS Start
         "BOSInitiate",

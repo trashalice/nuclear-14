@@ -79,6 +79,11 @@
     staticRecipes: # Guns or melee weapons related only.
     # Guns
     - BowImprovised
+    - N14WarBow # #Misfits Add
+    - N14RecurveBow # #Misfits Add
+    # Arrows
+    - N14ArrowTribal # #Misfits Add
+    - N14ArrowBroadHead # #Misfits Add
     # Melee
     - N14ScrapMachete
     - N14WastelandSpear
@@ -440,6 +445,9 @@
     - LandMineExplosive  # Explosive Mine (~4 tile radius)
     - LandMineModular    # Modular Mine (empty casing, add payload)
     - N14ModularGrenade
+    - TimerTrigger
+    - SignalTrigger
+    - VoiceTrigger
     - N14ChemicalPayload
     - N14ExplosivePayload
     - N14FlashPayload

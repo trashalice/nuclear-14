@@ -296,6 +296,7 @@ public sealed class FactionWarParticipantInfo
 {
     public byte Side;
     public string WarKey = string.Empty;
+    public bool Surrendered;
 }
 
 /// <summary>
@@ -343,4 +344,23 @@ public sealed class PlayerWarForceCeasefireRequestEvent : EntityEventArgs
 {
     public NetUserId Player1;
     public NetUserId Player2;
+}
+
+// ── /surrender network messages ──────────────────────────────────────────
+
+/// <summary>
+/// Client → server. Player surrenders in an active war.
+/// Server will force them down, paralyze them, and mark them as surrendered.
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class PlayerWarSurrenderRequestEvent : EntityEventArgs { }
+
+/// <summary>
+/// Server → client. Result of a surrender attempt.
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class FactionWarSurrenderResultEvent : EntityEventArgs
+{
+    public bool   Success = false;
+    public string Message = string.Empty;
 }

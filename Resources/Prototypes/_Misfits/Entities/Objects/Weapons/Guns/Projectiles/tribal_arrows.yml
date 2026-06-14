@@ -1,0 +1,47 @@
+# #Misfits Add - Tribal arrow variants: heavier war arrows and broadhead bleed arrows.
+# All inherit from BaseArrow which already has injectable solution support.
+
+- type: entity
+  parent: BaseArrow
+  id: N14ArrowTribal
+  name: tribal arrow
+  description: A heavy war arrow with a broad flint head, fletched with molted feathers. Hits much harder than standard arrows.
+  components:
+  - type: Sprite
+    layers:
+    - state: tail
+      color: red
+    - state: rod
+      color: brown
+    - state: tip
+      color: darkgray
+    - state: solution1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 60
+
+- type: entity
+  parent: BaseArrow
+  id: N14ArrowBroadHead
+  name: broadhead arrow
+  description: A razor-edged broadhead arrow designed to cause deep bleeding wounds. Less raw piercing power than a war arrow, but the wound channel is vicious.
+  components:
+  - type: Sprite
+    layers:
+    - state: tail
+      color: red
+    - state: rod
+      color: darkgray
+    - state: tip
+      color: white
+    - state: solution1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 35
+        Slash: 10

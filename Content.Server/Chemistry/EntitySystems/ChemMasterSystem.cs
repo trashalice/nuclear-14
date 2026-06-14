@@ -1,4 +1,3 @@
-using Content.Server.Chemistry.Components;
 using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Server.Labels;
 using Content.Server.Popups;
@@ -29,7 +28,7 @@ namespace Content.Server.Chemistry.EntitySystems
     /// <seealso cref="ChemMasterComponent"/>
     /// </summary>
     [UsedImplicitly]
-    public sealed class ChemMasterSystem : EntitySystem
+    public sealed class ChemMasterSystem : SharedChemMasterSystem
     {
         [Dependency] private readonly PopupSystem _popupSystem = default!;
         [Dependency] private readonly AudioSystem _audioSystem = default!;
@@ -59,13 +58,9 @@ namespace Content.Server.Chemistry.EntitySystems
             SubscribeLocalEvent<ChemMasterComponent, EntRemovedFromContainerMessage>(SubscribeUpdateUiState);
             SubscribeLocalEvent<ChemMasterComponent, BoundUIOpenedEvent>(SubscribeUpdateUiState);
 
-            SubscribeLocalEvent<ChemMasterComponent, ChemMasterSetModeMessage>(OnSetModeMessage);
-            SubscribeLocalEvent<ChemMasterComponent, ChemMasterSetPillTypeMessage>(OnSetPillTypeMessage);
             SubscribeLocalEvent<ChemMasterComponent, ChemMasterReagentAmountButtonMessage>(OnReagentButtonMessage);
             SubscribeLocalEvent<ChemMasterComponent, ChemMasterCreatePillsMessage>(OnCreatePillsMessage);
             SubscribeLocalEvent<ChemMasterComponent, ChemMasterOutputToBottleMessage>(OnOutputToBottleMessage);
-            SubscribeLocalEvent<ChemMasterComponent, ChemMasterSortMethodUpdated>(OnSortMethodUpdated);
-            SubscribeLocalEvent<ChemMasterComponent, ChemMasterTransferringAmountUpdated>(OnTransferringAmountUpdated);
         }
 
         private void SubscribeUpdateUiState<T>(Entity<ChemMasterComponent> ent, ref T ev) =>
@@ -104,26 +99,38 @@ namespace Content.Server.Chemistry.EntitySystems
             _userInterfaceSystem.SetUiState(owner, ChemMasterUiKey.Key, state);
         }
 
-        private void OnSetModeMessage(Entity<ChemMasterComponent> chemMaster, ref ChemMasterSetModeMessage message)
+        protected override void OnSetModeMessage(Entity<ChemMasterComponent> chemMaster, ref ChemMasterSetModeMessage message)
         {
             // Ensure the mode is valid, either Transfer or Discard.
             if (!Enum.IsDefined(typeof(ChemMasterMode), message.ChemMasterMode))
                 return;
 
-            chemMaster.Comp.Mode = message.ChemMasterMode;
+            base.OnSetModeMessage(chemMaster, ref message);
             UpdateUiState(chemMaster);
             ClickSound(chemMaster);
         }
 
-        private void OnSetPillTypeMessage(Entity<ChemMasterComponent> chemMaster, ref ChemMasterSetPillTypeMessage message)
+        protected override void OnSetPillTypeMessage(Entity<ChemMasterComponent> chemMaster, ref ChemMasterSetPillTypeMessage message)
         {
             // Ensure valid pill type. There are 20 pills selectable, 0-19.
             if (message.PillType > SharedChemMaster.PillTypes - 1)
                 return;
 
-            chemMaster.Comp.PillType = message.PillType;
+            base.OnSetPillTypeMessage(chemMaster, ref message);
             UpdateUiState(chemMaster);
             ClickSound(chemMaster);
+        }
+
+        protected override void OnSortMethodUpdated(Entity<ChemMasterComponent> chemMaster, ref ChemMasterSortMethodUpdated message)
+        {
+            base.OnSortMethodUpdated(chemMaster, ref message);
+            UpdateUiState(chemMaster);
+        }
+
+        protected override void OnTransferringAmountUpdated(Entity<ChemMasterComponent> chemMaster, ref ChemMasterTransferringAmountUpdated message)
+        {
+            base.OnTransferringAmountUpdated(chemMaster, ref message);
+            UpdateUiState(chemMaster);
         }
 
         private void OnReagentButtonMessage(Entity<ChemMasterComponent> chemMaster, ref ChemMasterReagentAmountButtonMessage message)
@@ -361,17 +368,5 @@ namespace Content.Server.Chemistry.EntitySystems
             {
                 Reagents = solution.Contents
             };
-
-        private void OnSortMethodUpdated(EntityUid uid, ChemMasterComponent chemMaster, ChemMasterSortMethodUpdated args)
-        {
-            chemMaster.SortMethod = args.SortMethod;
-            UpdateUiState((uid, chemMaster));
-        }
-
-        private void OnTransferringAmountUpdated(EntityUid uid, ChemMasterComponent chemMaster, ChemMasterTransferringAmountUpdated args)
-        {
-            chemMaster.TransferringAmount = args.TransferringAmount;
-            UpdateUiState((uid, chemMaster));
-        }
     }
 }

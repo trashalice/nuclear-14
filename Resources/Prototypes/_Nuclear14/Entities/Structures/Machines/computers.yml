@@ -47,6 +47,40 @@
     ports:
       - OrderSender
 
+- type: entity
+  id: N14ComputerOverwatchBase
+  parent: N14ComputerTerminalNew
+  name: overwatch terminal
+  description: A secured terminal for monitoring linked personnel feeds.
+  abstract: true
+  components:
+  - type: HolotapeData
+    title: overwatch-terminal-title
+    content: overwatch-terminal-content
+  - type: TerminalRandomContent
+    contentPool: []
+  - type: ActivatableUIRequiresAccess
+  - type: ActivatableUI
+    singleUser: true
+  - type: OverwatchConsole
+    monitorTitle: overwatch-monitor-title
+
+- type: entity
+  id: N14ComputerVaultOverwatch
+  parent: N14ComputerOverwatchBase
+  name: overseer overwatch terminal
+  description: A secured terminal for monitoring active vault personnel feeds.
+  suffix: Vault, Overseer
+  components:
+  - type: TerminalNotebook
+    terminalId: vault-overseer-overwatch
+  - type: AccessReader
+    access: [["VaultOverseer"]]
+  - type: OverwatchConsole
+    monitorTitle: overwatch-monitor-title-vault
+    trackedTags:
+    - IdCardVault
+
 # Camera Monitors
 ## Base
 - type: entity

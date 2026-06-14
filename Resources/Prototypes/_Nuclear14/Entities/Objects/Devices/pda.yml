@@ -192,7 +192,6 @@
       - PipBoyGroupsCartridge
       - PipBoyDirectoryCartridge
       - PipBoySettingsCartridge
-      - PipBoyFactionCartridge
       - MisfitsWastelandMapCartridge
   - type: PdaBorderColor
     borderColor: "#7C5D00"

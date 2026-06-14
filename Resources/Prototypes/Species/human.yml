@@ -63,7 +63,7 @@
       points: 4
       required: false
     Chest:
-      points: 1
+      points: 2 #misfits change: increased from 1 to 2 to allow for more chest markings, so you can select a front and back marking if you want
       required: false
     RightLeg:
       points: 2

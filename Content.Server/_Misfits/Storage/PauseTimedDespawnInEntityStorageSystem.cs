@@ -1,5 +1,5 @@
 using Content.Shared._Misfits.Storage;
-using Content.Shared.Storage.Components;
+using Robust.Shared.Containers;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Spawners;
 
@@ -7,29 +7,38 @@ namespace Content.Server._Misfits.Storage;
 
 public sealed class PauseTimedDespawnInEntityStorageSystem : EntitySystem
 {
+    [Dependency] private readonly SharedContainerSystem _container = default!;
+
     public override void Initialize()
     {
-        SubscribeLocalEvent<InsideEntityStorageComponent, ComponentStartup>(OnStorageEntered);
-        SubscribeLocalEvent<InsideEntityStorageComponent, ComponentShutdown>(OnStorageExited);
+        SubscribeLocalEvent<PauseTimedDespawnInEntityStorageComponent, ComponentStartup>(OnStartup);
+        SubscribeLocalEvent<PauseTimedDespawnInEntityStorageComponent, EntGotInsertedIntoContainerMessage>(OnInserted);
+        SubscribeLocalEvent<PauseTimedDespawnInEntityStorageComponent, EntGotRemovedFromContainerMessage>(OnRemoved);
     }
 
-    private void OnStorageEntered(EntityUid uid, InsideEntityStorageComponent component, ComponentStartup args)
+    private void OnStartup(EntityUid uid, PauseTimedDespawnInEntityStorageComponent pauseComp, ComponentStartup _)
     {
-        if (!TryComp<PauseTimedDespawnInEntityStorageComponent>(uid, out var pauseComp) ||
-            !TryComp<TimedDespawnComponent>(uid, out var timedDespawn))
-        {
-            return;
-        }
+        if (_container.IsEntityInContainer(uid))
+            PauseDespawn(uid, pauseComp);
+    }
 
+    private void OnInserted(EntityUid uid, PauseTimedDespawnInEntityStorageComponent pauseComp, EntGotInsertedIntoContainerMessage _)
+    {
+        PauseDespawn(uid, pauseComp);
+    }
+
+    private void PauseDespawn(EntityUid uid, PauseTimedDespawnInEntityStorageComponent pauseComp)
+    {
+        if (!TryComp<TimedDespawnComponent>(uid, out var timedDespawn))
+            return;
         // Keep compost from disappearing while a crate is intentionally storing it.
         pauseComp.PausedLifetime = timedDespawn.Lifetime;
         RemComp<TimedDespawnComponent>(uid);
     }
 
-    private void OnStorageExited(EntityUid uid, InsideEntityStorageComponent component, ComponentShutdown args)
+    private void OnRemoved(EntityUid uid, PauseTimedDespawnInEntityStorageComponent pauseComp, EntGotRemovedFromContainerMessage _)
     {
         if (MetaData(uid).EntityLifeStage >= EntityLifeStage.Terminating ||
-            !TryComp<PauseTimedDespawnInEntityStorageComponent>(uid, out var pauseComp) ||
             pauseComp.PausedLifetime is not { } pausedLifetime)
         {
             return;

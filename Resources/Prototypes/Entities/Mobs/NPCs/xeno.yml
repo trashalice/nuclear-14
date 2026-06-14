@@ -87,7 +87,8 @@
     animation: WeaponArcBite
     damage:
       groups:
-        Brute: 6
+        Brute: 15
+        Slash: 20
   - type: DamageStateVisuals
     rotate: true
     states:
@@ -163,10 +164,10 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      100: Critical
-      150: Dead
+      1000: Critical
+      1500: Dead
   - type: Stamina
-    critThreshold: 300
+    critThreshold: 1000
   - type: SlowOnDamage
     speedModifierThresholds:
       50: 0.7
@@ -181,6 +182,16 @@
         - MobMask
         layer:
         - MobLayer
+  - type: MeleeWeapon
+    altDisarm: false
+    angle: 0
+    soundHit:
+     collection: AlienClaw
+    animation: WeaponArcBite
+    damage:
+      groups:
+        Brute: 15
+        Slash: 20
 
 - type: entity
   name: Drone
@@ -197,15 +208,21 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      80: Critical
-      130: Dead
+      130: Critical
+      200: Dead
   - type: SlowOnDamage
     speedModifierThresholds:
       40: 0.7
   - type: MeleeWeapon
+    altDisarm: false
+    angle: 0
+    soundHit:
+     collection: AlienClaw
+    animation: WeaponArcBite
     damage:
       groups:
-        Brute: 6
+        Brute: 20
+        Slash: 15
   - type: MovementSpeedModifier
     baseSprintSpeed: 4
   - type: Fixtures
@@ -235,8 +252,8 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      300: Critical
-      350: Dead
+      3800: Critical
+      4000: Dead
   - type: SlowOnDamage
     speedModifierThresholds:
       150: 0.7
@@ -244,7 +261,8 @@
   - type: MeleeWeapon
     damage:
      groups:
-       Brute: 12
+       Brute: 10
+       Slash: 75
   - type: Fixtures
     fixtures:
       fix1:
@@ -282,17 +300,15 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      100: Critical
-      150: Dead
+      800: Critical
+      1000: Dead
   - type: MovementSpeedModifier
-    baseSprintSpeed: 4
+    baseSprintSpeed: 6
   - type: MeleeWeapon
     damage:
      groups:
-       Brute: 10
-  - type: SlowOnDamage
-    speedModifierThresholds:
-      50: 0.7
+       Brute: 20
+       Slash: 25
   - type: Fixtures
     fixtures:
       fix1:
@@ -318,11 +334,12 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: running
   - type: MovementSpeedModifier
-    baseSprintSpeed: 6.0
+    baseSprintSpeed: 7.0
   - type: MeleeWeapon
     damage:
      groups:
-       Brute: 10
+       Brute: 15
+       Slash: 10
   - type: Fixtures
     fixtures:
       fix1:
@@ -366,7 +383,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      50: Dead
+      90: Dead
   - type: SlowOnDamage
     speedModifierThresholds:
       25: 0.7
@@ -380,7 +397,7 @@
     capacity: 1
     count: 1
   - type: Gun
-    fireRate: 0.75
+    fireRate: 1
     useKey: false
     selectedMode: FullAuto
     availableModes:

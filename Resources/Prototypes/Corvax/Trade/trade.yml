@@ -595,10 +595,10 @@
     price: 5
   - proto: N14ClothingMaskPlate
     price: 15
-#  - proto: N14ClothingHeadHatChineseHelmet
-#    price: 15
   - proto: N14ClothingMaskBreather
     price: 15
+  - proto: N14ClothingHeadHatChineseHelmet
+    price: 35
   - proto: N14ClothingHeadHatPrewarMilitaryHelmet
     price: 35
 #  - proto: N14ClothingHeadHatCombatHelmetCargo
@@ -662,8 +662,8 @@
     price: 100
   - proto: N14ClothingOuterPoliceVest
     price: 200
-#  - proto: N14ClothingOuterVestChinese
-#    price: 200
+  - proto: N14ClothingOuterVestChinese
+    price: 200
   - proto: N14ClothingOuterCombatPainspike
     price: 500
   - proto: N14ClothingOuterRaiderCombat1
@@ -750,6 +750,8 @@
   id: CaravanBuy2_Misc
   name: "Misc"
   entries:
+  - proto: N14Binoculars
+    price: 100
   - proto: SprayPaintBlue
     price: 5
   - proto: SprayPaintRed
@@ -780,6 +782,10 @@
     price: 150
   - proto: BoxTapeRecorder
     price: 100
+  - proto: FishingRod
+    price: 50
+  - proto: FishingRodGolden
+    price: 250
 
 - type: storeCategoryStructured
   id: CaravanBuy2_Sprouts
@@ -834,6 +840,31 @@
   - proto: N14FloraWildXanderRootClippingSeed
     price: 5
 
+- type: storeCategoryStructured
+  id: CaravanBuy2_Plushies
+  name: "Plushies"
+  entries:
+  - proto: PlushiePeterPro
+    price: 500
+  - proto: PlushieDangerouslyJoyful
+    price: 500
+  - proto: PlushieMechanicalIdol
+    price: 500
+  - proto: PlushieCatBlack
+    price: 50
+  - proto: PlushieCatTuxedo
+    price: 50
+  - proto: PlushieCatTabby
+    price: 50
+  - proto: PlushieDeer
+    price: 50
+  - proto: PlushieGrey
+    price: 50
+  - proto: PlushiePenguin
+    price: 50
+  - proto: PlushieHampter
+    price: 50
+
 - type: storePresetStructured
   id: caravan_buy2
   currency: Caps
@@ -855,6 +886,7 @@
   - CaravanBuy2_Materials
   - CaravanBuy2_Alcohol
   - CaravanBuy2_Misc
+  - CaravanBuy2_Plushies
   - CaravanBuy2_Sprouts
 
 # ----------------------------

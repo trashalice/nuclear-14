@@ -358,6 +358,9 @@
   id: N14DoorMetalSlantedLockedBrass
   suffix: Locked, IronKey
   components:
+  - type: Tag
+    tags:
+    - ForceNoFixRotations
   - type: AccessReader
     access: [["BrassKey"]]
   - type: Wires

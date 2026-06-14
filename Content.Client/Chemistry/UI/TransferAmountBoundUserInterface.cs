@@ -25,7 +25,7 @@ namespace Content.Client.Chemistry.UI
             {
                 if (int.TryParse(_window.AmountLineEdit.Text, out var i))
                 {
-                    SendMessage(new TransferAmountSetValueMessage(FixedPoint2.New(i)));
+                    SendPredictedMessage(new TransferAmountSetValueMessage(FixedPoint2.New(i)));
                     _window.Close();
                 }
             };

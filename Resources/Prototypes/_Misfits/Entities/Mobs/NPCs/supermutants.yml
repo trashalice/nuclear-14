@@ -21,7 +21,7 @@
     animation: WeaponArcFist
     damage:
       types:
-        Blunt: 25
+        Blunt: 35
     range: 1.8
   - type: Sprite
     scale: 1.5, 1.5 # Misfits Tweak: Super Mutants are 1.5x bigger than humans.
@@ -59,7 +59,7 @@
     animation: WeaponArcFist
     damage:
       types:
-        Blunt: 30
+        Blunt: 50
     range: 1.8
   - type: DamageStateVisuals
     states:
@@ -95,7 +95,7 @@
     animation: WeaponArcFist
     damage:
       types:
-        Blunt: 18
+        Blunt: 30
     range: 1.8
   - type: Gun
     minAngle: 5
@@ -111,8 +111,8 @@
       - SemiAuto
   - type: BasicEntityAmmoProvider
     proto: N14Cartridge762Rifle
-    capacity: 8
-    count: 8
+    capacity: 20
+    count: 20
   - type: RechargeBasicEntityAmmo
     rechargeCooldown: 3
     rechargeSound:
@@ -159,7 +159,7 @@
     animation: WeaponArcSlash
     damage:
       types:
-        Slash: 28
+        Slash: 50
     range: 1.8
   - type: DamageStateVisuals
     states:
@@ -196,7 +196,7 @@
     animation: WeaponArcFist
     damage:
       types:
-        Blunt: 18
+        Blunt: 50
     range: 1.8
   - type: Gun
     minAngle: 4
@@ -253,7 +253,7 @@
     animation: WeaponArcFist
     damage:
       types:
-        Blunt: 22
+        Blunt: 50
     range: 1.8
   - type: Gun
     minAngle: 3
@@ -319,7 +319,7 @@
     animation: WeaponArcFist
     damage:
       types:
-        Blunt: 15
+        Blunt: 50
     range: 1.5
   - type: Explosive
     # Misfits Change - Suicider explosion. DesertRose: suicide grenade, approx radius 4 tiles.
@@ -373,7 +373,7 @@
     animation: WeaponArcFist
     damage:
       types:
-        Blunt: 28
+        Blunt: 50
     range: 1.8
   - type: DamageStateVisuals
     states:
@@ -492,8 +492,8 @@
     animation: WeaponArcFist
     damage:
       types:
-        Blunt: 50
-        Structural: 25
+        Blunt: 75
+        Structural: 100
     range: 2.2
   - type: DamageStateVisuals
     states:

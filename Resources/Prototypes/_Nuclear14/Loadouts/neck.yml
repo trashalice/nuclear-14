@@ -234,3 +234,15 @@
    items:
      - ClothingNeckScarfStripedLightBlue
 
+ - type: loadout
+   id: ClothingNeckBellCollar
+   category: Accessories
+   cost: 10 # It's annoying but funny
+   exclusive: true
+   customColorTint: true
+   requirements:
+     - !type:CharacterItemGroupRequirement
+       group: N14LoadoutNeck
+   items:
+     - ClothingNeckBellCollar
+

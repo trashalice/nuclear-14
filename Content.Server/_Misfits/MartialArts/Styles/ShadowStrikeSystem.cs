@@ -53,20 +53,20 @@ public sealed class ShadowStrikeSystem : EntitySystem
 
                 _popup.PopupEntity(targetUnaware
                     ? Loc.GetString("martial-arts-shadow-silent-blow-sneak", ("target", target))
-                    : Loc.GetString("martial-arts-shadow-silent-blow", ("target", target)), uid, uid, PopupType.Small);
+                    : Loc.GetString("martial-arts-shadow-silent-blow", ("target", target)), target, uid, PopupType.Medium);
                 break;
 
             case "ShadowHug":
                 // Instantly jump to Suffocate grab — only works if target is unaware
                 if (!targetUnaware)
                 {
-                    _popup.PopupEntity(Loc.GetString("martial-arts-shadow-hug-failed"), uid, uid, PopupType.Small);
+                    _popup.PopupEntity(Loc.GetString("martial-arts-shadow-hug-failed"), target, uid, PopupType.Medium);
                     break;
                 }
 
                 // Force grab straight to Suffocate via TryGrab + force-escalate
                 _grab.TryForceGrabStage(uid, target, GrabStage.Suffocate);
-                _popup.PopupEntity(Loc.GetString("martial-arts-shadow-hug", ("target", target)), uid, uid, PopupType.Medium);
+                _popup.PopupEntity(Loc.GetString("martial-arts-shadow-hug", ("target", target)), target, uid, PopupType.Medium);
                 break;
 
             case "ShadowDisarm":
@@ -83,7 +83,7 @@ public sealed class ShadowStrikeSystem : EntitySystem
                     _stun.TryStun(target, TimeSpan.FromSeconds(combo.ParalyzeTime), true);
                 }
 
-                _popup.PopupEntity(Loc.GetString("martial-arts-shadow-disarm", ("target", target)), uid, uid, PopupType.Small);
+                _popup.PopupEntity(Loc.GetString("martial-arts-shadow-disarm", ("target", target)), target, uid, PopupType.Medium);
                 break;
         }
     }

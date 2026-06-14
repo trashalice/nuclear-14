@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Content.Shared._Misfits.Overwatch;
 using Robust.Shared.Network;
 using Robust.Shared.Serialization;
 
@@ -61,6 +62,7 @@ public sealed class HolotapeBoundUserInterfaceState : BoundUserInterfaceState
     // #Misfits Add - Faction-shared database tab state. Null when the terminal has no
     // TerminalDatabaseComponent or its prototype is missing — DATABASE tab stays hidden.
     public readonly TerminalDatabaseState? Database;
+    public readonly OverwatchConsoleState? Overwatch;
 
     public HolotapeBoundUserInterfaceState(
         string title,
@@ -70,7 +72,8 @@ public sealed class HolotapeBoundUserInterfaceState : BoundUserInterfaceState
         bool isHolotapeItem = false,
         bool hasLinkSource = false,
         List<string>? linkPorts = null,
-        TerminalDatabaseState? database = null)
+        TerminalDatabaseState? database = null,
+        OverwatchConsoleState? overwatch = null)
     {
         Title = title;
         Content = content;
@@ -80,6 +83,7 @@ public sealed class HolotapeBoundUserInterfaceState : BoundUserInterfaceState
         HasLinkSource = hasLinkSource;
         LinkPorts = linkPorts;
         Database = database;
+        Overwatch = overwatch;
     }
 }
 

@@ -81,8 +81,8 @@ public sealed class PersistentPlayerDataSystem : EntitySystem
     {
         // Ensure the persistent data component exists on the player entity
         var comp = EnsureComp<PersistentPlayerDataComponent>(args.Mob);
-        var special = EnsureComp<SpecialComponent>(args.Mob);
-        _special.TrySetBaseValues(args.Mob, args.Profile.Special, special);
+        _special.TryApplyProfileBaseValues(args.Mob, args.Profile);
+        TryComp<SpecialComponent>(args.Mob, out var special);
         SyncPersistentSpecialFromComponent(args.Mob, comp, special);
 
         // Load immediately if the player is already attached (they will be for normal spawns)

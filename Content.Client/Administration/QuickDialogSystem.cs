@@ -20,6 +20,11 @@ public sealed class QuickDialogSystem : EntitySystem
         var cancel = (ev.Buttons & QuickDialogButtonFlag.CancelButton) != 0;
         var window = new DialogWindow(ev.Title, ev.Prompts, ok: ok, cancel: cancel);
 
+        if (ev.OkText != null)
+            window.SetOkButtonText(ev.OkText);
+        if (ev.CancelText != null)
+            window.SetCancelButtonText(ev.CancelText);
+
         window.OnConfirmed += responses =>
         {
             RaiseNetworkEvent(new QuickDialogResponseEvent(ev.DialogId,

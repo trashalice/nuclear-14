@@ -168,6 +168,7 @@ public sealed partial class GunSystem : SharedGunSystem
 
                     //in the situation when user == null, means that the cannon fires on its own (via signals). And we need the gun to not fire by itself in this case
                     var lastUser = user ?? gunUid;
+                    var rayIgnore = GetShotIgnoreEntity(user);
 
                     if (hitscan.Reflective != ReflectType.None)
                     {
@@ -175,7 +176,7 @@ public sealed partial class GunSystem : SharedGunSystem
                         {
                             var ray = new CollisionRay(from.Position, dir, hitscan.CollisionMask);
                             var rayCastResults =
-                                Physics.IntersectRay(from.MapId, ray, hitscan.MaxLength, lastUser, false).ToList();
+                                Physics.IntersectRay(from.MapId, ray, hitscan.MaxLength, rayIgnore ?? lastUser, false).ToList();
                             if (!rayCastResults.Any())
                                 break;
 

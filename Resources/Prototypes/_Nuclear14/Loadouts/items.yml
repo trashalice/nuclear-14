@@ -129,6 +129,27 @@
   items:
     - N14CigarettePackRepublics
 
+- type: loadout
+  id: N14LoadoutItemCigsLuckyStrike
+  category: Items
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: N14LoadoutSmokeables
+  - !type:CharacterJobRequirement
+    jobs:
+      - EnclaveEnlisted
+      - EnclaveNCO
+      - EnclaveJuniorOfficer
+      - EnclaveSeniorOfficer
+      - EnclaveCommander
+      - EnclaveJuniorScientist
+      - EnclaveScientist
+      - EnclaveHeadScientist
+
+  items:
+  - N14CigarettePackLuckyStrike
+
 # Lighters
 - type: loadout
   id: N14LoadoutItemLighter
@@ -248,6 +269,14 @@
   items:
     - N14InstrumentRockGuitar
 
+- type: loadout
+  id: N14ReagentContainerOliveoil
+  category: Items
+  cost: 1
+  items:
+  - N14ReagentContainerOliveoil
+
+
 
 
 
@@ -266,3 +295,109 @@
 #      - NCRPrisoner
 #  items:
 #    - N14CurrencyCap100
+
+# Heals and Drugs
+
+- type: loadout
+  id: LoadoutJet
+  category: Items
+  cost: 1
+  items:
+    - N14Jet
+
+- type: loadout
+  id: LoadoutTurbo
+  category: Items
+  cost: 2
+  items:
+    - N14Turbo
+
+- type: loadout
+  id: LoadoutPsycho
+  category: Items
+  cost: 2
+  items:
+    - N14Psycho
+
+
+- type: loadout
+  id: LoadoutHealingPowder
+  category: Items
+  cost: 1
+  items:
+    - N14HealingPowder
+
+
+- type: loadout
+  id: LoadoutHealingPoutltice
+  category: Items
+  cost: 2
+  items:
+    - N14HealingPoultice
+
+- type: loadout
+  id: LoadoutStimpakDirty
+  category: Items
+  cost: 2
+  items:
+    - N14StimpakDirty
+
+- type: loadout
+  id: LoadoutStimpak
+  category: Items
+  cost: 3
+  items:
+    - N14Stimpak
+
+
+# Paints
+
+- type: loadout
+  id: LoadoutSprayPaintBlue
+  category: Items
+  cost: 1
+  items:
+    - SprayPaintBlue
+
+- type: loadout
+  id: LoadoutSprayPaintRed
+  category: Items
+  cost: 1
+  items:
+    - SprayPaintRed
+
+- type: loadout
+  id: LoadoutSprayPaintBlack
+  category: Items
+  cost: 1
+  items:
+    - SprayPaintBlack
+
+- type: loadout
+  id: LoadoutSprayPaintOrange
+  category: Items
+  cost: 1
+  items:
+    - SprayPaintOrange
+
+- type: loadout
+  id: LoadoutSprayPaintPurple
+  category: Items
+  cost: 1
+  items:
+    - SprayPaintPurple
+
+- type: loadout
+  id: LoadoutSprayPaintWhite
+  category: Items
+  cost: 1
+  items:
+    - SprayPaintWhite
+
+- type: loadout
+  id: LoadoutSprayPaintGreen
+  category: Items
+  cost: 1
+  items:
+    - SprayPaintGreen
+

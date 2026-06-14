@@ -207,7 +207,7 @@
   availableFaction:
   - NCR
   materials:
-    Steel: 4000
+    Steel: 5000
 
     Wood: 1500
 
@@ -301,13 +301,15 @@
   availableFaction:
   - NCR
   materials:
-    Steel: 4000
+    Steel: 6500
 
     Wood: 1500
 
     Glass: 1000
 
-    N14Iron: 500
+    N14Iron: 800
+
+    N14Brass: 300
 
 
 # --- NCR Tier 3 Weapons (Ranger/Veteran grade) ---
@@ -644,6 +646,20 @@
 
     Leather: 500
 
+- type: latheRecipe
+  id: MisfitsShackledBoots
+  result: MisfitsShackledBoots
+  category: N14BlueprintNCRArmorT1
+  completetime: 6
+  requiresBlueprint: true
+  availableFaction:
+  - NCR
+  materials:
+    Cloth: 800
+
+    Thread: 500
+
+    Steel: 500
 
 - type: latheRecipe
   id: N14BPNCRArmorVestWoods
@@ -1848,9 +1864,9 @@
   availableFaction:
   - CaesarLegion
   materials:
-    Steel: 12000
+    Steel: 17500
 
-    N14Iron: 3000
+    N14Iron: 5000
 
     Circuitry: 100
 
@@ -1866,7 +1882,7 @@
   availableFaction:
   - CaesarLegion
   materials:
-    Wood: 3000
+    Wood: 4000
 
     N14Iron: 950
 
@@ -2113,26 +2129,6 @@
     Thread: 300
 
     N14Iron: 500
-
-
-- type: latheRecipe
-  id: N14BPLegionArmorOratorArmor
-  result: N14ClothingOuterLegionnaireOratorArmor
-  category: N14BlueprintLegionArmorT3
-  completetime: 12
-  requiresBlueprint: true
-  availableFaction:
-  - CaesarLegion
-  materials:
-    Leather: 250
-
-    Cloth: 220
-
-    Thread: 170
-
-    N14Iron: 1000
-
-    N14Gold: 150
 
 
 - type: latheRecipe

@@ -67,7 +67,7 @@
           NCRVeteranRanger: [ 1, 1 ] # #Misfits Change - renamed from RangerVeteran
           NCRFieldRanger: [ 1, 1 ]   # #Misfits Add - Field Ranger slot
           NCRPatrolRanger: [ 1, 1 ]  # #Misfits Change - renamed from RangerRecruit (was Patrol Ranger by FTL)
-          NCRRangerRecruit: [ 1, 1 ] # #Misfits Add - entry-level Ranger Recruit slot
+          NCRRangerRecruit: [ 2, 2 ] # #Misfits Add - entry-level Ranger Recruit slot
           NCRFirstSergeant: [ 1, 1 ]
           #NCRStaffSergeant: [ 1, 1 ] # #Misfits Removed - replaced by NCRHeavyTrooper as T5 specialist slot
           NCRHeavyTrooper: [ 2, 2 ]
@@ -124,7 +124,7 @@
           CaesarLegionFrumentarii: [ 2, 2 ] # Forge-Legion # #Misfits Tweak - raised total and initial slots from 1 to 2
           CaesarLegionPrimeDecanus: [ 1, 1 ] # Misfits-Legion
           CaesarLegionExplorer: [ 1, 2 ] # Misfits-Legion
-          CaesarLegionOrator: [ 1, 1 ] # Misfits-Legion
+          CaesarLegionOptio: [ 1, 1 ] # Misfits-Legion
           CaesarLegionPriestessOfMars: [ 1, 1 ] # Misfits-Legion — Priestess of Mars late-join slot
           CaesarLegionHoundmaster: [ 1, 1 ] # Forge-Legion
           # #Misfits Change: CaesarLegionRecruit slot removed — CaesarLegionLegionnaireRecruit (line 103) already covers entry-level.

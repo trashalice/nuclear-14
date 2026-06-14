@@ -39,7 +39,7 @@
     - map: [ "enum.DamageStateVisualLayers.Base" ]
       state: alive
       sprite: _Nuclear14/Mobs/Ghouls/ghoul-feral.rsi
-  
+
 - type: entity
   parent: N14MobBaseHostileFeral
   id: N14MobGhoulFeralReaver
@@ -81,7 +81,7 @@
     thresholds:
       0: Alive
       100: Dead
-        
+
 - type: entity
   parent: N14MobBaseHostileFeral
   id: N14MobGhoulFeralRotter
@@ -119,7 +119,7 @@
     - map: [ "enum.DamageStateVisualLayers.Base" ]
       state: alive
       sprite: _Nuclear14/Mobs/Ghouls/ghoul-rotter.rsi
-      
+
 - type: entity
   parent: N14MobBaseHostileFeral
   id: N14MobGhoulMaypole
@@ -184,10 +184,21 @@
         - MobMask
         layer:
         - MobLayer
+  - type: Stamina
+    critThreshold: 1000
   - type: MobThresholds
     thresholds:
       0: Alive
-      1000: Dead
+      1000: Critical
+      1500: Dead
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: alive
+      Critical:
+        Base: sleeping
+      Dead:
+        Base: dead
   - type: StaminaDamageResistance
     coefficient: 0
   - type: NoPull #Misfits Add - Maypole is too large to be grabbed

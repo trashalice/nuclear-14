@@ -42,13 +42,13 @@ public sealed class DesertSurvivalSystem : EntitySystem
         {
             case "DesertRushingStrike":
                 ApplyScaledDamage(uid, target, scaledDamage, combo.DamageType);
-                _popup.PopupEntity(Loc.GetString("martial-arts-desert-rushing-strike", ("target", target)), uid, uid, PopupType.Small);
+                _popup.PopupEntity(Loc.GetString("martial-arts-desert-rushing-strike", ("target", target)), target, uid, PopupType.Medium);
                 break;
 
             case "DesertPowerBurst":
                 ApplyScaledDamage(uid, target, scaledDamage, combo.DamageType);
                 _stun.TryStun(target, TimeSpan.FromSeconds(combo.ParalyzeTime), true);
-                _popup.PopupEntity(Loc.GetString("martial-arts-desert-power-burst", ("target", target)), uid, uid, PopupType.Medium);
+                _popup.PopupEntity(Loc.GetString("martial-arts-desert-power-burst", ("target", target)), target, uid, PopupType.Medium);
                 break;
 
             case "DesertSlamDown":
@@ -56,7 +56,7 @@ public sealed class DesertSurvivalSystem : EntitySystem
                 _stun.TryKnockdown(target, TimeSpan.FromSeconds(combo.ParalyzeTime), true);
                 if (combo.StaminaDamage > 0)
                     _stamina.TakeStaminaDamage(target, combo.StaminaDamage, source: uid);
-                _popup.PopupEntity(Loc.GetString("martial-arts-desert-slam-down", ("target", target)), uid, uid, PopupType.Medium);
+                _popup.PopupEntity(Loc.GetString("martial-arts-desert-slam-down", ("target", target)), target, uid, PopupType.Medium);
                 break;
         }
     }

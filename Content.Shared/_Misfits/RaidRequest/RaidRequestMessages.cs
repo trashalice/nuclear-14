@@ -26,6 +26,7 @@ public static class RaidRequestConfig
         "Townsfolk", "PlayerRaider",
         "Tribal", "Vault", "Followers",
         "Enclave", // #Misfits Add - Enclave remnant faction may submit faction-tier raid requests.
+        "Eighties", // #Misfits Add - 80s biker gang may submit faction-tier raid requests.
     };
 
     /// <summary>
@@ -66,6 +67,7 @@ public static class RaidRequestConfig
         "Vault"       => "Vault Dwellers",
         "Followers"   => "Followers of the Apocalypse",
         "Wastelander" => "Wastelander",
+        "Eighties"    => "80s",
         _             => canonicalFaction,
     };
 

@@ -29,9 +29,22 @@ public sealed class GibModifierSystem : EntitySystem
                 }
             }
         }
+
+        if (!ent.Comp.Ungibbable)
+        {
+            RemComp<UngibbableComponent>(ent);
+        }
+
         // set gib and sever thresholds for each bodypart
         foreach (var part in _body.GetBodyChildren(ent))
         {
+            if (ent.Comp.Ungibbable) // Adamantium Skeleton
+            {
+                part.Component.CanSever = false;
+                RemComp<DestructibleComponent>(part.Id);
+                continue;
+            }
+
             if (!TryComp(part.Id, out DestructibleComponent? partDestructible))
                 continue;
             foreach (var threshold in partDestructible.Thresholds)
@@ -41,6 +54,7 @@ public sealed class GibModifierSystem : EntitySystem
                     trigger.Damage = (int)  (trigger.Damage * ent.Comp.GibThresholdMultiplier); // rounds down
                 }
             }
+
             part.Component.CanSever = true; // beheading is back on the menu
             part.Component.SeverIntegrity = (part.Component.SeverIntegrity * ent.Comp.SeverThresholdMultiplier);
         }

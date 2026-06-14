@@ -1,7 +1,7 @@
 ## RoundEndSystem
 
 # Misfits Change - renamed "shuttle" to "train" for wasteland theme
-round-end-system-shuttle-announcement-sender = Wasteland Announcement
+round-end-system-shuttle-announcement-sender = Wasteland
 # round-end-system-shuttle-called-announcement = An emergency shuttle has been sent. ETA: {$time} {$units}.
 round-end-system-shuttle-called-announcement = A train has been dispatched. ETA: {$duration}. Board it or fall back to your bunkers.
 round-end-system-shuttle-countdown-announcement = The train is due in {$duration}. Board it or fall back to your bunkers.

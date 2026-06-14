@@ -77,11 +77,11 @@ public sealed class TribalAccentSystem : EntitySystem
         msg = RegexErLower.Replace(msg, "a");
         msg = RegexErUpper.Replace(msg, "A");
 
-        // Xand -> Xan
-        msg = RegexAnd.Replace(msg, "");
-
         // remove indefinite articles
         msg = RegexIndefiniteArticle.Replace(msg, "");
+
+        // Xand -> Xan
+        msg = RegexAnd.Replace(msg, "");
 
         // vowel shift, on -> un, oun -> un
         msg = RegexVowelShiftLower.Replace(msg, "o");

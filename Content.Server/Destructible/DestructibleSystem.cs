@@ -20,6 +20,8 @@ using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using System.Linq;
+using Content.Shared._Misfits.Traits;
+
 
 namespace Content.Server.Destructible
 {
@@ -54,6 +56,11 @@ namespace Content.Server.Destructible
         /// </summary>
         public void Execute(EntityUid uid, DestructibleComponent component, DamageChangedEvent args)
         {
+            // Misfits: Remove gibbing
+            if (TryComp<UngibbableComponent>(uid, out var ungibbable))
+                return;
+            //
+
             foreach (var threshold in component.Thresholds)
             {
                 if (threshold.Reached(args.Damageable, this))

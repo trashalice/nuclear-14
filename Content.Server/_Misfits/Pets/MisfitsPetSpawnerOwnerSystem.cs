@@ -14,6 +14,7 @@ namespace Content.Server._Misfits.Pets;
 public sealed class MisfitsPetSpawnerOwnerSystem : EntitySystem
 {
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly PetCollarSystem _petCollars = default!;
 
     public override void Initialize()
     {
@@ -42,5 +43,6 @@ public sealed class MisfitsPetSpawnerOwnerSystem : EntitySystem
         // to the proper grid/map (mirrors the AttachToGridOrMap call in GhostRoleSystem).
         _transform.SetCoordinates(args.Spawned, ownerXform.Coordinates);
         _transform.AttachToGridOrMap(args.Spawned);
+        _petCollars.EquipDefaultCollar(args.Spawned);
     }
 }

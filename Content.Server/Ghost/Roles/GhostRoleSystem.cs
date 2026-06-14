@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Server.Administration.Logs;
+using Content.Server.Administration;
 using Content.Server.EUI;
 using Content.Server.Ghost.Roles.Components;
 using Content.Server.Ghost.Roles.Events;
@@ -34,6 +35,7 @@ using Robust.Shared.Collections;
 using Robust.Shared.Configuration; // #Misfits Add - Ghost role cooldown
 using Content.Server.Chat.Managers; // #Misfits Add - Ghost role cooldown
 using Content.Shared.CCVar; // #Misfits Add - Ghost role cooldown
+using Content.Server._Misfits.Pets;
 
 namespace Content.Server.Ghost.Roles
 {
@@ -53,6 +55,7 @@ namespace Content.Server.Ghost.Roles
         [Dependency] private readonly IPrototypeManager _prototype = default!;
         [Dependency] private readonly IConfigurationManager _cfg = default!; // #Misfits Add - Ghost role cooldown
         [Dependency] private readonly IChatManager _chatManager = default!; // #Misfits Add - Ghost role cooldown
+        [Dependency] private readonly QuickDialogSystem _quickDialog = default!;
 
         private uint _nextRoleIdentifier;
         private bool _needsUpdateGhostRoleCount = true;
@@ -67,6 +70,7 @@ namespace Content.Server.Ghost.Roles
 
         private readonly Dictionary<uint, Entity<GhostRoleComponent>> _ghostRoles = new();
         private readonly Dictionary<uint, Entity<GhostRoleRaffleComponent>> _ghostRoleRaffles = new();
+        private readonly Dictionary<uint, ICommonSession> _pendingCompanionRequests = new();
 
         private readonly Dictionary<ICommonSession, GhostRolesEui> _openUis = new();
         private readonly Dictionary<ICommonSession, MakeGhostRoleEui> _openMakeGhostRoleUis = new();
@@ -313,6 +317,74 @@ namespace Content.Server.Ghost.Roles
             UpdateAllEui();
         }
 
+        private void RequestCompanionApproval(ICommonSession requester, uint identifier, Entity<GhostRoleComponent> role, MisfitsPetSpawnerOwnerComponent ownerComp)
+        {
+            if (_pendingCompanionRequests.ContainsKey(identifier))
+            {
+                NotifyCompanionRequester(requester, "ghost-role-information-n14pet-companion-request-pending");
+                return;
+            }
+
+            if (!_playerManager.TryGetSessionByEntity(ownerComp.Owner, out var ownerSession) || ownerSession is null)
+            {
+                NotifyCompanionRequester(requester, "ghost-role-information-n14pet-companion-request-owner-unavailable");
+                return;
+            }
+
+            _pendingCompanionRequests[identifier] = requester;
+
+            var requesterName = requester.AttachedEntity is { Valid: true } requesterEntity
+                ? MetaData(requesterEntity).EntityName
+                : requester.Name;
+
+            var title = Loc.GetString(
+                "ghost-role-information-n14pet-companion-request-title",
+                ("requester", requesterName),
+                ("role", role.Comp.RoleName));
+
+            _quickDialog.OpenConfirmationDialog(
+                ownerSession,
+                title,
+                Loc.GetString("ghost-role-information-n14pet-companion-approve-button"),
+                Loc.GetString("ghost-role-information-n14pet-companion-deny-button"),
+                () =>
+                {
+                    _pendingCompanionRequests.Remove(identifier);
+
+                    if (Takeover(requester, identifier))
+                    {
+                        NotifyCompanionOwner(ownerSession, "ghost-role-information-n14pet-companion-request-approved");
+                    }
+                    else
+                    {
+                        NotifyCompanionOwner(ownerSession, "ghost-role-information-n14pet-companion-request-expired");
+                    }
+                },
+                () =>
+                {
+                    _pendingCompanionRequests.Remove(identifier);
+                    NotifyCompanionRequester(requester, "ghost-role-information-n14pet-companion-request-denied");
+                });
+        }
+
+        private void NotifyCompanionRequester(ICommonSession requester, string locId)
+        {
+            _chatManager.DispatchServerMessage(requester, Loc.GetString(locId));
+        }
+
+        private void NotifyCompanionOwner(ICommonSession owner, string locId)
+        {
+            _chatManager.DispatchServerMessage(owner, Loc.GetString(locId));
+        }
+
+        private void ClearPendingCompanionRequests(ICommonSession session)
+        {
+            foreach (var (identifier, _) in _pendingCompanionRequests.Where(pair => pair.Value == session).ToArray())
+            {
+                _pendingCompanionRequests.Remove(identifier);
+            }
+        }
+
         private void PlayerStatusChanged(object? blah, SessionStatusEventArgs args)
         {
             if (args.NewStatus == SessionStatus.InGame)
@@ -324,6 +396,7 @@ namespace Content.Server.Ghost.Roles
             {
                 // people who disconnect are removed from ghost role raffles
                 LeaveAllRaffles(args.Session);
+                ClearPendingCompanionRequests(args.Session);
             }
         }
 
@@ -480,6 +553,12 @@ namespace Content.Server.Ghost.Roles
             // #Misfits Add - Ghost role cooldown: server-side guard in case the EUI check was bypassed.
             if (player.AttachedEntity is { } requestGhost && IsOnGhostRoleCooldown(player, requestGhost))
                 return;
+
+            if (TryComp(roleEnt.Owner, out MisfitsPetSpawnerOwnerComponent? ownerComp))
+            {
+                RequestCompanionApproval(player, identifier, roleEnt, ownerComp);
+                return;
+            }
 
             if (roleEnt.Comp.RaffleConfig is not null)
             {
@@ -645,6 +724,8 @@ namespace Content.Server.Ghost.Roles
             if (HasComp<GhostComponent>(message.Entity))
                 return;
 
+            ClearPendingCompanionRequests(message.Player);
+
             // The player is not a ghost (anymore), so they should not be in any raffles. Remove them.
             // This ensures player doesn't win a raffle after returning to their (revived) body and ends up being
             // forced into a ghost role.
@@ -682,6 +763,7 @@ namespace Content.Server.Ghost.Roles
             }
 
             _openUis.Clear();
+            _pendingCompanionRequests.Clear();
             _ghostRoles.Clear();
             _ghostRoleRaffles.Clear();
             _nextRoleIdentifier = 0;
@@ -736,6 +818,9 @@ namespace Content.Server.Ghost.Roles
 
             var spawnedEvent = new GhostRoleSpawnerUsedEvent(uid, mob);
             RaiseLocalEvent(mob, spawnedEvent);
+
+            if (TryComp<MisfitsPetSpawnerOwnerComponent>(uid, out _))
+                EntitySystem.Get<PetCollarSystem>().EquipDefaultCollar(mob);
 
             if (ghostRole.MakeSentient)
                 MakeSentientCommand.MakeSentient(mob, EntityManager, ghostRole.AllowMovement, ghostRole.AllowSpeech);

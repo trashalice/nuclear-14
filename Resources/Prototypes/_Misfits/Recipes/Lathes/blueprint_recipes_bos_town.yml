@@ -166,9 +166,9 @@
 
     ScrapElectronic: 500
 
-    Plastic: 750
+    Plastic: 1000
 
-    N14Gold: 150
+    N14Gold: 350
 
 
 - type: latheRecipe
@@ -334,13 +334,15 @@
   availableFaction:
   - BrotherhoodOfSteel
   materials:
-    Steel: 9000
+    Steel: 11500
 
-    N14Gunpowder: 80
+    N14Gold: 100
 
-    Circuitry: 20
+    N14Brass: 2000
 
-    ScrapElectronic: 15
+    ScrapElectronic: 150
+
+    Glass: 300 #scope
 
 
 - type: latheRecipe

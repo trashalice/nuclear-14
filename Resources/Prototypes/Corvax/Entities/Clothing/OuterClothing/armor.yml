@@ -337,9 +337,9 @@
 
 - type: entity
   parent: N14FalloutArmorBase
-  id: N14ClothingOuterLegionnaireOratorArmor
-  name: orator armor
-  description: "Armor of a Legion Orator, styled after the praetorian guard."
+  id: N14ClothingOuterLegionnaireOptioArmor
+  name: optio armor
+  description: "Armor of a Legion Optio, styled after the praetorian guard."
   components:
   - type: Sprite
     sprite: Corvax/Clothing/OuterClothing/Armor/oratorarmor.rsi
@@ -348,10 +348,10 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.80
-        Slash: 0.80
-        Piercing: 0.75 # I had pity on him and gave him 25%.
-        Heat: 0.75
+        Blunt: 0.60
+        Slash: 0.60
+        Piercing: 0.60 # wah wah, second in command should have good armor
+        Heat: 0.65
   - type: ExplosionResistance
     damageCoefficient: 0.82
 

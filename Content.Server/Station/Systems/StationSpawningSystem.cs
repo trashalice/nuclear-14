@@ -9,6 +9,7 @@ using Content.Server.Silicon.IPC;
 using Content.Server.Spawners.EntitySystems;
 using Content.Server.Spawners.Components;
 using Content.Server.Station.Components;
+using Content.Shared._Misfits.Special;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
 using Content.Shared.CCVar;
@@ -52,6 +53,7 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
     [Dependency] private readonly ArrivalsSystem _arrivalsSystem = default!;
     [Dependency] private readonly ContainerSpawnPointSystem _containerSpawnPointSystem = default!;
     [Dependency] private readonly CharacterRequirementsSystem _characterRequirements = default!;
+    [Dependency] private readonly SharedSpecialSystem _special = default!;
 
     private bool _randomizeCharacters;
 
@@ -164,6 +166,7 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
         if (profile != null)
         {
             _humanoidSystem.LoadProfile(entity.Value, profile);
+            _special.TryApplyProfileBaseValues(entity.Value, profile);
             _metaSystem.SetEntityName(entity.Value, profile.Name);
             if (profile.FlavorText != "" && _configurationManager.GetCVar(CCVars.FlavorText))
                 EnsureComp<DetailExaminableComponent>(entity.Value).Content = profile.FlavorText;

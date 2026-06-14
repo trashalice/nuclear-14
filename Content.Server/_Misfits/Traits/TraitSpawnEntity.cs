@@ -62,6 +62,7 @@ public sealed partial class TraitSpawnEntity : TraitFunction
                 var mob = entityManager.SpawnEntity(mobProto, coords);
                 entityManager.DeleteEntity(spawner);
                 entityManager.AddComponent(mob, new FollowerAutoRecruitComponent { Commander = uid });
+                EntitySystem.Get<PetCollarSystem>().EquipDefaultCollar(mob);
             }
             else
             {

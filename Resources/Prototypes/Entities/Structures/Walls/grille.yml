@@ -169,6 +169,9 @@
   parent: Grille
   name: diagonal grille
   components:
+    - type: Tag
+      tags:
+      - ForceNoFixRotations
     - type: Sprite
       drawdepth: Walls
       sprite: Structures/Walls/grille.rsi
@@ -204,6 +207,9 @@
   parent: ClockworkGrille
   name: diagonal clockwork grille
   components:
+    - type: Tag
+      tags:
+      - ForceNoFixRotations
     - type: Sprite
       drawdepth: Walls
       sprite: Structures/Walls/clockwork_grille.rsi

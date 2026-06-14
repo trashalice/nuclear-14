@@ -186,9 +186,20 @@ internal sealed class AllyTagOverlay : Overlay
             if (!cacheEntry.Visible)
                 continue;
 
-            var isAlly = info.Side == effectiveSide.Value;
-            var tag = isAlly ? "[ALLY]" : "[ENEMY]";
-            var color = isAlly ? Color.LimeGreen : new Color(1f, 0.3f, 0.3f);
+            string tag;
+            Color color;
+
+            if (info.Surrendered)
+            {
+                tag = "[SURRENDERED]";
+                color = Color.White;
+            }
+            else
+            {
+                var isAlly = info.Side == effectiveSide.Value;
+                tag = isAlly ? "[ALLY]" : "[ENEMY]";
+                color = isAlly ? Color.LimeGreen : new Color(1f, 0.3f, 0.3f);
+            }
 
             var screenCoords = _eyeManager.WorldToScreen(
                 aabb.Center + new Angle(-_eyeManager.CurrentEye.Rotation)

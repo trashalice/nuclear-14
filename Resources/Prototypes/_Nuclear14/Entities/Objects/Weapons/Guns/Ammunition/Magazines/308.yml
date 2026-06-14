@@ -170,7 +170,7 @@
       - N14Magazine308RifleSnipers
   - type: BallisticAmmoProvider
     proto: N14Cartridge308Rifle
-    capacity: 5
+    capacity: 10
   - type: Sprite
     netsync: false
     sprite: _Nuclear14/Objects/Weapons/Guns/Ammunition/Magazines/308/mag5.rsi
@@ -183,14 +183,18 @@
 - type: entity # Forge-add-start
   id: MagazineOver308RifleSniper
   name: "sniper magazine (Overpressure .308)"
+  description: A .308 overpressure magazine made for the sniper. Due to the bullets being slightly fatter, normal .308 won't fit in this mag.
   parent: BaseMagazine308Rifle
   components:
   - type: Tag
     tags:
       - N14MagazineOver308RifleSnipers
   - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - N14CartridgeOver308Rifle
     proto: N14CartridgeOver308Rifle
-    capacity: 5
+    capacity: 10
   - type: Sprite
     netsync: false
     sprite: _Nuclear14/Objects/Weapons/Guns/Ammunition/Magazines/308/mag5.rsi

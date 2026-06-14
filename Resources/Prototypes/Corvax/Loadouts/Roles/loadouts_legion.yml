@@ -139,7 +139,7 @@
         - CaesarLegionPrimeDecanus
         - CaesarLegionHoundmaster
         - CaesarLegionExplorer
-        - CaesarLegionOrator
+        - CaesarLegionOptio
         - CaesarLegionLegate
     - !type:CharacterPlaytimeRequirement
       tracker: CaesarLegionDean
@@ -169,7 +169,7 @@
         - CaesarLegionForgemaster
         - CaesarLegionHoundmaster
         - CaesarLegionExplorer
-        - CaesarLegionOrator
+        - CaesarLegionOptio
         - CaesarLegionLegate
     - !type:CharacterPlaytimeRequirement
       tracker: CaesarLegionFrumentarii
@@ -199,7 +199,7 @@
         - CaesarLegionFrumentarii
         - CaesarLegionHoundmaster
         - CaesarLegionExplorer
-        - CaesarLegionOrator
+        - CaesarLegionOptio
         - CaesarLegionLegate
     - !type:CharacterPlaytimeRequirement
       tracker: CaesarLegionCenturion

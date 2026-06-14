@@ -611,7 +611,7 @@ public sealed class WastelandMapSystem : EntitySystem
             source.Contains("vexillarius", StringComparison.OrdinalIgnoreCase) ||
             source.Contains("houndmaster", StringComparison.OrdinalIgnoreCase) ||
             source.Contains("frumentarii", StringComparison.OrdinalIgnoreCase) ||
-            source.Contains("orator", StringComparison.OrdinalIgnoreCase) ||
+            source.Contains("optio", StringComparison.OrdinalIgnoreCase) ||
             source.Contains("explorer", StringComparison.OrdinalIgnoreCase))
         {
             return WastelandMapTrackedBlipKind.LegionWarrior;

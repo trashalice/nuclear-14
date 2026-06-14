@@ -74,7 +74,7 @@
 
 # ── Caesar's Legion: Legio Vera ──────────────────────────────────────────────
 # #Misfits Tweak - Legion has no canonical "leadership tier"; using the closest
-# analogues: Centurion / Orator / Priestess / Houndmaster as Leadership, Legate
+# analogues: Centurion / Optio / Priestess / Houndmaster as Leadership, Legate
 # as Admin (HIGH FRUMENTARII). Adjust if Legion gets a dedicated rank pass.
 - type: misfitsTerminalDatabase
   id: legion-legiovera
@@ -87,7 +87,7 @@
   - LegionBrassKey
   leadershipJobs:
   - CaesarLegionCenturion
-  - CaesarLegionOrator
+  - CaesarLegionOptio
   - CaesarLegionPriestessOfMars
   - CaesarLegionHoundmaster
   adminJobs:

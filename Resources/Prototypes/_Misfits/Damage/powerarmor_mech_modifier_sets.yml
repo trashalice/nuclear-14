@@ -1,0 +1,79 @@
+- type: damageModifierSet
+  id: MisfitsMechPowerArmorT45
+  coefficients:
+    Blunt: 0.75
+    Slash: 0.75
+    Piercing: 0.75
+    Heat: 0.75
+    Caustic: 0.75
+    Radiation: 0.6
+
+- type: damageModifierSet
+  id: MisfitsMechPowerArmorT51
+  coefficients:
+    Blunt: 0.70
+    Slash: 0.70
+    Piercing: 0.70
+    Heat: 0.70
+    Caustic: 0.75
+    Radiation: 0.6
+
+- type: damageModifierSet
+  id: MisfitsMechPowerArmorT60
+  coefficients:
+    Blunt: 0.725
+    Slash: 0.725
+    Piercing: 0.725
+    Heat: 0.725
+    Caustic: 0.75
+    Radiation: 0.6
+
+- type: damageModifierSet
+  id: MisfitsMechPowerArmorX01
+  coefficients:
+    Blunt: 0.65
+    Slash: 0.65
+    Piercing: 0.65
+    Heat: 0.65
+    Caustic: 0.75
+    Radiation: 0.6
+
+- type: damageModifierSet
+  id: MisfitsMechPowerArmorX02
+  coefficients:
+    Blunt: 0.70
+    Slash: 0.70
+    Piercing: 0.70
+    Heat: 0.70
+    Caustic: 0.75
+    Radiation: 0.6
+
+- type: damageModifierSet
+  id: MisfitsMechPowerArmorHellfire
+  coefficients:
+    Blunt: 0.70
+    Slash: 0.70
+    Piercing: 0.70
+    Heat: 0.70
+    Caustic: 0.75
+    Radiation: 0.5
+
+- type: damageModifierSet
+  id: MisfitsMechPowerArmorMidwestCommander
+  coefficients:
+    Blunt: 0.695
+    Slash: 0.695
+    Piercing: 0.695
+    Heat: 0.695
+    Caustic: 0.745
+    Radiation: 0.595
+
+- type: damageModifierSet
+  id: MisfitsMechPowerArmorT51BC
+  coefficients:
+    Blunt: 0.675
+    Slash: 0.675
+    Piercing: 0.675
+    Heat: 0.675
+    Caustic: 0.75
+    Radiation: 0.6

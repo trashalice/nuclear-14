@@ -74,6 +74,12 @@ public sealed class FactionWarClientSystem : EntitySystem
             "Open the admin Force War panel.",
             "forcewar",
             OpenForceWarPanel);
+
+        _conHost.RegisterCommand(
+            "surrender",
+            "Surrender in an active war. You will be forced down, incapacitated, and marked as [SURRENDERED].",
+            "surrender",
+            OpenSurrender);
     }
 
     public override void Shutdown()
@@ -208,6 +214,13 @@ public sealed class FactionWarClientSystem : EntitySystem
 
         // Populate the admin panel with the latest online players and active wars.
         RaiseNetworkEvent(new FactionWarOpenPanelRequestEvent());
+    }
+
+    // ── /surrender client command ──────────────────────────────────────────
+
+    private void OpenSurrender(IConsoleShell shell, string argStr, string[] args)
+    {
+        RaiseNetworkEvent(new PlayerWarSurrenderRequestEvent());
     }
 
     // ── Window lifecycle ───────────────────────────────────────────────────

@@ -40,6 +40,7 @@ humanoid-profile-editor-robot-model-protectron-standard = Standard
 humanoid-profile-editor-robot-model-protectron-police = Police
 humanoid-profile-editor-robot-model-protectron-builder = Builder
 humanoid-profile-editor-robot-model-protectron-fire = Firefighter
+humanoid-profile-editor-robot-model-protectron-tribal = Tribal Spirit-Tender
 
 # Robot model selector labels for Assaultron variants.
 humanoid-profile-editor-robot-model-assaultron-beam = Beam

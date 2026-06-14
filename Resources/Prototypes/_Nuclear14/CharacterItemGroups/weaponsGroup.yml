@@ -10,15 +10,120 @@
     - type: loadout
       id: N14WeaponPistol22lr
     - type: loadout
+      id: N14WeaponPistol10mm
+    - type: loadout
+      id: N14WeaponPistol12mm
+    - type: loadout
+      id: N14WeaponPistol9mmChinese
+    - type: loadout
+      id: N14WeaponPistolWebley
+    - type: loadout
+      id: N14WeaponRevolver44Magnun
+    - type: loadout
+      id: N14WeaponLaserPistol
+    - type: loadout
+      id: N14WeaponLaserRevolver
+
+
+- type: characterItemGroup
+  id: N14LoadoutGunsBig
+  items:
+    - type: loadout
       id: N14WeaponShotgunDoubleBarrel
     - type: loadout
       id: N14WeaponRifle556Pipe
+    - type: loadout
+      id: N14WeaponLaserRifleMakeshift
+    - type: loadout
+      id: N14WeaponShotgunCaravan
+    - type: loadout
+      id: N14WeaponShotgun
+    - type: loadout
+      id: N14WeaponSMG9mm
+    - type: loadout
+      id: N14WeaponSMG10mm
+    - type: loadout
+      id: N14WeaponSMG10mmSuppressed
+    - type: loadout
+      id: N14WeaponSMG10mmChinese
+    - type: loadout
+      id: N14WeaponRifle556R91
+    - type: loadout
+      id: N14WeaponRifle556Service
+    - type: loadout
+      id: N14WeaponRifle556CarbineOld
+    - type: loadout
+      id: N14WeaponRifle762M14
+    - type: loadout
+      id: N14WeaponRifle762Fal
+    - type: loadout
+      id: N14WeaponRifle762SKS
+    - type: loadout
+      id: N14WeaponSniper556VarmintRifle
+    - type: loadout
+      id: N14WeaponSniperHunting
+    - type: loadout
+      id: N14WeaponSniper44LeverCarbine
+
 
 - type: characterItemGroup
   id: N14LoadoutAmmo
   items:
     - type: loadout
       id: N14SpeedLoader9
+    - type: loadout
+      id: N14SpeedLoader44
+    - type: loadout
+      id: N14MagazinePistol9mm
+    - type: loadout
+      id: N14MagazinePistol22lr
+    - type: loadout
+      id: N14MagazinePistol10mm
+    - type: loadout
+      id: N14MagazinePistol45
+    - type: loadout
+      id: N14MagazinePistol12
+    - type: loadout
+      id: N14PowerCellSmall
+
+- type: characterItemGroup
+  id: N14LoadoutAmmoBig
+  items:
+    - type: loadout
+      id: N14MagazineSMG9mm
+    - type: loadout
+      id: N14BaseMagazine10mmSubMachineGun
+    - type: loadout
+      id: Magazine762AmmoShort
+    - type: loadout
+      id: Magazine556Rifle
+
+- type: characterItemGroup
+  id: N14LoadoutAmmoBox
+  items:
+    - type: loadout
+      id: MagazineBox12gauge
+    - type: loadout
+      id: MagazineBox20gauge
+    - type: loadout
+      id: MagazineBox9mm
+    - type: loadout
+      id: MagazineBox10mm
+    - type: loadout
+      id: MagazineBox22
+    - type: loadout
+      id: MagazineBox45
+    - type: loadout
+      id: MagazineBox556
+    - type: loadout
+      id: MagazineBox12
+    - type: loadout
+      id: MagazineBox44
+    - type: loadout
+      id: MagazineBox762
+    - type: loadout
+      id: MagazineBox308
+
 
 - type: characterItemGroup
   id: N14LoadoutMelee
@@ -37,3 +142,19 @@
       id: N14TribalMachete
     - type: loadout
       id: N14TribalClub
+    - type: loadout
+      id: N14PoliceBaton
+    - type: loadout
+      id: N14TrenchClub
+    - type: loadout
+      id: N14LongSwordBoS
+    - type: loadout
+      id: N14GladiusLegion
+    - type: loadout
+      id: N14LongSword
+    - type: loadout
+      id: N14Gladius
+    - type: loadout
+      id: N14ChineseSword    
+    - type: loadout
+      id: N14CeremonialSwordCent

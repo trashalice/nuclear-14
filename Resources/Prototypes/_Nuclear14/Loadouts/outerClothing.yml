@@ -131,69 +131,67 @@
   items:
     -  N14ClothingOuterCoatFollowerLab
 
-# Misfits Change - Disabled: armor/weapons removed from roundstart loadout menu
-#- type: loadout
-#  id: N14LoadoutOuterCoatWinterArmored
-#  category: Outer
-#  cost: 3
-#  requirements:
-#    - !type:CharacterItemGroupRequirement
-#      group: N14LoadoutOuter
-#    - !type:CharacterDepartmentRequirement # Forge-Change
-#      inverted: true
-#      departments:
-#      - Vault
-#    - !type:CharacterJobRequirement # Forge-Change
-#      inverted: true
-#      jobs:
-#      - BoSMidSerf
-#      - CaesarLegionSlave
-#      - NCRPrisoner
-#  items:
-#    - N14ClothingOuterCoatWinterArmored
-#
-# Misfits Change - Disabled: armor/weapons removed from roundstart loadout menu
-#- type: loadout
-#  id: N14LoadoutOuterCoatBattlecoat
-#  category: Outer
-#  cost: 3
-#  requirements:
-#    - !type:CharacterItemGroupRequirement
-#      group: N14LoadoutOuter
-#    - !type:CharacterDepartmentRequirement # Forge-Change
-#      inverted: true
-#      departments:
-#      - Vault
-#    - !type:CharacterJobRequirement # Forge-Change
-#      inverted: true
-#      jobs:
-#      - BoSMidSerf
-#      - CaesarLegionSlave
-#      - NCRPrisoner
-#  items:
-#    - N14ClothingOuterBattlecoatCoat
-#
-# Misfits Change - Disabled: armor with resistance values removed from roundstart loadout menu
-#- type: loadout
-#  id: N14LoadoutOuterCoatBattlecoatTan
-#  category: Outer
-#  cost: 3
-#  requirements:
-#    - !type:CharacterItemGroupRequirement
-#      group: N14LoadoutOuter
-#    - !type:CharacterDepartmentRequirement # Forge-Change
-#      inverted: true
-#      departments:
-#      - Vault
-#    - !type:CharacterJobRequirement # Forge-Change
-#      inverted: true
-#      jobs:
-#      - BoSMidSerf
-#      - CaesarLegionSlave
-#      - NCRPrisoner
-#  items:
-#    - N14ClothingOuterBattlecoatTan
-#
+- type: loadout
+  id: N14LoadoutOuterCoatWinterArmored
+  category: Outer
+  cost: 3
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutOuter
+    - !type:CharacterDepartmentRequirement # Forge-Change
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement # Forge-Change
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14ClothingOuterCoatWinterArmored
+
+- type: loadout
+  id: N14LoadoutOuterCoatBattlecoat
+  category: Outer
+  cost: 3
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutOuter
+    - !type:CharacterDepartmentRequirement # Forge-Change
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement # Forge-Change
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14ClothingOuterBattlecoatCoat
+
+
+- type: loadout
+  id: N14LoadoutOuterCoatBattlecoatTan
+  category: Outer
+  cost: 3
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutOuter
+    - !type:CharacterDepartmentRequirement # Forge-Change
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement # Forge-Change
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14ClothingOuterBattlecoatTan
+
 - type: loadout
   id: N14LoadoutOuterCoatDuster
   category: Outer
@@ -270,170 +268,167 @@
   items:
     - N14ClothingOuterCoatLeatherCoat
 
-# Misfits Change - Disabled: armor with resistance values removed from roundstart loadout menu
-#- type: loadout
-#  id: N14ClothingOuterTownCoat
-#  category: Outer
-#  cost: 1
-#  requirements:
-#    - !type:CharacterItemGroupRequirement
-#      group: N14LoadoutOuter
-#    - !type:CharacterJobRequirement # Forge-Change
-#      inverted: true
-#      jobs:
-#      - BoSMidSerf
-#      - CaesarLegionSlave
-#      - NCRPrisoner
-#  items:
-#    - N14ClothingOuterTownCoat
-#
-# Misfits Change - Disabled: armor/weapons removed from roundstart loadout menu
-#- type: loadout
-#  id: N14ClothingOuterTownMediumCoat
-#  category: Outer
-#  cost: 3
-#  requirements:
-#    - !type:CharacterItemGroupRequirement
-#      group: N14LoadoutOuter
-#    - !type:CharacterDepartmentRequirement # Forge-Change
-#      inverted: true
-#      departments:
-#      - Vault
-#    - !type:CharacterJobRequirement # Forge-Change
-#      inverted: true
-#      jobs:
-#      - BoSMidSerf
-#      - CaesarLegionSlave
-#      - NCRPrisoner
-#  items:
-#    - N14ClothingOuterTownMediumCoat
-#
-# Misfits Change - Disabled: armor/weapons removed from roundstart loadout menu
-#- type: loadout
-#  id: N14LoadoutOuterLeatherArmor
-#  category: Outer
-#  cost: 3
-#  requirements:
-#    - !type:CharacterItemGroupRequirement
-#      group: N14LoadoutOuter
-#    - !type:CharacterDepartmentRequirement # Forge-Change
-#      inverted: true
-#      departments:
-#      - Vault
-#    - !type:CharacterJobRequirement # Forge-Change
-#      inverted: true
-#      jobs:
-#      - BoSMidSerf
-#      - CaesarLegionSlave
-#      - NCRPrisoner
-#  items:
-#    - N14ClothingOuterLeatherArmor
-#
-# Misfits Change - Disabled: armor/weapons removed from roundstart loadout menu
-#- type: loadout
-#  id: N14LoadoutOuterMetalArmor
-#  category: Outer
-#  cost: 3
-#  requirements:
-#    - !type:CharacterItemGroupRequirement
-#      group: N14LoadoutOuter
-#    - !type:CharacterDepartmentRequirement # Forge-Change
-#      inverted: true
-#      departments:
-#      - Vault
-#    - !type:CharacterJobRequirement # Forge-Change
-#      inverted: true
-#      jobs:
-#      - BoSMidSerf
-#      - CaesarLegionSlave
-#      - NCRPrisoner
-#  items:
-#    - N14ClothingOuterMetalArmor
-#
-# Misfits Change - Disabled: armor/weapons removed from roundstart loadout menu
-#- type: loadout
-#  id: N14LoadoutOuterTribalArmor
-#  category: Outer
-#  cost: 2
-#  requirements:
-#    - !type:CharacterItemGroupRequirement
-#      group: N14LoadoutOuter
-#    - !type:CharacterDepartmentRequirement # Forge-Change
-#      inverted: true
-#      departments:
-#      - Vault
-#    - !type:CharacterJobRequirement # Forge-Change
-#      inverted: true
-#      jobs:
-#      - BoSMidSerf
-#      - CaesarLegionSlave
-#      - NCRPrisoner
-#  items:
-#    - N14ClothingOuterTribalArmor
-#
-# Misfits Change - Disabled: armor/weapons removed from roundstart loadout menu
-#- type: loadout
-#  id: N14LoadoutOuterTribalArmorHeavy
-#  category: Outer
-#  cost: 3
-#  requirements:
-#    - !type:CharacterItemGroupRequirement
-#      group: N14LoadoutOuter
-#    - !type:CharacterDepartmentRequirement # Forge-Change
-#      inverted: true
-#      departments:
-#      - Vault
-#    - !type:CharacterJobRequirement # Forge-Change
-#      inverted: true
-#      jobs:
-#      - BoSMidSerf
-#      - CaesarLegionSlave
-#      - NCRPrisoner
-#  items:
-#    - N14ClothingOuterTribalArmorHeavy
-#
-# Misfits Change - Disabled: armor/weapons removed from roundstart loadout menu
-#- type: loadout
-#  id: N14LoadoutOuterRaiderBadlands
-#  category: Outer
-#  cost: 3
-#  requirements:
-#    - !type:CharacterItemGroupRequirement
-#      group: N14LoadoutOuter
-#    - !type:CharacterDepartmentRequirement # Forge-Change
-#      inverted: true
-#      departments:
-#      - Vault
-#    - !type:CharacterJobRequirement # Forge-Change
-#      inverted: true
-#      jobs:
-#      - BoSMidSerf
-#      - CaesarLegionSlave
-#      - NCRPrisoner
-#  items:
-#    - N14ClothingOuterRaiderBadlands
-#
-# Misfits Change - Disabled: armor/weapons removed from roundstart loadout menu
-#- type: loadout
-#  id: N14LoadoutOuterRaiderBlastmaster
-#  category: Outer
-#  cost: 3
-#  requirements:
-#    - !type:CharacterItemGroupRequirement
-#      group: N14LoadoutOuter
-#    - !type:CharacterDepartmentRequirement # Forge-Change
-#      inverted: true
-#      departments:
-#      - Vault
-#    - !type:CharacterJobRequirement # Forge-Change
-#      inverted: true
-#      jobs:
-#      - BoSMidSerf
-#      - CaesarLegionSlave
-#      - NCRPrisoner
-#  items:
-#    - N14ClothingOuterRaiderBlastmaster
-#
+
+- type: loadout
+  id: N14ClothingOuterTownCoat
+  category: Outer
+  cost: 1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutOuter
+    - !type:CharacterJobRequirement # Forge-Change
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+   - N14ClothingOuterTownCoat
+
+
+- type: loadout
+  id: N14ClothingOuterTownMediumCoat
+  category: Outer
+  cost: 3
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutOuter
+    - !type:CharacterDepartmentRequirement # Forge-Change
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement # Forge-Change
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14ClothingOuterTownMediumCoat
+
+
+- type: loadout
+  id: N14LoadoutOuterLeatherArmor
+  category: Outer
+  cost: 3
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutOuter
+    - !type:CharacterDepartmentRequirement # Forge-Change
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement # Forge-Change
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14ClothingOuterLeatherArmor
+
+- type: loadout
+  id: N14LoadoutOuterMetalArmor
+  category: Outer
+  cost: 3
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutOuter
+    - !type:CharacterDepartmentRequirement # Forge-Change
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement # Forge-Change
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14ClothingOuterMetalArmor
+
+- type: loadout
+  id: N14LoadoutOuterTribalArmor
+  category: Outer
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutOuter
+    - !type:CharacterDepartmentRequirement # Forge-Change
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement # Forge-Change
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14ClothingOuterTribalArmor
+
+
+- type: loadout
+  id: N14LoadoutOuterTribalArmorHeavy
+  category: Outer
+  cost: 3
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutOuter
+    - !type:CharacterDepartmentRequirement # Forge-Change
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement # Forge-Change
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14ClothingOuterTribalArmorHeavy
+
+ 
+- type: loadout
+  id: N14LoadoutOuterRaiderBadlands
+  category: Outer
+  cost: 3
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutOuter
+    - !type:CharacterDepartmentRequirement # Forge-Change
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement # Forge-Change
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14ClothingOuterRaiderBadlands
+
+- type: loadout
+  id: N14LoadoutOuterRaiderBlastmaster
+  category: Outer
+  cost: 3
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutOuter
+    - !type:CharacterDepartmentRequirement # Forge-Change
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement # Forge-Change
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14ClothingOuterRaiderBlastmaster
+
 - type: loadout
   id: N14LoadoutOuterHarperCoat
   category: Outer
@@ -454,27 +449,329 @@
   items:
     - N14ClothingOuterHarperCoat
 
-# Misfits Change - Disabled: armor/weapons removed from roundstart loadout menu
-#- type: loadout
-#  id: N14LoadoutOuterScavengerHeavyArmor
-#  category: Outer
-#  cost: 6
-#  requirements:
-#    - !type:CharacterPlaytimeRequirement
-#      tracker: Wastelander
-#      min: 24000
-#    - !type:CharacterItemGroupRequirement
-#      group: N14LoadoutOuter
-#    - !type:CharacterDepartmentRequirement # Forge-Change
-#      inverted: true
-#      departments:
-#      - Vault
-#    - !type:CharacterJobRequirement # Forge-Change
-#      inverted: true
-#      jobs:
-#      - BoSMidSerf
-#      - CaesarLegionSlave
-#      - NCRPrisoner
-#  items:
-#    - N14ClothingScavengerHeavyArmor
-#
+
+- type: loadout
+  id: N14LoadoutOuterScavengerHeavyArmor
+  category: Outer
+  cost: 6
+  requirements:
+    - !type:CharacterPlaytimeRequirement
+      tracker: Wastelander
+      min: 24000
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutOuter
+    - !type:CharacterDepartmentRequirement # Forge-Change
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement # Forge-Change
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14ClothingScavengerHeavyArmor
+
+# Make Charisma Useful, Armors
+
+- type: loadout
+  id: N14LoadoutOuterZealotDuster
+  category: Outer
+  cost: 5
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutOuter
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement 
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14ClothingOuterZealotDuster
+
+- type: loadout
+  id: N14LoadoutOuterCoatCombatDuster
+  category: Outer
+  cost: 5
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutOuter
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement 
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14ClothingOuterCoatCombatDuster
+
+
+- type: loadout
+  id: N14LoadoutOuterCoatFollowersArmored
+  category: Outer
+  cost: 7
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutOuter
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement 
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14ClothingOuterCoatFollowersArmored
+
+
+- type: loadout
+  id: N14LoadoutOuterCombatArmorRaider
+  category: Outer
+  cost: 5
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutOuter
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement 
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14ClothingOuterCombatRaider
+
+- type: loadout
+  id: N14LoadoutOuterPoliceCombat
+  category: Outer
+  cost: 6
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutOuter
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement 
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14ClothingOuterPoliceCombat
+
+
+- type: loadout
+  id: N14LoadoutOuterPressArmor
+  category: Outer
+  cost: 6
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutOuter
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement 
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14ClothingOuterPressArmor
+
+- type: loadout
+  id: N14LoadoutOuterCombatArmor
+  category: Outer
+  cost: 10
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutOuter
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement 
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14ClothingOuterCombatArmor
+
+- type: loadout
+  id: N14LoadoutOuterCombatArmorPainspike
+  category: Outer
+  cost: 10
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutOuter
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement 
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14ClothingOuterCombatPainspike
+
+
+- type: loadout
+  id: N14LoadoutOuterRaiderCombat1
+  category: Outer
+  cost: 10
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutOuter
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement 
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14ClothingOuterRaiderCombat1
+    
+- type: loadout
+  id: N14LoadoutOuterCombatArmorChinese
+  category: Outer
+  cost: 10
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+      - LanguageChinese
+      - LanguageNerd 
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutOuter
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement 
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14ClothingOuterCombatArmorChinese
+
+- type: loadout
+  id: N14LoadoutOuterVestChinese
+  category: Outer
+  cost: 9
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+      - LanguageChinese
+      - LanguageNerd 
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutOuter
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement 
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14ClothingOuterVestChinese
+
+
+# Make Charisma Useful, Drip
+
+- type: loadout
+  id: N14LoadoutOuterSoldierCoat
+  category: Outer
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutOuter
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement 
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14ClothingOuterCoatSoldierCoat
+
+
+
+- type: loadout
+  id: N14LoadoutOuterJacketBomber
+  category: Outer
+  cost: 1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutOuter
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement 
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14ClothingOuterJacketBomber
+
+
+
+- type: loadout
+  id: N14LoadoutOuterDuster
+  category: Outer
+  cost: 1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutOuter
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement 
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14ClothingOuterCoatDuster
+
+

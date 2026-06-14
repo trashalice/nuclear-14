@@ -1,0 +1,14 @@
+ent-N14WallAdobeTall = adobe wall
+    .desc = A tall hand-packed adobe wall made from sun-baked mud brick.
+ent-N14WallWoodTall = tall wood wall
+    .desc = A tall wall made from wood.
+ent-N14WallScrapTall = tall sheet metal wall
+    .desc = A tall wall made from sheet metal.
+ent-N14WallScrapBlueTall = tall blue sheet metal wall
+    .desc = A tall wall made from blue sheet metal.
+ent-N14WallScrapRedTall = tall red sheet metal wall
+    .desc = A tall wall made from red sheet metal.
+ent-N14WallScrapWhiteTall = tall white sheet metal wall
+    .desc = A tall wall made from white sheet metal.
+ent-N14WallRoughScrapTall = tall rough scrap wall
+    .desc = A tall rough wall made from scrap metal.

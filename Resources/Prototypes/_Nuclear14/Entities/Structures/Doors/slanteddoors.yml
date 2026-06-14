@@ -70,6 +70,9 @@
   id: N14DoorMetalBlueAltSlanted
   name: alt blue metal door
   components:
+  - type: Tag
+    tags:
+    - ForceNoFixRotations
   - type: Sprite
     sprite: _Nuclear14/Structures/Doors/SlantedDoors/metalbluealt.rsi
     layers:
@@ -167,6 +170,9 @@
   suffix: Slanted
   description: A wooden door.
   components:
+  - type: Tag
+    tags:
+    - ForceNoFixRotations
   - type: Sprite
     sprite: _Nuclear14/Structures/Doors/SlantedDoors/wood.rsi
     layers:

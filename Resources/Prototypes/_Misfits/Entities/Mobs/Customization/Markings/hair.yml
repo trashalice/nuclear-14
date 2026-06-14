@@ -21,3 +21,11 @@
   sprites:
     - sprite: _Misfits/Mobs/Customization/hair.rsi
       state: newyou
+
+- type: marking
+  id: doublebunM14
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+    - sprite: _Misfits/Mobs/Customization/hair.rsi
+      state: doublebunM14

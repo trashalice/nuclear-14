@@ -99,6 +99,12 @@ public sealed partial class StrapComponent : Component
     [DataField]
     public float UnbuckleDoafterTime = 1f;
     // Goobstation
+
+    /// <summary>
+    /// add so can block unbuckeling of vehicle drivers
+    /// </summary>
+    [DataField]
+    public bool AllowOthersToUnbuckle = true; // Goobstation
 }
 
 public enum StrapPosition

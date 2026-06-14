@@ -84,7 +84,7 @@ public sealed partial class QuickDialogSystem : EntitySystem
         _openDialogsByUser.Remove(user);
     }
 
-    private void OpenDialogInternal(ICommonSession session, string title, List<QuickDialogEntry> entries, QuickDialogButtonFlag buttons, Action<QuickDialogResponseEvent> okAction, Action cancelAction)
+    private void OpenDialogInternal(ICommonSession session, string title, List<QuickDialogEntry> entries, QuickDialogButtonFlag buttons, Action<QuickDialogResponseEvent> okAction, Action cancelAction, string? okText = null, string? cancelText = null)
     {
         var did = GetDialogId();
         RaiseNetworkEvent(
@@ -92,7 +92,9 @@ public sealed partial class QuickDialogSystem : EntitySystem
                 title,
                 entries,
                 did,
-                buttons),
+                buttons,
+                okText,
+                cancelText),
             session
         );
 
@@ -101,6 +103,22 @@ public sealed partial class QuickDialogSystem : EntitySystem
             _openDialogsByUser.Add(session.UserId, new List<int>());
 
         _openDialogsByUser[session.UserId].Add(did);
+    }
+
+    /// <summary>
+    /// Opens a confirmation dialog with custom button text and no input fields.
+    /// </summary>
+    public void OpenConfirmationDialog(ICommonSession session, string title, string okText, string cancelText, Action approveAction, Action denyAction)
+    {
+        OpenDialogInternal(
+            session,
+            title,
+            new List<QuickDialogEntry>(),
+            QuickDialogButtonFlag.OkButton | QuickDialogButtonFlag.CancelButton,
+            _ => approveAction.Invoke(),
+            denyAction,
+            okText,
+            cancelText);
     }
 
     private bool TryParseQuickDialog<T>(QuickDialogEntryType entryType, string input, [NotNullWhen(true)] out T? output)

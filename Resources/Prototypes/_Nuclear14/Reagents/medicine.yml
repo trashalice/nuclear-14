@@ -17,12 +17,6 @@
           messageKeys:
           - drug-ambience-healing-mixture-1
           - drug-ambience-healing-mixture-2
-        - !type:GenericStatusEffect # Misfits Add: mark entity as having an active recovery drug — enables 2s crit stand-up
-          key: RecoveryDrugActive
-          component: RecoveryDrugActiveComponent
-          type: Add
-          time: 3
-          refresh: true
         - !type:HealthChange
           damage:
             groups:
@@ -70,7 +64,7 @@
             Brute: -2.0
             Airloss: -2.0
           types:
-            Radiation: 0.5
+            Radiation: 0.25
             Poison: 0.25
       - !type:ModifyBleedAmount
         amount: -1
@@ -236,12 +230,6 @@
         messageKeys:
         - drug-ambience-robust-healing-mixture-1
         - drug-ambience-robust-healing-mixture-2
-      - !type:GenericStatusEffect # Misfits Add: mark entity as having an active recovery drug — enables 2s crit stand-up
-        key: RecoveryDrugActive
-        component: RecoveryDrugActiveComponent
-        type: Add
-        time: 3
-        refresh: true
       - !type:HealthChange
         damage:
           groups:

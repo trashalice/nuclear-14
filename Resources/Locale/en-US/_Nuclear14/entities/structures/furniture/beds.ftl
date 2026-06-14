@@ -6,3 +6,5 @@ ent-N14Bedroll = bedroll
     .desc = A bedroll for sleeping on the road. Not very comfy.
 ent-N14BedMattress0 = Mattress
     .desc = A mattress on the floor. Better than nothing.
+ent-N14BedWoodBunk = wooden bunk bed
+    .desc = A bunk bed with a wooden frame.

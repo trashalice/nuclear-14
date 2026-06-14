@@ -66,7 +66,7 @@ public sealed class RangerCombatSystem : EntitySystem
                 _hands.TryDrop(target, hand, checkActionBlocker: false, doDropInteraction: false, handsComp: targetHands);
         }
         ApplyComboEffects(uid, target, combo);
-        _popup.PopupEntity(Loc.GetString("martial-arts-ranger-quick-disarm", ("target", target)), uid, uid, PopupType.Small);
+        _popup.PopupEntity(Loc.GetString("martial-arts-ranger-quick-disarm", ("target", target)), target, uid, PopupType.Medium);
     }
 
     /// <summary>Pressure Point: Harm+Disarm+Disarm — stun and drain stamina from a precision nerve strike.</summary>
@@ -74,7 +74,7 @@ public sealed class RangerCombatSystem : EntitySystem
     {
         ApplyComboEffects(uid, target, combo);
         _stun.TryStun(target, TimeSpan.FromSeconds(combo.ParalyzeTime), true);
-        _popup.PopupEntity(Loc.GetString("martial-arts-ranger-pressure-point", ("target", target)), uid, uid, PopupType.Medium);
+        _popup.PopupEntity(Loc.GetString("martial-arts-ranger-pressure-point", ("target", target)), target, uid, PopupType.Medium);
     }
 
     /// <summary>Takedown Throw: Grab+Harm — leveraged throw dealing blunt damage on landing.</summary>
@@ -85,7 +85,7 @@ public sealed class RangerCombatSystem : EntitySystem
         ApplyComboEffects(uid, target, combo);
         _throwing.TryThrow(target, dir * 2f, combo.ThrownSpeed, uid);
         _stun.TryKnockdown(target, TimeSpan.FromSeconds(combo.ParalyzeTime), true);
-        _popup.PopupEntity(Loc.GetString("martial-arts-ranger-takedown-throw", ("target", target)), uid, uid, PopupType.Medium);
+        _popup.PopupEntity(Loc.GetString("martial-arts-ranger-takedown-throw", ("target", target)), target, uid, PopupType.Medium);
     }
 
     /// <summary>Arm Bar: Grab+Grab at Hard+ — locks the target in an arm bar; high stamina drain and paralysis.</summary>
@@ -100,7 +100,7 @@ public sealed class RangerCombatSystem : EntitySystem
 
         ApplyComboEffects(uid, target, combo);
         _stun.TryKnockdown(target, TimeSpan.FromSeconds(combo.ParalyzeTime), true);
-        _popup.PopupEntity(Loc.GetString("martial-arts-ranger-arm-bar", ("target", target)), uid, uid, PopupType.LargeCaution);
+        _popup.PopupEntity(Loc.GetString("martial-arts-ranger-arm-bar", ("target", target)), target, uid, PopupType.LargeCaution);
     }
 
     private void ApplyComboEffects(EntityUid uid, EntityUid target, MisfitsComboPrototype combo)

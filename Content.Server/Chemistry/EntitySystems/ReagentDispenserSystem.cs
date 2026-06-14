@@ -1,5 +1,5 @@
-using Content.Server.Chemistry.Components;
 using Content.Server.Chemistry.Containers.EntitySystems;
+using Content.Shared.Chemistry.Components;
 using Content.Server.Nutrition.Components;
 using Content.Shared.Chemistry;
 using Content.Shared.Chemistry.Dispenser;
@@ -22,7 +22,7 @@ namespace Content.Server.Chemistry.EntitySystems
     /// <seealso cref="ReagentDispenserComponent"/>
     /// </summary>
     [UsedImplicitly]
-    public sealed class ReagentDispenserSystem : EntitySystem
+    public sealed class ReagentDispenserSystem : SharedReagentDispenserSystem
     {
         [Dependency] private readonly AudioSystem _audioSystem = default!;
         [Dependency] private readonly SolutionContainerSystem _solutionContainerSystem = default!;
@@ -43,7 +43,6 @@ namespace Content.Server.Chemistry.EntitySystems
             SubscribeLocalEvent<ReagentDispenserComponent, EntRemovedFromContainerMessage>(SubscribeUpdateUiState);
             SubscribeLocalEvent<ReagentDispenserComponent, BoundUIOpenedEvent>(SubscribeUpdateUiState);
 
-            SubscribeLocalEvent<ReagentDispenserComponent, ReagentDispenserSetDispenseAmountMessage>(OnSetDispenseAmountMessage);
             SubscribeLocalEvent<ReagentDispenserComponent, ReagentDispenserDispenseReagentMessage>(OnDispenseReagentMessage);
             SubscribeLocalEvent<ReagentDispenserComponent, ReagentDispenserClearContainerSolutionMessage>(OnClearContainerSolutionMessage);
 
@@ -116,9 +115,9 @@ namespace Content.Server.Chemistry.EntitySystems
             return inventory;
         }
 
-        private void OnSetDispenseAmountMessage(Entity<ReagentDispenserComponent> reagentDispenser, ref ReagentDispenserSetDispenseAmountMessage message)
+        protected override void OnSetDispenseAmountMessage(Entity<ReagentDispenserComponent> reagentDispenser, ref ReagentDispenserSetDispenseAmountMessage message)
         {
-            reagentDispenser.Comp.DispenseAmount = message.ReagentDispenserDispenseAmount;
+            base.OnSetDispenseAmountMessage(reagentDispenser, ref message);
             UpdateUiState(reagentDispenser);
             ClickSound(reagentDispenser);
         }
