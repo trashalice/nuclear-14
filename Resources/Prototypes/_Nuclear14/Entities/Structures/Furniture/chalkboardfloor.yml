@@ -124,7 +124,7 @@
   - type: Sprite
     state: board_text2
   - type: AccessReader
-    access: [["CaesarLegionCenturion"]]
+    access: [["CaesarLegion"]]
   - type: ActivatableUIRequiresAccess
   - type: WastelandMap
     mapTexturePath: _Misfits/Maps/wendover_map.png
