@@ -9,6 +9,7 @@ using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Controls.FancyTree;
 using Content.Client.Verbs.UI;
 using Content.Shared.Verbs;
+using Content.Shared._Misfits.UI; // #Misfits Add - UI theme palette prototype
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
@@ -84,7 +85,7 @@ namespace Content.Client.Stylesheets
         public const string StyleClassPipBoyPanel = "PipBoyPanel";
         public const string StyleClassPipBoyHeading = "PipBoyHeading";
         public const string StyleClassPipBoyLabel = "PipBoyLabel";
-        // Rule-driven chrome fills so they re-skin live on a theme swap (vs. baked-in colors).
+        // #Misfits Add - Rule-driven chrome fills so they re-skin live on a theme swap (vs. baked-in colors).
         public const string StyleClassPipBoyFill = "PipBoyFill";           // flat panel background
         public const string StyleClassPipBoyHighlight = "PipBoyHighlight"; // selected/inset highlight
         public const string StyleClassPipBoyDivider = "PipBoyDivider";     // thin accent divider bar
@@ -98,14 +99,14 @@ namespace Content.Client.Stylesheets
 
         public static readonly Color PanelDark = Color.FromHex("#1E1E22");
 
-        // Themeable accent (default Pip-Boy green, was gold #A88B5E). Reassigned by ApplyPalette.
+        // #Misfits Change - Themeable accent (mutable so the UI theme can be swapped at runtime). Reassigned by ApplyPalette.
         public static Color NanoGold = Color.FromHex("#33FF66");
         public static readonly Color GoodGreenFore = Color.FromHex("#31843E");
         public static readonly Color ConcerningOrangeFore = Color.FromHex("#A5762F");
         public static readonly Color DangerousRedFore = Color.FromHex("#BB3232");
         public static readonly Color DisabledFore = Color.FromHex("#5A5A5A");
 
-        // Themeable default button family (default Pip-Boy green). Reassigned by ApplyPalette.
+        // #Misfits Change - Themeable default button family (mutable for runtime theme swap). Reassigned by ApplyPalette.
         public static Color ButtonColorDefault = Color.FromHex("#163E1E");
         public static readonly Color ButtonColorDefaultRed = Color.FromHex("#D43B3B");
         public static Color ButtonColorHovered = Color.FromHex("#205A2C");
@@ -127,7 +128,7 @@ namespace Content.Client.Stylesheets
         public static readonly Color ButtonColorGoodHovered = Color.FromHex("#31843E");
         public static readonly Color ButtonColorGoodDisabled = Color.FromHex("#164420");
 
-        // Themeable palette aliases used by the rethemed menus. Reassigned by ApplyPalette.
+        // #Misfits Change - Themeable palette aliases used by the rethemed menus (mutable for runtime swap). Reassigned by ApplyPalette.
         public static Color PipBoyGreen = Color.FromHex("#33FF66");
         public static Color PipBoyGreenDim = Color.FromHex("#1E9C3D");
         public static Color PipBoyPanelBg = Color.FromHex("#0C1F0E");
@@ -137,26 +138,27 @@ namespace Content.Client.Stylesheets
         public static Color PipBoyBtnPressed = Color.FromHex("#2E7D3F");
         public static Color PipBoyBtnDisabled = Color.FromHex("#10240F");
 
+        // #Misfits Add - Applies a server-definable UI theme to the themeable color fields above.
         /// <summary>
-        /// Applies a <see cref="UiPalette"/> to the themeable color fields above. Call this BEFORE
+        /// Applies a <see cref="UiThemePrototype"/> to the themeable color fields above. Call this BEFORE
         /// constructing a new <see cref="StyleNano"/> (so its rules capture the colors), then have
         /// the stylesheet manager reassign the rebuilt sheet to restyle the live UI.
         /// </summary>
-        public static void ApplyPalette(UiPalette p)
+        public static void ApplyPalette(UiThemePrototype p)
         {
             NanoGold = p.Accent;
-            ButtonColorDefault = p.BtnDefault;
-            ButtonColorHovered = p.BtnHovered;
-            ButtonColorPressed = p.BtnPressed;
-            ButtonColorDisabled = p.BtnDisabled;
+            ButtonColorDefault = p.ButtonDefault;
+            ButtonColorHovered = p.ButtonHovered;
+            ButtonColorPressed = p.ButtonPressed;
+            ButtonColorDisabled = p.ButtonDisabled;
 
             PipBoyGreen = p.Accent;
             PipBoyGreenDim = p.AccentDim;
             PipBoyPanelBg = p.PanelBg;
-            PipBoyBtnDefault = p.BtnDefault;
-            PipBoyBtnHovered = p.BtnHovered;
-            PipBoyBtnPressed = p.BtnPressed;
-            PipBoyBtnDisabled = p.BtnDisabled;
+            PipBoyBtnDefault = p.ButtonDefault;
+            PipBoyBtnHovered = p.ButtonHovered;
+            PipBoyBtnPressed = p.ButtonPressed;
+            PipBoyBtnDisabled = p.ButtonDisabled;
         }
 
         //NavMap
@@ -1494,8 +1496,8 @@ namespace Content.Client.Stylesheets
                     .Prop(Label.StylePropertyFont, pipBoyMono12)
                     .Prop(Label.StylePropertyFontColor, PipBoyGreenDim),
 
-                // Rule-driven themed chrome fills. The StyleBoxFlat is captured at sheet-build time,
-                // so rebuilding the sheet on a palette change re-skins these live.
+                // #Misfits Add - Rule-driven themed chrome fills. The StyleBoxFlat is captured at sheet-build
+                // time, so rebuilding the sheet on a palette change re-skins these live.
                 Element<PanelContainer>().Class(StyleClassPipBoyFill)
                     .Prop(PanelContainer.StylePropertyPanel, new StyleBoxFlat { BackgroundColor = PipBoyPanelBg }),
 

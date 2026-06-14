@@ -41,8 +41,8 @@ namespace Content.Client.Lobby.UI
             _entManager = entManager;
             _protomanager = protoManager;
 
-            // BackgroundPanel is themed via the PipBoyPanel style class (see CharacterSetupGui.xaml),
-            // so it re-skins live with the selected UI palette.
+            // #Misfits Change - BackgroundPanel is themed via the PipBoyPanel style class (see CharacterSetupGui.xaml)
+            // instead of a baked-in modulate, so it re-skins live with the selected UI theme.
             _createNewCharacterButton = new Button
             {
                 Text = Loc.GetString("character-setup-gui-create-new-character-button"),

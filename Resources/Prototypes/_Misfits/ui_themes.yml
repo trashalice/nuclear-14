@@ -1,0 +1,60 @@
+# #Misfits Add - Server-definable UI color palettes for the options "UI color theme" dropdown.
+- type: misfitsUiTheme
+  id: pipboy_green
+  name: ui-theme-pipboy-green
+  order: 0
+  accent: "#33FF66"
+  accentDim: "#1E9C3D"
+  panelBg: "#0C1F0E"
+  buttonDefault: "#163E1E"
+  buttonHovered: "#205A2C"
+  buttonPressed: "#2E7D3F"
+  buttonDisabled: "#10240F"
+
+- type: misfitsUiTheme
+  id: dark
+  name: ui-theme-dark
+  order: 1
+  accent: "#8FB3D0"
+  accentDim: "#6A8298"
+  panelBg: "#1A1B1E"
+  buttonDefault: "#2A2C30"
+  buttonHovered: "#3A3D42"
+  buttonPressed: "#4A6075"
+  buttonDisabled: "#202225"
+
+- type: misfitsUiTheme
+  id: amber
+  name: ui-theme-amber
+  order: 2
+  accent: "#FFB642"
+  accentDim: "#B36A1E"
+  panelBg: "#1F1405"
+  buttonDefault: "#3E2A0E"
+  buttonHovered: "#5A3E14"
+  buttonPressed: "#7D5A1E"
+  buttonDisabled: "#241805"
+
+- type: misfitsUiTheme
+  id: vault_blue
+  name: ui-theme-vault-blue
+  order: 3
+  accent: "#4FC3F7"
+  accentDim: "#2A7CA8"
+  panelBg: "#0A1622"
+  buttonDefault: "#15304A"
+  buttonHovered: "#1E4A6B"
+  buttonPressed: "#2E6B9E"
+  buttonDisabled: "#0E2030"
+
+- type: misfitsUiTheme
+  id: classic
+  name: ui-theme-classic
+  order: 4
+  accent: "#A88B5E"
+  accentDim: "#8A7049"
+  panelBg: "#1E1E22"
+  buttonDefault: "#464950"
+  buttonHovered: "#575B61"
+  buttonPressed: "#3E6C45"
+  buttonDisabled: "#292929"

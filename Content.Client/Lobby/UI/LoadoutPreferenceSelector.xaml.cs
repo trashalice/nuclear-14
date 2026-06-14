@@ -195,7 +195,7 @@ public sealed partial class LoadoutPreferenceSelector : Control
                 },
                 new PanelContainer
                 {
-                    StyleClasses = { StyleNano.StyleClassPipBoyHighlight },
+                    StyleClasses = { StyleNano.StyleClassPipBoyHighlight }, // #Misfits Change - themeable fill
                     Children =
                     {
                         previewLoadout,
