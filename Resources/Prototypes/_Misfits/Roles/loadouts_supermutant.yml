@@ -348,7 +348,7 @@
   items:
     - ClothingSuperMutantScavengedGloves
 
-    - type: loadout
+- type: loadout
   id: MisfitsLoadoutSuperMutantScavengedArmor
   category: Outer
   cost: 1
@@ -368,7 +368,7 @@
   items:
     - ClothingSuperMutantScavengedArmor
 
-    - type: loadout
+- type: loadout
   id: MisfitsLoadoutSuperMutantScavengedHelmet
   category: Head
   cost: 1
@@ -388,7 +388,7 @@
   items:
     - ClothingSuperMutantScavengedHelmet
 
-        - type: loadout
+- type: loadout
   id: MisfitsLoadoutSuperMutantScavengedBoots
   category: Shoes
   cost: 1
