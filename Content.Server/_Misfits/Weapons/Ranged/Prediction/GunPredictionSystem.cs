@@ -168,17 +168,19 @@ public sealed class GunPredictionSystem : SharedGunPredictionSystem
         MapCoordinates lowestCoordinate = default;
         var otherCoordinates = EntityCoordinates.Invalid;
         var ping = projectile.Comp1.Shooter?.Ping ?? 0;
-        var sentTime = _timing.CurTime - TimeSpan.FromMilliseconds(ping * 1.5);
-        var pingTime = TimeSpan.FromMilliseconds(ping);
+        var sentTicks = Math.Max(1, (uint) Math.Ceiling(ping * 1.5 / 1000f * _timing.TickRate));
+        var pingTicks = Math.Max(1, (uint) Math.Ceiling(ping / 1000f * _timing.TickRate));
+        var sentTick = _timing.CurTick - sentTicks;
+        var lowestTick = sentTick - pingTicks;
 
         foreach (var pos in other.Comp1.Positions)
         {
-            otherCoordinates = pos.Item2;
-            if (pos.Item1 >= sentTime)
+            otherCoordinates = pos.Coordinates;
+            if (pos.Tick >= sentTick)
                 break;
 
-            if (lowestCoordinate == default && pos.Item1 >= sentTime - pingTime)
-                lowestCoordinate = _transform.ToMapCoordinates(pos.Item2);
+            if (lowestCoordinate == default && pos.Tick >= lowestTick)
+                lowestCoordinate = _transform.ToMapCoordinates(pos.Coordinates);
         }
 
         var otherMapCoordinates = otherCoordinates == default

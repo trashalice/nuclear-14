@@ -29,8 +29,8 @@ public sealed class LagCompensationSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        var curTime = _timing.CurTime;
-        var earliestTime = curTime - BufferTime;
+        var bufferTicks = Math.Max(1, (int) Math.Ceiling(BufferTime.TotalSeconds * _timing.TickRate));
+        var earliestTick = _timing.CurTick - (uint) bufferTicks;
 
         // Cull any old ones from active updates
         // Probably fine to include ignored.
@@ -40,7 +40,7 @@ public sealed class LagCompensationSystem : EntitySystem
         {
             while (comp.Positions.TryPeek(out var pos))
             {
-                if (pos.Item1 < earliestTime)
+                if (pos.Tick < earliestTick)
                 {
                     comp.Positions.Dequeue();
                     continue;
@@ -56,7 +56,7 @@ public sealed class LagCompensationSystem : EntitySystem
         if (!args.NewPosition.EntityId.IsValid())
             return; // probably being sent to nullspace for deletion.
 
-        component.Positions.Enqueue((_timing.CurTime, args.NewPosition, args.NewRotation));
+        component.Positions.Enqueue((_timing.CurTick, args.NewPosition, args.NewRotation));
     }
 
     public (EntityCoordinates Coordinates, Angle Angle) GetCoordinatesAngle(EntityUid uid, ICommonSession? pSession,
@@ -65,25 +65,39 @@ public sealed class LagCompensationSystem : EntitySystem
         if (!Resolve(uid, ref xform))
             return (EntityCoordinates.Invalid, Angle.Zero);
 
-        if (pSession == null || !TryComp<LagCompensationComponent>(uid, out var lag) || lag.Positions.Count == 0)
+        if (pSession == null)
             return (xform.Coordinates, xform.LocalRotation);
 
-        var angle = Angle.Zero;
-        var coordinates = EntityCoordinates.Invalid;
         var ping = pSession.Ping;
-        // Use 1.5 due to the trip buffer.
-        var sentTime = _timing.CurTime - TimeSpan.FromMilliseconds(ping * 1.5);
+        var deltaTicks = Math.Max(1, (int) Math.Ceiling(ping * 1.5 / 1000f * _timing.TickRate));
+        var targetTick = _timing.CurTick - (uint) deltaTicks;
+        return GetCoordinatesAngle(uid, targetTick, xform);
+    }
+
+    public (EntityCoordinates Coordinates, Angle Angle) GetCoordinatesAngle(EntityUid uid, GameTick targetTick,
+        TransformComponent? xform = null)
+    {
+        if (!Resolve(uid, ref xform))
+            return (EntityCoordinates.Invalid, Angle.Zero);
+
+        if (!TryComp<LagCompensationComponent>(uid, out var lag) || lag.Positions.Count == 0)
+            return (xform.Coordinates, xform.LocalRotation);
+
+        var angle = xform.LocalRotation;
+        var coordinates = xform.Coordinates;
+        var found = false;
 
         foreach (var pos in lag.Positions)
         {
-            coordinates = pos.Item2;
-            angle = pos.Item3;
+            coordinates = pos.Coordinates;
+            angle = pos.Angle;
+            found = true;
 
-            if (pos.Item1 >= sentTime)
+            if (pos.Tick >= targetTick)
                 break;
         }
 
-        if (coordinates == default)
+        if (!found)
         {
             Log.Debug($"No long comp coords found, using {xform.Coordinates}");
             coordinates = xform.Coordinates;

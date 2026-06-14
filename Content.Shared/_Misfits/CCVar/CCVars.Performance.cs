@@ -61,14 +61,14 @@ public sealed class PerformanceCVars : CVars
     /// Extra AABB inflation applied when validating lag-compensated projectile and hitscan collisions.
     /// </summary>
     public static readonly CVarDef<float> GunPredictionAabbEnlargement =
-        CVarDef.Create("misfits.gun_prediction_aabb_enlargement", 0.3f, CVar.SERVERONLY);
+        CVarDef.Create("misfits.gun_prediction_aabb_enlargement", 0.3f, CVar.REPLICATED | CVar.SERVER);
 
     /// <summary>
     /// Extra search padding for server-side hitscan rewind validation so nearby lag-compensated targets
     /// are still considered even when the current-state lookup box is slightly stale.
     /// </summary>
     public static readonly CVarDef<float> GunPredictionHitscanSearchPadding =
-        CVarDef.Create("misfits.gun_prediction_hitscan_search_padding", 1.5f, CVar.SERVERONLY);
+        CVarDef.Create("misfits.gun_prediction_hitscan_search_padding", 1.5f, CVar.REPLICATED | CVar.SERVER);
 
     /// <summary>
     /// How often (seconds) the proximity NPC system scans for nearby players.

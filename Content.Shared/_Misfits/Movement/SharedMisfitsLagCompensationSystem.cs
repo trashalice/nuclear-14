@@ -66,6 +66,25 @@ public abstract class SharedMisfitsLagCompensationSystem : EntitySystem
         return coordinates;
     }
 
+    public virtual (EntityCoordinates Coordinates, Angle Angle) GetCoordinatesAngle(EntityUid uid,
+        GameTick tick,
+        TransformComponent? xform = null)
+    {
+        return GetCoordinatesAngle(uid, (ICommonSession?) null, xform);
+    }
+
+    public virtual Angle GetAngle(EntityUid uid, GameTick tick, TransformComponent? xform = null)
+    {
+        var (_, angle) = GetCoordinatesAngle(uid, tick, xform);
+        return angle;
+    }
+
+    public virtual EntityCoordinates GetCoordinates(EntityUid uid, GameTick tick, TransformComponent? xform = null)
+    {
+        var (coordinates, _) = GetCoordinatesAngle(uid, tick, xform);
+        return coordinates;
+    }
+
     public EntityCoordinates GetCoordinates(EntityUid uid, EntityUid? session, TransformComponent? xform = null)
     {
         if (!_actorQuery.TryComp(session, out var actor))

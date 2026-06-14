@@ -103,16 +103,36 @@ public sealed class ServerMisfitsLagCompensationSystem : SharedMisfitsLagCompens
         ICommonSession? session,
         TransformComponent? xform = null)
     {
-        return _lagCompensation.GetCoordinatesAngle(uid, session, xform);
+        if (session == null)
+            return _lagCompensation.GetCoordinatesAngle(uid, session, xform);
+
+        return _lagCompensation.GetCoordinatesAngle(uid, GetLastRealTick(session), xform);
     }
 
     public override Angle GetAngle(EntityUid uid, ICommonSession? session, TransformComponent? xform = null)
     {
-        return _lagCompensation.GetAngle(uid, session, xform);
+        return GetCoordinatesAngle(uid, session, xform).Angle;
     }
 
     public override EntityCoordinates GetCoordinates(EntityUid uid, ICommonSession? session, TransformComponent? xform = null)
     {
-        return _lagCompensation.GetCoordinates(uid, session, xform);
+        return GetCoordinatesAngle(uid, session, xform).Coordinates;
+    }
+
+    public override (EntityCoordinates Coordinates, Angle Angle) GetCoordinatesAngle(EntityUid uid,
+        GameTick tick,
+        TransformComponent? xform = null)
+    {
+        return _lagCompensation.GetCoordinatesAngle(uid, tick, xform);
+    }
+
+    public override Angle GetAngle(EntityUid uid, GameTick tick, TransformComponent? xform = null)
+    {
+        return _lagCompensation.GetCoordinatesAngle(uid, tick, xform).Angle;
+    }
+
+    public override EntityCoordinates GetCoordinates(EntityUid uid, GameTick tick, TransformComponent? xform = null)
+    {
+        return _lagCompensation.GetCoordinatesAngle(uid, tick, xform).Coordinates;
     }
 }

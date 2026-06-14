@@ -8,6 +8,7 @@ using Content.Shared.Contests;
 using Content.Shared.CombatMode;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
 using Content.Shared.Examine;
 using Content.Shared.Gravity;
 using Content.Shared.Hands;
@@ -16,6 +17,7 @@ using Content.Shared.Item;
 using Content.Shared.Mech.Components; // Goobstation
 using Content.Shared._Misfits.CCVar;
 using Content.Shared._Misfits.Random;
+using Content.Shared._Misfits.Weapons;
 using Content.Shared._Misfits.Weapons.Ranged.Prediction;
 using Content.Shared.Popups;
 using Content.Shared.Projectiles;
@@ -34,6 +36,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Network;
+using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
@@ -632,6 +635,112 @@ public abstract partial class SharedGunSystem : EntitySystem
             return shooter;
 
         return mechPilot.Mech;
+    }
+
+    protected bool TryResolveGunHitscan(EntityUid gunUid, out HitscanPrototype hitscan)
+    {
+        hitscan = default!;
+
+        var providerUid = gunUid;
+        if (!TryComp<HitscanBatteryAmmoProviderComponent>(providerUid, out var provider))
+        {
+            var magEnt = GetMagazineEntity(gunUid);
+            if (magEnt == null || !TryComp<HitscanBatteryAmmoProviderComponent>(magEnt.Value, out provider))
+                return false;
+
+            providerUid = magEnt.Value;
+        }
+
+        if (!ProtoManager.TryIndex(provider.Prototype, out HitscanPrototype? baseHitscan))
+            return false;
+
+        hitscan = baseHitscan;
+
+        if (providerUid != gunUid &&
+            TryComp<GunDamageBonusComponent>(providerUid, out var providerOverride) &&
+            providerOverride.HitscanProtoOverride != null &&
+            ProtoManager.TryIndex(providerOverride.HitscanProtoOverride, out HitscanPrototype? providerOverrideHitscan))
+        {
+            hitscan = providerOverrideHitscan;
+        }
+
+        if (TryComp<GunDamageBonusComponent>(gunUid, out var gunOverride) &&
+            gunOverride.HitscanProtoOverride != null &&
+            ProtoManager.TryIndex(gunOverride.HitscanProtoOverride, out HitscanPrototype? gunOverrideHitscan))
+        {
+            hitscan = gunOverrideHitscan;
+        }
+
+        return true;
+    }
+
+    protected bool IsValidHitscanTarget(EntityUid hitEntity, EntityUid? target, bool firedFromContainer)
+    {
+        return firedFromContainer ||
+               hitEntity == target ||
+               CompOrNull<RequireProjectileTargetComponent>(hitEntity)?.Active != true;
+    }
+
+    protected bool TryGetFirstValidHitscanResult(
+        IEnumerable<RayCastResults> results,
+        EntityUid? target,
+        bool firedFromContainer,
+        out EntityUid hit,
+        out float distance)
+    {
+        foreach (var result in results)
+        {
+            if (!IsValidHitscanTarget(result.HitEntity, target, firedFromContainer))
+                continue;
+
+            hit = result.HitEntity;
+            distance = result.Distance;
+            return true;
+        }
+
+        hit = default;
+        distance = 0f;
+        return false;
+    }
+
+    protected static bool TryIntersectSegmentBox(Vector2 start, Vector2 end, Box2 box, out float fraction)
+    {
+        if (box.Contains(start))
+        {
+            fraction = 0f;
+            return true;
+        }
+
+        var direction = end - start;
+        var min = 0f;
+        var max = 1f;
+
+        if (!ClipAxis(start.X, direction.X, box.Left, box.Right, ref min, ref max) ||
+            !ClipAxis(start.Y, direction.Y, box.Bottom, box.Top, ref min, ref max))
+        {
+            fraction = 0f;
+            return false;
+        }
+
+        fraction = min;
+        return max >= min;
+    }
+
+    private static bool ClipAxis(float start, float direction, float minBound, float maxBound, ref float min, ref float max)
+    {
+        if (Math.Abs(direction) < 0.0001f)
+            return start >= minBound && start <= maxBound;
+
+        var inv = 1f / direction;
+        var enter = (minBound - start) * inv;
+        var exit = (maxBound - start) * inv;
+
+        if (enter > exit)
+            (enter, exit) = (exit, enter);
+
+        min = Math.Max(min, enter);
+        max = Math.Min(max, exit);
+        return max >= min;
     }
 
     protected abstract void Popup(string message, EntityUid? uid, EntityUid? user);

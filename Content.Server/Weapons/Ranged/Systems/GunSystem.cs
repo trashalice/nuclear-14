@@ -185,15 +185,8 @@ public sealed partial class GunSystem : SharedGunSystem
 
                     break;
                 case HitscanPrototype hitscan:
-
-                    // #Misfits Add - Override hitscan proto if gun specifies one.
-                    // This lets weapons control their own beam color and base damage
-                    // independently of which cell is inserted.
-                    if (TryComp<GunDamageBonusComponent>(gunUid, out var gunOverride) &&
-                        gunOverride.HitscanProtoOverride != null)
-                    {
-                        hitscan = ProtoManager.Index<HitscanPrototype>(gunOverride.HitscanProtoOverride);
-                    }
+                    if (TryResolveGunHitscan(gunUid, out var resolvedHitscan))
+                        hitscan = resolvedHitscan;
 
                     EntityUid? lastHit = null;
 
@@ -274,7 +267,11 @@ public sealed partial class GunSystem : SharedGunSystem
                             {
                                 if (dmg.AnyPositive())
                                 {
-                                    _color.RaiseEffect(Color.Red, new List<EntityUid>() { hitEntity }, Filter.Pvs(hitEntity, entityManager: EntityManager));
+                                    var filter = Filter.Pvs(hitEntity, entityManager: EntityManager);
+                                    if (userSession != null)
+                                        filter.RemovePlayer(userSession);
+
+                                    _color.RaiseEffect(Color.Red, new List<EntityUid>() { hitEntity }, filter);
                                 }
 
                                 // TODO get fallback position for playing hit sound.
@@ -377,7 +374,7 @@ public sealed partial class GunSystem : SharedGunSystem
         var firedFromContainer = _container.IsEntityOrParentInContainer(source);
 
         if (session == null)
-            return TryGetCurrentHitscanResult(raycastEvent.RayCastResults, target, firedFromContainer, out hit, out distance);
+            return TryGetFirstValidHitscanResult(raycastEvent.RayCastResults, target, firedFromContainer, out hit, out distance);
 
         EntityUid? staticHit = null;
         EntityUid? currentLagCompHit = null;
@@ -386,12 +383,8 @@ public sealed partial class GunSystem : SharedGunSystem
 
         foreach (var result in raycastEvent.RayCastResults)
         {
-            if (!firedFromContainer &&
-                result.HitEntity != target &&
-                CompOrNull<RequireProjectileTargetComponent>(result.HitEntity)?.Active == true)
-            {
+            if (!IsValidHitscanTarget(result.HitEntity, target, firedFromContainer))
                 continue;
-            }
 
             if (HasComp<LagCompensationComponent>(result.HitEntity))
             {
@@ -440,32 +433,6 @@ public sealed partial class GunSystem : SharedGunSystem
         return false;
     }
 
-    private bool TryGetCurrentHitscanResult(
-        List<RayCastResults> results,
-        EntityUid? target,
-        bool firedFromContainer,
-        out EntityUid hit,
-        out float distance)
-    {
-        foreach (var result in results)
-        {
-            if (!firedFromContainer &&
-                result.HitEntity != target &&
-                CompOrNull<RequireProjectileTargetComponent>(result.HitEntity)?.Active == true)
-            {
-                continue;
-            }
-
-            hit = result.HitEntity;
-            distance = result.Distance;
-            return true;
-        }
-
-        hit = default;
-        distance = 0f;
-        return false;
-    }
-
     private bool TryGetLagCompensatedHitscanResult(
         MapCoordinates from,
         Vector2 direction,
@@ -497,12 +464,8 @@ public sealed partial class GunSystem : SharedGunSystem
                 continue;
             }
 
-            if (!firedFromContainer &&
-                candidate != target &&
-                CompOrNull<RequireProjectileTargetComponent>(candidate)?.Active == true)
-            {
+            if (!IsValidHitscanTarget(candidate, target, firedFromContainer))
                 continue;
-            }
 
             if (!TryGetLagCompensatedBounds(candidate, session, collisionMask, fixtures, xform, out var bounds) ||
                 !TryIntersectSegmentBox(from.Position, end, bounds, out var fraction))
@@ -562,46 +525,6 @@ public sealed partial class GunSystem : SharedGunSystem
 
         bounds = bounds.Enlarged(_lagCompAabbEnlargement);
         return true;
-    }
-
-    private static bool TryIntersectSegmentBox(Vector2 start, Vector2 end, Box2 box, out float fraction)
-    {
-        if (box.Contains(start))
-        {
-            fraction = 0f;
-            return true;
-        }
-
-        var direction = end - start;
-        var min = 0f;
-        var max = 1f;
-
-        if (!ClipAxis(start.X, direction.X, box.Left, box.Right, ref min, ref max) ||
-            !ClipAxis(start.Y, direction.Y, box.Bottom, box.Top, ref min, ref max))
-        {
-            fraction = 0f;
-            return false;
-        }
-
-        fraction = min;
-        return max >= min;
-    }
-
-    private static bool ClipAxis(float start, float direction, float minBound, float maxBound, ref float min, ref float max)
-    {
-        if (Math.Abs(direction) < 0.0001f)
-            return start >= minBound && start <= maxBound;
-
-        var inv = 1f / direction;
-        var enter = (minBound - start) * inv;
-        var exit = (maxBound - start) * inv;
-
-        if (enter > exit)
-            (enter, exit) = (exit, enter);
-
-        min = Math.Max(min, enter);
-        max = Math.Min(max, exit);
-        return max >= min;
     }
 
     protected override void Popup(string message, EntityUid? uid, EntityUid? user) { }
