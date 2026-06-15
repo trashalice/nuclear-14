@@ -7055,3 +7055,16 @@ Entries:
   id: 6073
   time: '2026-06-15T01:16:19.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/802
+- author: Squagg
+  changes:
+    - type: Fix
+      message: Fixed Spoon Cat being unable to emote or use `*` chat emotes.
+    - type: Fix
+      message: Fixed Spoon Cat being unable to click-open doors.
+    - type: Add
+      message: >-
+        Added a Spoon Cat ability that lets up to three people understand Cat
+        per round.
+  id: 6074
+  time: '2026-06-15T02:17:35.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/808
