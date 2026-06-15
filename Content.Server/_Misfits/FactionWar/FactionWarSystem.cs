@@ -166,6 +166,14 @@ public sealed class FactionWarSystem : EntitySystem
             "forcewar <player1_name_or_uid> <player2_name_or_uid> [reason...]",
             ForceWarCommand);
 
+        // Admin-only: force a player into an existing war on a chosen side.
+        _conHost.RegisterCommand(
+            "forcewarjoin",
+            "Force a player into the same war side as another player.",
+            "forcewarjoin <target_username> <ally_username>",
+            ForceWarJoinCommand,
+            ForceWarJoinCompletion);
+
         // Receive GUI form submissions from clients.
         SubscribeNetworkEvent<FactionWarOpenPanelRequestEvent>(OnPanelRequest);
         SubscribeNetworkEvent<PlayerWarDeclareRequestEvent>(OnDeclareRequest);
@@ -1131,6 +1139,92 @@ public sealed class FactionWarSystem : EntitySystem
         SendPanelDataToAll();
 
         shell.WriteLine($"War forced between {Name(p1Entity)} and {Name(p2Entity)}.");
+    }
+
+    private void ForceWarJoinCommand(IConsoleShell shell, string argStr, string[] args)
+    {
+        if (shell.Player is { } player && !_adminManager.IsAdmin(player))
+        {
+            shell.WriteError("You must be an admin.");
+            return;
+        }
+
+        if (args.Length < 2)
+        {
+            shell.WriteError("Usage: forcewarjoin <target_username> <ally_username>");
+            return;
+        }
+
+        var targetId = ResolvePlayerIdentifier(args[0]);
+        var allyId = ResolvePlayerIdentifier(args[1]);
+
+        if (targetId == null || allyId == null)
+        {
+            shell.WriteError("Target or ally player not found.");
+            return;
+        }
+
+        if (!TryGetSessionForPlayer(targetId.Value, out var targetSession) ||
+            targetSession.AttachedEntity is not { } targetEntity)
+        {
+            shell.WriteError("Target player is not currently in-game with a character.");
+            return;
+        }
+
+        if (!TryGetSessionForPlayer(allyId.Value, out var allySession) ||
+            allySession.AttachedEntity is not { } allyEntity)
+        {
+            shell.WriteError("Ally player is not currently in-game with a character.");
+            return;
+        }
+
+        var allyNetEntity = GetNetEntity(allyEntity);
+        if (!_warParticipants.TryGetValue(allyNetEntity, out var allyEntry) ||
+            !_activeWars.TryGetValue(allyEntry.WarKey, out var war))
+        {
+            shell.WriteError("Ally player is not in a war.");
+            return;
+        }
+
+        var side = allyEntry.Side;
+        var targetNetEntity = GetNetEntity(targetEntity);
+        if (_warParticipants.TryGetValue(targetNetEntity, out var oldEntry) &&
+            _activeWars.TryGetValue(oldEntry.WarKey, out var oldWar))
+        {
+            oldWar.Participants.Remove(targetNetEntity);
+        }
+
+        war.Participants[targetNetEntity] = side;
+        _warParticipants[targetNetEntity] = (war.WarKey, side);
+        _surrenderedParticipants.Remove(targetNetEntity);
+
+        war.History.Add(new WarHistoryEvent
+        {
+            EventType = WarHistoryEventType.PlayerJoined,
+            OccurredAtUtc = DateTime.UtcNow,
+            ActorUserId = targetSession.UserId,
+            ActorUserName = targetSession.Name,
+            ActorCharacterName = Name(targetEntity),
+            Details = $"Admin-forced onto side {side}"
+        });
+
+        BroadcastParticipants();
+        BroadcastWarState();
+        SendPanelDataToAll();
+
+        var sideName = side == 1 ? war.SideName1 : war.SideName2;
+        _chat.DispatchServerMessage(targetSession, $"An admin has placed you in the war on the side of {sideName}.");
+        shell.WriteLine($"Forced {Name(targetEntity)} into the war on the side of {sideName}.");
+    }
+
+    private CompletionResult ForceWarJoinCompletion(IConsoleShell shell, string[] args)
+    {
+        return args.Length switch
+        {
+            1 => CompletionResult.FromHintOptions(CompletionHelper.SessionNames(players: _playerManager), "<target username>"),
+            2 => CompletionResult.FromHintOptions(CompletionHelper.SessionNames(players: _playerManager), "<ally username>"),
+            _ => CompletionResult.Empty
+        };
     }
 
     private void OnForceWarRequest(PlayerWarForceRequestEvent msg, EntitySessionEventArgs args)
