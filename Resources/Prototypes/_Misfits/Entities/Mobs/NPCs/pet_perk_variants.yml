@@ -86,6 +86,7 @@
     makeSentient: false
     allowMovement: true
   - type: GhostTakeoverAvailable
+  - type: Emoting
   - type: MobThresholds # #Misfits Add - allow revival by medics
     allowRevives: true
   - type: Inventory
@@ -103,6 +104,10 @@
     interfaces:
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - FelinidEmotes
   - type: PassiveDamage # #Misfits Add - slow natural regeneration for player-controlled pet cats
     allowedStates:
     - Alive
