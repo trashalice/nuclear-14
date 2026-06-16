@@ -6,3 +6,21 @@
   components:
   - type: Sprite
     sprite: _Misfits/Clothing/Back/vaultsecuritysatchel.rsi
+
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: M14OldSatchel
+  name: old satchel
+  description: The leather is stiff and cracking, but the satchel still works
+  components:
+  - type: Sprite
+    sprite: _Misfits/Clothing/Back/oldsatchel.rsi
+
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: M14MarchingSatchel
+  name: marching satchel
+  description: A sturdy leather bag attacked to the belt, for carrying necessary supplies.
+  components:
+  - type: Sprite
+    sprite: _Misfits/Clothing/Back/marchingsatchel.rsi

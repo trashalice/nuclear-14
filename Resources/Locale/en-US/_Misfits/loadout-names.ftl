@@ -21,6 +21,8 @@ loadout-name-N14ClothingBackpackSatchelExplorer = explorer satchel
 loadout-name-N14ClothingBackpackSatchelTribal = tribal satchel
 loadout-name-N14ClothingBackpackSatchelMilitary = military satchel
 loadout-name-N14ClothingBackpackSatchelTrekker = trekker satchel
+loadout-name-M14ClothingBackpackSatchelMarching = marching satchel
+loading-name-M14ClothingBackpackSatchelOld = old satchel
 
 # Uniforms
 loadout-name-ClothingUniformJumpsuitOliveSweaterVault = olive sweater
@@ -480,6 +482,7 @@ loadout-name-MisfitsLoadoutHeadDesertBoonie = desert boonie hat
 loadout-name-MisfitsLoadoutHeadArmyBeret = army beret
 loadout-name-MisfitsLoadoutHeadArmyBeretAirborne = airborne beret
 loadout-name-MisfitsLoadoutHeadArmyBeretSpecial = special forces beret
+loadout-name-MisfitsLoadoutHeadRedBandana = red bandana
 # Head — NCR soldiers
 loadout-name-MisfitsLoadoutHeadNCRSidecap = NCR sidecap
 loadout-name-MisfitsLoadoutHeadNCRBeretOfficer = NCR officer beret
