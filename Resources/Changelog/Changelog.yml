@@ -7200,3 +7200,10 @@ Entries:
   id: 6083
   time: '2026-06-16T01:29:32.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/820
+- author: punished pierow
+  changes:
+    - type: Fix
+      message: Admins no longer drop their epic centcom pens when possessing objects!
+  id: 6084
+  time: '2026-06-16T02:33:10.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/821
